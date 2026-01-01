@@ -30,6 +30,15 @@ export default function Pricing() {
     }
   ];
 
+  const handlePayment = (planName: string) => {
+    const { STRIPE_LINKS } = require('../utils/emailConfig');
+    if (planName === 'Basic') {
+      window.location.href = STRIPE_LINKS.BASIC;
+    } else {
+      window.location.href = STRIPE_LINKS.PROFESSIONAL;
+    }
+  };
+
   return (
     <section id="pricing" className="relative bg-[#0a0a0a] py-12 lg:py-20 overflow-hidden">
       {/* Top decorative border */}
@@ -164,7 +173,7 @@ export default function Pricing() {
                   </ul>
 
                   <button
-                    onClick={openTrialModal}
+                    onClick={() => handlePayment(plan.name)}
                     className="w-full bg-gray-900 text-white font-black py-4 rounded-xl border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:bg-gray-800 active:translate-y-1 active:shadow-none transition-all uppercase tracking-widest text-sm"
                   >
                     {t.pricing[plan.buttonTextKey]}

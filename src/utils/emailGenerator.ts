@@ -1,4 +1,5 @@
 import { Language, translations } from './translations';
+import { STRIPE_LINKS } from './emailConfig';
 
 /**
  * Generates a beautiful, premium HTML email template based on the 
@@ -23,7 +24,6 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
             newsletterHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}aff6dd8b8a3b6658dc9c21e719e0921f.png" alt="newmindr. Newsletter" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}e08d778ef3a764e65fd10a0d34eb5f6f.png" alt="Discover more" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
         }
 
-        // Add the unsubscribe footer to the custom HTML
         const footerHtml = `
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
@@ -37,7 +37,6 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
             </table>
         `;
 
-        // Inject footer before closing body/html
         return newsletterHtml.replace('</body></html>', `${footerHtml}</body></html>`);
     }
 
@@ -53,7 +52,6 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
 
     const themeColor = type === 'trial' ? colors.primary : type === 'newsletter' ? colors.secondary : colors.success;
 
-    // Helper to replace variables in translation strings
     const interpolate = (str: string, values: any) => {
         return str.replace(/{(\w+)}/g, (_, key) => values[key] || '');
     };
@@ -76,10 +74,22 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
         </div>
     `;
 
+    let actionButton = '';
+    if (type === 'trial') {
+        actionButton = `
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="${STRIPE_LINKS.TRIAL}" style="display: inline-block; background: ${colors.black}; color: ${colors.white}; padding: 18px 30px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 16px; border: 2px solid ${colors.white}; box-shadow: 4px 4px 0px 0px ${colors.primary};">
+                    ${lang === 'lt' ? 'AKTYVUOTI NEMOKAMĄ BANDYMĄ' : lang === 'ru' ? 'АКТИВИРОВАТЬ БЕСПЛАТНУЮ ВЕРСИЮ' : 'ACTIVATE FREE TRIAL'}
+                </a>
+            </div>
+        `;
+    }
+
     let bodyContent = `
         <div style="padding: 40px 30px; font-family: sans-serif;">
             <p style="font-size: 18px; line-height: 1.6; color: ${colors.black};">${interpolate(t.greeting, data)}</p>
             <p style="font-size: 16px; line-height: 1.6; color: #444; margin-top: 20px;">${t.content || t.subGreeting || ''}</p>
+            ${actionButton}
         </div>
     `;
 
