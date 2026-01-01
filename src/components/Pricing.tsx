@@ -82,7 +82,7 @@ export default function Pricing() {
                 </span>
                 <button
                   onClick={() => setIsYearly(!isYearly)}
-                  className="relative w-14 sm:w-16 h-7 sm:h-8 bg-gray-700 border-2 border-white rounded-full transition-colors shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] shrink-0"
+                  className="relative w-14 sm:w-16 h-7 sm:h-8 bg-gray-700 border-2 border-white rounded-full transition-colors shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] shrink-0 !min-w-0 !min-h-0"
                 >
                   <div
                     className={`absolute top-0.5 sm:top-1 w-5 h-5 bg-white rounded-full transition-all duration-300 ${isYearly ? 'left-8 sm:left-9' : 'left-0.5 sm:left-1'
