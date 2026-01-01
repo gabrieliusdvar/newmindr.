@@ -141,7 +141,7 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
             <div>
               <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.footer.navigation}</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1 sm:space-y-2">
                 {navItems.map((item) => (
                   <li key={item.name}>
                     {item.path ? (
