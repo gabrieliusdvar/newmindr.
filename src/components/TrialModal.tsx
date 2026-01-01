@@ -35,13 +35,11 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
 
     return (
         <div
-            className={`fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-hidden ${isAnimating ? 'pointer-events-auto' : 'pointer-events-none'}`}
+            className={`fixed inset-0 z-[500] flex items-center justify-center p-4 transition-all duration-300 ${isOpen
+                ? 'bg-black/60 backdrop-blur-sm pointer-events-auto opacity-100'
+                : 'bg-black/0 pointer-events-none opacity-0'}`}
             onClick={onClose}
         >
-            {/* Background Overlay */}
-            <div
-                className={`absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}
-            />
 
             <div
                 className={`bg-white w-full ${modalView === 'buy' ? 'max-w-5xl' : 'max-w-md'} max-h-[90vh] overflow-y-auto rounded-3xl border-4 border-gray-900 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative transition-all duration-500 perspective-1000 z-10 
@@ -50,13 +48,14 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                         : 'animate-modal-out opacity-0'}`}
                 onClick={e => e.stopPropagation()}
             >
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-3 right-3 sm:top-4 sm:right-4 w-7 h-7 sm:w-9 sm:h-9 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 transition-colors flex items-center justify-center"
-                >
-                    <X className="w-4.5 h-4.5 sm:w-6 sm:h-6 text-gray-900" />
-                </button>
+                {/* Close Button hit area */}
+                <div className="absolute top-0 right-0 z-50 p-4 sm:p-6 cursor-pointer group" onClick={onClose}>
+                    <button
+                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100/80 hover:bg-gray-200 rounded-full transition-colors flex items-center justify-center"
+                    >
+                        <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" />
+                    </button>
+                </div>
 
                 {/* Back Button (if not on choice) */}
                 {modalView !== 'choice' && (

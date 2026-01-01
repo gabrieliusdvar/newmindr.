@@ -74,20 +74,27 @@ export default function MinigamePopup({ isOpen, onClose }: { isOpen: boolean; on
     };
 
     return (
-        <div className="fixed inset-0 z-[600] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300">
-            <div className="relative w-full max-w-2xl bg-white border-4 border-gray-900 rounded-[2.5rem] shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col min-h-[500px]">
+        <div
+            className="fixed inset-0 z-[600] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
+            onClick={onClose}
+        >
+            <div
+                className="relative w-full max-w-2xl bg-white border-4 border-gray-900 rounded-[2.5rem] shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col min-h-[500px]"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Header */}
                 <div className="p-6 border-b-4 border-gray-900 flex items-center justify-between bg-emerald-400">
                     <div className="flex items-center gap-3">
                         <Brain className="w-8 h-8 text-gray-900 animate-bounce" />
                         <h2 className="text-2xl font-black text-gray-900 uppercase italic tracking-tighter">{t.minigame.title}</h2>
                     </div>
-                    <button
-                        onClick={onClose}
-                        className="w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-0.5 active:shadow-none"
-                    >
-                        <X className="w-5 h-5 text-gray-900" />
-                    </button>
+                    <div className="absolute top-2 right-2 z-50 p-4 cursor-pointer group" onClick={onClose}>
+                        <button
+                            className="w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-0.5 active:shadow-none"
+                        >
+                            <X className="w-5 h-5 text-gray-900" />
+                        </button>
+                    </div>
                 </div>
 
                 {/* Game Area */}

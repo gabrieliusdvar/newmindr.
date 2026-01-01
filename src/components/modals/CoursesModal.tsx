@@ -25,7 +25,7 @@ export default function CoursesModal({ isOpen, onClose }: CoursesModalProps) {
 
     return (
         <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 animate-in fade-in duration-200 backdrop-blur-sm"
             onClick={onClose}
             style={{ willChange: 'opacity' }}
         >
@@ -35,9 +35,9 @@ export default function CoursesModal({ isOpen, onClose }: CoursesModalProps) {
                 style={{ willChange: 'transform, opacity' }}
             >
                 {/* Close Button */}
-                <div className="absolute top-6 right-6 z-10">
+                {/* Close Button hit area */}
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={onClose}>
                     <button
-                        onClick={onClose}
                         className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100/80 hover:bg-gray-200 rounded-full transition-all group border-2 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none"
                         aria-label="Close modal"
                     >

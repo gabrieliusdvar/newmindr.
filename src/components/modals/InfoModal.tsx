@@ -198,7 +198,7 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
 
     return (
         <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 animate-in fade-in duration-200 backdrop-blur-sm"
             onClick={onClose}
         >
             <div
@@ -217,13 +217,14 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                     </div>
                 </div>
 
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
-                >
-                    <X className="w-6 h-6 text-gray-900" />
-                </button>
+                {/* Close Button hit area */}
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={onClose}>
+                    <button
+                        className="w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
+                    >
+                        <X className="w-6 h-6 text-gray-900" />
+                    </button>
+                </div>
 
                 {/* Scrollable Content */}
                 <div className="overflow-y-auto p-10 md:p-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">

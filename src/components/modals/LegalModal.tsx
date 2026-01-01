@@ -33,12 +33,14 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
                 <h2 className="text-2xl font-black text-white uppercase italic tracking-tighter" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     {content.title}
                 </h2>
-                <button
-                    onClick={onClose}
-                    className="w-10 h-10 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
-                >
-                    <X className="w-6 h-6" />
-                </button>
+                {/* Close Button hit area */}
+                <div className="absolute top-0 right-0 h-full flex items-center px-4 cursor-pointer group" onClick={onClose}>
+                    <button
+                        className="w-10 h-10 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
+                </div>
             </div>
 
             {/* Content Container */}

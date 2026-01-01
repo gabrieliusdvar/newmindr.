@@ -34,8 +34,11 @@ export default function LanguageAvailabilityPopup() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed inset-0 z-[400] flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
-            <div className="relative w-full max-w-4xl bg-[#111111] border-4 border-white rounded-[2.5rem] p-6 md:p-10 shadow-[20px_20px_0px_0px_rgba(255,255,255,0.1)] overflow-hidden animate-content-reveal">
+        <div className="fixed inset-0 z-[400] flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm" onClick={() => setIsVisible(false)}>
+            <div
+                className="relative w-full max-w-4xl bg-[#111111] border-4 border-white rounded-[2.5rem] p-6 md:p-10 shadow-[20px_20px_0px_0px_rgba(255,255,255,0.1)] overflow-hidden animate-content-reveal"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Decorative Background Icons */}
                 <div className="absolute top-10 right-10 opacity-10 -rotate-12 translate-x-1/2 -translate-y-1/2 pointer-events-none">
                     <Globe size={300} strokeWidth={1} className="text-white" />
@@ -51,12 +54,14 @@ export default function LanguageAvailabilityPopup() {
                                 {t.popups.globalLearning}
                             </h2>
                         </div>
-                        <button
-                            onClick={() => setIsVisible(false)}
-                            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-1 active:shadow-none"
-                        >
-                            <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </button>
+                        {/* Close Button hit area */}
+                        <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={() => setIsVisible(false)}>
+                            <button
+                                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-1 active:shadow-none"
+                            >
+                                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                            </button>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

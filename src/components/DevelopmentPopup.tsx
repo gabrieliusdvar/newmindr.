@@ -49,18 +49,22 @@ export default function DevelopmentPopup() {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-300 p-4">
+        <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-300 p-4"
+            onClick={handleClose}
+        >
             <div
                 className="bg-white border-4 border-gray-900 rounded-3xl shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-lg w-full relative animate-in zoom-in-95 duration-300"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close Button */}
-                <button
-                    onClick={handleClose}
-                    className="absolute top-2 right-2 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 border-2 sm:border-4 border-gray-900 rounded-full flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all z-10"
-                >
-                    <X className="w-5 h-5 text-white" strokeWidth={3} />
-                </button>
+                {/* Close Button hit area - makes it much easier to tap */}
+                <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 z-50 p-6 cursor-pointer group" onClick={handleClose}>
+                    <button
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 border-2 sm:border-4 border-gray-900 rounded-full flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-all"
+                    >
+                        <X className="w-6 h-6 text-white" strokeWidth={3} />
+                    </button>
+                </div>
 
                 {/* Header with animated icons */}
                 <div className="bg-gradient-to-r from-purple-400 to-pink-400 border-b-4 border-gray-900 rounded-t-[1.25rem] p-6 sm:p-8 relative overflow-hidden">
