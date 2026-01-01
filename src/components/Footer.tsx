@@ -190,17 +190,17 @@ export default function Footer() {
                 ))}
               </div>
               <div className="mt-6 space-y-3">
-                <a href="mailto:hello@spyk.edu" className="flex items-center gap-2 text-gray-900 text-sm font-bold hover:text-emerald-500 transition-colors group">
+                <a href="mailto:hello@newmindr.com" className="flex items-center gap-2 text-gray-900 text-sm font-bold hover:text-emerald-500 transition-colors group">
                   <div className="p-1.5 bg-gray-50 border-2 border-gray-900 rounded-md group-hover:bg-emerald-50 transition-colors">
                     <Mail className="w-3.5 h-3.5" />
                   </div>
-                  hello@spyk.edu
+                  hello@newmindr.com
                 </a>
-                <a href="tel:+123456789" className="flex items-center gap-2 text-gray-900 text-sm font-bold hover:text-emerald-500 transition-colors group">
+                <a href="tel:+37063911939" className="flex items-center gap-2 text-gray-900 text-sm font-bold hover:text-emerald-500 transition-colors group">
                   <div className="p-1.5 bg-gray-50 border-2 border-gray-900 rounded-md group-hover:bg-emerald-50 transition-colors">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
-                  +1 (234) 567-890
+                  +370 (639) 11 939
                 </a>
               </div>
             </div>
