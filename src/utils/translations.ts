@@ -1,6 +1,6 @@
 export type Language = 'en' | 'lt' | 'ru';
 
-export const translations = {
+export const translations: Record<Language, any> = {
   en: {
     seo: {
       title: "newmindr. Interactive Learning"
@@ -1021,289 +1021,289 @@ export const translations = {
           description: "Tu ne tik įsimeni, tu įvaldai. Įgūdžiai patvirtinami kuriant, kaupiant realių darbų portfelį, o ne pažymių knygelę.",
           action: "Atsiimti meistrų laipsnį"
         }
+      },
+      completed: "Įveikta",
+      journeyUnlocked: "Kelionė Atrakinta!",
+      experienceReal: "Tu supranti procesą. Dabar patirk tai realybėje.",
+      startFirstClass: "Pradėk Pirmąją Pamoką",
+      modal: {
+        readyToStart: "Pasiruošęs pradėti?",
+        choosePath: "Pasirink, kaip nori pradėti savo kelionę.",
+        startFreeTrial: "Pradėti nemokamą bandymą",
+        sevenDays: "7 Dienos",
+        or: "ARBA",
+        buyNow: "Pirkti Dabar",
+        trial: {
+          title: "Pradėk nemokamą bandymą",
+          firstName: "Vardas",
+          lastName: "Pavardė",
+          email: "El. paštas",
+          phone: "Tel. numeris",
+          optional: "(Neprivaloma)",
+          activate: "Aktyvuoti 7 d. bandymą",
+          noCreditCard: "Tik naujiems vartotojams"
+        },
+        buy: {
+          title: "Pasirink planą",
+          basic: {
+            title: "Atrask ir Pradėk",
+            desc: "Geriausia: smalsiems pradedantiesiems.",
+            features: [
+              "Prieiga prie interaktyvių mokymosi žaidimų ir pamokų",
+              "Savarankiška veikla ir iššūkiai",
+              "Amžių atitinkantys mokymosi keliai",
+              "Prieiga prie bendruomenės"
+            ],
+            notIncluded: "Neįeina: gyvos instruktorių pamokos",
+            button: "Pradėti"
+          },
+          pro: {
+            title: "Mokykis gyvai. Kurk įgūdžius.",
+            desc: "Geriausia: norintiems daugiau vedimo.",
+            features: [
+              "Viskas, kas įeina į Basic",
+              "Gyvos interaktyvios pamokos su instruktoriais",
+              "Dalyvavimas realiu laiku (žaidimai, iššūkiai, komandinis darbas)",
+              "Vadovaujami mokymosi keliai pagal amžiaus grupes",
+              "Nuolatinis grįžtamasis ryšys sesijų metu",
+              "Pirmenybė naujoms funkcijoms"
+            ],
+            button: "Gauti Profesionalų"
+          }
+        }
       }
     },
-    completed: "Įveikta",
-    journeyUnlocked: "Kelionė Atrakinta!",
-    experienceReal: "Tu supranti procesą. Dabar patirk tai realybėje.",
-    startFirstClass: "Pradėk Pirmąją Pamoką",
-    modal: {
-      readyToStart: "Pasiruošęs pradėti?",
-      choosePath: "Pasirink, kaip nori pradėti savo kelionę.",
-      startFreeTrial: "Pradėti nemokamą bandymą",
-      sevenDays: "7 Dienos",
-      or: "ARBA",
-      buyNow: "Pirkti Dabar",
-      trial: {
-        title: "Pradėk nemokamą bandymą",
-        firstName: "Vardas",
-        lastName: "Pavardė",
-        email: "El. paštas",
-        phone: "Tel. numeris",
-        optional: "(Neprivaloma)",
-        activate: "Aktyvuoti 7 d. bandymą",
-        noCreditCard: "Tik naujiems vartotojams"
+    infoModal: {
+      gotIt: "Supratau!",
+      about: {
+        title: "Apie newmindr",
+        subtitle: "Kuriame ateities kūrėjų kartą",
+        intro: "newmindr tikime, kad tradicinė švietimo sistema nespėja su technologijų tempu. Mes esame čia, kad užpildytume šią spragą.",
+        missionTitle: "Mūsų Misija",
+        missionDesc: "Suteikti studentams praktinių, ateičiai aktualių įgūdžių per įtraukiantį mokymąsi ir kūrybą.",
+        methodTitle: "Mūsų Metodas",
+        methodDesc: "Projektinis mokymasis, aplinka be spaudimo ir ekspertų mentorystė.",
+        footer: "Prisijunk prie daugiau nei 1000 studentų visame pasaulyje, kurie savo ateitį kuria jau šiandien."
       },
-      buy: {
-        title: "Pasirink planą",
+      programs: {
+        title: "Mūsų Programos",
+        subtitle: "Pritaikyta kiekvienai amžiaus grupei",
+        youngExplorers: "Jaunieji atradėjai (8-12)",
+        youngExplorersDesc: "Žaidybinis mokymasis, orientuotas į logiką, pasakojimą ir bazinį technologinį raštingumą.",
+        teenInnovators: "Paaugliai Inovatoriai (13-16)",
+        teenInnovatorsDesc: "Praktinės dizaino dirbtuvės, kodavimo ir bendrų projektų sritys.",
+        futureLeaders: "Ateities Lyderiai (17-19)",
+        futureLeadersDesc: "Pažangūs AI, automatizavimo, lyderystės ir startuolių kūrimo kursai."
+      },
+      pricing: {
+        title: "Kainų Planai",
+        subtitle: "Skaidru ir lankstu kiekvienam",
+        monthly: "Mėnesio",
+        yearly: "Metų",
+        save: "Sutaupykite 20%",
         basic: {
-          title: "Atrask ir Pradėk",
-          desc: "Geriausia: smalsiems pradedantiesiems.",
-          features: [
-            "Prieiga prie interaktyvių mokymosi žaidimų ir pamokų",
-            "Savarankiška veikla ir iššūkiai",
-            "Amžių atitinkantys mokymosi keliai",
-            "Prieiga prie bendruomenės"
-          ],
-          notIncluded: "Neįeina: gyvos instruktorių pamokos",
-          button: "Pradėti"
+          title: "Bazinis Planas",
+          desc: "Pilna prieiga prie interaktyvios bibliotekos ir savarankiškų kursų.",
+          feature1: "Begalybė žaidimų",
+          feature2: "Pasaulinė bendruomenė"
         },
         pro: {
-          title: "Mokykis gyvai. Kurk įgūdžius.",
-          desc: "Geriausia: norintiems daugiau vedimo.",
-          features: [
-            "Viskas, kas įeina į Basic",
-            "Gyvos interaktyvios pamokos su instruktoriais",
-            "Dalyvavimas realiu laiku (žaidimai, iššūkiai, komandinis darbas)",
-            "Vadovaujami mokymosi keliai pagal amžiaus grupes",
-            "Nuolatinis grįžtamasis ryšys sesijų metu",
-            "Pirmenybė naujoms funkcijoms"
-          ],
-          button: "Gauti Profesionalų"
+          title: "Profesionalus",
+          desc: "Kasdienės gyvos dirbtuvės su atsidavusiais instruktoriais.",
+          feature1: "Asmeninė mentorystė (1 prieš 1)",
+          feature2: "Portfolio kūrimas",
+          badge: "Geriausia Vertė"
         }
-      }
-    }
-  },
-  infoModal: {
-    gotIt: "Supratau!",
-    about: {
-      title: "Apie newmindr",
-      subtitle: "Kuriame ateities kūrėjų kartą",
-      intro: "newmindr tikime, kad tradicinė švietimo sistema nespėja su technologijų tempu. Mes esame čia, kad užpildytume šią spragą.",
-      missionTitle: "Mūsų Misija",
-      missionDesc: "Suteikti studentams praktinių, ateičiai aktualių įgūdžių per įtraukiantį mokymąsi ir kūrybą.",
-      methodTitle: "Mūsų Metodas",
-      methodDesc: "Projektinis mokymasis, aplinka be spaudimo ir ekspertų mentorystė.",
-      footer: "Prisijunk prie daugiau nei 1000 studentų visame pasaulyje, kurie savo ateitį kuria jau šiandien."
-    },
-    programs: {
-      title: "Mūsų Programos",
-      subtitle: "Pritaikyta kiekvienai amžiaus grupei",
-      youngExplorers: "Jaunieji atradėjai (8-12)",
-      youngExplorersDesc: "Žaidybinis mokymasis, orientuotas į logiką, pasakojimą ir bazinį technologinį raštingumą.",
-      teenInnovators: "Paaugliai Inovatoriai (13-16)",
-      teenInnovatorsDesc: "Praktinės dizaino dirbtuvės, kodavimo ir bendrų projektų sritys.",
-      futureLeaders: "Ateities Lyderiai (17-19)",
-      futureLeadersDesc: "Pažangūs AI, automatizavimo, lyderystės ir startuolių kūrimo kursai."
-    },
-    pricing: {
-      title: "Kainų Planai",
-      subtitle: "Skaidru ir lankstu kiekvienam",
-      monthly: "Mėnesio",
-      yearly: "Metų",
-      save: "Sutaupykite 20%",
-      basic: {
-        title: "Bazinis Planas",
-        desc: "Pilna prieiga prie interaktyvios bibliotekos ir savarankiškų kursų.",
-        feature1: "Begalybė žaidimų",
-        feature2: "Pasaulinė bendruomenė"
       },
-      pro: {
-        title: "Profesionalus",
-        desc: "Kasdienės gyvos dirbtuvės su atsidavusiais instruktoriais.",
-        feature1: "Asmeninė mentorystė (1 prieš 1)",
-        feature2: "Portfolio kūrimas",
-        badge: "Geriausia Vertė"
+      contact: {
+        title: "Susisiekite",
+        subtitle: "Mes esame čia, kad padėtume jums augti",
+        directContact: "Tiesioginis Kontaktas",
+        ourStudio: "Mūsų Studija",
+        visitSocial: "Aplankykite mūsų socialinius tinklus",
+        socialDesc: "Sekite mus kasdieniam įkvėpimui ir studentų pasiekimams!",
+        address: "VISŲ ŠIRDYSE"
       }
     },
-    contact: {
-      title: "Susisiekite",
-      subtitle: "Mes esame čia, kad padėtume jums augti",
-      directContact: "Tiesioginis Kontaktas",
-      ourStudio: "Mūsų Studija",
-      visitSocial: "Aplankykite mūsų socialinius tinklus",
-      socialDesc: "Sekite mus kasdieniam įkvėpimui ir studentų pasiekimams!",
-      address: "VISŲ ŠIRDYSE"
-    }
-  },
-  coursesModal: {
-    title: "Visi Mūsų Kursai",
-    subtitle: "Atraskite tobulą mokymosi kelią kiekvienam amžiui ir pomėgiui.",
-    groups: {
-      "8-12": {
-        age: "8–12 Metų",
-        theme: "Tyrinėtojai ir Kūrėjai",
-        list: [
-          "Kodavimo Istorijos", "Komiksai ir Vizualinis Pasakojimas", "Kūrybinio Rašymo Studija",
-          "Dizaino ir Kūrybiškumo Laboratorija", "Skaitmeninių Statybų Laboratorija", "Žaidimų Kūrimo Studija",
-          "Kaip Viskas Veikia", "Logikos Ieškojimai", "Matematikos Nuotykiai", "Mažieji Mokslininkai (Skaitmeninė Laboratorija)",
-          "Gamtos ir Žemės Tyrinėtojas", "Problemų Sprendimo Laboratorija", "Kosmoso Tyrinėtojai",
-          "Kalbėk ir Dalinkis", "Technologijų Gudrybės", "Mąstyk Kaip Profesionalas", "ir daugiau!"
-        ]
-      },
-      "13-16": {
-        age: "13–16 Metų",
-        theme: "Novatoriai ir Statytojai",
-        list: [
-          "AI ir Ateities Technologijos", "Pokyčių Projektai", "Sukurk Savo Pirmąją Programėlę",
-          "Viešasis Kalbėjimas Su Pasitikėjimu", "Kūrybinio Aplanko Sprintas", "Debatai ir Kritinis Mąstymas",
-          "Inžinerijos ir Robotikos Pagrindai", "Nuo Idėjos Iki Startuolio", "Lyderystė Komandose",
-          "Rinkodara ir Prekės Ženklo Kūrimas", "Pinigai, Projektai ir Protingi Sprendimai",
-          "Muzikos ir Garso Kūrimas", "Pristatyk Kaip Įkūrėjas", "Mokslo Eksperimentai, Kurie Svarbūs",
-          "Pasakojimas Žaidimams ir Filmams", "Vizualinio Dizaino Laboratorija", "ir daugiau!"
-        ]
-      },
-      "17-19": {
-        age: "17–19 Metų",
-        theme: "Ateities Lyderiai",
-        list: [
-          "AI Įrankiai ir Promptų Kūrimas", "Automatizacija ir No-Code Sistemos", "Biotechnologijų ir Sveikatos Tyrinėjimai",
-          "Prekės Ženklo Dizaino Studija", "Kibernetinio Saugumo Pagrindai", "Duomenų Mokslo Pagrindai",
-          "Skaitmeninė Iliustracija ir Vizualinis Stilius", "Inžinerinio Dizaino Iššūkis",
-          "Lyderystė ir Derybos", "Rinkodara ir Turinio Strategija", "Kasdienių Technologijų Fizika",
-          "Trumpametražiai Filmai ir Pasakojimas", "Socialinio Poveikio Laboratorija", "Startuolio Idėja iki MVP",
-          "UX ir Produkto Dizaino Sprintas", "Web Programėlių Kūrimas", "ir daugiau!"
-        ]
+    coursesModal: {
+      title: "Visi Mūsų Kursai",
+      subtitle: "Atraskite tobulą mokymosi kelią kiekvienam amžiui ir pomėgiui.",
+      groups: {
+        "8-12": {
+          age: "8–12 Metų",
+          theme: "Tyrinėtojai ir Kūrėjai",
+          list: [
+            "Kodavimo Istorijos", "Komiksai ir Vizualinis Pasakojimas", "Kūrybinio Rašymo Studija",
+            "Dizaino ir Kūrybiškumo Laboratorija", "Skaitmeninių Statybų Laboratorija", "Žaidimų Kūrimo Studija",
+            "Kaip Viskas Veikia", "Logikos Ieškojimai", "Matematikos Nuotykiai", "Mažieji Mokslininkai (Skaitmeninė Laboratorija)",
+            "Gamtos ir Žemės Tyrinėtojas", "Problemų Sprendimo Laboratorija", "Kosmoso Tyrinėtojai",
+            "Kalbėk ir Dalinkis", "Technologijų Gudrybės", "Mąstyk Kaip Profesionalas", "ir daugiau!"
+          ]
+        },
+        "13-16": {
+          age: "13–16 Metų",
+          theme: "Novatoriai ir Statytojai",
+          list: [
+            "AI ir Ateities Technologijos", "Pokyčių Projektai", "Sukurk Savo Pirmąją Programėlę",
+            "Viešasis Kalbėjimas Su Pasitikėjimu", "Kūrybinio Aplanko Sprintas", "Debatai ir Kritinis Mąstymas",
+            "Inžinerijos ir Robotikos Pagrindai", "Nuo Idėjos Iki Startuolio", "Lyderystė Komandose",
+            "Rinkodara ir Prekės Ženklo Kūrimas", "Pinigai, Projektai ir Protingi Sprendimai",
+            "Muzikos ir Garso Kūrimas", "Pristatyk Kaip Įkūrėjas", "Mokslo Eksperimentai, Kurie Svarbūs",
+            "Pasakojimas Žaidimams ir Filmams", "Vizualinio Dizaino Laboratorija", "ir daugiau!"
+          ]
+        },
+        "17-19": {
+          age: "17–19 Metų",
+          theme: "Ateities Lyderiai",
+          list: [
+            "AI Įrankiai ir Promptų Kūrimas", "Automatizacija ir No-Code Sistemos", "Biotechnologijų ir Sveikatos Tyrinėjimai",
+            "Prekės Ženklo Dizaino Studija", "Kibernetinio Saugumo Pagrindai", "Duomenų Mokslo Pagrindai",
+            "Skaitmeninė Iliustracija ir Vizualinis Stilius", "Inžinerinio Dizaino Iššūkis",
+            "Lyderystė ir Derybos", "Rinkodara ir Turinio Strategija", "Kasdienių Technologijų Fizika",
+            "Trumpametražiai Filmai ir Pasakojimas", "Socialinio Poveikio Laboratorija", "Startuolio Idėja iki MVP",
+            "UX ir Produkto Dizaino Sprintas", "Web Programėlių Kūrimas", "ir daugiau!"
+          ]
+        }
       }
-    }
-  },
-  legal: {
-    privacy: {
-      title: "Privatumo politika",
-      lastUpdated: "2025 m. gruodžio 30 d.",
-      intro: "newmindr. esame pasiryžę saugoti jūsų privatumą ir užtikrinti jūsų asmens duomenų saugumą. Šioje privatumo politikoje aprašoma, kaip mes renkame, naudojame, tvarkome ir atskleidžiame jūsų informaciją, įskaitant asmeninę informaciją, susijusią su jūsų prieiga prie mūsų platformos ir naudojimusi ja.",
-      sections: [
-        {
-          title: "1. Informacija, kurią renkame",
-          content: "Mes renkame kelių rūšių informaciją iš mūsų svetainės vartotojų ir apie juos, įskaitant informaciją, pagal kurią jus galima asmeniškai atpažinti, pavyzdžiui, vardą, pašto adresą, el. pašto adresą, telefono numerį ar bet kurį kitą identifikatorių, pagal kurį su jumis galima susisiekti internetu arba neprisijungus.",
-          list: [
-            "Informacija, kurią mums pateikiate tiesiogiai (registracija, profilis, bendravimas).",
-            "Automatiškai renkama informacija (naudojimo duomenys, slapukai, IP adresai).",
-            "Informacija iš trečiųjų šalių šaltinių (socialinis prisijungimas, partneriai)."
-          ]
-        },
-        {
-          title: "2. Jūsų informacijos naudojimas",
-          content: "Mes naudojame informaciją, kurią surenkame apie jus arba kurią mums pateikiate, įskaitant bet kokią asmeninę informaciją:",
-          list: [
-            "Mūsų švietimo paslaugoms teikti ir tobulinti.",
-            "Sandoriams apdoroti ir jūsų paskyrai valdyti.",
-            "Atsakyti į jūsų užklausas ir pasiūlyti pagalbą.",
-            "Suasmeninti jūsų mokymosi patirtį.",
-            "Pranešti apie svarbius atnaujinimus ir reklaminį turinį.",
-            "Užtikrinti mūsų platformos saugumą ir vientisumą."
-          ]
-        },
-        {
-          title: "3. Duomenų apsauga ir saugumas",
-          content: "Mes įgyvendiname įvairias saugumo priemones, kad išlaikytume jūsų asmeninės informacijos saugumą. Jūsų asmeninė informacija saugoma už saugių tinklų ir yra prieinama tik ribotam skaičiui asmenų, turinčių specialias prieigos teises prie tokių sistemų ir privalančių laikytis informacijos konfidencialumo."
-        },
-        {
-          title: "4. Jūsų informacijos atskleidimas",
-          content: "Mes neparduodame, neprekiaujame ir kitaip neperduodame trečiosioms šalims jūsų asmenį identifikuojančios informacijos, nebent apie tai iš anksto informuotume vartotojus. Tai neapima svetainės prieglobos partnerių ir kitų šalių, padedančių mums valdyti mūsų svetainę, vykdyti verslą ar aptarnauti vartotojus, jei tos šalys sutinka laikyti šią informaciją konfidencialia."
-        },
-        {
-          title: "5. Jūsų teisės ir pasirinkimai",
-          content: "Jūs turite teisę pasiekti, atnaujinti arba ištrinti informaciją, kurią turime apie jus. Kai tik įmanoma, asmens duomenis galite pasiekti, atnaujinti arba prašyti juos ištrinti tiesiogiai savo paskyros nustatymų skiltyje. Jei negalite atlikti šių veiksmų patys, susisiekite su mumis ir mes jums padėsime."
-        },
-        {
-          title: "6. Duomenų saugojimas",
-          content: "Mes saugome jūsų asmens duomenis tik tiek laiko, kiek tai būtina šioje privatumo politikoje nurodytiems tikslams. Mes saugosime ir naudosime jūsų asmens duomenis tiek, kiek tai būtina, kad įvykdytume savo teisinius įsipareigojimus (pavyzdžiui, jei privalome saugoti jūsų duomenis laikydamiesi galiojančių įstatymų), spręstume ginčus ir vykdytume savo teisinius susitarimus bei politiką."
-        },
-        {
-          title: "7. Tarptautinis duomenų perdavimas",
-          content: "Jūsų informacija, įskaitant asmens duomenis, gali būti perduota ir saugoma kompiuteriuose, esančiuose už jūsų valstybės, provincijos, šalies ar kitos valstybinės jurisdikcijos ribų, kur duomenų apsaugos įstatymai gali skirtis nuo jūsų jurisdikcijos įstatymų. Jūsų sutikimas su šia privatumo politika ir tokios informacijos pateikimas reiškia jūsų sutikimą su tokiu perdavimu."
-        },
-        {
-          title: "8. Slapukų politika",
-          content: "Mūsų svetainė naudoja „slapukus“, kad atpažintų svetainės sritis, kuriose lankėtės. Slapukas yra nedidelis duomenų fragmentas, kurį jūsų interneto naršyklė išsaugo jūsų kompiuteryje ar mobiliajame įrenginyje. Slapukus naudojame turiniui, kurį matote mūsų svetainėje, suasmeninti. Daugumą interneto naršyklių galima nustatyti taip, kad slapukai būtų išjungti. Tačiau, jei išjungsite slapukus, gali būti, kad negalėsite tinkamai arba visai naudotis mūsų svetainės funkcijomis. Mes niekada į slapukus nededame asmenį identifikuojančios informacijos."
-        },
-        {
-          title: "9. Šios privatumo politikos pakeitimai",
-          content: "Mes galime laikas nuo laiko atnaujinti savo privatumo politiką. Apie bet kokius pakeitimus informuosime paskelbdami naują privatumo politiką šiame puslapyje. Patariama periodiškai peržiūrėti šią privatumo politiką, ar nėra pakeitimų. Šios privatumo politikos pakeitimai įsigalioja juos paskelbus šiame puslapyje."
-        },
-        {
-          title: "10. Susisiekite su mumis",
-          content: "Jei turite klausimų dėl šios privatumo politikos, susisiekite su mumis el. paštu legal@newmindr.edu."
-        }
-      ],
-      footer: "© 2025 newmindr. Visos teisės saugomos. Griežtas BDAR, CCPA ir tarptautinių duomenų apsaugos standartų laikymasis."
     },
-    terms: {
-      title: "Paslaugų teikimo sąlygos",
-      lastUpdated: "2025 m. gruodžio 30 d.",
-      intro: "PRAŠOME ATIDŽIAI PERSKAITYTI ŠIAS PASLAUGŲ TEIKIMO SĄLYGAS. PRISIJUNGDAMI PRIE NEWMINDR. PLATFORMOS AR NAUDODAMIESI JA, JŪS SUTINKATE LAIKYTIS ŠIŲ SĄLYGŲ IR VISŲ SĄLYGŲ, ĮTRAUKTŲ NUORODOMIS.",
-      sections: [
-        {
-          title: "1. Sutikimas su sąlygomis",
-          content: "Naudodamiesi newmindr. („Platforma“), jūs sutinkate su šiomis Paslaugų teikimo sąlygomis. Jei nesutinkate su visomis šiomis sąlygomis, nesinaudokite Platforma. Mes pasiliekame teisę bet kuriuo metu ir savo nuožiūra keisti ar modifikuoti šias Sąlygas."
-        },
-        {
-          title: "2. Tinkamumas ir paskyra",
-          content: "Norėdami naudotis tam tikromis Platformos funkcijomis, turite užregistruoti paskyrą. Kurdami paskyrą sutinkate:",
-          list: [
-            "Pateikti tikslią, naujausią ir išsamią informaciją.",
-            "Užtikrinti savo slaptažodžio saugumą ir prisiimti visą riziką, susijusią su neteisėta prieiga prie jūsų paskyros.",
-            "Nedelsdami pranešti mums, jei pastebėsite ar kai kitaip įtarsite bet kokius su Platforma susijusius saugumo pažeidimus."
-          ]
-        },
-        {
-          title: "3. Intelektinės nuosavybės teisės",
-          content: "Jei nenurodyta kitaip, Platforma ir visa joje esanti medžiaga, įskaitant, be apribojimų, newmindr. logotipą ir visus dizainus, tekstą, grafiką, paveikslėlius, informaciją, duomenis, programinę įrangą, garso failus, kitus failus bei jų parinkimą ir išdėstymą (kartu vadinama „Turiniu“), yra newmindr. arba mūsų licencijos išdavėjų nuosavybė."
-        },
-        {
-          title: "4. Vartotojo elgesys",
-          content: "Jūs sutinkate, kad nepažeisite jokių įstatymų, sutarčių, intelektinės nuosavybės ar kitų trečiųjų šalių teisių ir nepadarysite teisės pažeidimo, bei esate visiškai atsakingi už savo elgesį prisijungiant prie mūsų Platformos ar naudojantis ja. Jūs sutinkate, kad laikysitės šių Sąlygų ir nedarysite šių veiksmų:",
-          list: [
-            "Nenaudosite Platformos jokiems neteisėtiems ar neleistiniems tikslams.",
-            "Nedalyvausite jokiame priekabiavime, grasinime, gąsdinime ar persekiojime.",
-            "Nebandysite apeiti jokių mūsų taikomų turinio filtravimo metodų.",
-            "Nekursite ir nenaudosite jokių trečiųjų šalių programėlių, kurios sąveikauja su Platforma be mūsų išankstinio raštiško sutikimo."
-          ]
-        },
-        {
-          title: "5. Mokėjimai ir prenumeratos",
-          content: "Kai kai kurie Platformos aspektai gali būti mokami. Jei nuspręsite naudotis mokamais Platformos aspektais, sutinkate su kainodaros ir mokėjimo sąlygomis, kurias galime laikas nuo laiko atnaujinti. newmindr. gali bet kuriuo metu savo nuožiūra pridėti naujų paslaugų už papildomą mokestį arba pakeisti esamų paslaugų mokesčius."
-        },
-        {
-          title: "6. Atsakomybės ribojimas",
-          content: "KIEK TAI LEIDŽIA GALIOJANTYS ĮSTATYMAI, NEWMINDR. NEATSAKO UŽ JOKIĄ NETIESIOGINĘ, ATSITIKTINĘ, SPECIALIĄJĄ ARBA BAUDŽIAMĄJĄ ŽALĄ, ARBA JOKĮ PELNO AR PAJAMŲ PRARADIMĄ, NESVARBU, AR JIE BUVO PATIRTI TIESIOGIAI AR NETIESIOGIAI, ARBA JOKĮ DUOMENŲ, NAUDOJIMO, GEROS VALIOS AR KITŲ NEMATERIALIŲ NUOSTOLIŲ PRARADIMĄ."
-        },
-        {
-          title: "7. Žalos atlyginimas",
-          content: "Jūs sutinkate ginti, atlyginti žalą ir apsaugoti newmindr., našų nepriklausomus rangovus, paslaugų teikėjus ir konsultantus bei mūsų atitinkamus direktorius, darbuotojus ir agentus nuo bet kokių pretenzijų, žalos, išlaidų, atsakomybės ir sąnaudų, kylančių dėl jūsų naudojimosi Platforma arba susijusių su juo."
-        },
-        {
-          title: "8. Nutraukimas",
-          content: "Nepaisant bet kurios iš šių Sąlygų, newmindr. pasilieka teisę be įspėjimo ir savo nuožiūra nutraukti jūsų licenciją naudotis Platforma bei užblokuoti arba užkirsti kelią jūsų būsimai prieigai prie Platformos ir naudojimuisi ja."
-        },
-        {
-          title: "9. Nuostatų atskiriamumas",
-          content: "Jei kuri nors šių Sąlygų nuostata pripažįstama neteisėta, negaliojančia arba dėl kokių nors priežasčių neįvykdoma, ši nuostata laikoma atskiriama nuo šių Sąlygų ir neturi įtakos kitų nuostatų galiojimui ir įvykdomumui."
-        },
-        {
-          title: "10. Taikytina teisė ir jurisdikcija",
-          content: "Šioms Sąlygoms taikomi ir jos aiškinamos pagal šalies, kurioje yra newmindr. būstinė, įstatymus, neatsižvelgiant į jokių teisių kolizijos principų poveikį."
-        }
-      ],
-      footer: "NAUDODAMIESI ŠIA PLATFORMA JŪS PATVIRTINATE, KAD PERSKAITĖTE ŠIAS SĄLYGAS IR SUTINKATE JŲ LAIKYTIS. ŠIŲ SĄLYGŲ NESILAIKYMAS GALI LEMTI NEATIDĖLIOTINĄ JŪSŲ PASKYROS NUTRAUKIMĄ."
-    }
-  },
-  devPopup: {
-    badge: "Netrukus",
-    title: "Kuriame Kažką Nuostabaus!",
-    subtitle: "Interaktyvaus mokymosi ateitis jau čia pat.",
-    description: "Aktyviai kuriame ir netrukus pradėsime veiklą! Užsirezervuokite vietą dabar ir būkite tarp pirmųjų, kurie patirs naujos kartos mokymąsi.",
-    emailLabel: "Jūsų El. paštas",
-    emailPlaceholder: "jusu@pastas.lt",
-    ctaButton: "Rezervuoti Vietą",
-    skipButton: "Sugrįšiu vėliau",
-    successTitle: "Jūs Užsiregistravote!",
-    successMessage: "Pranešime jums, kai tik pradėsime veiklą. Pasiruoškite! 🚀"
-  },
-  validation: {
-    required: "Prašome užpildyti šį laukelį",
-    invalidEmail: "Įveskite galiojantį el. pašto adresą"
+    legal: {
+      privacy: {
+        title: "Privatumo politika",
+        lastUpdated: "2025 m. gruodžio 30 d.",
+        intro: "newmindr. esame pasiryžę saugoti jūsų privatumą ir užtikrinti jūsų asmens duomenų saugumą. Šioje privatumo politikoje aprašoma, kaip mes renkame, naudojame, tvarkome ir atskleidžiame jūsų informaciją, įskaitant asmeninę informaciją, susijusią su jūsų prieiga prie mūsų platformos ir naudojimusi ja.",
+        sections: [
+          {
+            title: "1. Informacija, kurią renkame",
+            content: "Mes renkame kelių rūšių informaciją iš mūsų svetainės vartotojų ir apie juos, įskaitant informaciją, pagal kurią jus galima asmeniškai atpažinti, pavyzdžiui, vardą, pašto adresą, el. pašto adresą, telefono numerį ar bet kurį kitą identifikatorių, pagal kurį su jumis galima susisiekti internetu arba neprisijungus.",
+            list: [
+              "Informacija, kurią mums pateikiate tiesiogiai (registracija, profilis, bendravimas).",
+              "Automatiškai renkama informacija (naudojimo duomenys, slapukai, IP adresai).",
+              "Informacija iš trečiųjų šalių šaltinių (socialinis prisijungimas, partneriai)."
+            ]
+          },
+          {
+            title: "2. Jūsų informacijos naudojimas",
+            content: "Mes naudojame informaciją, kurią surenkame apie jus arba kurią mums pateikiate, įskaitant bet kokią asmeninę informaciją:",
+            list: [
+              "Mūsų švietimo paslaugoms teikti ir tobulinti.",
+              "Sandoriams apdoroti ir jūsų paskyrai valdyti.",
+              "Atsakyti į jūsų užklausas ir pasiūlyti pagalbą.",
+              "Suasmeninti jūsų mokymosi patirtį.",
+              "Pranešti apie svarbius atnaujinimus ir reklaminį turinį.",
+              "Užtikrinti mūsų platformos saugumą ir vientisumą."
+            ]
+          },
+          {
+            title: "3. Duomenų apsauga ir saugumas",
+            content: "Mes įgyvendiname įvairias saugumo priemones, kad išlaikytume jūsų asmeninės informacijos saugumą. Jūsų asmeninė informacija saugoma už saugių tinklų ir yra prieinama tik ribotam skaičiui asmenų, turinčių specialias prieigos teises prie tokių sistemų ir privalančių laikytis informacijos konfidencialumo."
+          },
+          {
+            title: "4. Jūsų informacijos atskleidimas",
+            content: "Mes neparduodame, neprekiaujame ir kitaip neperduodame trečiosioms šalims jūsų asmenį identifikuojančios informacijos, nebent apie tai iš anksto informuotume vartotojus. Tai neapima svetainės prieglobos partnerių ir kitų šalių, padedančių mums valdyti mūsų svetainę, vykdyti verslą ar aptarnauti vartotojus, jei tos šalys sutinka laikyti šią informaciją konfidencialia."
+          },
+          {
+            title: "5. Jūsų teisės ir pasirinkimai",
+            content: "Jūs turite teisę pasiekti, atnaujinti arba ištrinti informaciją, kurią turime apie jus. Kai tik įmanoma, asmens duomenis galite pasiekti, atnaujinti arba prašyti juos ištrinti tiesiogiai savo paskyros nustatymų skiltyje. Jei negalite atlikti šių veiksmų patys, susisiekite su mumis ir mes jums padėsime."
+          },
+          {
+            title: "6. Duomenų saugojimas",
+            content: "Mes saugome jūsų asmens duomenis tik tiek laiko, kiek tai būtina šioje privatumo politikoje nurodytiems tikslams. Mes saugosime ir naudosime jūsų asmens duomenis tiek, kiek tai būtina, kad įvykdytume savo teisinius įsipareigojimus (pavyzdžiui, jei privalome saugoti jūsų duomenis laikydamiesi galiojančių įstatymų), spręstume ginčus ir vykdytume savo teisinius susitarimus bei politiką."
+          },
+          {
+            title: "7. Tarptautinis duomenų perdavimas",
+            content: "Jūsų informacija, įskaitant asmens duomenis, gali būti perduota ir saugoma kompiuteriuose, esančiuose už jūsų valstybės, provincijos, šalies ar kitos valstybinės jurisdikcijos ribų, kur duomenų apsaugos įstatymai gali skirtis nuo jūsų jurisdikcijos įstatymų. Jūsų sutikimas su šia privatumo politika ir tokios informacijos pateikimas reiškia jūsų sutikimą su tokiu perdavimu."
+          },
+          {
+            title: "8. Slapukų politika",
+            content: "Mūsų svetainė naudoja „slapukus“, kad atpažintų svetainės sritis, kuriose lankėtės. Slapukas yra nedidelis duomenų fragmentas, kurį jūsų interneto naršyklė išsaugo jūsų kompiuteryje ar mobiliajame įrenginyje. Slapukus naudojame turiniui, kurį matote mūsų svetainėje, suasmeninti. Daugumą interneto naršyklių galima nustatyti taip, kad slapukai būtų išjungti. Tačiau, jei išjungsite slapukus, gali būti, kad negalėsite tinkamai arba visai naudotis mūsų svetainės funkcijomis. Mes niekada į slapukus nededame asmenį identifikuojančios informacijos."
+          },
+          {
+            title: "9. Šios privatumo politikos pakeitimai",
+            content: "Mes galime laikas nuo laiko atnaujinti savo privatumo politiką. Apie bet kokius pakeitimus informuosime paskelbdami naują privatumo politiką šiame puslapyje. Patariama periodiškai peržiūrėti šią privatumo politiką, ar nėra pakeitimų. Šios privatumo politikos pakeitimai įsigalioja juos paskelbus šiame puslapyje."
+          },
+          {
+            title: "10. Susisiekite su mumis",
+            content: "Jei turite klausimų dėl šios privatumo politikos, susisiekite su mumis el. paštu legal@newmindr.edu."
+          }
+        ],
+        footer: "© 2025 newmindr. Visos teisės saugomos. Griežtas BDAR, CCPA ir tarptautinių duomenų apsaugos standartų laikymasis."
+      },
+      terms: {
+        title: "Paslaugų teikimo sąlygos",
+        lastUpdated: "2025 m. gruodžio 30 d.",
+        intro: "PRAŠOME ATIDŽIAI PERSKAITYTI ŠIAS PASLAUGŲ TEIKIMO SĄLYGAS. PRISIJUNGDAMI PRIE NEWMINDR. PLATFORMOS AR NAUDODAMIESI JA, JŪS SUTINKATE LAIKYTIS ŠIŲ SĄLYGŲ IR VISŲ SĄLYGŲ, ĮTRAUKTŲ NUORODOMIS.",
+        sections: [
+          {
+            title: "1. Sutikimas su sąlygomis",
+            content: "Naudodamiesi newmindr. („Platforma“), jūs sutinkate su šiomis Paslaugų teikimo sąlygomis. Jei nesutinkate su visomis šiomis sąlygomis, nesinaudokite Platforma. Mes pasiliekame teisę bet kuriuo metu ir savo nuožiūra keisti ar modifikuoti šias Sąlygas."
+          },
+          {
+            title: "2. Tinkamumas ir paskyra",
+            content: "Norėdami naudotis tam tikromis Platformos funkcijomis, turite užregistruoti paskyrą. Kurdami paskyrą sutinkate:",
+            list: [
+              "Pateikti tikslią, naujausią ir išsamią informaciją.",
+              "Užtikrinti savo slaptažodžio saugumą ir prisiimti visą riziką, susijusią su neteisėta prieiga prie jūsų paskyros.",
+              "Nedelsdami pranešti mums, jei pastebėsite ar kai kitaip įtarsite bet kokius su Platforma susijusius saugumo pažeidimus."
+            ]
+          },
+          {
+            title: "3. Intelektinės nuosavybės teisės",
+            content: "Jei nenurodyta kitaip, Platforma ir visa joje esanti medžiaga, įskaitant, be apribojimų, newmindr. logotipą ir visus dizainus, tekstą, grafiką, paveikslėlius, informaciją, duomenis, programinę įrangą, garso failus, kitus failus bei jų parinkimą ir išdėstymą (kartu vadinama „Turiniu“), yra newmindr. arba mūsų licencijos išdavėjų nuosavybė."
+          },
+          {
+            title: "4. Vartotojo elgesys",
+            content: "Jūs sutinkate, kad nepažeisite jokių įstatymų, sutarčių, intelektinės nuosavybės ar kitų trečiųjų šalių teisių ir nepadarysite teisės pažeidimo, bei esate visiškai atsakingi už savo elgesį prisijungiant prie mūsų Platformos ar naudojantis ja. Jūs sutinkate, kad laikysitės šių Sąlygų ir nedarysite šių veiksmų:",
+            list: [
+              "Nenaudosite Platformos jokiems neteisėtiems ar neleistiniems tikslams.",
+              "Nedalyvausite jokiame priekabiavime, grasinime, gąsdinime ar persekiojime.",
+              "Nebandysite apeiti jokių mūsų taikomų turinio filtravimo metodų.",
+              "Nekursite ir nenaudosite jokių trečiųjų šalių programėlių, kurios sąveikauja su Platforma be mūsų išankstinio raštiško sutikimo."
+            ]
+          },
+          {
+            title: "5. Mokėjimai ir prenumeratos",
+            content: "Kai kai kurie Platformos aspektai gali būti mokami. Jei nuspręsite naudotis mokamais Platformos aspektais, sutinkate su kainodaros ir mokėjimo sąlygomis, kurias galime laikas nuo laiko atnaujinti. newmindr. gali bet kuriuo metu savo nuožiūra pridėti naujų paslaugų už papildomą mokestį arba pakeisti esamų paslaugų mokesčius."
+          },
+          {
+            title: "6. Atsakomybės ribojimas",
+            content: "KIEK TAI LEIDŽIA GALIOJANTYS ĮSTATYMAI, NEWMINDR. NEATSAKO UŽ JOKIĄ NETIESIOGINĘ, ATSITIKTINĘ, SPECIALIĄJĄ ARBA BAUDŽIAMĄJĄ ŽALĄ, ARBA JOKĮ PELNO AR PAJAMŲ PRARADIMĄ, NESVARBU, AR JIE BUVO PATIRTI TIESIOGIAI AR NETIESIOGIAI, ARBA JOKĮ DUOMENŲ, NAUDOJIMO, GEROS VALIOS AR KITŲ NEMATERIALIŲ NUOSTOLIŲ PRARADIMĄ."
+          },
+          {
+            title: "7. Žalos atlyginimas",
+            content: "Jūs sutinkate ginti, atlyginti žalą ir apsaugoti newmindr., našų nepriklausomus rangovus, paslaugų teikėjus ir konsultantus bei mūsų atitinkamus direktorius, darbuotojus ir agentus nuo bet kokių pretenzijų, žalos, išlaidų, atsakomybės ir sąnaudų, kylančių dėl jūsų naudojimosi Platforma arba susijusių su juo."
+          },
+          {
+            title: "8. Nutraukimas",
+            content: "Nepaisant bet kurios iš šių Sąlygų, newmindr. pasilieka teisę be įspėjimo ir savo nuožiūra nutraukti jūsų licenciją naudotis Platforma bei užblokuoti arba užkirsti kelią jūsų būsimai prieigai prie Platformos ir naudojimuisi ja."
+          },
+          {
+            title: "9. Nuostatų atskiriamumas",
+            content: "Jei kuri nors šių Sąlygų nuostata pripažįstama neteisėta, negaliojančia arba dėl kokių nors priežasčių neįvykdoma, ši nuostata laikoma atskiriama nuo šių Sąlygų ir neturi įtakos kitų nuostatų galiojimui ir įvykdomumui."
+          },
+          {
+            title: "10. Taikytina teisė ir jurisdikcija",
+            content: "Šioms Sąlygoms taikomi ir jos aiškinamos pagal šalies, kurioje yra newmindr. būstinė, įstatymus, neatsižvelgiant į jokių teisių kolizijos principų poveikį."
+          }
+        ],
+        footer: "NAUDODAMIESI ŠIA PLATFORMA JŪS PATVIRTINATE, KAD PERSKAITĖTE ŠIAS SĄLYGAS IR SUTINKATE JŲ LAIKYTIS. ŠIŲ SĄLYGŲ NESILAIKYMAS GALI LEMTI NEATIDĖLIOTINĄ JŪSŲ PASKYROS NUTRAUKIMĄ."
+      }
+    },
+    devPopup: {
+      badge: "Netrukus",
+      title: "Kuriame Kažką Nuostabaus!",
+      subtitle: "Interaktyvaus mokymosi ateitis jau čia pat.",
+      description: "Aktyviai kuriame ir netrukus pradėsime veiklą! Užsirezervuokite vietą dabar ir būkite tarp pirmųjų, kurie patirs naujos kartos mokymąsi.",
+      emailLabel: "Jūsų El. paštas",
+      emailPlaceholder: "jusu@pastas.lt",
+      ctaButton: "Rezervuoti Vietą",
+      skipButton: "Sugrįšiu vėliau",
+      successTitle: "Jūs Užsiregistravote!",
+      successMessage: "Pranešime jums, kai tik pradėsime veiklą. Pasiruoškite! 🚀"
+    },
+    validation: {
+      required: "Prašome užpildyti šį laukelį",
+      invalidEmail: "Įveskite galiojantį el. pašto adresą"
+    },
   },
   ru: {
     seo: {
@@ -1818,6 +1818,7 @@ export const translations = {
         }
       }
     },
+
     legal: {
       privacy: {
         title: "Privacy Policy (RU Placeholder)",
