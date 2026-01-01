@@ -85,16 +85,28 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                 <div className="space-y-6">
                     {/* Toggle Switch */}
                     <div className="flex items-center justify-center gap-4 mb-4">
-                        <span className={`text-sm font-bold ${!isYearly ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.infoModal.pricing.monthly}</span>
+                        <span
+                            onClick={() => setIsYearly(false)}
+                            className={`text-sm font-bold cursor-pointer transition-colors ${!isYearly ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                        >
+                            {t.infoModal.pricing.monthly}
+                        </span>
                         <button
                             onClick={() => setIsYearly(!isYearly)}
-                            className="relative w-12 h-6 bg-gray-200 border-2 border-gray-900 rounded-full transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="relative w-12 h-6 bg-gray-200 border-2 border-gray-900 rounded-full transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] !min-w-0 !min-h-0"
                         >
                             <div
                                 className={`absolute top-0.5 w-4 h-4 bg-gray-900 rounded-full transition-all duration-300 ${isYearly ? 'left-6' : 'left-1'}`}
                             />
                         </button>
-                        <span className={`text-sm font-bold ${isYearly ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.infoModal.pricing.yearly}</span>
+                        <span
+                            onClick={() => setIsYearly(true)}
+                            className={`text-sm font-bold cursor-pointer transition-colors ${isYearly ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                        >
+                            {t.infoModal.pricing.yearly}
+                        </span>
                         <div className="bg-yellow-400 border-2 border-gray-900 text-[10px] px-2 py-0.5 font-black rounded-lg uppercase animate-bounce" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.infoModal.pricing.save}</div>
                     </div>
 
