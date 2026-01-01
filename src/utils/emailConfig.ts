@@ -1,7 +1,7 @@
 export const EMAIL_CONFIG = {
     // RESEND SETTINGS
     RESEND_API_KEY: 're_Hy7ja2GF_ADaDnFERb3hCSf9kd5YhUpP3',
-    FROM_EMAIL: 'hello@newmindr.com',
+    FROM_EMAIL: 'newmindr <no-reply@newmindr.com>',
 
     // SUPABASE SETTINGS (Required because Resend blocks browser requests)
     SUPABASE_URL: 'https://ueobnqseskhrpezrvukk.supabase.co',
