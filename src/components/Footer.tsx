@@ -141,20 +141,20 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
             <div>
               <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.footer.navigation}</h3>
-              <ul className="space-y-1 sm:space-y-2">
+              <ul className="flex flex-col gap-2.5 sm:gap-3">
                 {navItems.map((item) => (
                   <li key={item.name}>
                     {item.path ? (
                       <Link
                         to={item.path}
-                        className="text-gray-900 text-sm font-bold hover:text-emerald-500 hover:translate-x-2 transition-all block w-fit"
+                        className="text-gray-900 text-sm font-bold hover:text-emerald-500 hover:translate-x-2 transition-all block w-fit leading-none"
                       >
                         {item.name}
                       </Link>
                     ) : (
                       <button
                         onClick={() => openModal(item.type as any)}
-                        className="text-gray-900 text-sm font-bold hover:text-emerald-500 hover:translate-x-2 transition-all block w-fit text-left"
+                        className="text-gray-900 text-sm font-bold hover:text-emerald-500 hover:translate-x-2 transition-all block w-fit text-left p-0 bg-transparent border-none appearance-none leading-none"
                       >
                         {item.name}
                       </button>
