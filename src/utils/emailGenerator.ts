@@ -50,7 +50,7 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
         gray: '#f3f4f6'
     };
 
-    const themeColor = type === 'trial' ? colors.primary : type === 'newsletter' ? colors.secondary : colors.success;
+    const themeColor = type === 'trial' ? colors.primary : colors.success;
 
     const interpolate = (str: string, values: any) => {
         return str.replace(/{(\w+)}/g, (_, key) => values[key] || '');
@@ -58,7 +58,7 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
 
     const header = `
         <div style="background: ${themeColor}; padding: 40px 20px; text-align: center; border-bottom: 4px solid ${colors.black}; position: relative; overflow: hidden;">
-            <h1 style="color: ${type === 'newsletter' ? colors.black : colors.white}; margin: 0; font-family: sans-serif; font-size: 32px; font-weight: 900;">
+            <h1 style="color: ${colors.white}; margin: 0; font-family: sans-serif; font-size: 32px; font-weight: 900;">
                 ${t.title}
             </h1>
         </div>
@@ -76,9 +76,12 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
 
     let actionButton = '';
     if (type === 'trial') {
+        const langKey = (lang.toUpperCase() as keyof typeof STRIPE_LINKS) || 'EN';
+        const trialLink = STRIPE_LINKS[langKey]?.TRIAL || STRIPE_LINKS.EN.TRIAL;
+
         actionButton = `
             <div style="margin-top: 30px; text-align: center;">
-                <a href="${STRIPE_LINKS.TRIAL}" style="display: inline-block; background: ${colors.black}; color: ${colors.white}; padding: 18px 30px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 16px; border: 2px solid ${colors.white}; box-shadow: 4px 4px 0px 0px ${colors.primary};">
+                <a href="${trialLink}" style="display: inline-block; background: ${colors.black}; color: ${colors.white}; padding: 18px 30px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 16px; border: 2px solid ${colors.white}; box-shadow: 4px 4px 0px 0px ${colors.primary};">
                     ${lang === 'lt' ? 'AKTYVUOTI NEMOKAMĄ BANDYMĄ' : lang === 'ru' ? 'АКТИВИРОВАТЬ БЕСПЛАТНУЮ ВЕРСИЮ' : 'ACTIVATE FREE TRIAL'}
                 </a>
             </div>

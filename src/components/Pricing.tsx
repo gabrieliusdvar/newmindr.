@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useModal } from '../contexts/ModalContext';
+import { STRIPE_LINKS } from '../utils/emailConfig';
 
 export default function Pricing() {
-  const { t } = useLanguage();
-  const { openTrialModal } = useModal();
+  const { t, language } = useLanguage();
   const [isYearly, setIsYearly] = useState(true);
 
   const plans = [
@@ -31,11 +30,13 @@ export default function Pricing() {
   ];
 
   const handlePayment = (planName: string) => {
-    const { STRIPE_LINKS } = require('../utils/emailConfig');
+    const langKey = (language.toUpperCase() as keyof typeof STRIPE_LINKS) || 'EN';
+    const links = STRIPE_LINKS[langKey] || STRIPE_LINKS.EN;
+
     if (planName === 'Basic') {
-      window.location.href = STRIPE_LINKS.BASIC;
+      window.location.href = isYearly ? links.BASIC_YEARLY : links.BASIC_MONTHLY;
     } else {
-      window.location.href = STRIPE_LINKS.PROFESSIONAL;
+      window.location.href = isYearly ? links.PRO_YEARLY : links.PRO_MONTHLY;
     }
   };
 
