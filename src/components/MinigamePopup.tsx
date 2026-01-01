@@ -84,9 +84,9 @@ export default function MinigamePopup({ isOpen, onClose }: { isOpen: boolean; on
                     </div>
                     <button
                         onClick={onClose}
-                        className="p-2 bg-white border-2 border-gray-900 rounded-lg hover:bg-gray-100 transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-0.5 active:shadow-none"
+                        className="w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-0.5 active:shadow-none"
                     >
-                        <X className="w-6 h-6" />
+                        <X className="w-5 h-5 text-gray-900" />
                     </button>
                 </div>
 
