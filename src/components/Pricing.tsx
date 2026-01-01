@@ -74,7 +74,10 @@ export default function Pricing() {
             {/* Toggle Switch */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <div className="flex items-center gap-4">
-                <span className={`text-base sm:text-lg font-bold ${!isYearly ? 'text-white' : 'text-gray-400'}`}>
+                <span
+                  onClick={() => setIsYearly(false)}
+                  className={`text-base sm:text-lg font-bold cursor-pointer transition-colors ${!isYearly ? 'text-white' : 'text-gray-400 hover:text-white/80'}`}
+                >
                   {t.pricing.monthly}
                 </span>
                 <button
@@ -86,7 +89,10 @@ export default function Pricing() {
                       }`}
                   />
                 </button>
-                <span className={`text-base sm:text-lg font-bold ${isYearly ? 'text-white' : 'text-gray-400'}`}>
+                <span
+                  onClick={() => setIsYearly(true)}
+                  className={`text-base sm:text-lg font-bold cursor-pointer transition-colors ${isYearly ? 'text-white' : 'text-gray-400 hover:text-white/80'}`}
+                >
                   {t.pricing.yearly}
                 </span>
               </div>
