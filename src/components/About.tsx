@@ -499,7 +499,10 @@ export default function About() {
               <div className="flex gap-1">
                 <button onClick={() => setWindowState(windowState === 'minimized' ? 'normal' : 'minimized')} className="w-6 h-5 bg-[#c0c0c0] border-t-white border-l-white border-b-black border-r-black border text-xs font-bold leading-none flex items-center justify-center">_</button>
                 <button onClick={() => setWindowState(windowState === 'maximized' ? 'normal' : 'maximized')} className="w-6 h-5 bg-[#c0c0c0] border-t-white border-l-white border-b-black border-r-black border text-xs font-bold leading-none flex items-center justify-center">□</button>
-                <button onClick={() => setActivePopup(null)} className="w-6 h-5 bg-[#c0c0c0] border-t-white border-l-white border-b-black border-r-black border text-xs font-bold leading-none flex items-center justify-center ml-1">X</button>
+                <div className="relative">
+                  <button onClick={() => setActivePopup(null)} className="w-6 h-5 bg-[#c0c0c0] border-t-white border-l-white border-b-black border-r-black border text-xs font-bold leading-none flex items-center justify-center ml-1">X</button>
+                  <div className="absolute -inset-2 sm:-inset-4 cursor-pointer z-10" onClick={() => setActivePopup(null)}></div>
+                </div>
               </div>
             </div>
 
@@ -538,7 +541,10 @@ export default function About() {
             onClick={e => e.stopPropagation()}
           >
             <div className="bg-gray-50/50 px-6 py-4 flex items-center justify-between border-b border-gray-100 relative">
-              <button onClick={() => setActivePopup(null)} className="text-blue-500 font-medium text-lg hover:opacity-70 transition-opacity">Done</button>
+              <div className="relative">
+                <button onClick={() => setActivePopup(null)} className="text-blue-500 font-medium text-lg hover:opacity-70 transition-opacity">Done</button>
+                <div className="absolute -inset-4 cursor-pointer z-10" onClick={() => setActivePopup(null)}></div>
+              </div>
               <div className="w-12 h-1.5 bg-gray-300 rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"></div>
               <div className="flex gap-4">
                 <button onClick={() => setWindowState(windowState === 'minimized' ? 'normal' : 'minimized')} className="p-2 text-gray-400">_</button>
@@ -595,7 +601,10 @@ export default function About() {
               <div className="flex gap-2">
                 <button onClick={() => setWindowState(windowState === 'minimized' ? 'normal' : 'minimized')} className="hover:bg-[#444] p-1 rounded"><Minus className="w-4 h-4" /></button>
                 <button onClick={() => setWindowState(windowState === 'maximized' ? 'normal' : 'maximized')} className="hover:bg-[#444] p-1 rounded"><Square className="w-3 h-3" /></button>
-                <button onClick={() => setActivePopup(null)} className="hover:bg-red-500 hover:text-white p-1 rounded"><X className="w-4 h-4" /></button>
+                <div className="relative">
+                  <button onClick={() => setActivePopup(null)} className="hover:bg-red-500 hover:text-white p-1 rounded"><X className="w-4 h-4" /></button>
+                  <div className="absolute -inset-3 cursor-pointer z-10" onClick={() => setActivePopup(null)}></div>
+                </div>
               </div>
             </div>
 

@@ -494,12 +494,13 @@ export default function Features() {
                           <h4 className="text-white font-black text-xl">{t.features.skillPath}</h4>
                           <p className="text-gray-400 text-[10px]">{t.features.nonLinear}</p>
                         </div>
-                        <button
-                          onClick={() => setIsBrowserMenuOpen(false)}
-                          className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
+                        <div className="absolute top-4 right-4 z-50 p-4 cursor-pointer group" onClick={() => setIsBrowserMenuOpen(false)}>
+                          <button
+                            className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-white/20 transition-colors"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
 
                       <div className="flex-1 space-y-4">

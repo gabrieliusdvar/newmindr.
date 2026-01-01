@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Phone, MessageCircle, Facebook, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Facebook, Instagram, Youtube, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
@@ -16,6 +16,9 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     // Lock body scroll and prevent pull-to-refresh/overscroll on mobile
@@ -79,6 +82,47 @@ export default function Contact() {
 
     // Handle form submission
     console.log('Form submitted:', formData);
+    sendEmail();
+  };
+
+  const sendEmail = async () => {
+    setIsSubmitting(true);
+    setSubmitError(false);
+    setSubmitSuccess(false);
+
+    try {
+      const { sendEmail } = await import('../utils/emailService');
+
+      await sendEmail({
+        to: 'hello@newmindr.com',
+        subject: `New Contact Form Submission: ${formData.name} 📩`,
+        html: `
+            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 4px solid #111; border-radius: 20px; overflow: hidden; background: white;">
+                <div style="background: #10b981; padding: 30px; text-align: center;">
+                    <h1 style="color: white; margin: 0; font-size: 24px;">New Message from Contact Form</h1>
+                </div>
+                <div style="padding: 30px;">
+                    <p><b>Name:</b> ${formData.name}</p>
+                    <p><b>Email:</b> ${formData.email}</p>
+                    <p><b>Help Needed With:</b> ${formData.helpOptions.join(', ') || 'General Inquiry'}</p>
+                    <hr style="border: 1px solid #eee; margin: 20px 0;" />
+                    <p style="white-space: pre-wrap;"><b>Message:</b><br/>${formData.message}</p>
+                </div>
+                <div style="background: #f3f4f6; padding: 15px; text-align: center; font-size: 12px; color: #666;">
+                    Submitted via newmindr.com on ${new Date().toLocaleString()}
+                </div>
+            </div>
+        `
+      });
+
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', message: '', helpOptions: [] });
+    } catch (err) {
+      console.error('Email failed to send:', err);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -207,114 +251,136 @@ export default function Contact() {
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} noValidate className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.fullName}</label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder={t.contact.namePlaceholder}
-                      className={`w-full bg-white border-2 ${errors.name ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none`}
-                    />
-                    {errors.name && (
-                      <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
-                        <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
-                        <span className="text-[10px] font-black">{t.validation[errors.name as keyof typeof t.validation]}</span>
-                      </div>
-                    )}
-                  </div>
+            {submitSuccess ? (
+              <div className="bg-white border-4 border-gray-900 rounded-3xl p-10 text-center shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-in zoom-in duration-300">
+                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-emerald-500">
+                  <Check className="w-10 h-10 text-emerald-600" strokeWidth={3} />
                 </div>
-                <div>
-                  <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.emailAddress}</label>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder={t.contact.emailPlaceholder}
-                      className={`w-full bg-white border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none`}
-                    />
-                    {errors.email && (
-                      <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
-                        <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
-                        <span className="text-[10px] font-black">{t.validation[errors.email as keyof typeof t.validation]}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <h2 className="text-3xl font-black text-gray-900 mb-4 uppercase italic leading-none">{t.contact.headline}!</h2>
+                <p className="text-gray-600 font-bold mb-8">{t.contact.subheadline}</p>
+                <button
+                  onClick={() => setSubmitSuccess(false)}
+                  className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-all uppercase tracking-widest text-xs"
+                >
+                  Send another message
+                </button>
               </div>
-
-              <div>
-                <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.yourMessage}</label>
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder={t.contact.messagePlaceholder}
-                    rows={3}
-                    className={`w-full bg-white border-2 ${errors.message ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-4 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none resize-none`}
-                  />
-                  {errors.message && (
-                    <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
-                      <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
-                      <span className="text-[10px] font-black">{errors.message}</span>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.fullName}</label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder={t.contact.namePlaceholder}
+                        className={`w-full bg-white border-2 ${errors.name ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none`}
+                      />
+                      {errors.name && (
+                        <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                          <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                          <span className="text-[10px] font-black">{t.validation[errors.name as keyof typeof t.validation]}</span>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.emailAddress}</label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder={t.contact.emailPlaceholder}
+                        className={`w-full bg-white border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none`}
+                      />
+                      {errors.email && (
+                        <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                          <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                          <span className="text-[10px] font-black">{t.validation[errors.email as keyof typeof t.validation]}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* How can we help? */}
-              <div className="pt-2">
-                <h3 className="text-base font-black text-gray-900 mb-3 uppercase tracking-tighter">{t.contact.helpTitle}</h3>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { key: 'websiteDesign', label: t.contact.websiteDesign },
-                    { key: 'uxDesign', label: t.contact.uxDesign },
-                    { key: 'userResearch', label: t.contact.userResearch },
-                    { key: 'contentCreation', label: t.contact.contentCreation },
-                    { key: 'strategyConsulting', label: t.contact.strategyConsulting },
-                    { key: 'other', label: t.contact.other },
-                  ].map((option) => (
-                    <label key={option.key} className="flex items-center gap-2 cursor-pointer group bg-white/50 border border-gray-900/10 p-2 rounded-lg hover:bg-white transition-colors">
-                      <div className="relative flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={formData.helpOptions.includes(option.key)}
-                          onChange={() => handleCheckboxChange(option.key)}
-                          className="w-4 h-4 appearance-none border-2 border-gray-900 rounded checked:bg-gray-900 checked:border-gray-900 focus:outline-none cursor-pointer"
-                          style={{
-                            backgroundImage: formData.helpOptions.includes(option.key)
-                              ? "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E\")"
-                              : 'none',
-                            backgroundSize: 'contain',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'center',
-                          }}
-                        />
+                <div>
+                  <label className="block text-[10px] font-black uppercase mb-1 text-gray-900 pl-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.contact.yourMessage}</label>
+                  <div className="relative">
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder={t.contact.messagePlaceholder}
+                      rows={3}
+                      className={`w-full bg-white border-2 ${errors.message ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl p-4 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-yellow-50 transition-all font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none resize-none`}
+                    />
+                    {errors.message && (
+                      <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                        <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                        <span className="text-[10px] font-black">{errors.message}</span>
                       </div>
-                      <span className="text-gray-900 font-bold text-[10px] uppercase leading-none group-hover:text-gray-700">
-                        {option.label}
-                      </span>
-                    </label>
-                  ))}
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-gray-900 text-white font-black py-4 rounded-2xl hover:bg-emerald-600 transition-all text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_#FCD34D] hover:shadow-none hover:translate-x-1 hover:translate-y-1 border-2 border-gray-900 mt-4 h-16"
-                style={{ fontFamily: "'Sora', sans-serif" }}
-              >
-                {t.contact.submitButton}
-              </button>
-            </form>
+                {/* How can we help? */}
+                <div className="pt-2">
+                  <h3 className="text-base font-black text-gray-900 mb-3 uppercase tracking-tighter">{t.contact.helpTitle}</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { key: 'websiteDesign', label: t.contact.websiteDesign },
+                      { key: 'uxDesign', label: t.contact.uxDesign },
+                      { key: 'userResearch', label: t.contact.userResearch },
+                      { key: 'contentCreation', label: t.contact.contentCreation },
+                      { key: 'strategyConsulting', label: t.contact.strategyConsulting },
+                      { key: 'other', label: t.contact.other },
+                    ].map((option) => (
+                      <label key={option.key} className="flex items-center gap-2 cursor-pointer group bg-white/50 border border-gray-900/10 p-2 rounded-lg hover:bg-white transition-colors">
+                        <div className="relative flex items-center">
+                          <input
+                            type="checkbox"
+                            checked={formData.helpOptions.includes(option.key)}
+                            onChange={() => handleCheckboxChange(option.key)}
+                            className="w-4 h-4 appearance-none border-2 border-gray-900 rounded checked:bg-gray-900 checked:border-gray-900 focus:outline-none cursor-pointer"
+                            style={{
+                              backgroundImage: formData.helpOptions.includes(option.key)
+                                ? "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E\")"
+                                : 'none',
+                              backgroundSize: 'contain',
+                              backgroundRepeat: 'no-repeat',
+                              backgroundPosition: 'center',
+                            }}
+                          />
+                        </div>
+                        <span className="text-gray-900 font-bold text-[10px] uppercase leading-none group-hover:text-gray-700">
+                          {option.label}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {submitError && (
+                  <p className="text-red-500 text-xs font-black text-center italic">Failed to send. Please try again or email us directly.</p>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full bg-gray-900 text-white font-black py-4 rounded-2xl transition-all text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_#FCD34D] h-16 border-2 border-gray-900 mt-4 
+                    ${isSubmitting ? 'opacity-50 animate-pulse bg-gray-700' : 'hover:bg-emerald-600 hover:shadow-none hover:translate-x-1 hover:translate-y-1'}`}
+                  style={{ fontFamily: "'Sora', sans-serif" }}
+                >
+                  {isSubmitting ? 'SENDING...' : t.contact.submitButton}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

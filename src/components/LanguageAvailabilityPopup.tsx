@@ -57,7 +57,7 @@ export default function LanguageAvailabilityPopup() {
                         {/* Close Button hit area */}
                         <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={() => setIsVisible(false)}>
                             <button
-                                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-1 active:shadow-none"
+                                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-red-500 text-white border-2 border-white rounded-full hover:bg-red-600 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-1 active:shadow-none"
                             >
                                 <X className="w-5 h-5 sm:w-6 sm:h-6" />
                             </button>

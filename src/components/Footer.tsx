@@ -13,7 +13,7 @@ export default function Footer() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -28,13 +28,38 @@ export default function Footer() {
       return;
     }
 
-    // Simulate proper submission
-    console.log('Newsletter subscribed:', email);
-    setSuccess(true);
-    setEmail('');
+    try {
+      const { sendEmail } = await import('../utils/emailService');
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setSuccess(false), 3000);
+      await sendEmail({
+        to: email,
+        subject: 'Welcome to the newmindr. newsletter! 💌',
+        html: `
+            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 4px solid #111; border-radius: 24px; overflow: hidden; background: white;">
+                <div style="background: #fbbf24; padding: 40px; text-align: center;">
+                    <h1 style="color: black; margin: 0; font-size: 32px; text-transform: uppercase;">You're In!</h1>
+                </div>
+                <div style="padding: 40px;">
+                    <p style="font-size: 18px; line-height: 1.6; color: #111;">Thanks for subscribing to the <b>newmindr.</b> newsletter.</p>
+                    <p style="font-size: 16px; line-height: 1.6; color: #444;">You'll be the first to know about new interactive courses, learning roadmap updates, and exclusive tips for your negotiation and leadership skills.</p>
+                </div>
+                <div style="background: #111; padding: 20px; text-align: center; color: white;">
+                    <p style="font-size: 12px; margin: 0;">© ${new Date().getFullYear()} newmindr. Learning Reimagined</p>
+                </div>
+            </div>
+        `
+      });
+
+      console.log('Newsletter subscribed:', email);
+      setSuccess(true);
+      setEmail('');
+
+      // Reset success message after 3 seconds
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err: any) {
+      console.error('Email failed to send:', err);
+      setError(err?.message || 'error');
+    }
   };
 
   const handleHeartClick = () => {
@@ -226,9 +251,9 @@ export default function Footer() {
                       />
                       {error && (
                         <div className="absolute top-full mt-1 left-0 right-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
-                          <div className="w-3 h-3 bg-red-500 text-white rounded-full flex items-center justify-center text-[7px] shrink-0 font-black">!</div>
+                          <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[7px] shrink-0 font-black">!</div>
                           <span className="text-[9px] font-black leading-tight">
-                            {t.validation[error as keyof typeof t.validation]}
+                            {error.includes(' ') ? error : (t.validation[error as keyof typeof t.validation] || 'Connection Error')}
                           </span>
                         </div>
                       )}

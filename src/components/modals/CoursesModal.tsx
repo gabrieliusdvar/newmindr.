@@ -38,10 +38,10 @@ export default function CoursesModal({ isOpen, onClose }: CoursesModalProps) {
                 {/* Close Button hit area */}
                 <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={onClose}>
                     <button
-                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100/80 hover:bg-gray-200 rounded-full transition-all group border-2 border-gray-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none"
+                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-red-500 border-2 border-gray-900 rounded-full hover:bg-red-600 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none"
                         aria-label="Close modal"
                     >
-                        <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900 group-hover:rotate-90 transition-transform" />
+                        <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={3} />
                     </button>
                 </div>
 

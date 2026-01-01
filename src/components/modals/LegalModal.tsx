@@ -27,7 +27,10 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
     const content = isPrivacy ? t.legal.privacy : t.legal.terms;
 
     return (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black animate-in fade-in duration-300">
+        <div
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black animate-in fade-in duration-300"
+            onClick={onClose}
+        >
             {/* Sticky Header with Close Button */}
             <div className="absolute top-0 left-0 right-0 h-20 bg-black/80 backdrop-blur-md flex items-center justify-between px-8 z-50 border-b border-white/10">
                 <h2 className="text-2xl font-black text-white uppercase italic tracking-tighter" style={{ fontFamily: "'Outfit', sans-serif" }}>
@@ -36,9 +39,9 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
                 {/* Close Button hit area */}
                 <div className="absolute top-0 right-0 h-full flex items-center px-4 cursor-pointer group" onClick={onClose}>
                     <button
-                        className="w-10 h-10 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
+                        className="w-10 h-10 flex items-center justify-center bg-red-500 border-2 border-white rounded-full hover:bg-red-600 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
                     >
-                        <X className="w-6 h-6" />
+                        <X className="w-6 h-6 text-white" strokeWidth={3} />
                     </button>
                 </div>
             </div>

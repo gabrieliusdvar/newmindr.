@@ -220,9 +220,9 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                 {/* Close Button hit area */}
                 <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-6 cursor-pointer group" onClick={onClose}>
                     <button
-                        className="w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
+                        className="w-10 h-10 flex items-center justify-center bg-red-500 border-2 border-gray-900 rounded-full hover:bg-red-600 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
                     >
-                        <X className="w-6 h-6 text-gray-900" />
+                        <X className="w-6 h-6 text-white" strokeWidth={3} />
                     </button>
                 </div>
 
