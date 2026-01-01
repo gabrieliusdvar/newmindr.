@@ -10,23 +10,22 @@ export const STRIPE_LINKS = {
     EN: {
         BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
         PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        PRO_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
-        TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01' // Defaulting trial to PRO for now
+        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
+        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
+        TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
     },
-    // Using EN links as defaults for now
     LT: {
         BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
         PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        PRO_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
+        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
+        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
         TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
     },
     RU: {
         BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
         PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        PRO_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
+        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
+        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
         TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
     }
 };
