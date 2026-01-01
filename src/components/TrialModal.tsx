@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, ChevronLeft, Check } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface TrialModalProps {
@@ -53,25 +53,25 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 transition-colors"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 w-7 h-7 sm:w-9 sm:h-9 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 transition-colors flex items-center justify-center"
                 >
-                    <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" />
+                    <X className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-gray-900" />
                 </button>
 
                 {/* Back Button (if not on choice) */}
                 {modalView !== 'choice' && (
                     <button
                         onClick={() => setModalView('choice')}
-                        className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 flex items-center gap-1 text-[10px] sm:text-sm font-bold px-2 sm:px-3 transition-colors text-gray-900"
+                        className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 flex items-center justify-center text-[10px] sm:text-sm font-black px-2.5 sm:px-4 py-1 sm:py-2 transition-colors text-gray-900 uppercase italic"
                     >
-                        <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 text-gray-900" /> Back
+                        Back
                     </button>
                 )}
 
                 <div className="p-6 sm:p-8 md:p-10">
                     {/* CHOICE VIEW */}
                     {modalView === 'choice' && (
-                        <div className="text-center pt-8 sm:pt-4">
+                        <div className="text-center pt-12 sm:pt-4">
                             <h2 className="text-3xl font-black text-gray-900 mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>{t.studyingProcess.modal.readyToStart}</h2>
                             <p className="text-gray-600 mb-10">{t.studyingProcess.modal.choosePath}</p>
 
@@ -101,7 +101,7 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
 
                     {/* TRIAL FORM VIEW */}
                     {modalView === 'trial' && (
-                        <div className="pt-8 sm:pt-4">
+                        <div className="pt-12 sm:pt-4">
                             <h2 className="text-2xl font-black text-gray-900 mb-6 text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>{t.studyingProcess.modal.trial.title}</h2>
                             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                                 <div className="grid grid-cols-2 gap-4">
@@ -133,7 +133,7 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
 
                     {/* BUY OPTIONS VIEW */}
                     {modalView === 'buy' && (
-                        <div className="pt-10 sm:pt-6">
+                        <div className="pt-14 sm:pt-6">
                             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 text-center">{t.studyingProcess.modal.buy.title}</h2>
 
                             {/* Billing Toggle */}
