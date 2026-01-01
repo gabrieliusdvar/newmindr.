@@ -677,7 +677,8 @@ export const translations: Record<Language, any> = {
         email: "Email",
         help: "Help Needed With",
         message: "Message",
-        footer: "Submitted via newmindr.com"
+        footer: "Submitted via newmindr.com",
+        unsubscribe: "Don't want to get newsletters? UNSUBSCRIBE"
       }
     }
   },
@@ -1357,7 +1358,8 @@ export const translations: Record<Language, any> = {
         email: "El. paštas",
         help: "Reikalinga pagalba dėl",
         message: "Žinutė",
-        footer: "Pateikta per newmindr.com"
+        footer: "Pateikta per newmindr.com",
+        unsubscribe: "Nenorite gauti naujienlaiškių? ATSISAKYTI"
       }
     }
   },
@@ -1942,7 +1944,8 @@ export const translations: Record<Language, any> = {
         email: "Email",
         help: "Нужна помощь с",
         message: "Сообщение",
-        footer: "Отправлено через newmindr.com"
+        footer: "Отправлено через newmindr.com",
+        unsubscribe: "Не хотите получать рассылку? ОТПИСАТЬСЯ"
       }
     }
   }

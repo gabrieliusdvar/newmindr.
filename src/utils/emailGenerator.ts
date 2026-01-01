@@ -5,21 +5,41 @@ import { Language, translations } from './translations';
  * neo-brutalist design of newmindr.com
  */
 export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' | 'contact', data: any) {
+    const t = translations[lang].emails[type];
+    const shared = translations[lang].emails.contact; // Using contact as source for shared footer keys
+
     // CUSTOM NEWSLETTER TEMPLATES PROVIDED BY USER
-    // Note: These are image-heavy. If images don't load, email looks "blank".
     if (type === 'newsletter') {
         const baseUrl = 'https://newmindr.pages.dev/newsletter/images/';
+        const unsubscribeText = shared.unsubscribe;
+
+        let newsletterHtml = '';
 
         if (lang === 'lt') {
-            return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}e1c32af7216d822d5e67de5642f69670.png" alt="newmindr. Naujienlaiškis" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}f792eb1e8b56dc33bcae2476b015b3d9.png" alt="Atraskite naujas galimybes" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
+            newsletterHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}e1c32af7216d822d5e67de5642f69670.png" alt="newmindr. Naujienlaiškis" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}f792eb1e8b56dc33bcae2476b015b3d9.png" alt="Atraskite naujas galimybes" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
         } else if (lang === 'ru') {
-            return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}f00c60897cb2eeb4b98d8875197bcf36.png" alt="newmindr. Новости" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}42e30765187a3a740111d37e904f5cb5.png" alt="Узнайте больше" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
+            newsletterHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}f00c60897cb2eeb4b98d8875197bcf36.png" alt="newmindr. Новости" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}42e30765187a3a740111d37e904f5cb5.png" alt="Узнайте больше" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
         } else {
-            return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}aff6dd8b8a3b6658dc9c21e719e0921f.png" alt="newmindr. Newsletter" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}e08d778ef3a764e65fd10a0d34eb5f6f.png" alt="Discover more" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
+            newsletterHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head><body style="width:100%;background-color:#f0f1f5;margin:0;padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f0f1f5"><tbody><tr><td align="center"> <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff"><tbody><tr><td style="padding:10px 0"><img src="${baseUrl}aff6dd8b8a3b6658dc9c21e719e0921f.png" alt="newmindr. Newsletter" width="600" style="display:block;width:100%;height:auto;"></td></tr><tr><td style="padding:10px 0"><img src="${baseUrl}e08d778ef3a764e65fd10a0d34eb5f6f.png" alt="Discover more" width="600" style="display:block;width:100%;height:auto;"></td></tr></tbody></table> </td></tr></tbody></table></body></html>`;
         }
-    }
 
-    const t = translations[lang].emails[type];
+        // Add the unsubscribe footer to the custom HTML
+        const footerHtml = `
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="center" style="padding: 20px 0; background-color: #f0f1f5;">
+                        <p style="font-family: sans-serif; font-size: 12px; color: #666; margin: 0;">
+                            ${unsubscribeText.split('UNSUBSCRIBE')[0]} 
+                            <a href="https://newmindr.com/unsubscribe" style="color: #3b82f6; font-weight: bold; text-decoration: none;">${unsubscribeText.includes('UNSUBSCRIBE') ? 'UNSUBSCRIBE' : 'ATSISAKYTI'}</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        `;
+
+        // Inject footer before closing body/html
+        return newsletterHtml.replace('</body></html>', `${footerHtml}</body></html>`);
+    }
 
     // Theme colors
     const colors = {
@@ -49,6 +69,10 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
     const footer = `
         <div style="background: ${colors.black}; padding: 30px 20px; text-align: center; color: ${colors.white}; font-family: sans-serif;">
             <p style="margin: 0; font-size: 14px; font-weight: bold;">${t.footer || 'newmindr. Learning Reimagined'}</p>
+            <p style="margin-top: 15px; font-size: 10px; color: #888;">
+                ${shared.unsubscribe.split('UNSUBSCRIBE')[0]} 
+                <a href="https://newmindr.com/unsubscribe" style="color: #3b82f6; text-decoration: none;">${shared.unsubscribe.includes('UNSUBSCRIBE') ? 'UNSUBSCRIBE' : 'ATSISAKYTI'}</a>
+            </p>
         </div>
     `;
 
