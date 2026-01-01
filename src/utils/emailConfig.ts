@@ -8,24 +8,24 @@ export const EMAIL_CONFIG = {
 // Stripe links for each plan and duration
 export const STRIPE_LINKS = {
     EN: {
-        BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
-        PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
-        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
+        BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
+        PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
+        BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
+        PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
+        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
     },
     LT: {
-        BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
-        PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
-        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
+        BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
+        PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
+        BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
+        PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
+        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
     },
     RU: {
-        BASIC_MONTHLY: 'https://buy.stripe.com/test_cNicN4eAb9x87XfaFLfIs00',
-        PRO_MONTHLY: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01',
-        BASIC_YEARLY: 'https://buy.stripe.com/test_eVqdR88bNaBc5P79BHfIs03',
-        PRO_YEARLY: 'https://buy.stripe.com/test_6oUcN40Jl10C2CV29ffIs02',
-        TRIAL: 'https://buy.stripe.com/test_aFa6oGcs38t46Tb5lrfIs01'
+        BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
+        PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
+        BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
+        PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
+        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
     }
 };
