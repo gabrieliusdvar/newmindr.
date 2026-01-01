@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { MapPin, Phone, MessageCircle, Facebook, Instagram, Youtube, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { generateEmailHtml } from '../utils/emailGenerator';
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -95,24 +96,13 @@ export default function Contact() {
 
       await sendEmail({
         to: 'hello@newmindr.com',
-        subject: `New Contact Form Submission: ${formData.name} 📩`,
-        html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 4px solid #111; border-radius: 20px; overflow: hidden; background: white;">
-                <div style="background: #10b981; padding: 30px; text-align: center;">
-                    <h1 style="color: white; margin: 0; font-size: 24px;">New Message from Contact Form</h1>
-                </div>
-                <div style="padding: 30px;">
-                    <p><b>Name:</b> ${formData.name}</p>
-                    <p><b>Email:</b> ${formData.email}</p>
-                    <p><b>Help Needed With:</b> ${formData.helpOptions.join(', ') || 'General Inquiry'}</p>
-                    <hr style="border: 1px solid #eee; margin: 20px 0;" />
-                    <p style="white-space: pre-wrap;"><b>Message:</b><br/>${formData.message}</p>
-                </div>
-                <div style="background: #f3f4f6; padding: 15px; text-align: center; font-size: 12px; color: #666;">
-                    Submitted via newmindr.com on ${new Date().toLocaleString()}
-                </div>
-            </div>
-        `
+        subject: t.emails.contact.subject.replace('{name}', formData.name),
+        html: generateEmailHtml(language, 'contact', {
+          name: formData.name,
+          email: formData.email,
+          helpOptions: formData.helpOptions.join(', '),
+          message: formData.message
+        })
       });
 
       setSubmitSuccess(true);

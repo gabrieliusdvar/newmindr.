@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Mail, Phone, Facebook, Youtube, Instagram, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { generateEmailHtml } from '../utils/emailGenerator';
 import { useModal } from '../contexts/ModalContext';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { openModal } = useModal();
   const [locationClicked, setLocationClicked] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
@@ -33,21 +34,8 @@ export default function Footer() {
 
       await sendEmail({
         to: email,
-        subject: 'Welcome to the newmindr. newsletter! 💌',
-        html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 4px solid #111; border-radius: 24px; overflow: hidden; background: white;">
-                <div style="background: #fbbf24; padding: 40px; text-align: center;">
-                    <h1 style="color: black; margin: 0; font-size: 32px; text-transform: uppercase;">You're In!</h1>
-                </div>
-                <div style="padding: 40px;">
-                    <p style="font-size: 18px; line-height: 1.6; color: #111;">Thanks for subscribing to the <b>newmindr.</b> newsletter.</p>
-                    <p style="font-size: 16px; line-height: 1.6; color: #444;">You'll be the first to know about new interactive courses, learning roadmap updates, and exclusive tips for your negotiation and leadership skills.</p>
-                </div>
-                <div style="background: #111; padding: 20px; text-align: center; color: white;">
-                    <p style="font-size: 12px; margin: 0;">© ${new Date().getFullYear()} newmindr. Learning Reimagined</p>
-                </div>
-            </div>
-        `
+        subject: t.emails.newsletter.subject,
+        html: generateEmailHtml(language, 'newsletter', {})
       });
 
       console.log('Newsletter subscribed:', email);

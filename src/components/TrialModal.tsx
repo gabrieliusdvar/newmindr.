@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { generateEmailHtml } from '../utils/emailGenerator';
 
 interface TrialModalProps {
     isOpen: boolean;
@@ -9,7 +10,7 @@ interface TrialModalProps {
 }
 
 export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: TrialModalProps) {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const [modalView, setModalView] = useState<'choice' | 'trial' | 'buy'>(initialView);
     const [isYearly, setIsYearly] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -46,25 +47,8 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
 
             await sendEmail({
                 to: formData.email,
-                subject: 'Your 7-Day Free Trial is Active! 🚀',
-                html: `
-                    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 4px solid #111; border-radius: 24px; overflow: hidden; background: white;">
-                        <div style="background: #3b82f6; padding: 40px; text-align: center;">
-                            <h1 style="color: white; margin: 0; font-size: 32px; text-transform: uppercase;">Ready to Learn?</h1>
-                        </div>
-                        <div style="padding: 40px;">
-                            <h2 style="color: #111;">Hi ${formData.firstName},</h2>
-                            <p style="font-size: 18px; line-height: 1.6; color: #444;">Your 7-day free trial at <b>newmindr.</b> is officially active!</p>
-                            <p style="font-size: 16px; line-height: 1.6; color: #444;">You now have full access to our interactive learning roadmap and premium course content.</p>
-                            <div style="margin: 40px 0; text-align: center;">
-                                <a href="https://newmindr.com" style="background: #111; color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">START LEARNING NOW</a>
-                            </div>
-                        </div>
-                        <div style="background: #f9fafb; padding: 20px; text-align: center; border-top: 2px solid #eee;">
-                            <p style="font-size: 12px; color: #9ca3af;">No credit card required for your trial. Enjoy!</p>
-                        </div>
-                    </div>
-                `
+                subject: t.emails.trial.subject,
+                html: generateEmailHtml(language, 'trial', { name: formData.firstName })
             });
 
             setSendSuccess(true);

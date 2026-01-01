@@ -652,6 +652,33 @@ export const translations: Record<Language, any> = {
     validation: {
       required: "Please fill out this field",
       invalidEmail: "Please enter a valid email address"
+    },
+    emails: {
+      newsletter: {
+        subject: "Welcome to the newmindr. newsletter! 💌",
+        title: "You're In!",
+        greeting: "Thanks for subscribing to the <b>newmindr.</b> newsletter.",
+        content: "You'll be the first to know about new interactive courses, learning roadmap updates, and exclusive tips for your negotiation and leadership skills.",
+        footer: "newmindr. Learning Reimagined"
+      },
+      trial: {
+        subject: "Your 7-Day Free Trial is Active! 🚀",
+        title: "Ready to Learn?",
+        greeting: "Hi {name},",
+        subGreeting: "Your 7-day free trial at <b>newmindr.</b> is officially active!",
+        content: "You now have full access to our interactive learning roadmap and premium course content.",
+        cta: "START LEARNING NOW",
+        disclaimer: "No credit card required for your trial. Enjoy!"
+      },
+      contact: {
+        subject: "New Message from Contact Form: {name} 📩",
+        title: "New Message from Contact Form",
+        name: "Name",
+        email: "Email",
+        help: "Help Needed With",
+        message: "Message",
+        footer: "Submitted via newmindr.com"
+      }
     }
   },
   lt: {
@@ -1306,6 +1333,33 @@ export const translations: Record<Language, any> = {
       required: "Prašome užpildyti šį laukelį",
       invalidEmail: "Įveskite galiojantį el. pašto adresą"
     },
+    emails: {
+      newsletter: {
+        subject: "Sveiki prisijungę prie newmindr. naujienlaiškio! 💌",
+        title: "Jūs jau čia!",
+        greeting: "Ačiū, kad užsiprenumeravote <b>newmindr.</b> naujienlaiškį.",
+        content: "Jūs pirmieji sužinosite apie naujus interaktyvius kursus, mokymosi gairių atnaujinimus ir išskirtinius patarimus derybų bei lyderystės srityse.",
+        footer: "newmindr. Mokymasis iš naujo"
+      },
+      trial: {
+        subject: "Jūsų 7 dienų nemokamas bandomasis laikotarpis aktyvuotas! 🚀",
+        title: "Pasiruošę mokytis?",
+        greeting: "Sveiki, {name},",
+        subGreeting: "Jūsų 7 dienų nemokamas bandomasis laikotarpis <b>newmindr.</b> platformoje oficialiai įjungtas!",
+        content: "Dabar turite pilną prieigą prie mūsų interaktyvių mokymosi gairių ir aukščiausios kokybės kursų turinio.",
+        cta: "PRADĖTI MOKYTIS DABAR",
+        disclaimer: "Bandomajam laikotarpiui kreditinė kortelė nereikalinga. Mėgaukitės!"
+      },
+      contact: {
+        subject: "Nauja žinutė iš kontaktų formos: {name} 📩",
+        title: "Nauja žinutė iš kontaktų formos",
+        name: "Vardas",
+        email: "El. paštas",
+        help: "Reikalinga pagalba dėl",
+        message: "Žinutė",
+        footer: "Pateikta per newmindr.com"
+      }
+    }
   },
   ru: {
     seo: {
@@ -1862,7 +1916,34 @@ export const translations: Record<Language, any> = {
     },
     validation: {
       required: "Пожалуйста, заполните это поле",
-      invalidEmail: "Пожалуйста, введите корректный email"
+      invalidEmail: "Пожалуйста, введите корректный адрес электронной почты"
+    },
+    emails: {
+      newsletter: {
+        subject: "Добро пожаловать в рассылку newmindr.! 💌",
+        title: "Вы с нами!",
+        greeting: "Спасибо за подписку на рассылку <b>newmindr.</b>.",
+        content: "Вы первыми узнаете о новых интерактивных курсах, обновлениях дорожной карты обучения и эксклюзивных советах по переговорам и лидерству.",
+        footer: "newmindr. Обучение в новом формате"
+      },
+      trial: {
+        subject: "Ваш пробный 7-дневный период активирован! 🚀",
+        title: "Готовы учиться?",
+        greeting: "Привет, {name},",
+        subGreeting: "Ваш пробный 7-дневный период в <b>newmindr.</b> официально активирован!",
+        content: "Теперь у вас есть полный доступ к нашей интерактивной дорожной карте обучения и премиум-контенту курсов.",
+        cta: "НАЧАТЬ ОБУЧЕНИЕ",
+        disclaimer: "Для пробного периода кредитная карта не требуется. Наслаждайтесь!"
+      },
+      contact: {
+        subject: "Новое сообщение из формы обратной связи: {name} 📩",
+        title: "Новое сообщение из формы обратной связи",
+        name: "Имя",
+        email: "Email",
+        help: "Нужна помощь с",
+        message: "Сообщение",
+        footer: "Отправлено через newmindr.com"
+      }
     }
   }
 };
