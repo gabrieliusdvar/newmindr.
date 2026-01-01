@@ -375,6 +375,7 @@ export const translations: Record<Language, any> = {
       experienceReal: "You understand the process. Now experience it for real.",
       startFirstClass: "Start Your First Class",
       modal: {
+        back: "Back",
         readyToStart: "Ready to Start?",
         choosePath: "Choose how you want to begin your journey.",
         startFreeTrial: "Start Free Trial",
@@ -1027,6 +1028,7 @@ export const translations: Record<Language, any> = {
       experienceReal: "Tu supranti procesą. Dabar patirk tai realybėje.",
       startFirstClass: "Pradėk Pirmąją Pamoką",
       modal: {
+        back: "Atgal",
         readyToStart: "Pasiruošęs pradėti?",
         choosePath: "Pasirink, kaip nori pradėti savo kelionę.",
         startFreeTrial: "Pradėti nemokamą bandymą",
@@ -1679,6 +1681,7 @@ export const translations: Record<Language, any> = {
       experienceReal: "You understand the process. Now experience it for real.",
       startFirstClass: "Start Your First Class",
       modal: {
+        back: "Back",
         readyToStart: "Ready to Start?",
         choosePath: "Choose how you want to begin your journey.",
         startFreeTrial: "Start Free Trial",

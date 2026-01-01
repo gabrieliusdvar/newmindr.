@@ -55,7 +55,7 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                     onClick={onClose}
                     className="absolute top-3 right-3 sm:top-4 sm:right-4 w-7 h-7 sm:w-9 sm:h-9 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 transition-colors flex items-center justify-center"
                 >
-                    <X className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-gray-900" />
+                    <X className="w-4.5 h-4.5 sm:w-6 sm:h-6 text-gray-900" />
                 </button>
 
                 {/* Back Button (if not on choice) */}
@@ -64,7 +64,7 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                         onClick={() => setModalView('choice')}
                         className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-gray-100/80 hover:bg-gray-200 rounded-full z-10 flex items-center justify-center text-[10px] sm:text-sm font-black px-2.5 sm:px-4 py-1 sm:py-2 transition-colors text-gray-900 uppercase italic"
                     >
-                        Back
+                        {t.studyingProcess.modal.back}
                     </button>
                 )}
 
