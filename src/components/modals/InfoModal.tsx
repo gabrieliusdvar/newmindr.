@@ -137,14 +137,14 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                         <div className="space-y-4">
                             <h4 className="text-xl font-black uppercase italic text-gray-900 underline decoration-yellow-400">{t.infoModal.contact.directContact}</h4>
                             <div className="space-y-2">
-                                <p className="flex items-center gap-3 font-bold text-gray-700 hover:text-gray-900 cursor-pointer transition-colors">
+                                <a href="mailto:hello@newmindr.com" className="flex items-center gap-3 font-bold text-gray-700 hover:text-gray-900 transition-colors">
                                     <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white"><Clock className="w-4 h-4" /></div>
-                                    hello@spyk.edu
-                                </p>
-                                <p className="flex items-center gap-3 font-bold text-gray-700">
+                                    hello@newmindr.com
+                                </a>
+                                <a href="tel:+37063911939" className="flex items-center gap-3 font-bold text-gray-700 hover:text-gray-900 transition-colors">
                                     <div className="w-8 h-8 bg-gray-100 border-2 border-gray-900 rounded-lg flex items-center justify-center text-gray-900"><Zap className="w-4 h-4" /></div>
-                                    +1 (234) 567-890
-                                </p>
+                                    +370 (639) 11 939
+                                </a>
                             </div>
                         </div>
                         <div className="space-y-4 text-center md:text-left">
@@ -208,9 +208,9 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 z-20 p-2 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
+                    className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center bg-white border-2 border-gray-900 rounded-full hover:bg-gray-100 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-bold"
                 >
-                    <X className="w-5 h-5 text-gray-900" />
+                    <X className="w-6 h-6 text-gray-900" />
                 </button>
 
                 {/* Scrollable Content */}

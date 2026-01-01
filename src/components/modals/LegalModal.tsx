@@ -35,7 +35,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
                 </h2>
                 <button
                     onClick={onClose}
-                    className="p-3 bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
+                    className="w-10 h-10 flex items-center justify-center bg-white text-black border-2 border-white rounded-full hover:bg-gray-200 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] active:translate-y-1 active:shadow-none font-bold"
                 >
                     <X className="w-6 h-6" />
                 </button>
