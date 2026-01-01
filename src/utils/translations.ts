@@ -1304,8 +1304,7 @@ export const translations = {
   validation: {
     required: "Prašome užpildyti šį laukelį",
     invalidEmail: "Įveskite galiojantį el. pašto adresą"
-  }
-},
+  },
   ru: {
     seo: {
       title: "newmindr. Интерактивное обучение"
