@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Mail, Users, Briefcase, Clock, Rocket } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { sendEmail } from '../utils/emailService';
+import { generateEmailHtml } from '../utils/emailGenerator';
+import { translations } from '../utils/translations';
 
 export default function Hero() {
   const { t, language } = useLanguage();
@@ -15,14 +18,26 @@ export default function Hero() {
       );
   };
 
-  const handleClaim = () => {
+  const handleClaim = async () => {
     if (!validateEmail(email)) {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 600);
       return;
     }
 
-    setStatus('success');
+    try {
+      const html = generateEmailHtml(language, 'trial', { name: 'Friend' });
+      await sendEmail({
+        to: email,
+        subject: translations[language].emails.trial.subject,
+        html
+      });
+      setStatus('success');
+    } catch (error) {
+      console.error('Email failed:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   return (
