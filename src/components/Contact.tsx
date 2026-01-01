@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin, Phone, MessageCircle, Facebook, Instagram, Youtube } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -16,6 +16,20 @@ export default function Contact() {
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    // Lock body scroll and prevent pull-to-refresh/overscroll on mobile
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    const originalOverscroll = window.getComputedStyle(document.body).overscrollBehavior;
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.overscrollBehavior = 'none';
+
+    return () => {
+      document.body.style.overflow = originalStyle;
+      document.body.style.overscrollBehavior = originalOverscroll;
+    };
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -68,7 +82,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-[100svh] pt-[50px] lg:pt-0 lg:fixed lg:inset-0 lg:top-[50px] lg:overflow-hidden bg-emerald-400 lg:bg-white overflow-y-auto lg:overflow-y-hidden">
+    <div className="fixed inset-0 top-[50px] lg:top-[50px] overflow-hidden bg-emerald-400 lg:bg-white overscroll-none touch-none lg:touch-auto">
       <div className="grid lg:grid-cols-[1.2fr_0.8fr] min-h-[calc(100svh-50px)] w-full relative flex flex-col lg:grid">
         {/* Black divider line - moved to 60% */}
         <div className="absolute left-[60%] top-0 bottom-0 w-1 bg-gray-900 transform -translate-x-1/2 z-10 hidden lg:block"></div>
@@ -126,8 +140,8 @@ export default function Contact() {
                 <h3 className="text-lg sm:text-xl font-black text-gray-900 uppercase tracking-tighter">{t.contact.callTitle}</h3>
               </div>
               <p className="text-gray-800 text-xs sm:text-sm mb-4 sm:mb-6 font-bold leading-relaxed">{t.contact.callDescription}</p>
-              <a href="tel:+1234567890" className="inline-flex items-center bg-gray-900 border-2 border-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-white font-black text-xs sm:text-sm hover:bg-emerald-500 transition-colors shadow-[3px_3px_0_0_rgba(16,185,129,1)] sm:shadow-[4px_4px_0_0_rgba(16,185,129,1)] active:translate-y-1 active:shadow-none uppercase" style={{ fontFamily: "'Sora', sans-serif" }}>
-                +1 (234) 567-890
+              <a href="tel:+37063911939" className="inline-flex items-center bg-gray-900 border-2 border-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-white font-black text-xs sm:text-sm hover:bg-emerald-500 transition-colors shadow-[3px_3px_0_0_rgba(16,185,129,1)] sm:shadow-[4px_4px_0_0_rgba(16,185,129,1)] active:translate-y-1 active:shadow-none uppercase" style={{ fontFamily: "'Sora', sans-serif" }}>
+                +370 (639) 11 939
               </a>
             </div>
           </div>
@@ -170,7 +184,7 @@ export default function Contact() {
         </div>
 
         {/* Right Section - Emerald Green Background with Waves */}
-        <div className="flex-1 bg-gradient-to-br from-emerald-300 to-emerald-400 p-6 lg:p-10 flex flex-col justify-center lg:justify-center overflow-y-auto lg:overflow-hidden relative z-10">
+        <div className="flex-1 bg-gradient-to-br from-emerald-300 to-emerald-400 p-6 lg:p-10 flex flex-col justify-center lg:justify-center relative z-10 touch-auto overflow-y-auto lg:overflow-hidden">
           {/* Water Wave Effect */}
           <div className="absolute inset-0 pointer-events-none opacity-20">
             <div
