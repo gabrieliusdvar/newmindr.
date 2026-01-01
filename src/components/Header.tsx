@@ -34,13 +34,13 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-gray-900">
-      <nav className="container mx-auto px-4 lg:px-6 3xl:px-8 py-2.5 sm:py-3 3xl:py-4 flex items-center justify-between">
+      <nav className="container mx-auto px-5 lg:px-6 3xl:px-8 py-3.5 sm:py-4 3xl:py-5 flex items-center justify-between">
         {/* Left side - Logo and Courses */}
         <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
           <Link
             to="/"
             onClick={handleLogoClick}
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter shrink-0 hover:scale-110 active:scale-95 transition-all duration-300"
+            className="text-[26px] sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter shrink-0 hover:scale-110 active:scale-95 transition-all duration-300 leading-none translate-y-[2px] sm:translate-y-0"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             newmindr.
@@ -96,7 +96,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-x-0 top-[50px] bottom-0 bg-white z-40 transition-transform duration-300 lg:hidden overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-x-0 top-[66px] bottom-0 bg-white z-40 transition-transform duration-300 lg:hidden overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div className="p-6 flex flex-col gap-6">
