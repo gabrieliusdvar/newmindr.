@@ -12,20 +12,20 @@ export const STRIPE_LINKS = {
         PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
         BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
         PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
-        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
+        TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
     },
     LT: {
         BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
         PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
         BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
         PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
-        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
+        TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
     },
     RU: {
         BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
         PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
         BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
         PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
-        TRIAL: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002'
+        TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
     }
 };
