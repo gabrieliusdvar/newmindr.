@@ -1470,7 +1470,7 @@ export const translations: Record<Language, any> = {
       growingRevenue: "Учитесь у реальных людей",
       growingRevenueDesc: "Курсы созданы практиками, а не корпорациями.",
       bestInClass: "Практические навыки",
-      bestInClassDesc: "Применяйте знания немедленно в реальных ситуациях.",
+      bestInClassDesc: "Применяйте знания сразу в реальных ситуациях.",
       competitiveAdvantage: "Гибкое обучение",
       competitiveAdvantageDesc: "Учитесь когда угодно, где угодно и в своем темпе.",
       growthPotential: "Результаты для карьеры",
