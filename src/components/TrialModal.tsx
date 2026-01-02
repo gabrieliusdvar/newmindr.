@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { generateEmailHtml } from '../utils/emailGenerator';
+import { STRIPE_LINKS } from '../utils/emailConfig';
 
 interface TrialModalProps {
     isOpen: boolean;
@@ -60,6 +61,17 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
             setSendError(true);
         } finally {
             setIsSubmitting(false);
+        }
+    };
+
+    const handlePayment = (planName: string) => {
+        const langKey = (language.toUpperCase() as keyof typeof STRIPE_LINKS) || 'EN';
+        const links = STRIPE_LINKS[langKey] || STRIPE_LINKS.EN;
+
+        if (planName === 'Basic') {
+            window.location.href = isYearly ? links.BASIC_YEARLY : links.BASIC_MONTHLY;
+        } else {
+            window.location.href = isYearly ? links.PRO_YEARLY : links.PRO_MONTHLY;
         }
     };
 
@@ -264,7 +276,10 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                                         <p className="text-xs text-gray-800 italic opacity-80 decoration-slice">{t.studyingProcess.modal.buy.basic.notIncluded}</p>
                                     </div>
 
-                                    <button className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-colors">
+                                    <button
+                                        onClick={() => handlePayment('Basic')}
+                                        className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-colors"
+                                    >
                                         {t.studyingProcess.modal.buy.basic.button}
                                     </button>
                                 </div>
@@ -289,7 +304,10 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                                         ))}
                                     </ul>
 
-                                    <button className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-colors">
+                                    <button
+                                        onClick={() => handlePayment('PRO')}
+                                        className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-colors"
+                                    >
                                         {t.studyingProcess.modal.buy.pro.button}
                                     </button>
                                 </div>

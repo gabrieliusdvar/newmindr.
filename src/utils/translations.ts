@@ -145,10 +145,10 @@ export const translations: Record<Language, any> = {
       monthly: "Monthly",
       yearly: "Yearly",
       save: "(Save 20%)",
-      basic: "Explore & Get Started",
-      professional: "Learn Live. Build Real Skills.",
+      basic: "BASIC",
+      professional: "PRO",
       getStarted: "Get Started",
-      getProfessional: "Get Professional",
+      getProfessional: "Get Pro",
       perMonth: "/month",
       perfectPlan: "Best for: curious beginners who want to try interactive learning.",
       idealForCreators: "Best for: students who want more guidance, and interaction.",
@@ -395,8 +395,8 @@ export const translations: Record<Language, any> = {
         buy: {
           title: "Choose Your Plan",
           basic: {
-            title: "Explore & Get Started",
-            desc: "Best for: curious beginners who want to try interactive learning.",
+            title: "BASIC",
+            desc: "Explore & Get Started. Best for: curious beginners who want to try interactive learning.",
             features: [
               "Access to interactive learning games and classes",
               "Self-paced activities & challenges",
@@ -407,8 +407,8 @@ export const translations: Record<Language, any> = {
             button: "Get Started"
           },
           pro: {
-            title: "Learn Live. Build Real Skills.",
-            desc: "Best for: students who want more guidance, and interaction.",
+            title: "PRO",
+            desc: "Learn Live. Build Real Skills. Best for: students who want more guidance, and interaction.",
             features: [
               "Everything in Basic",
               "Live interactive classes with instructors",
@@ -417,7 +417,7 @@ export const translations: Record<Language, any> = {
               "Continuous feedback during sessions",
               "Priority access to new features"
             ],
-            button: "Get Professional"
+            button: "Get Pro"
           }
         }
       }
@@ -457,7 +457,7 @@ export const translations: Record<Language, any> = {
           feature2: "Global Community"
         },
         pro: {
-          title: "Professional",
+          title: "PRO",
           desc: "Daily live workshops with dedicated industry instructors.",
           feature1: "1-on-1 Mentorship",
           feature2: "Portfolio Building",
@@ -1088,7 +1088,7 @@ export const translations: Record<Language, any> = {
             button: "Pradėti"
           },
           pro: {
-            title: "Mokykis gyvai. Kurk įgūdžius.",
+            title: "PRO",
             desc: "Geriausia: norintiems daugiau vedimo.",
             features: [
               "Viskas, kas įeina į Basic",
@@ -1098,7 +1098,7 @@ export const translations: Record<Language, any> = {
               "Nuolatinis grįžtamasis ryšys sesijų metu",
               "Pirmenybė naujoms funkcijoms"
             ],
-            button: "Gauti Profesionalų"
+            button: "Gauti Pro"
           }
         }
       }
@@ -1138,7 +1138,7 @@ export const translations: Record<Language, any> = {
           feature2: "Pasaulinė bendruomenė"
         },
         pro: {
-          title: "Profesionalus",
+          title: "PRO",
           desc: "Kasdienės gyvos dirbtuvės su atsidavusiais instruktoriais.",
           feature1: "Asmeninė mentorystė (1 prieš 1)",
           feature2: "Portfolio kūrimas",
@@ -1507,8 +1507,8 @@ export const translations: Record<Language, any> = {
       monthly: "Ежемесячно",
       yearly: "Ежегодно",
       save: "(Экономия 20%)",
-      basic: "Исследуй и начни",
-      professional: "Живое обучение. Реальные навыки.",
+      basic: "BASIC",
+      professional: "PRO",
       getStarted: "Начать",
       getProfessional: "Стать Pro",
       perMonth: "/мес",
@@ -1757,8 +1757,8 @@ export const translations: Record<Language, any> = {
         buy: {
           title: "Выберите план",
           basic: {
-            title: "Исследуй и начни",
-            desc: "Для начинающих, которые хотят попробовать интерактивное обучение.",
+            title: "BASIC",
+            desc: "Исследуй и начни. Для начинающих, которые хотят попробовать интерактивное обучение.",
             features: [
               "Доступ к играм и занятиям",
               "Самостоятельные задания",
@@ -1769,8 +1769,8 @@ export const translations: Record<Language, any> = {
             button: "Начать"
           },
           pro: {
-            title: "Живое обучение. Реальные навыки.",
-            desc: "Для тех, кому нужно больше практики и обратной связи.",
+            title: "PRO",
+            desc: "Живое обучение. Реальные навыки. Для тех, кому нужно больше практики и обратной связи.",
             features: [
               "Все из плана Basic",
               "Живые интерактивные классы",
@@ -1779,7 +1779,7 @@ export const translations: Record<Language, any> = {
               "Постоянная обратная связь",
               "Приоритет к новым функциям"
             ],
-            button: "Стать Professional"
+            button: "Стать Pro"
           }
         }
       }
@@ -1819,7 +1819,7 @@ export const translations: Record<Language, any> = {
           feature2: "Мировое сообщество"
         },
         pro: {
-          title: "Professional",
+          title: "PRO",
           desc: "Ежедневные живые воркшопы с экспертами индустрии.",
           feature1: "Личный ментор",
           feature2: "Свое портфолио",
