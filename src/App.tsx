@@ -13,7 +13,7 @@ import Blog from './pages/Blog';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
 import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
-import DevelopmentPopup from './components/DevelopmentPopup';
+// import DevelopmentPopup from './components/DevelopmentPopup';
 
 import { ModalProvider } from './contexts/ModalContext';
 
@@ -47,7 +47,7 @@ function App() {
           </Routes>
           <CookieNotice />
           <LanguageAvailabilityPopup />
-          <DevelopmentPopup />
+          {/* <DevelopmentPopup /> */}
         </Router>
       </ModalProvider>
     </LanguageProvider>
