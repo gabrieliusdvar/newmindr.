@@ -449,7 +449,7 @@ export default function Features() {
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-400 border border-gray-900"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-green-400 border border-gray-900"></div>
                   </div>
-                  <div className="flex-1 bg-white rounded-md px-3 py-1 text-[10px] text-gray-500 flex items-center border border-gray-300">
+                  <div className="flex-1 bg-white rounded-md px-3 py-1 text-[10px] text-gray-500 flex items-center border border-gray-300 notranslate" translate="no">
                     <span className="mr-2">🔒</span>
                     learning.newmindr.com
                   </div>
