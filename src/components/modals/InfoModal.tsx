@@ -122,8 +122,8 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                                 <li className="flex gap-2 items-center text-sm font-bold text-gray-700 italic"><Check className="w-4 h-4" strokeWidth={3} /> {t.infoModal.pricing.basic.feature2}</li>
                             </ul>
                         </div>
-                        <div className="p-6 border-4 border-gray-900 rounded-2xl bg-emerald-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
-                            <div className="absolute top-2 right-2 bg-yellow-400 border-2 border-gray-900 text-[10px] px-2 py-1 font-black rounded-lg uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.infoModal.pricing.pro.badge}</div>
+                        <div className="px-6 pb-6 pt-12 border-4 border-gray-900 rounded-2xl bg-emerald-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+                            <div className="absolute top-3 right-3 bg-yellow-400 border-2 border-gray-900 text-[10px] px-2 py-1 font-black rounded-lg uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.infoModal.pricing.pro.badge}</div>
                             <div className="flex justify-between items-center mb-4">
                                 <h4 className="text-2xl font-black">{t.infoModal.pricing.pro.title}</h4>
                                 <span className="text-3xl font-black text-emerald-600">€{isYearly ? '45' : '56'}<span className="text-sm">/mo</span></span>

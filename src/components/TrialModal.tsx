@@ -20,6 +20,7 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [sendError, setSendError] = useState(false);
     const [sendSuccess, setSendSuccess] = useState(false);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
     // Handle open/close animations
     useEffect(() => {
@@ -40,6 +41,23 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
 
     const handleTrialSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validation
+        const newErrors: { [key: string]: string } = {};
+        if (!formData.firstName.trim()) newErrors.firstName = 'required';
+        if (!formData.lastName.trim()) newErrors.lastName = 'required';
+        if (!formData.email.trim()) {
+            newErrors.email = 'required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'invalidEmail';
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
         setIsSubmitting(true);
         setSendError(false);
 
@@ -156,41 +174,65 @@ export default function TrialModal({ isOpen, onClose, initialView = 'choice' }: 
                             ) : (
                                 <>
                                     <h2 className="text-2xl font-black text-gray-900 mb-6 text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>{t.studyingProcess.modal.trial.title}</h2>
-                                    <form className="space-y-4" onSubmit={handleTrialSubmit}>
+                                    <form className="space-y-4" onSubmit={handleTrialSubmit} noValidate>
                                         <div className="grid grid-cols-2 gap-4">
-                                            <div>
+                                            <div className="relative">
                                                 <label className="block text-sm font-bold text-gray-700 mb-1">{t.studyingProcess.modal.trial.firstName}</label>
                                                 <input
                                                     type="text"
-                                                    required
                                                     value={formData.firstName}
-                                                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                                                    className="w-full bg-gray-50 border-2 border-gray-900 rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all"
+                                                    onChange={(e) => {
+                                                        setFormData({ ...formData, firstName: e.target.value });
+                                                        if (errors.firstName) setErrors({ ...errors, firstName: '' });
+                                                    }}
+                                                    className={`w-full bg-gray-50 border-2 ${errors.firstName ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all`}
                                                     placeholder="John"
                                                 />
+                                                {errors.firstName && (
+                                                    <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                                                        <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                                                        <span className="text-[10px] font-black">{t.validation[errors.firstName as keyof typeof t.validation]}</span>
+                                                    </div>
+                                                )}
                                             </div>
-                                            <div>
+                                            <div className="relative">
                                                 <label className="block text-sm font-bold text-gray-700 mb-1">{t.studyingProcess.modal.trial.lastName}</label>
                                                 <input
                                                     type="text"
-                                                    required
                                                     value={formData.lastName}
-                                                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                                                    className="w-full bg-gray-50 border-2 border-gray-900 rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all"
+                                                    onChange={(e) => {
+                                                        setFormData({ ...formData, lastName: e.target.value });
+                                                        if (errors.lastName) setErrors({ ...errors, lastName: '' });
+                                                    }}
+                                                    className={`w-full bg-gray-50 border-2 ${errors.lastName ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all`}
                                                     placeholder="Doe"
                                                 />
+                                                {errors.lastName && (
+                                                    <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                                                        <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                                                        <span className="text-[10px] font-black">{t.validation[errors.lastName as keyof typeof t.validation]}</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
-                                        <div>
+                                        <div className="relative">
                                             <label className="block text-sm font-bold text-gray-700 mb-1">{t.studyingProcess.modal.trial.email}</label>
                                             <input
                                                 type="email"
-                                                required
                                                 value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full bg-gray-50 border-2 border-gray-900 rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all"
+                                                onChange={(e) => {
+                                                    setFormData({ ...formData, email: e.target.value });
+                                                    if (errors.email) setErrors({ ...errors, email: '' });
+                                                }}
+                                                className={`w-full bg-gray-50 border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:border-blue-500 focus:outline-none font-medium transition-all`}
                                                 placeholder="john@example.com"
                                             />
+                                            {errors.email && (
+                                                <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
+                                                    <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
+                                                    <span className="text-[10px] font-black">{t.validation[errors.email as keyof typeof t.validation]}</span>
+                                                </div>
+                                            )}
                                         </div>
                                         <div>
                                             <label className="block text-sm font-bold text-gray-700 mb-1">{t.studyingProcess.modal.trial.phone} <span className="text-gray-400 font-normal">{t.studyingProcess.modal.trial.optional}</span></label>
