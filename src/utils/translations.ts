@@ -100,7 +100,7 @@ export const translations: Record<Language, any> = {
         visual: { name: "Visual", desc: "Enhance spatial and visual learning" }
       },
       growingRevenue: "Learn from Real People",
-      growingRevenueDesc: "Courses made by practitioners, not corporations.",
+      growingRevenueDesc: "Courses built by experience, not corporations.",
       bestInClass: "Practical Skills",
       bestInClassDesc: "Apply what you learn immediately in real situations.",
       competitiveAdvantage: "Flexible Learning",
@@ -795,7 +795,7 @@ export const translations: Record<Language, any> = {
       stayOnPath: "Likite kelyje: spauskite eilės tvarka",
       gamesDisclaimer: "Šie žaidimai skirti tik pramogai ir demonstracijai! Jie nesusiję su mūsų tikraisiais kursais - tai tik žaismingas būdas parodyti, kaip gali atrodyti interaktyvus mokymasis. Tikri kursai yra daug labiau struktūruoti ir edukaciniai. 🎮",
       growingRevenue: "Mokykis iš tikrų žmonių",
-      growingRevenueDesc: "Kursai, kuriuos kuria praktikai, o ne korporacijos.",
+      growingRevenueDesc: "Kursai, kuriuos kuria patirtis, o ne korporacijos.",
       bestInClass: "Praktiniai įgūdžiai",
       bestInClassDesc: "Pritaikyk tai, ką išmokai, realiose situacijose iškart.",
       competitiveAdvantage: "Lankstus mokymasis",
@@ -1468,7 +1468,7 @@ export const translations: Record<Language, any> = {
         visual: { name: "Визуализация", desc: "Развивайте пространственное восприятие и вкус" }
       },
       growingRevenue: "Учитесь у реальных людей",
-      growingRevenueDesc: "Курсы созданы практиками, а не корпорациями.",
+      growingRevenueDesc: "Курсы созданы опытом, а не корпорациями.",
       bestInClass: "Практические навыки",
       bestInClassDesc: "Применяйте знания сразу в реальных ситуациях.",
       competitiveAdvantage: "Гибкое обучение",
