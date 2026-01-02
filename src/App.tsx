@@ -11,7 +11,6 @@ import StudyingProcess from './components/StudyingProcess';
 import Contact from './components/Contact';
 import Blog from './pages/Blog';
 import BlogPostRouter from './pages/BlogPostRouter';
-import Seed from './pages/Seed';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
 import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
@@ -46,7 +45,6 @@ function App() {
             <Route path="/contact" element={<Layout showFooter={false}><Contact /></Layout>} />
             <Route path="/blog" element={<Layout><Blog /></Layout>} />
             <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
-            <Route path="/seed" element={<Seed />} />
           </Routes>
           <CookieNotice />
           <LanguageAvailabilityPopup />
