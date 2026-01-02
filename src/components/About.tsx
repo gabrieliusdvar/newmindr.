@@ -597,7 +597,7 @@ export default function About() {
             onClick={e => e.stopPropagation()}
           >
             <div className="bg-[#2d2d2d] px-4 py-2 flex items-center justify-between select-none">
-              <span className="text-sm text-gray-400">programs.tsx — newmindr</span>
+              <span className="text-sm text-gray-400">programs.tsx - newmindr</span>
               <div className="flex gap-2">
                 <button onClick={() => setWindowState(windowState === 'minimized' ? 'normal' : 'minimized')} className="hover:bg-[#444] p-1 rounded"><Minus className="w-4 h-4" /></button>
                 <button onClick={() => setWindowState(windowState === 'maximized' ? 'normal' : 'maximized')} className="hover:bg-[#444] p-1 rounded"><Square className="w-3 h-3" /></button>

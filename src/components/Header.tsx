@@ -86,7 +86,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-x-0 top-[66px] bottom-0 bg-white z-40 transition-transform duration-300 lg:hidden overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-x-0 top-[64px] bottom-0 bg-white z-40 transition-transform duration-300 lg:hidden overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div className="p-6 flex flex-col gap-6">
