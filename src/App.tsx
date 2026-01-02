@@ -10,8 +10,7 @@ import About from './components/About';
 import StudyingProcess from './components/StudyingProcess';
 import Contact from './components/Contact';
 import Blog from './pages/Blog';
-import ArticleParents from './pages/articles/ArticleParents';
-import ArticleTeens from './pages/articles/ArticleTeens';
+import BlogPostRouter from './pages/BlogPostRouter';
 import Seed from './pages/Seed';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
@@ -46,8 +45,7 @@ function App() {
             <Route path="/process" element={<Layout><StudyingProcess /></Layout>} />
             <Route path="/contact" element={<Layout showFooter={false}><Contact /></Layout>} />
             <Route path="/blog" element={<Layout><Blog /></Layout>} />
-            <Route path="/blog/parents-guide" element={<Layout showFooter={false}><ArticleParents /></Layout>} />
-            <Route path="/blog/student-hacks" element={<Layout showFooter={false}><ArticleTeens /></Layout>} />
+            <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
             <Route path="/seed" element={<Seed />} />
           </Routes>
           <CookieNotice />

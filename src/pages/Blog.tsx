@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Sparkles, BookOpen, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { supabase } from '../utils/supabase';
@@ -43,7 +44,7 @@ export default function Blog() {
                         }),
                         likes: item.likes,
                         comments: item.comments,
-                        url: item.url
+                        url: `/blog/${item.id}`
                     })) as BlogPost[];
                     setFetchedPosts(mappedPosts);
                 } else {
@@ -96,7 +97,7 @@ export default function Blog() {
 
                 {/* Featured Post */}
                 {featuredPost && (
-                    <div className="mb-24 group cursor-pointer">
+                    <Link to={featuredPost.url} className="mb-24 group cursor-pointer block">
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                             <div className="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-emerald-900/10">
                                 <div className="absolute inset-0 bg-gray-800 animate-pulse" />
@@ -128,13 +129,13 @@ export default function Blog() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 )}
 
                 {/* Grid Posts */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                     {gridPosts.map((post) => (
-                        <article key={post.id} className="group flex flex-col gap-6 cursor-pointer">
+                        <Link to={post.url} key={post.id} className="group flex flex-col gap-6 cursor-pointer">
                             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gray-900">
                                 <img
                                     src={post.image}
@@ -163,7 +164,7 @@ export default function Blog() {
                                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </div>
-                        </article>
+                        </Link>
                     ))}
                 </div>
 
