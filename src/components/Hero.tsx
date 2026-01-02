@@ -91,7 +91,7 @@ export default function Hero() {
                   {/* Line 3 */}
                   <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 3xl:gap-4 flex-wrap">
                     <span
-                      className={`text-white block ${['lt', 'ru'].includes(language) ? 'text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl 3xl:text-8xl' : 'text-5xl xs:text-6xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-8xl 3xl:text-9xl'} py-1`}
+                      className={`text-white block ${['lt', 'ru'].includes(language) ? 'text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl 3xl:text-8xl' : 'text-5xl xs:text-6xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-8xl 3xl:text-9xl'} py-1 whitespace-nowrap`}
                       style={{
                         WebkitTextStroke: '1px #111827',
                         filter: 'drop-shadow(2px 2px 0px #10B981)',
