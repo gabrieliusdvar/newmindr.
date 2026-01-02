@@ -71,3 +71,29 @@ For now, we have implemented the **structure** manually in `translations.ts`.
 -   **Lithuanian**: Points to `@newmindr_lt`.
 
 This allows the UI to work correctly immediately. When you build the backend integration, you simply replace the data source in `Blog.tsx`.
+
+## 5. Setup Instructions (How to use the files created)
+
+We have created the necessary files for you to start using Supabase immediately:
+
+1.  **Run SQL Migration**:
+    *   Open your [Supabase Dashboard](https://supabase.com/dashboard).
+    *   Go to **SQL Editor**.
+    *   Copy the content of \`supabase_social_posts.sql\` (found in your project root) and run it. This creates the database table.
+
+2.  **Verify Environment Variables**:
+    *   Ensure your \`.env\` file has your project keys:
+        ```env
+        VITE_SUPABASE_URL=your_project_url
+        VITE_SUPABASE_ANON_KEY=your_anon_key
+        ```
+
+3.  **Seed Initial Data**:
+    *   We created a hidden utility page to populate your database with the current static content.
+    *   Run your app (`npm run dev`).
+    *   Navigate to **http://localhost:5173/seed**.
+    *   Click **Run Seed Script**. This will copy all 3 languages' posts into your database.
+
+4.  **Test**:
+    *   Go back to the **Blog** page.
+    *   It will now try to fetch from Supabase. If you added new rows in the database, they will appear here automatically!

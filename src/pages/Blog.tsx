@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Youtube, Facebook, Share2, MessageCircle, Heart, ExternalLink, Loader2, Play, Camera, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { supabase } from '../utils/supabase';
 
 interface BlogPost {
     id: number;
@@ -19,8 +20,40 @@ export default function Blog() {
     const [activeCategory, setActiveCategory] = useState('all');
     const [isScanning, setIsScanning] = useState(true);
 
-    // Get posts from translations
-    const posts: BlogPost[] = (t.blog?.posts || []) as BlogPost[];
+    const [fetchedPosts, setFetchedPosts] = useState<BlogPost[]>([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const { data } = await supabase
+                .from('social_posts')
+                .select('*')
+                .eq('language', language)
+                .order('published_at', { ascending: false });
+
+            if (data && data.length > 0) {
+                const mappedPosts = data.map((item: any) => ({
+                    id: item.id,
+                    platform: item.platform,
+                    title: item.title,
+                    content: item.content,
+                    image: item.image_url,
+                    date: new Date(item.published_at).toLocaleDateString(),
+                    likes: item.likes,
+                    comments: item.comments,
+                    url: item.url
+                })) as BlogPost[];
+                setFetchedPosts(mappedPosts);
+            } else {
+                setFetchedPosts([]);
+            }
+        };
+        fetchPosts();
+    }, [language]);
+
+    // Use fetched posts if available, otherwise use static translations
+    const posts: BlogPost[] = fetchedPosts.length > 0
+        ? fetchedPosts
+        : (t.blog?.posts || []) as BlogPost[];
 
     useEffect(() => {
         const timer = setTimeout(() => setIsScanning(false), 2000);
