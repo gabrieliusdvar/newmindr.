@@ -1023,7 +1023,7 @@ export const translations: Record<Language, any> = {
       other: "BENDRAS KLAUSIMAS",
       submitButton: "Pradėkime!",
       successTitle: "Žinutė Sėkmingai Išsiųsta!",
-      successMessage: "Ačiū, kad susisiekėte! Atsakysime kuo greičiau.",
+      successMessage: "Ačiū, kad susisiekėte! Atsakysime kiek įmanoma greičiau.",
       sendAnother: "Siųsti Kitą Žinutę"
     },
     studyingProcess: {
