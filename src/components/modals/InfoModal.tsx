@@ -172,7 +172,7 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                         <div className="flex gap-4">
                             {[
                                 { icon: Facebook, color: 'hover:bg-indigo-600', url: 'https://www.facebook.com/newmindr' },
-                                { icon: Instagram, color: 'hover:bg-pink-500', url: 'https://www.instagram.com/newmindr' },
+                                { icon: Instagram, color: 'hover:bg-pink-500', url: language === 'lt' ? 'https://www.instagram.com/newmindr.lt/' : 'https://www.instagram.com/newmindr' },
                                 { icon: Youtube, color: 'hover:bg-red-600', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
                                 {
                                     icon: (props: any) => (
