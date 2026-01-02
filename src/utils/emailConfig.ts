@@ -22,10 +22,10 @@ export const STRIPE_LINKS = {
         TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
     },
     RU: {
-        BASIC_MONTHLY: 'https://buy.stripe.com/14AfZgfDg6jg310ax3es003',
-        PRO_MONTHLY: 'https://buy.stripe.com/cNicN4fDg6jgbxw6gNes002',
-        BASIC_YEARLY: 'https://buy.stripe.com/eVq14m0ImbDAfNMbB7es000',
-        PRO_YEARLY: 'https://buy.stripe.com/bJe28qbn09vs1WWcFbes001',
+        BASIC_MONTHLY: 'https://buy.stripe.com/00w8wO3UycHE3106gNes00b',
+        PRO_MONTHLY: 'https://buy.stripe.com/4gM00i9eSfTQbxwax3es00c',
+        BASIC_YEARLY: 'https://buy.stripe.com/cNi7sK0ImfTQatsgVres00d',
+        PRO_YEARLY: 'https://buy.stripe.com/fZu8wO62G4b86dc0Wtes00e',
         TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
     }
 };
