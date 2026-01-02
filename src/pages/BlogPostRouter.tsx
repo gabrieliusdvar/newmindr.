@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../utils/supabase';
+import ArticleRise from './articles/ArticleRise';
 import ArticleParents from './articles/ArticleParents';
 import ArticleTeens from './articles/ArticleTeens';
 import ArticleGeneric from './articles/ArticleGeneric';
@@ -26,8 +27,6 @@ export default function BlogPostRouter() {
 
             if (error || !data) {
                 console.error('Post not found', error);
-                // Handle 404 or redirect
-                // navigate('/blog'); 
             } else {
                 setPost(data);
             }
@@ -56,17 +55,15 @@ export default function BlogPostRouter() {
         );
     }
 
-    // Router Logic based on ID or Platform
-    // We bind ID 1 to Parents, ID 2 to Teens
-    // In a real app, you might add a 'template_type' column to the DB
-
-    if (post.id === 1 || post.title.includes('Vadovėliai') || post.platform === 'Parents') {
-        return <ArticleParents />;
+    // Router Logic
+    // ID 1 (The Setup) -> Interactive Rise Article
+    if (post.id === 1 || post.title.includes('Interactive') || post.platform === 'Insights') {
+        return <ArticleRise />;
     }
 
-    if (post.id === 2 || post.title.includes('nulaužti') || post.platform === 'Students') {
-        return <ArticleTeens />;
-    }
+    // Fallbacks for older data if it exists
+    if (post.platform === 'Parents') return <ArticleParents />;
+    if (post.platform === 'Students') return <ArticleTeens />;
 
     return <ArticleGeneric post={post} />;
 }

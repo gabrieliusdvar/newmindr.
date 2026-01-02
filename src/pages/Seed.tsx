@@ -13,6 +13,10 @@ export default function Seed() {
         setLog([]);
         addLog('Starting seed process...');
 
+        // Clear existing data
+        addLog('Cleaning old data...');
+        await supabase.from('social_posts').delete().neq('id', 0); // Deletes all rows where id != 0
+
         const languages = ['en', 'lt', 'ru'] as const;
 
         try {

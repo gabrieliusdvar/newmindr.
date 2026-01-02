@@ -695,25 +695,14 @@ export const translations: Record<Language, any> = {
       posts: [
         {
           id: 1,
-          platform: "Parents",
-          title: "Why Textbooks Are Failing",
-          content: "Discover why interactive learning boosts engagement by 400% and makes retention effortless.",
-          image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop",
-          date: "Dec 30, 2025",
-          likes: "2.4k",
-          comments: "142",
-          url: "/blog/parents-guide"
-        },
-        {
-          id: 2,
-          platform: "Students",
-          title: "Hack Your Brain Speed",
-          content: "Stop grinding. Start leveling up. The old system is laggy. Here is the patch.",
-          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
-          date: "Dec 28, 2025",
-          likes: "45.2k",
-          comments: "890",
-          url: "/blog/student-hacks"
+          platform: "Insights",
+          title: "Why Interactive Learning Is On The Rise",
+          content: "70% better retention. 300% more engagement. The data is clear: static textbook learning is obsolete. Here is the future.",
+          image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format&fit=crop",
+          date: "Jan 2, 2026",
+          likes: "12k",
+          comments: "340",
+          url: "/blog/interactive-rise"
         }
       ]
     }
@@ -1412,25 +1401,14 @@ export const translations: Record<Language, any> = {
       posts: [
         {
           id: 1,
-          platform: "Tėvams",
-          title: "Kodėl vadovėliai neveikia",
-          content: "Sužinokite, kodėl interaktyvus mokymasis didina įsitraukimą 400% ir leidžia mokytis be pastangų.",
-          image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop",
-          date: "Gru 30, 2025",
-          likes: "2.4k",
-          comments: "142",
-          url: "/blog/parents-guide"
-        },
-        {
-          id: 2,
-          platform: "Moksleiviams",
-          title: "Kaip 'nulaužti' mokymosi greitį",
-          content: "Nustok kalti. Pradėk level-upinti. Senoji sistema lagina. Štai naujas patch'as.",
-          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
-          date: "Gru 28, 2025",
-          likes: "45.2k",
-          comments: "890",
-          url: "/blog/student-hacks"
+          platform: "Įžvalgos",
+          title: "Kodėl interaktyvus mokymasis populiarėja",
+          content: "70% geresnis inforamcijos įsiminimas. 300% didesnis įsitraukimas. Vadovėliai – pasenusi klasika. Štai ateitis.",
+          image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format&fit=crop",
+          date: "Sau 2, 2026",
+          likes: "12k",
+          comments: "340",
+          url: "/blog/interactive-rise"
         }
       ]
     }
