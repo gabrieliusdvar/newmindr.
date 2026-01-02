@@ -191,7 +191,7 @@ export default function Footer() {
                       </svg>
                     ),
                     color: 'hover:bg-black',
-                    url: 'https://www.tiktok.com/@newmindr'
+                    url: language === 'lt' ? 'https://www.tiktok.com/@newmindr' : 'https://www.tiktok.com/@newmindr.com'
                   },
                 ].map((social, i) => (
                   <a
