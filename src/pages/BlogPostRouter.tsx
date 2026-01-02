@@ -13,28 +13,34 @@ export default function BlogPostRouter() {
 
     // We fetch from local translations now
     const posts = t.blog?.posts || [];
-    const postId = Number(id);
 
-    const post = posts.find((p: any) => p.id === postId);
+    // Improved Lookup: Checks ID or URL Slug
+    const post = posts.find((p: any) =>
+        String(p.id) === id ||
+        (p.url && p.url.endsWith(id || ''))
+    );
 
     if (!post) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-black text-white">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">404</h1>
-                    <p className="text-gray-400">Article not found.</p>
+                    <p className="text-gray-400">Article not found: {id}</p>
+                    <button onClick={() => window.history.back()} className="mt-4 text-emerald-500 hover:underline">
+                        Go Back
+                    </button>
                 </div>
             </div>
         );
     }
 
     // Router Logic
-    // ID 1 (The Setup) -> Interactive Rise Article (The requested one)
-    if (post.id === 1 || post.title.includes('Interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos') {
+    // ID 1 (The Setup) or Interactive Slug -> Interactive Rise Article
+    if (post.id === 1 || post.url.includes('interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos' || post.platform === 'Инсайты') {
         return <ArticleRise />;
     }
 
-    // Fallbacks for older/different data if added locally later
+    // Fallbacks for older protocols
     if (post.platform === 'Parents') return <ArticleParents />;
     if (post.platform === 'Students') return <ArticleTeens />;
 
