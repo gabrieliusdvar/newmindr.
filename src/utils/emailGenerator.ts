@@ -73,6 +73,95 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
         return newsletterHtml.replace('</body></html>', `${footerHtml}</body></html>`);
     }
 
+    // CUSTOM CONTACT TEMPLATE
+    if (type === 'contact') {
+        const colors = {
+            emerald: '#34d399',
+            black: '#111111',
+            white: '#ffffff',
+            gray: '#f3f4f6',
+            yellow: '#fcd34d'
+        };
+
+        return `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; background-color: ${colors.gray}; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" style="padding: 40px 10px;">
+                        <table width="600" border="4" cellspacing="0" cellpadding="0" style="background: ${colors.white}; border-color: ${colors.black}; border-style: solid; box-shadow: 12px 12px 0px 0px ${colors.black};">
+                            <!-- Header -->
+                            <tr>
+                                <td style="background-color: ${colors.emerald}; padding: 40px 30px; border-bottom: 4px solid ${colors.black}; text-align: center;">
+                                    <h1 style="margin: 0; font-size: 32px; font-weight: 900; color: ${colors.black}; text-transform: uppercase; letter-spacing: -1px;">
+                                        ${t.title}
+                                    </h1>
+                                </td>
+                            </tr>
+                            
+                            <!-- Content -->
+                            <tr>
+                                <td style="padding: 40px 30px;">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <!-- Sender Info -->
+                                        <tr>
+                                            <td style="padding-bottom: 30px;">
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: ${colors.gray}; border: 2px solid ${colors.black}; border-radius: 12px;">
+                                                    <tr>
+                                                        <td width="30%" style="font-weight: 900; text-transform: uppercase; font-size: 12px; color: #666;">${t.name}</td>
+                                                        <td style="font-weight: 700; font-size: 16px; color: ${colors.black};">${data.name}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-weight: 900; text-transform: uppercase; font-size: 12px; color: #666;">${t.email}</td>
+                                                        <td style="font-weight: 700; font-size: 16px; color: ${colors.black};"><a href="mailto:${data.email}" style="color: #3b82f6; text-decoration: none;">${data.email}</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Help Options -->
+                                        <tr>
+                                            <td style="padding-bottom: 30px;">
+                                                <p style="margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase; font-size: 12px; color: #666;">${t.help}</p>
+                                                <div style="background-color: ${colors.yellow}; padding: 10px 15px; border: 2px solid ${colors.black}; border-radius: 8px; display: inline-block; font-weight: 900; font-size: 14px; color: ${colors.black};">
+                                                    ${data.helpOptions || 'General'}
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Message -->
+                                        <tr>
+                                            <td>
+                                                <p style="margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase; font-size: 12px; color: #666;">${t.message}</p>
+                                                <div style="background-color: ${colors.white}; padding: 20px; border: 2px solid ${colors.black}; border-radius: 12px; font-size: 16px; line-height: 1.6; color: ${colors.black}; white-space: pre-wrap;">${data.message}</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- Footer -->
+                            <tr>
+                                <td style="background-color: ${colors.black}; padding: 30px; text-align: center;">
+                                    <p style="margin: 0; color: ${colors.white}; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">
+                                        ${t.footer}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+        </html>
+        `;
+    }
+
     // Theme colors
     const colors = {
         primary: '#3b82f6', // Trial (Blue)

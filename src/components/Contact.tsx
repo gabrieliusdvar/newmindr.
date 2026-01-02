@@ -94,13 +94,25 @@ export default function Contact() {
     try {
       const { sendEmail } = await import('../utils/emailService');
 
+      const helpLabels = formData.helpOptions.map(opt => {
+        const option = [
+          { key: 'websiteDesign', label: t.contact.websiteDesign },
+          { key: 'uxDesign', label: t.contact.uxDesign },
+          { key: 'userResearch', label: t.contact.userResearch },
+          { key: 'contentCreation', label: t.contact.contentCreation },
+          { key: 'strategyConsulting', label: t.contact.strategyConsulting },
+          { key: 'other', label: t.contact.other },
+        ].find(o => o.key === opt);
+        return option ? option.label : opt;
+      });
+
       await sendEmail({
         to: 'hello@newmindr.com',
         subject: t.emails.contact.subject.replace('{name}', formData.name),
         html: generateEmailHtml(language, 'contact', {
           name: formData.name,
           email: formData.email,
-          helpOptions: formData.helpOptions.join(', '),
+          helpOptions: helpLabels.join(', '),
           message: formData.message
         })
       });
