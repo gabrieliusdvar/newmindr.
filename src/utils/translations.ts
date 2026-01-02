@@ -1712,7 +1712,7 @@ export const translations: Record<Language, any> = {
     },
     studyingProcess: {
       howItWorks: "Как это работает",
-      learningRoadmap: "ДОРОЖНАЯ КАРТА ОБУЧЕНИЯ",
+      learningRoadmap: "ВАШ ПУТЬ В ОБУЧЕНИИ",
       interactiveJourney: "Забудьте о скучных лекциях. Это интерактивный путь под вашим контролем.",
       steps: {
         step1: {
