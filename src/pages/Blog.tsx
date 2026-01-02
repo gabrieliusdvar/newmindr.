@@ -32,7 +32,7 @@ export default function Blog() {
         : posts.filter(p => p.platform === activeCategory);
 
     const categories = [
-        { id: 'all', label: language === 'ru' ? 'ВСЯ ЛЕНТА' : 'THE WHOLE FEED', icon: Globe },
+        { id: 'all', label: language === 'ru' ? 'ВСЯ ЛЕНТА' : language === 'lt' ? 'VISAS SRAUTAS' : 'THE WHOLE FEED', icon: Globe },
         { id: 'instagram', label: 'INSTAGRAM', icon: Instagram },
         { id: 'youtube', label: 'YOUTUBE', icon: Youtube },
         { id: 'tiktok', label: 'TIKTOK', icon: Camera },

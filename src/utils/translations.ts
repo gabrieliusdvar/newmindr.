@@ -702,7 +702,7 @@ export const translations: Record<Language, any> = {
           date: "2h ago",
           likes: "1.2k",
           comments: "48",
-          url: "#"
+          url: "https://instagram.com/newmindr"
         },
         {
           id: 2,
@@ -713,7 +713,7 @@ export const translations: Record<Language, any> = {
           date: "5h ago",
           likes: "850",
           comments: "124",
-          url: "#"
+          url: "https://youtube.com/@newmindr"
         },
         {
           id: 3,
@@ -724,7 +724,7 @@ export const translations: Record<Language, any> = {
           date: "1d ago",
           likes: "45.2k",
           comments: "890",
-          url: "#"
+          url: "https://tiktok.com/@newmindr.com"
         },
         {
           id: 4,
@@ -735,7 +735,7 @@ export const translations: Record<Language, any> = {
           date: "2d ago",
           likes: "420",
           comments: "32",
-          url: "#"
+          url: "https://facebook.com/newmindr"
         },
         {
           id: 5,
@@ -746,7 +746,7 @@ export const translations: Record<Language, any> = {
           date: "3d ago",
           likes: "2.5k",
           comments: "156",
-          url: "#"
+          url: "https://instagram.com/newmindr"
         },
         {
           id: 6,
@@ -757,7 +757,7 @@ export const translations: Record<Language, any> = {
           date: "4d ago",
           likes: "1.8k",
           comments: "210",
-          url: "#"
+          url: "https://youtube.com/@newmindr"
         }
       ]
     }
@@ -1447,78 +1447,78 @@ export const translations: Record<Language, any> = {
     },
     blog: {
       title: "NEWMINDR",
-      subtitle: "Real-time updates, student wins, and deep dives. Automatically synchronized from across our digital world.",
-      scanning: "SCANNING NETWORKS...",
-      pulse: "SOCIAL PULSE / 100% RAW",
-      activeFeed: "ACTIVE_FEED",
-      distributed: "DISTRIBUTED",
-      loadMore: "Synchronizing more updates...",
+      subtitle: "Naujienos realiuoju laiku, mokinių pergalės ir gilios įžvalgos. Automatiškai sinchronizuojama iš viso mūsų skaitmeninio pasaulio.",
+      scanning: "NUSKAITOMI TINKLAI...",
+      pulse: "SOCIALINIS PULSAS / 100% RAW",
+      activeFeed: "AKTYVUS SRAUTAS",
+      distributed: "PLATINAMA",
+      loadMore: "Sinchronizuojama daugiau naujienų...",
       posts: [
         {
           id: 1,
           platform: "instagram",
-          title: "Our new AI module is LIVE!",
-          content: "We just dropped the most interactive AI course of 2024. Check the link in bio to start your first mission.",
+          title: "Mūsų naujas DI modulis jau ČIA!",
+          content: "Pats interaktyviausias 2024-ųjų DI kursas. Spausk nuorodą bio ir pradėk pirmąją misiją.",
           image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
-          date: "2h ago",
+          date: "Prieš 2 val.",
           likes: "1.2k",
           comments: "48",
-          url: "#"
+          url: "https://instagram.com/newmindr.lt"
         },
         {
           id: 2,
           platform: "youtube",
-          title: "How we built NewMindr",
-          content: "A deep dive into our infrastructure and why interactive learning is the future of education.",
+          title: "Kaip mes kūrėme NewMindr",
+          content: "Gilus žvilgsnis į mūsų infrastruktūrą ir kodėl interaktyvus mokymasis yra ateitis.",
           image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
-          date: "5h ago",
+          date: "Prieš 5 val.",
           likes: "850",
           comments: "124",
-          url: "#"
+          url: "https://youtube.com/@newmindr_LT"
         },
         {
           id: 3,
           platform: "tiktok",
-          title: "Wait for the ending... 😲",
-          content: "Students reacting to our Logic Quest final boss. Full immersive mode activated.",
+          title: "Laukite pabaigos... 😲",
+          content: "Mokiniai reaguoja į Logic Quest finalinį bosą. Pilnas įsitraukimas.",
           image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
-          date: "1d ago",
+          date: "Prieš 1 d.",
           likes: "45.2k",
           comments: "890",
-          url: "#"
+          url: "https://tiktok.com/@newmindr_lt"
         },
         {
           id: 4,
           platform: "facebook",
-          title: "Our Community is Growing!",
-          content: "Join the discussion on our official group. Over 5,000 parents and students sharing their journeys.",
+          title: "Mūsų bendruomenė auga!",
+          content: "Prisijunk prie diskusijų mūsų oficialioje grupėje. Daugiau nei 5000 tėvų ir mokinių.",
           image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
-          date: "2d ago",
+          date: "Prieš 2 d.",
           likes: "420",
           comments: "32",
-          url: "#"
+          url: "https://facebook.com/newmindr"
         },
         {
           id: 5,
           platform: "instagram",
-          title: "Student Spotlight: Leo",
-          content: "At just 14, Leo built his first startup idea using our Leadership module. Proud moment!",
+          title: "Mokinio istorija: Leo",
+          content: "Būdamas tik 14-os, Leo sukūrė savo pirmąją startuolio idėją naudodamas Lyderystės modulį. Didžiuojamės!",
           image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
-          date: "3d ago",
+          date: "Prieš 3 d.",
           likes: "2.5k",
           comments: "156",
-          url: "#"
+          url: "https://instagram.com/newmindr.lt"
         },
         {
           id: 6,
           platform: "youtube",
-          title: "Weekly Community Mission",
-          content: "Global leaderboard is heating up! See who won this weeks $500 Creative Spark challenge.",
+          title: "Savaitinė Bendruomenės Misija",
+          content: "Pasaulinė lyderių lentelė kaista! Pažiūrėk, kas laimėjo šios savaitės 500€ Kūrybinės Kibirkšties iššūkį.",
           image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
-          date: "4d ago",
+          date: "Prieš 4 d.",
           likes: "1.8k",
           comments: "210",
-          url: "#"
+          url: "https://youtube.com/@newmindr_LT"
         }
       ]
     }
@@ -2224,7 +2224,7 @@ export const translations: Record<Language, any> = {
           date: "2ч назад",
           likes: "1.2k",
           comments: "48",
-          url: "#"
+          url: "https://instagram.com/newmindr"
         },
         {
           id: 2,
@@ -2235,7 +2235,7 @@ export const translations: Record<Language, any> = {
           date: "5ч назад",
           likes: "850",
           comments: "124",
-          url: "#"
+          url: "https://youtube.com/@newmindr"
         },
         {
           id: 3,
@@ -2246,7 +2246,7 @@ export const translations: Record<Language, any> = {
           date: "1д назад",
           likes: "45.2k",
           comments: "890",
-          url: "#"
+          url: "https://tiktok.com/@newmindr.com"
         },
         {
           id: 4,
@@ -2257,7 +2257,7 @@ export const translations: Record<Language, any> = {
           date: "2д назад",
           likes: "420",
           comments: "32",
-          url: "#"
+          url: "https://facebook.com/newmindr"
         },
         {
           id: 5,
@@ -2268,7 +2268,7 @@ export const translations: Record<Language, any> = {
           date: "3д назад",
           likes: "2.5k",
           comments: "156",
-          url: "#"
+          url: "https://instagram.com/newmindr"
         },
         {
           id: 6,
@@ -2279,7 +2279,7 @@ export const translations: Record<Language, any> = {
           date: "4д назад",
           likes: "1.8k",
           comments: "210",
-          url: "#"
+          url: "https://youtube.com/@newmindr"
         }
       ]
     }
