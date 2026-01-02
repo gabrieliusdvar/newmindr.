@@ -1500,7 +1500,7 @@ export const translations: Record<Language, any> = {
       title: "БУДУЩЕЕ ОБРАЗОВАНИЯ",
       subtitle: "ЭТО",
       education: "ИНТЕРАКТИВ",
-      description: "Живые сессии, умные вызовы и игровой дизайн — для каждого этапа роста.",
+      description: "Живые сессии, интересные вызовы и игровой дизайн - для каждого этапа роста.",
       virtualClass: "Юные гении",
       virtualClassDesc: "Кликай, играй, спрашивай, открывай. Магия обучения.",
       studentMonitoring: "Творцы",
