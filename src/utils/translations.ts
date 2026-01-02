@@ -686,78 +686,34 @@ export const translations: Record<Language, any> = {
     },
     blog: {
       title: "NEWMINDR",
-      subtitle: "Real-time updates, student wins, and deep dives. Automatically synchronized from across our digital world.",
-      scanning: "SCANNING NETWORKS...",
-      pulse: "SOCIAL PULSE / 100% RAW",
-      activeFeed: "ACTIVE_FEED",
+      subtitle: "More than just learning. It's an evolution.",
+      scanning: "LATEST UPDATES...",
+      pulse: "FEATURED STORIES",
+      activeFeed: "FEED",
       distributed: "DISTRIBUTED",
-      loadMore: "Synchronizing more updates...",
+      loadMore: "Loading more...",
       posts: [
         {
           id: 1,
-          platform: "instagram",
-          title: "Our new AI module is LIVE!",
-          content: "We just dropped the most interactive AI course of 2024. Check the link in bio to start your first mission.",
-          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
-          date: "2h ago",
-          likes: "1.2k",
-          comments: "48",
-          url: "https://instagram.com/newmindr"
+          platform: "Parents",
+          title: "Why Textbooks Are Failing",
+          content: "Discover why interactive learning boosts engagement by 400% and makes retention effortless.",
+          image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop",
+          date: "Dec 30, 2025",
+          likes: "2.4k",
+          comments: "142",
+          url: "/blog/parents-guide"
         },
         {
           id: 2,
-          platform: "youtube",
-          title: "How we built NewMindr",
-          content: "A deep dive into our infrastructure and why interactive learning is the future of education.",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
-          date: "5h ago",
-          likes: "850",
-          comments: "124",
-          url: "https://youtube.com/@newmindr"
-        },
-        {
-          id: 3,
-          platform: "tiktok",
-          title: "Wait for the ending... 😲",
-          content: "Students reacting to our Logic Quest final boss. Full immersive mode activated.",
+          platform: "Students",
+          title: "Hack Your Brain Speed",
+          content: "Stop grinding. Start leveling up. The old system is laggy. Here is the patch.",
           image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
-          date: "1d ago",
+          date: "Dec 28, 2025",
           likes: "45.2k",
           comments: "890",
-          url: "https://tiktok.com/@newmindr.com"
-        },
-        {
-          id: 4,
-          platform: "facebook",
-          title: "Our Community is Growing!",
-          content: "Join the discussion on our official group. Over 5,000 parents and students sharing their journeys.",
-          image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
-          date: "2d ago",
-          likes: "420",
-          comments: "32",
-          url: "https://facebook.com/newmindr"
-        },
-        {
-          id: 5,
-          platform: "instagram",
-          title: "Student Spotlight: Leo",
-          content: "At just 14, Leo built his first startup idea using our Leadership module. Proud moment!",
-          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
-          date: "3d ago",
-          likes: "2.5k",
-          comments: "156",
-          url: "https://instagram.com/newmindr"
-        },
-        {
-          id: 6,
-          platform: "youtube",
-          title: "Weekly Community Mission",
-          content: "Global leaderboard is heating up! See who won this weeks $500 Creative Spark challenge.",
-          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
-          date: "4d ago",
-          likes: "1.8k",
-          comments: "210",
-          url: "https://youtube.com/@newmindr"
+          url: "/blog/student-hacks"
         }
       ]
     }
@@ -1447,7 +1403,7 @@ export const translations: Record<Language, any> = {
     },
     blog: {
       title: "NEWMINDR",
-      subtitle: "Naujienos realiuoju laiku, mokinių pergalės ir gilios įžvalgos. Automatiškai sinchronizuojama iš viso mūsų skaitmeninio pasaulio.",
+      subtitle: "Daugiau nei mokymasis. Tai evoliucija.",
       scanning: "NUSKAITOMI TINKLAI...",
       pulse: "SOCIALINIS PULSAS / 100% RAW",
       activeFeed: "AKTYVUS SRAUTAS",
@@ -1456,69 +1412,25 @@ export const translations: Record<Language, any> = {
       posts: [
         {
           id: 1,
-          platform: "instagram",
-          title: "Mūsų naujas DI modulis jau ČIA!",
-          content: "Pats interaktyviausias 2024-ųjų DI kursas. Spausk nuorodą bio ir pradėk pirmąją misiją.",
-          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
-          date: "Prieš 2 val.",
-          likes: "1.2k",
-          comments: "48",
-          url: "https://instagram.com/newmindr.lt"
+          platform: "Tėvams",
+          title: "Kodėl vadovėliai neveikia",
+          content: "Sužinokite, kodėl interaktyvus mokymasis didina įsitraukimą 400% ir leidžia mokytis be pastangų.",
+          image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop",
+          date: "Gru 30, 2025",
+          likes: "2.4k",
+          comments: "142",
+          url: "/blog/parents-guide"
         },
         {
           id: 2,
-          platform: "youtube",
-          title: "Kaip mes kūrėme NewMindr",
-          content: "Gilus žvilgsnis į mūsų infrastruktūrą ir kodėl interaktyvus mokymasis yra ateitis.",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
-          date: "Prieš 5 val.",
-          likes: "850",
-          comments: "124",
-          url: "https://youtube.com/@newmindr_LT"
-        },
-        {
-          id: 3,
-          platform: "tiktok",
-          title: "Laukite pabaigos... 😲",
-          content: "Mokiniai reaguoja į Logic Quest finalinį bosą. Pilnas įsitraukimas.",
+          platform: "Moksleiviams",
+          title: "Kaip 'nulaužti' mokymosi greitį",
+          content: "Nustok kalti. Pradėk level-upinti. Senoji sistema lagina. Štai naujas patch'as.",
           image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
-          date: "Prieš 1 d.",
+          date: "Gru 28, 2025",
           likes: "45.2k",
           comments: "890",
-          url: "https://tiktok.com/@newmindr_lt"
-        },
-        {
-          id: 4,
-          platform: "facebook",
-          title: "Mūsų bendruomenė auga!",
-          content: "Prisijunk prie diskusijų mūsų oficialioje grupėje. Daugiau nei 5000 tėvų ir mokinių.",
-          image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
-          date: "Prieš 2 d.",
-          likes: "420",
-          comments: "32",
-          url: "https://facebook.com/newmindr"
-        },
-        {
-          id: 5,
-          platform: "instagram",
-          title: "Mokinio istorija: Leo",
-          content: "Būdamas tik 14-os, Leo sukūrė savo pirmąją startuolio idėją naudodamas Lyderystės modulį. Didžiuojamės!",
-          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
-          date: "Prieš 3 d.",
-          likes: "2.5k",
-          comments: "156",
-          url: "https://instagram.com/newmindr.lt"
-        },
-        {
-          id: 6,
-          platform: "youtube",
-          title: "Savaitinė Bendruomenės Misija",
-          content: "Pasaulinė lyderių lentelė kaista! Pažiūrėk, kas laimėjo šios savaitės 500€ Kūrybinės Kibirkšties iššūkį.",
-          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
-          date: "Prieš 4 d.",
-          likes: "1.8k",
-          comments: "210",
-          url: "https://youtube.com/@newmindr_LT"
+          url: "/blog/student-hacks"
         }
       ]
     }
