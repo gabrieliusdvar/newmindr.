@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Phone, MessageCircle, Facebook, Instagram, Youtube, Check } from 'lucide-react';
+import { MapPin, MessageCircle, Facebook, Instagram, Youtube, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { generateEmailHtml } from '../utils/emailGenerator';
 
@@ -172,23 +172,6 @@ export default function Contact() {
               <p className="text-gray-900 font-black text-xs sm:text-sm md:text-base border-l-3 sm:border-l-4 border-gray-900 pl-3 sm:pl-4 py-1 italic">
                 {t.footer.address}
               </p>
-            </div>
-
-            {/* Call us - Blue sticky note */}
-            <div
-              className="group/note bg-blue-300 p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border-3 sm:border-4 border-gray-900 max-w-sm w-full transition-all duration-300 hover:-translate-y-2 hover:-rotate-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-              style={{ transform: 'rotate(-1.5deg)' }}
-            >
-              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white border-2 border-gray-900 rounded-xl flex items-center justify-center shadow-[3px_3px_0_0_rgba(0,0,0,1)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transform -rotate-2 group-hover/note:rotate-6 transition-transform">
-                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-black text-gray-900 uppercase tracking-tighter">{t.contact.callTitle}</h3>
-              </div>
-              <p className="text-gray-800 text-xs sm:text-sm mb-4 sm:mb-6 font-bold leading-relaxed">{t.contact.callDescription}</p>
-              <a href="tel:+37063911939" className="inline-flex items-center bg-gray-900 border-2 border-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-white font-black text-xs sm:text-sm hover:bg-emerald-500 transition-colors shadow-[3px_3px_0_0_rgba(16,185,129,1)] sm:shadow-[4px_4px_0_0_rgba(16,185,129,1)] active:translate-y-1 active:shadow-none uppercase" style={{ fontFamily: "'Sora', sans-serif" }}>
-                +370 (639) 11 939
-              </a>
             </div>
           </div>
 

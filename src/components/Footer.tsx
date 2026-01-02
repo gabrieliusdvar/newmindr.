@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Facebook, Youtube, Instagram, Heart } from 'lucide-react';
+import { Mail, Facebook, Youtube, Instagram, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { generateEmailHtml } from '../utils/emailGenerator';
@@ -211,12 +211,6 @@ export default function Footer() {
                     <Mail className="w-3.5 h-3.5" />
                   </div>
                   hello@newmindr.com
-                </a>
-                <a href="tel:+37063911939" className="flex items-center gap-2 text-gray-900 text-sm font-bold hover:text-emerald-500 transition-colors group">
-                  <div className="p-1.5 bg-gray-50 border-2 border-gray-900 rounded-md group-hover:bg-emerald-50 transition-colors">
-                    <Phone className="w-3.5 h-3.5" />
-                  </div>
-                  +370 (639) 11 939
                 </a>
               </div>
             </div>

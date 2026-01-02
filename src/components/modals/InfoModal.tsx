@@ -153,10 +153,6 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                                     <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white"><Clock className="w-4 h-4" /></div>
                                     hello@newmindr.com
                                 </a>
-                                <a href="tel:+37063911939" className="flex items-center gap-3 font-bold text-gray-700 hover:text-gray-900 transition-colors">
-                                    <div className="w-8 h-8 bg-gray-100 border-2 border-gray-900 rounded-lg flex items-center justify-center text-gray-900"><Zap className="w-4 h-4" /></div>
-                                    +370 (639) 11 939
-                                </a>
                             </div>
                         </div>
                         <div className="space-y-4 text-center md:text-left">
