@@ -4,11 +4,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { sendEmail } from '../utils/emailService';
 import { generateEmailHtml } from '../utils/emailGenerator';
 import { translations } from '../utils/translations';
+import MinigamePopup from './MinigamePopup';
 
 export default function Hero() {
   const { t, language } = useLanguage();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isMinigameOpen, setIsMinigameOpen] = useState(false);
 
   const validateEmail = (email: string) => {
     return String(email)
@@ -81,7 +83,7 @@ export default function Hero() {
                   </span>
 
                   {/* Line 2 - The Panel */}
-                  <div className="inline-block relative mb-4 sm:mb-6 3xl:mb-8 transform -rotate-2 hover:rotate-1 hover:scale-105 transition-all duration-300 cursor-default">
+                  <div onClick={() => setIsMinigameOpen(true)} className="inline-block relative mb-4 sm:mb-6 3xl:mb-8 transform -rotate-2 hover:rotate-1 hover:scale-105 transition-all duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-purple-400 border-2 sm:border-3 3xl:border-4 border-gray-900 rounded-lg sm:rounded-xl 3xl:rounded-2xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 3xl:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]" />
                     <span className={`relative block ${['lt', 'ru'].includes(language) ? 'text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl'} text-gray-900 italic px-3 sm:px-5 3xl:px-8 py-1 sm:py-2 3xl:py-3 font-black`}>
                       {t.hero.superpower}
@@ -357,6 +359,7 @@ export default function Hero() {
           50% { transform: translate(-50%, -50%) translateX(15px); }
         }
       `}</style>
+      <MinigamePopup isOpen={isMinigameOpen} onClose={() => setIsMinigameOpen(false)} />
     </section >
   );
 }

@@ -1,23 +1,14 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Gift, ChevronDown, Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useModal } from '../contexts/ModalContext';
-import MinigamePopup from './MinigamePopup';
 
 export default function Header() {
   const { t, language } = useLanguage();
   const { openModal, openTrialModal } = useModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMinigameOpen, setIsMinigameOpen] = useState(false);
-  const location = useLocation();
 
-  const handleLogoClick = (e: React.MouseEvent) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      setIsMinigameOpen(true);
-    }
-  };
 
   const handleTryForFree = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -39,7 +30,6 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
           <Link
             to="/"
-            onClick={handleLogoClick}
             className="text-[26px] sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter shrink-0 hover:scale-110 active:scale-95 transition-all duration-300 leading-none translate-y-[2px] sm:translate-y-0"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
@@ -135,11 +125,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-
-      <MinigamePopup
-        isOpen={isMinigameOpen}
-        onClose={() => setIsMinigameOpen(false)}
-      />
     </header>
   );
 }
