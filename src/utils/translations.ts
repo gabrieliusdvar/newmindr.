@@ -683,6 +683,83 @@ export const translations: Record<Language, any> = {
         footer: "Submitted via newmindr.com",
         unsubscribe: "Don't want to get newsletters? UNSUBSCRIBE"
       }
+    },
+    blog: {
+      title: "NEWMINDR",
+      subtitle: "Real-time updates, student wins, and deep dives. Automatically synchronized from across our digital world.",
+      scanning: "SCANNING NETWORKS...",
+      pulse: "SOCIAL PULSE / 100% RAW",
+      activeFeed: "ACTIVE_FEED",
+      distributed: "DISTRIBUTED",
+      loadMore: "Synchronizing more updates...",
+      posts: [
+        {
+          id: 1,
+          platform: "instagram",
+          title: "Our new AI module is LIVE!",
+          content: "We just dropped the most interactive AI course of 2024. Check the link in bio to start your first mission.",
+          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
+          date: "2h ago",
+          likes: "1.2k",
+          comments: "48",
+          url: "#"
+        },
+        {
+          id: 2,
+          platform: "youtube",
+          title: "How we built NewMindr",
+          content: "A deep dive into our infrastructure and why interactive learning is the future of education.",
+          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
+          date: "5h ago",
+          likes: "850",
+          comments: "124",
+          url: "#"
+        },
+        {
+          id: 3,
+          platform: "tiktok",
+          title: "Wait for the ending... 😲",
+          content: "Students reacting to our Logic Quest final boss. Full immersive mode activated.",
+          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
+          date: "1d ago",
+          likes: "45.2k",
+          comments: "890",
+          url: "#"
+        },
+        {
+          id: 4,
+          platform: "facebook",
+          title: "Our Community is Growing!",
+          content: "Join the discussion on our official group. Over 5,000 parents and students sharing their journeys.",
+          image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
+          date: "2d ago",
+          likes: "420",
+          comments: "32",
+          url: "#"
+        },
+        {
+          id: 5,
+          platform: "instagram",
+          title: "Student Spotlight: Leo",
+          content: "At just 14, Leo built his first startup idea using our Leadership module. Proud moment!",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
+          date: "3d ago",
+          likes: "2.5k",
+          comments: "156",
+          url: "#"
+        },
+        {
+          id: 6,
+          platform: "youtube",
+          title: "Weekly Community Mission",
+          content: "Global leaderboard is heating up! See who won this weeks $500 Creative Spark challenge.",
+          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
+          date: "4d ago",
+          likes: "1.8k",
+          comments: "210",
+          url: "#"
+        }
+      ]
     }
   },
   lt: {
@@ -1367,6 +1444,83 @@ export const translations: Record<Language, any> = {
         footer: "Pateikta per newmindr.com",
         unsubscribe: "Nenorite gauti naujienlaiškių? ATSISAKYTI"
       }
+    },
+    blog: {
+      title: "NEWMINDR",
+      subtitle: "Real-time updates, student wins, and deep dives. Automatically synchronized from across our digital world.",
+      scanning: "SCANNING NETWORKS...",
+      pulse: "SOCIAL PULSE / 100% RAW",
+      activeFeed: "ACTIVE_FEED",
+      distributed: "DISTRIBUTED",
+      loadMore: "Synchronizing more updates...",
+      posts: [
+        {
+          id: 1,
+          platform: "instagram",
+          title: "Our new AI module is LIVE!",
+          content: "We just dropped the most interactive AI course of 2024. Check the link in bio to start your first mission.",
+          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
+          date: "2h ago",
+          likes: "1.2k",
+          comments: "48",
+          url: "#"
+        },
+        {
+          id: 2,
+          platform: "youtube",
+          title: "How we built NewMindr",
+          content: "A deep dive into our infrastructure and why interactive learning is the future of education.",
+          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
+          date: "5h ago",
+          likes: "850",
+          comments: "124",
+          url: "#"
+        },
+        {
+          id: 3,
+          platform: "tiktok",
+          title: "Wait for the ending... 😲",
+          content: "Students reacting to our Logic Quest final boss. Full immersive mode activated.",
+          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
+          date: "1d ago",
+          likes: "45.2k",
+          comments: "890",
+          url: "#"
+        },
+        {
+          id: 4,
+          platform: "facebook",
+          title: "Our Community is Growing!",
+          content: "Join the discussion on our official group. Over 5,000 parents and students sharing their journeys.",
+          image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
+          date: "2d ago",
+          likes: "420",
+          comments: "32",
+          url: "#"
+        },
+        {
+          id: 5,
+          platform: "instagram",
+          title: "Student Spotlight: Leo",
+          content: "At just 14, Leo built his first startup idea using our Leadership module. Proud moment!",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
+          date: "3d ago",
+          likes: "2.5k",
+          comments: "156",
+          url: "#"
+        },
+        {
+          id: 6,
+          platform: "youtube",
+          title: "Weekly Community Mission",
+          content: "Global leaderboard is heating up! See who won this weeks $500 Creative Spark challenge.",
+          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
+          date: "4d ago",
+          likes: "1.8k",
+          comments: "210",
+          url: "#"
+        }
+      ]
     }
   },
   ru: {
@@ -2051,6 +2205,83 @@ export const translations: Record<Language, any> = {
         footer: "Отправлено через newmindr.com",
         unsubscribe: "Не хотите получать рассылку? ОТПИСАТЬСЯ"
       }
+    },
+    blog: {
+      title: "NEWMINDR",
+      subtitle: "Обновления в реальном времени, победы студентов и глубокие разборы. Автоматическая синхронизация со всего нашего цифрового мира.",
+      scanning: "СКАНИРОВАНИЕ СЕТЕЙ...",
+      pulse: "СОЦИАЛЬНЫЙ ПУЛЬС / 100% RAW",
+      activeFeed: "АКТИВНЫЙ_ФИД",
+      distributed: "РАСПРЕДЕЛЕНО",
+      loadMore: "Синхронизация новых обновлений...",
+      posts: [
+        {
+          id: 1,
+          platform: "instagram",
+          title: "Наш новый модуль ИИ уже LIVE!",
+          content: "Мы только что выпустили самый интерактивный курс по ИИ 2024 года. Ссылка в био, чтобы начать первую миссию.",
+          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
+          date: "2ч назад",
+          likes: "1.2k",
+          comments: "48",
+          url: "#"
+        },
+        {
+          id: 2,
+          platform: "youtube",
+          title: "Как мы строили NewMindr",
+          content: "Глубокое погружение в нашу инфраструктуру и почему интерактивное обучение - это будущее образования.",
+          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
+          date: "5ч назад",
+          likes: "850",
+          comments: "124",
+          url: "#"
+        },
+        {
+          id: 3,
+          platform: "tiktok",
+          title: "Ждите концовку... 😲",
+          content: "Реакция студентов на финального босса в Logic Quest. Полный режим погружения активирован.",
+          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop",
+          date: "1д назад",
+          likes: "45.2k",
+          comments: "890",
+          url: "#"
+        },
+        {
+          id: 4,
+          platform: "facebook",
+          title: "Наше сообщество растет!",
+          content: "Присоединяйтесь к обсуждению в нашей официальной группе. Более 5000 родителей и студентов делятся своим путем.",
+          image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop",
+          date: "2д назад",
+          likes: "420",
+          comments: "32",
+          url: "#"
+        },
+        {
+          id: 5,
+          platform: "instagram",
+          title: "В центре внимания: Лео",
+          content: "Всего в 14 лет Лео создал идею своего первого стартапа, используя наш модуль Лидерства. Гордимся!",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop",
+          date: "3д назад",
+          likes: "2.5k",
+          comments: "156",
+          url: "#"
+        },
+        {
+          id: 6,
+          platform: "youtube",
+          title: "Еженедельная миссия сообщества",
+          content: "Глобальная таблица лидеров накаляется! Узнайте, кто выиграл челлендж Творческая Искра на $500 на этой неделе.",
+          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
+          date: "4д назад",
+          likes: "1.8k",
+          comments: "210",
+          url: "#"
+        }
+      ]
     }
   }
 };

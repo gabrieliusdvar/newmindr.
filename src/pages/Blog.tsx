@@ -14,88 +14,13 @@ interface BlogPost {
     url: string;
 }
 
-const CATEGORIES = [
-    { id: 'all', label: 'THE WHOLE FEED', icon: Globe },
-    { id: 'instagram', label: 'INSTAGRAM', icon: Instagram },
-    { id: 'youtube', label: 'YOUTUBE', icon: Youtube },
-    { id: 'tiktok', label: 'TIKTOK', icon: Camera },
-    { id: 'facebook', label: 'FACEBOOK', icon: Facebook },
-];
-
 export default function Blog() {
-    useLanguage();
+    const { t, language } = useLanguage();
     const [activeCategory, setActiveCategory] = useState('all');
     const [isScanning, setIsScanning] = useState(true);
 
-    // Simulated "Live" social posts
-    const posts: BlogPost[] = [
-        {
-            id: 1,
-            platform: 'instagram',
-            title: 'Our new AI module is LIVE!',
-            content: 'We just dropped the most interactive AI course of 2024. Check the link in bio to start your first mission.',
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop',
-            date: '2h ago',
-            likes: '1.2k',
-            comments: '48',
-            url: '#'
-        },
-        {
-            id: 2,
-            platform: 'youtube',
-            title: 'How we built NewMindr',
-            content: 'A deep dive into our infrastructure and why interactive learning is the future of education.',
-            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop',
-            date: '5h ago',
-            likes: '850',
-            comments: '124',
-            url: '#'
-        },
-        {
-            id: 3,
-            platform: 'tiktok',
-            title: 'Wait for the ending... 😲',
-            content: 'Students reacting to our Logic Quest final boss. Full immersive mode activated.',
-            image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop',
-            date: '1d ago',
-            likes: '45.2k',
-            comments: '890',
-            url: '#'
-        },
-        {
-            id: 4,
-            platform: 'facebook',
-            title: 'Our Community is Growing!',
-            content: 'Join the discussion on our official group. Over 5,000 parents and students sharing their journeys.',
-            image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&auto=format&fit=crop',
-            date: '2d ago',
-            likes: '420',
-            comments: '32',
-            url: '#'
-        },
-        {
-            id: 5,
-            platform: 'instagram',
-            title: 'Student Spotlight: Leo',
-            content: 'At just 14, Leo built his first startup idea using our Leadership module. Proud moment!',
-            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop',
-            date: '3d ago',
-            likes: '2.5k',
-            comments: '156',
-            url: '#'
-        },
-        {
-            id: 6,
-            platform: 'youtube',
-            title: 'Weekly Community Mission',
-            content: 'Global leaderboard is heating up! See who won this weeks $500 Creative Spark challenge.',
-            image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop',
-            date: '4d ago',
-            likes: '1.8k',
-            comments: '210',
-            url: '#'
-        }
-    ];
+    // Get posts from translations
+    const posts: BlogPost[] = (t.blog?.posts || []) as BlogPost[];
 
     useEffect(() => {
         const timer = setTimeout(() => setIsScanning(false), 2000);
@@ -105,6 +30,14 @@ export default function Blog() {
     const filteredPosts = activeCategory === 'all'
         ? posts
         : posts.filter(p => p.platform === activeCategory);
+
+    const categories = [
+        { id: 'all', label: language === 'ru' ? 'ВСЯ ЛЕНТА' : 'THE WHOLE FEED', icon: Globe },
+        { id: 'instagram', label: 'INSTAGRAM', icon: Instagram },
+        { id: 'youtube', label: 'YOUTUBE', icon: Youtube },
+        { id: 'tiktok', label: 'TIKTOK', icon: Camera },
+        { id: 'facebook', label: 'FACEBOOK', icon: Facebook },
+    ];
 
     return (
         <div className="min-h-screen bg-white" style={{ backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
@@ -126,17 +59,17 @@ export default function Blog() {
                         <div className="inline-flex items-center gap-3 bg-white border-4 border-gray-900 px-6 py-2.5 rounded-2xl mb-12 shadow-[6px_6px_0_0_#FCD34D] -rotate-1 animate-float">
                             <div className={`w-3 h-3 rounded-full ${isScanning ? 'bg-yellow-400 animate-pulse' : 'bg-emerald-400 shadow-[0_0_12px_#10b981]'}`}></div>
                             <span className="text-gray-900 text-xs font-black uppercase tracking-widest leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                                {isScanning ? 'SCANNING NETWORKS...' : 'SOCIAL PULSE / 100% RAW'}
+                                {isScanning ? t.blog?.scanning : t.blog?.pulse}
                             </span>
                         </div>
 
                         <div className="relative group">
                             {/* Floating Tech Accents */}
                             <div className="hidden lg:block absolute -top-12 -left-12 p-3 bg-gray-900 border-2 border-emerald-500 rounded-xl text-emerald-500 font-mono text-[10px] animate-float delay-100 z-20 shadow-[4px_4px_0_0_#10b981]">
-                                <Globe className="w-4 h-4 mb-1" /> ACTIVE_FEED
+                                <Globe className="w-4 h-4 mb-1" /> {t.blog?.activeFeed}
                             </div>
                             <div className="hidden lg:block absolute -bottom-8 -right-8 p-3 bg-gray-900 border-2 border-purple-500 rounded-xl text-purple-500 font-mono text-[10px] animate-float delay-300 z-20 shadow-[4px_4px_0_0_#a855f7]">
-                                <Share2 className="w-4 h-4 mb-1" /> DISTRIBUTED
+                                <Share2 className="w-4 h-4 mb-1" /> {t.blog?.distributed}
                             </div>
 
                             <h1
@@ -146,13 +79,12 @@ export default function Blog() {
                                     textShadow: '8px 8px 0px #10b981'
                                 }}
                             >
-                                NEWMINDR<span className="inline-block w-[0.14em] h-[0.14em] bg-emerald-400 ml-4 mb-[0.15em]"></span>
+                                {t.blog?.title}<span className="inline-block w-[0.14em] h-[0.14em] bg-emerald-400 ml-4 mb-[0.15em]"></span>
                             </h1>
                         </div>
 
                         <p className="text-gray-400 text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed border-l-4 border-emerald-500/30 pl-8" style={{ fontFamily: "'Inter', sans-serif" }}>
-                            Real-time updates, student wins, and deep dives. <br />
-                            <span className="text-white/40">Automatically synchronized from across our digital world.</span>
+                            {t.blog?.subtitle}
                         </p>
                     </div>
                 </div>
@@ -166,7 +98,7 @@ export default function Blog() {
             <div className="sticky top-[76px] z-40 bg-white/80 backdrop-blur-md border-y-4 border-gray-900">
                 <div className="container mx-auto px-6 overflow-x-auto">
                     <div className="flex items-center justify-center gap-4 py-4 min-w-max">
-                        {CATEGORIES.map((cat) => (
+                        {categories.map((cat) => (
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveCategory(cat.id)}
@@ -273,7 +205,7 @@ export default function Blog() {
                             style={{ fontFamily: "'Sora', sans-serif" }}
                         >
                             <Loader2 className="w-5 h-5 animate-spin" />
-                            Synchronizing more updates...
+                            {t.blog?.loadMore}
                         </button>
                     </div>
                 </div>

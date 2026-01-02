@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useModal } from '../contexts/ModalContext';
 
 export default function Header() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const { openModal, openTrialModal } = useModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Header() {
   const navLinks = [
     { to: '/about', label: t.header.about },
     { to: '/process', label: t.header.studyingProcess },
-    ...(language !== 'ru' ? [{ to: '/blog', label: t.header.blog }] : []),
+    { to: '/blog', label: t.header.blog },
     { to: '/contact', label: t.header.contact },
   ];
 
