@@ -327,7 +327,7 @@ export default function Contact() {
                     {errors.message && (
                       <div className="absolute top-full mt-1 left-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
                         <div className="w-3.5 h-3.5 bg-red-500 text-white rounded-full flex items-center justify-center text-[8px] font-black border border-gray-900">!</div>
-                        <span className="text-[10px] font-black">{errors.message}</span>
+                        <span className="text-[10px] font-black">{t.validation[errors.message as keyof typeof t.validation]}</span>
                       </div>
                     )}
                   </div>
