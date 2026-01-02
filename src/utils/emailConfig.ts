@@ -19,13 +19,13 @@ export const STRIPE_LINKS = {
         PRO_MONTHLY: 'https://buy.stripe.com/aFadR8aiW4b87hgcFbes008',
         BASIC_YEARLY: 'https://buy.stripe.com/28E00i62G6jgbxw6gNes009',
         PRO_YEARLY: 'https://buy.stripe.com/4gM9AS4YC230eJI7kRes00a',
-        TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
+        TRIAL: 'https://buy.stripe.com/dRm8wOgHkcHEgRQ5cJes006'
     },
     RU: {
         BASIC_MONTHLY: 'https://buy.stripe.com/00w8wO3UycHE3106gNes00b',
         PRO_MONTHLY: 'https://buy.stripe.com/4gM00i9eSfTQbxwax3es00c',
         BASIC_YEARLY: 'https://buy.stripe.com/cNi7sK0ImfTQatsgVres00d',
         PRO_YEARLY: 'https://buy.stripe.com/fZu8wO62G4b86dc0Wtes00e',
-        TRIAL: 'https://buy.stripe.com/bJeaEWbn0230310eNjes004'
+        TRIAL: 'https://buy.stripe.com/5kQ28q3Uy230bxw20xes005'
     }
 };
