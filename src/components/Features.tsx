@@ -349,8 +349,8 @@ export default function Features() {
           {/* Folder-style tabs - Improved for mobile responsiveness */}
           <div className="relative mb-0 overflow-x-auto no-scrollbar pb-2">
             <div className="flex items-end gap-0 px-2 min-w-max sm:min-w-0">
-              {/* Globe icon on the left - Hidden on tiny screens */}
-              <div className="hidden sm:flex w-10 h-10 bg-cyan-400 rounded-full items-center justify-center mb-0 mr-2 z-30 flex-shrink-0">
+              {/* Globe icon on the left - Hidden on tiny screens and for long languages on mobile */}
+              <div className={`${['ru', 'lt'].includes(language) ? 'hidden md:flex' : 'hidden sm:flex'} w-10 h-10 bg-cyan-400 rounded-full items-center justify-center mb-0 mr-2 z-30 flex-shrink-0`}>
                 <Globe className="w-6 h-6 text-white" strokeWidth={3} />
               </div>
 
@@ -368,12 +368,12 @@ export default function Features() {
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`${isLongLang ? 'px-2 sm:px-3 text-[10px] xs:text-xs sm:text-sm md:text-sm' : 'px-3 sm:px-4 text-xs sm:text-sm md:text-base'} py-2 font-black transition-all duration-200 relative overflow-hidden border-2 sm:border-4 border-gray-900 ${isActive ? 'z-30 translate-y-0' : 'z-10 translate-y-1 opacity-70 hover:opacity-100'
+                    className={`${isLongLang ? 'px-1 sm:px-1.5 text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] tracking-tighter' : 'px-3 sm:px-4 text-xs sm:text-sm md:text-base'} py-2 font-black transition-all duration-200 relative overflow-hidden border-2 sm:border-4 border-gray-900 ${isActive ? 'z-30 translate-y-0' : 'z-10 translate-y-1 opacity-70 hover:opacity-100'
                       } ${getTabColors()}`}
                     style={{
                       borderBottomWidth: isActive ? '0' : '4px',
                       borderRadius: '0.75rem 0.75rem 0 0',
-                      marginRight: '-2px',
+                      marginRight: '-1px',
                       boxShadow: isActive ? 'none' : '2px 4px -2px 0px rgba(0,0,0,1)',
                     }}
                   >
