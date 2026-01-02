@@ -725,7 +725,7 @@ export default function Features() {
                       {avatars.map((avatar, index) => (
                         <div
                           key={index}
-                          className="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all group h-40 flex flex-col system-cursor-zone"
+                          className="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all group min-h-[160px] flex flex-col system-cursor-zone"
                         >
                           <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${avatar.color} mb-3 shadow-lg flex items-center justify-center flex-shrink-0`}>
                             <avatar.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
@@ -733,10 +733,10 @@ export default function Features() {
 
                           {/* Animated text that fades in */}
                           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden group-hover:block">
-                            <h4 className="text-gray-900 font-bold text-xs sm:text-sm mb-0.5">
+                            <h4 className={`text-gray-900 font-bold mb-0.5 ${['ru', 'lt'].includes(language) ? 'text-[10px] sm:text-[11px]' : 'text-xs sm:text-sm'}`}>
                               {avatar.name}
                             </h4>
-                            <p className="text-gray-600 text-[10px] sm:text-xs leading-snug">
+                            <p className={`text-gray-600 leading-snug ${['ru', 'lt'].includes(language) ? 'text-[9px] sm:text-[10px]' : 'text-[10px] sm:text-xs'}`}>
                               {avatar.description}
                             </p>
                           </div>
