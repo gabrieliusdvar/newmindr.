@@ -1518,7 +1518,7 @@ export const translations: Record<Language, any> = {
       getStarted: "Начать",
       getProfessional: "Стать Pro",
       perMonth: "/мес",
-      perfectPlan: "Идеально для начинающих, которые хотят попробовать интерактив.",
+      perfectPlan: "Идеально для начинающих, которые хотят попробовать интерактивное обучение.",
       idealForCreators: "Лучший выбор для тех, кому нужно больше руководства и общения.",
     },
     heroStats: {
