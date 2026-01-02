@@ -338,6 +338,9 @@ export const translations: Record<Language, any> = {
       strategyConsulting: "PAYMENTS & BILLING",
       other: "GENERAL QUESTION",
       submitButton: "Let's get started!",
+      successTitle: "Message Successfully Sent!",
+      successMessage: "Thank you for reaching out! We'll get back to you as soon as possible.",
+      sendAnother: "Send Another Message"
     },
     studyingProcess: {
       howItWorks: "How It Works",
@@ -1019,6 +1022,9 @@ export const translations: Record<Language, any> = {
       strategyConsulting: "MOKĖJIMAI IR SĄSKAITOS",
       other: "BENDRAS KLAUSIMAS",
       submitButton: "Pradėkime!",
+      successTitle: "Žinutė Sėkmingai Išsiųsta!",
+      successMessage: "Ačiū, kad susisiekėte! Atsakysime kuo greičiau.",
+      sendAnother: "Siųsti Kitą Žinutę"
     },
     studyingProcess: {
       howItWorks: "Kaip tai veikia",
@@ -1700,6 +1706,9 @@ export const translations: Record<Language, any> = {
       strategyConsulting: "ОПЛАТА И СЧЕТА",
       other: "ОБЩИЙ ВОПРОС",
       submitButton: "Давайте начнем!",
+      successTitle: "Сообщение Успешно Отправлено!",
+      successMessage: "Спасибо, что связались с нами! Мы ответим как можно скорее.",
+      sendAnother: "Отправить Еще Сообщение"
     },
     studyingProcess: {
       howItWorks: "Как это работает",

@@ -258,13 +258,13 @@ export default function Contact() {
                 <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-emerald-500">
                   <Check className="w-10 h-10 text-emerald-600" strokeWidth={3} />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900 mb-4 uppercase italic leading-none">{t.contact.headline}!</h2>
-                <p className="text-gray-600 font-bold mb-8">{t.contact.subheadline}</p>
+                <h2 className="text-3xl font-black text-gray-900 mb-4 uppercase italic leading-none">{t.contact.successTitle}</h2>
+                <p className="text-gray-600 font-bold mb-8">{t.contact.successMessage}</p>
                 <button
                   onClick={() => setSubmitSuccess(false)}
                   className="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-gray-800 transition-all uppercase tracking-widest text-xs"
                 >
-                  Send another message
+                  {t.contact.sendAnother}
                 </button>
               </div>
             ) : (
