@@ -25,7 +25,7 @@ const minigameStyles = `
 `;
 
 export default function Features() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState(0);
   const [isBrowserMenuOpen, setIsBrowserMenuOpen] = useState(false);
   const [gameStats, setGameStats] = useState([
@@ -362,11 +362,13 @@ export default function Features() {
                   return isActive ? 'bg-pink-300 text-gray-900' : 'bg-gray-200 text-gray-600';
                 };
 
+                const isLongLang = ['ru', 'lt'].includes(language);
+
                 return (
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`px-3 sm:px-4 py-2 font-black text-xs sm:text-sm md:text-base transition-all duration-200 relative overflow-hidden border-2 sm:border-4 border-gray-900 ${isActive ? 'z-30 translate-y-0' : 'z-10 translate-y-1 opacity-70 hover:opacity-100'
+                    className={`${isLongLang ? 'px-2 sm:px-3 text-[10px] xs:text-xs sm:text-sm md:text-sm' : 'px-3 sm:px-4 text-xs sm:text-sm md:text-base'} py-2 font-black transition-all duration-200 relative overflow-hidden border-2 sm:border-4 border-gray-900 ${isActive ? 'z-30 translate-y-0' : 'z-10 translate-y-1 opacity-70 hover:opacity-100'
                       } ${getTabColors()}`}
                     style={{
                       borderBottomWidth: isActive ? '0' : '4px',
