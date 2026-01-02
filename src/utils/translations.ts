@@ -1503,7 +1503,7 @@ export const translations: Record<Language, any> = {
       description: "Живые сессии, интересные вызовы и игровой дизайн - для каждого этапа роста.",
       virtualClass: "Интерактивное Исследование",
       virtualClassDesc: "Кликай, играй, спрашивай, открывай. Магия обучения.",
-      studentMonitoring: "Творческое создание",
+      studentMonitoring: "Творческое Создание",
       studentMonitoringDesc: "Практические проекты и интерактивные уроки, которые запоминаются.",
       scholarshipProgram: "Шаг в будущее",
       scholarshipProgramDesc: "Фокусированное обучение с реальным результатом.",
