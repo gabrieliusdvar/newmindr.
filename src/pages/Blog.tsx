@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Sparkles, BookOpen, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { supabase } from '../utils/supabase';
 
 interface BlogPost {
     id: number;
-    platform: string; // Used as Category
+    platform: string;
     title: string;
     content: string;
     image: string;
@@ -18,51 +16,9 @@ interface BlogPost {
 
 export default function Blog() {
     const { t, language } = useLanguage();
-    const [fetchedPosts, setFetchedPosts] = useState<BlogPost[]>([]);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const { data } = await supabase
-                    .from('social_posts')
-                    .select('*')
-                    .eq('language', language)
-                    .order('published_at', { ascending: false });
-
-                if (data && data.length > 0) {
-                    const mappedPosts = data.map((item: any) => ({
-                        id: item.id,
-                        platform: item.platform || 'General',
-                        title: item.title,
-                        content: item.content,
-                        image: item.image_url,
-                        date: new Date(item.published_at).toLocaleDateString(language === 'lt' ? 'lt-LT' : 'en-US', {
-                            month: 'long',
-                            day: 'numeric',
-                            year: 'numeric'
-                        }),
-                        likes: item.likes,
-                        comments: item.comments,
-                        url: `/blog/${item.id}`
-                    })) as BlogPost[];
-                    setFetchedPosts(mappedPosts);
-                } else {
-                    setFetchedPosts([]);
-                }
-            } catch (error) {
-                console.error('Error fetching blog posts:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchPosts();
-    }, [language, t]);
-
-    // Use fetched posts if available, otherwise use static translations
-    const posts: BlogPost[] = fetchedPosts.length > 0
-        ? fetchedPosts
-        : (t.blog?.posts || []) as BlogPost[];
+    // Use local translations as the source of truth
+    const posts = (t.blog?.posts || []) as BlogPost[];
 
     const featuredPost = posts[0];
     const gridPosts = posts.slice(1);
@@ -104,28 +60,34 @@ export default function Blog() {
                                 <img
                                     src={featuredPost.image}
                                     alt={featuredPost.title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent" />
-                            </div>
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-sm font-medium text-emerald-400">
-                                    <span className="uppercase tracking-wider">{featuredPost.platform.replace('youtube', 'Video').replace('instagram', 'Update').replace('tiktok', 'Social')}</span>
-                                    <span className="w-1 h-1 rounded-full bg-emerald-500" />
-                                    <span className="text-gray-400 flex items-center gap-2">
-                                        <Calendar className="w-4 h-4" />
-                                        {featuredPost.date}
+                                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                                    <span className="text-xs font-bold text-emerald-400 tracking-wider uppercase">
+                                        {featuredPost.platform}
                                     </span>
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-bold leading-tight group-hover:text-emerald-400 transition-colors">
+                            </div>
+                            <div className="flex flex-col gap-6">
+                                <div className="flex items-center gap-4 text-gray-400 text-sm font-medium tracking-wide">
+                                    <div className="flex items-center gap-2">
+                                        <Calendar className="w-4 h-4 text-emerald-500" />
+                                        <span>{featuredPost.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Clock className="w-4 h-4 text-emerald-500" />
+                                        <span>5 min read</span>
+                                    </div>
+                                </div>
+                                <h2 className="text-4xl md:text-5xl font-bold leading-tight group-hover:text-emerald-400 transition-colors">
                                     {featuredPost.title}
                                 </h2>
-                                <p className="text-lg text-gray-400 line-clamp-3">
+                                <p className="text-lg text-gray-400 line-clamp-3 leading-relaxed">
                                     {featuredPost.content}
                                 </p>
-                                <div className="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all">
-                                    {language === 'lt' ? 'Skaityti toliau' : language === 'ru' ? 'Читать далее' : 'Read Article'}
-                                    <ArrowRight className="w-4 h-4" />
+                                <div className="flex items-center gap-2 text-emerald-400 font-bold uppercase tracking-widest text-sm mt-2 group/btn">
+                                    Read Article <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-2" />
                                 </div>
                             </div>
                         </div>
@@ -140,40 +102,42 @@ export default function Blog() {
                                 <img
                                     src={post.image}
                                     alt={post.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                    loading="lazy"
                                 />
-                                <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-gray-950/80 backdrop-blur-md border border-white/10 rounded-full text-xs font-bold text-white uppercase tracking-wider">
-                                        {post.platform.replace('youtube', 'Video').replace('instagram', 'Story').replace('tiktok', 'Highlight')}
+                                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                                    <span className="text-xs font-bold text-emerald-400 tracking-wider uppercase">
+                                        {post.platform}
                                     </span>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <div className="flex items-center gap-3 text-sm text-gray-500">
-                                    <Clock className="w-4 h-4" />
+                                <div className="flex items-center gap-3 text-gray-500 text-xs font-bold tracking-widest uppercase">
                                     <span>{post.date}</span>
+                                    <span className="w-1 h-1 rounded-full bg-gray-600" />
+                                    <span>3 min read</span>
                                 </div>
-                                <h3 className="text-xl font-bold leading-snug group-hover:text-emerald-400 transition-colors">
+                                <h3 className="text-2xl font-bold leading-tight group-hover:text-emerald-400 transition-colors">
                                     {post.title}
                                 </h3>
-                                <p className="text-gray-400 text-sm line-clamp-2">
+                                <p className="text-gray-400 line-clamp-2 text-sm leading-relaxed">
                                     {post.content}
                                 </p>
-                                <div className="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-white/50 group-hover:text-white transition-colors">
-                                    {language === 'lt' ? 'Skaityti' : language === 'ru' ? 'Читать' : 'Read'}
-                                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                <div className="mt-auto pt-2 flex items-center text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                    Read More <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </div>
                         </Link>
                     ))}
                 </div>
 
-                {!loading && posts.length === 0 && (
-                    <div className="text-center py-24 border border-dashed border-gray-800 rounded-3xl">
-                        <BookOpen className="w-12 h-12 text-gray-700 mx-auto mb-4" />
-                        <h3 className="text-xl font-bold text-gray-500">
-                            {language === 'lt' ? 'Įrašų nerasta' : 'No articles found'}
-                        </h3>
+                {posts.length === 0 && (
+                    <div className="text-center py-24 border border-white/10 rounded-3xl bg-white/5 backdrop-blur-sm">
+                        <BookOpen className="w-12 h-12 text-gray-600 mx-auto mb-4" />
+                        <h3 className="text-xl font-bold text-gray-300">Journal Updating...</h3>
+                        <p className="text-gray-500 max-w-md mx-auto mt-2">
+                            We are curating new stories. Check back soon.
+                        </p>
                     </div>
                 )}
             </div>

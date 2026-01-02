@@ -1,45 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { supabase } from '../utils/supabase';
+import { useLanguage } from '../contexts/LanguageContext';
 import ArticleRise from './articles/ArticleRise';
+import ArticleParents from './articles/ArticleParents';
+import ArticleTeens from './articles/ArticleTeens';
+import ArticleGeneric from './articles/ArticleGeneric';
 import { Loader2 } from 'lucide-react';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
-    const [post, setPost] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
+    const { t } = useLanguage();
 
-    useEffect(() => {
-        const fetchPost = async () => {
-            if (!id) return;
-            setLoading(true);
+    // We fetch from local translations now
+    const posts = t.blog?.posts || [];
+    const postId = Number(id);
 
-            // Fetch from Supabase
-            const { data, error } = await supabase
-                .from('social_posts')
-                .select('*')
-                .eq('id', id)
-                .single();
-
-            if (error || !data) {
-                console.error('Post not found', error);
-            } else {
-                setPost(data);
-            }
-            setLoading(false);
-        };
-
-        fetchPost();
-    }, [id, navigate]);
-
-    if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-                <Loader2 className="w-8 h-8 animate-spin text-emerald-500" />
-            </div>
-        );
-    }
+    const post = posts.find((p: any) => p.id === postId);
 
     if (!post) {
         return (
@@ -52,7 +28,15 @@ export default function BlogPostRouter() {
         );
     }
 
-    // FORCE INTERACTIVE LAYOUT FOR EVERYTHING
-    // The user explicitly requested to remove the static ones.
-    return <ArticleRise />;
+    // Router Logic
+    // ID 1 (The Setup) -> Interactive Rise Article (The requested one)
+    if (post.id === 1 || post.title.includes('Interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos') {
+        return <ArticleRise />;
+    }
+
+    // Fallbacks for older/different data if added locally later
+    if (post.platform === 'Parents') return <ArticleParents />;
+    if (post.platform === 'Students') return <ArticleTeens />;
+
+    return <ArticleGeneric post={post} />;
 }
