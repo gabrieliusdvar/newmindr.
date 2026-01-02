@@ -350,7 +350,7 @@ export default function Features() {
           <div className="relative mb-0 overflow-x-auto no-scrollbar pb-2">
             <div className="flex items-end gap-0 px-2 min-w-max sm:min-w-0">
               {/* Globe icon on the left - Hidden on tiny screens and for long languages on mobile */}
-              <div className={`${['ru', 'lt'].includes(language) ? 'hidden md:flex' : 'hidden sm:flex'} w-10 h-10 bg-cyan-400 rounded-full items-center justify-center mb-0 mr-2 z-30 flex-shrink-0`}>
+              <div className={`${['ru', 'lt', 'en'].includes(language) ? 'hidden md:flex' : 'hidden sm:flex'} w-10 h-10 bg-cyan-400 rounded-full items-center justify-center mb-0 mr-2 z-30 flex-shrink-0`}>
                 <Globe className="w-6 h-6 text-white" strokeWidth={3} />
               </div>
 
@@ -362,7 +362,7 @@ export default function Features() {
                   return isActive ? 'bg-pink-300 text-gray-900' : 'bg-gray-200 text-gray-600';
                 };
 
-                const isLongLang = ['ru', 'lt'].includes(language);
+                const isLongLang = ['ru', 'lt', 'en'].includes(language);
 
                 return (
                   <button
