@@ -6,7 +6,7 @@ import { useModal } from '../contexts/ModalContext';
 import MinigamePopup from './MinigamePopup';
 
 export default function Header() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { openModal, openTrialModal } = useModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMinigameOpen, setIsMinigameOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function Header() {
   const navLinks = [
     { to: '/about', label: t.header.about },
     { to: '/process', label: t.header.studyingProcess },
-    { to: '/blog', label: t.header.blog },
+    ...(language !== 'ru' ? [{ to: '/blog', label: t.header.blog }] : []),
     { to: '/contact', label: t.header.contact },
   ];
 
