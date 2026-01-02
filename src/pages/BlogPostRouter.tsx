@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../utils/supabase';
 import ArticleRise from './articles/ArticleRise';
-import ArticleParents from './articles/ArticleParents';
-import ArticleTeens from './articles/ArticleTeens';
-import ArticleGeneric from './articles/ArticleGeneric';
 import { Loader2 } from 'lucide-react';
 
 export default function BlogPostRouter() {
@@ -55,15 +52,7 @@ export default function BlogPostRouter() {
         );
     }
 
-    // Router Logic
-    // ID 1 (The Setup) -> Interactive Rise Article
-    if (post.id === 1 || post.title.includes('Interactive') || post.platform === 'Insights') {
-        return <ArticleRise />;
-    }
-
-    // Fallbacks for older data if it exists
-    if (post.platform === 'Parents') return <ArticleParents />;
-    if (post.platform === 'Students') return <ArticleTeens />;
-
-    return <ArticleGeneric post={post} />;
+    // FORCE INTERACTIVE LAYOUT FOR EVERYTHING
+    // The user explicitly requested to remove the static ones.
+    return <ArticleRise />;
 }
