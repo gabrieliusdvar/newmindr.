@@ -195,9 +195,9 @@ export default function Contact() {
           {/* Social Media Links - Interactive Floating Bar */}
           <div className="hidden lg:flex absolute left-6 top-1/2 transform -translate-y-1/2 flex-col gap-6 z-20">
             {[
-              { icon: Facebook, color: 'hover:bg-indigo-600', shadow: 'shadow-[4px_4px_0_0_#1e1b4b]' },
-              { icon: Instagram, color: 'hover:bg-pink-500', shadow: 'shadow-[4px_4px_0_0_#831843]' },
-              { icon: Youtube, color: 'hover:bg-red-600', shadow: 'shadow-[4px_4px_0_0_#7f1d1d]' },
+              { icon: Facebook, color: 'hover:bg-indigo-600', shadow: 'shadow-[4px_4px_0_0_#1e1b4b]', url: 'https://www.facebook.com/newmindr' },
+              { icon: Instagram, color: 'hover:bg-pink-500', shadow: 'shadow-[4px_4px_0_0_#831843]', url: 'https://www.instagram.com/newmindr' },
+              { icon: Youtube, color: 'hover:bg-red-600', shadow: 'shadow-[4px_4px_0_0_#7f1d1d]', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
               {
                 icon: (props: any) => (
                   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -205,12 +205,15 @@ export default function Contact() {
                   </svg>
                 ),
                 color: 'hover:bg-black',
-                shadow: 'shadow-[4px_4px_0_0_#000000]'
+                shadow: 'shadow-[4px_4px_0_0_#000000]',
+                url: 'https://www.tiktok.com/@newmindr'
               },
             ].map((social, i) => (
               <a
                 key={i}
-                href="#"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`w-12 h-12 bg-white border-2 border-gray-900 rounded-2xl flex items-center justify-center text-gray-900 transition-all hover:-translate-y-1 hover:-translate-x-1 ${social.shadow} hover:shadow-none ${social.color} hover:text-white`}
               >
                 <social.icon className="w-6 h-6" />

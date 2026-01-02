@@ -181,21 +181,24 @@ export default function Footer() {
               <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.footer.connect}</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: Facebook, color: 'hover:bg-indigo-600' },
-                  { icon: Instagram, color: 'hover:bg-pink-500' },
-                  { icon: Youtube, color: 'hover:bg-red-600' },
+                  { icon: Facebook, color: 'hover:bg-indigo-600', url: 'https://www.facebook.com/newmindr' },
+                  { icon: Instagram, color: 'hover:bg-pink-500', url: 'https://www.instagram.com/newmindr' },
+                  { icon: Youtube, color: 'hover:bg-red-600', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
                   {
                     icon: (props: any) => (
                       <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
                         <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.46-.12 3.43-.2 6.87-.58 10.28-.41 3.22-3.12 5.76-6.36 5.95-3.32.22-6.52-2.07-7.23-5.3-.9-3.92 1.48-8 5.42-8.59.88-.13 1.77-.11 2.65.04V14.5c-1.22-.32-2.58-.1-3.53.7-.95.8-1.39 2.1-1.07 3.29.32 1.19 1.4 2.06 2.62 2.14 1.22.08 2.4-.6 2.87-1.72.33-.78.36-1.63.36-2.47V0z" />
                       </svg>
                     ),
-                    color: 'hover:bg-black'
+                    color: 'hover:bg-black',
+                    url: 'https://www.tiktok.com/@newmindr'
                   },
                 ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-10 h-10 bg-white border-2 border-gray-900 rounded-lg flex items-center justify-center shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group ${social.color}`}
                   >
                     <social.icon className="w-5 h-5 text-gray-900 group-hover:text-white transition-colors" />

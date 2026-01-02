@@ -9,7 +9,7 @@ interface InfoModalProps {
 
 export default function InfoModal({ type, onClose }: InfoModalProps) {
     const [isYearly, setIsYearly] = useState(true);
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     useEffect(() => {
         if (type) {
@@ -171,21 +171,28 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
                         <p className="text-sm font-bold text-white/60 mb-4">{t.infoModal.contact.socialDesc}</p>
                         <div className="flex gap-4">
                             {[
-                                { icon: Facebook, color: 'hover:bg-indigo-600' },
-                                { icon: Instagram, color: 'hover:bg-pink-500' },
-                                { icon: Youtube, color: 'hover:bg-red-600' },
+                                { icon: Facebook, color: 'hover:bg-indigo-600', url: 'https://www.facebook.com/newmindr' },
+                                { icon: Instagram, color: 'hover:bg-pink-500', url: 'https://www.instagram.com/newmindr' },
+                                { icon: Youtube, color: 'hover:bg-red-600', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
                                 {
                                     icon: (props: any) => (
                                         <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
                                             <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.46-.12 3.43-.2 6.87-.58 10.28-.41 3.22-3.12 5.76-6.36 5.95-3.32.22-6.52-2.07-7.23-5.3-.9-3.92 1.48-8 5.42-8.59.88-.13 1.77-.11 2.65.04V14.5c-1.22-.32-2.58-.1-3.53.7-.95.8-1.39 2.1-1.07 3.29.32 1.19 1.4 2.06 2.62 2.14 1.22.08 2.4-.6 2.87-1.72.33-.78.36-1.63.36-2.47V0z" />
                                         </svg>
                                     ),
-                                    color: 'hover:bg-black'
+                                    color: 'hover:bg-black',
+                                    url: 'https://www.tiktok.com/@newmindr'
                                 },
                             ].map((s, idx) => (
-                                <div key={idx} className={`w-12 h-12 border-4 border-white/20 rounded-xl flex items-center justify-center font-black group transition-all cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-1 active:shadow-none hover:border-white ${s.color}`}>
+                                <a
+                                    key={idx}
+                                    href={s.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`w-12 h-12 border-4 border-white/20 rounded-xl flex items-center justify-center font-black group transition-all cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-1 active:shadow-none hover:border-white ${s.color}`}
+                                >
                                     <s.icon className="w-5 h-5 text-white transition-colors" />
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>
