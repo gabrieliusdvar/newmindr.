@@ -70,7 +70,7 @@ export default function Hero() {
                 <h1 className="font-black leading-[1.1] mb-6 sm:mb-8 3xl:mb-12 uppercase tracking-tighter text-center lg:text-left">
                   {/* Line 1 */}
                   <span
-                    className={`block ${language === 'lt' ? 'text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-4xl 3xl:text-5xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-5xl 3xl:text-6xl'} mb-3 sm:mb-4 3xl:mb-6 text-white`}
+                    className={`block ${['lt', 'ru'].includes(language) ? 'text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] 3xl:text-5xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-5xl 3xl:text-6xl'} mb-3 sm:mb-4 3xl:mb-6 text-white whitespace-nowrap lg:whitespace-normal xl:whitespace-nowrap`}
                     style={{
                       WebkitTextStroke: '1px #111827',
                       filter: 'drop-shadow(2px 2px 0px #FACC15)',
@@ -83,7 +83,7 @@ export default function Hero() {
                   {/* Line 2 - The Panel */}
                   <div className="inline-block relative mb-4 sm:mb-6 3xl:mb-8 transform -rotate-2 hover:rotate-1 hover:scale-105 transition-all duration-300 cursor-default">
                     <div className="absolute inset-0 bg-purple-400 border-2 sm:border-3 3xl:border-4 border-gray-900 rounded-lg sm:rounded-xl 3xl:rounded-2xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 3xl:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]" />
-                    <span className={`relative block ${language === 'lt' ? 'text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl'} text-gray-900 italic px-3 sm:px-5 3xl:px-8 py-1 sm:py-2 3xl:py-3 font-black`}>
+                    <span className={`relative block ${['lt', 'ru'].includes(language) ? 'text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl'} text-gray-900 italic px-3 sm:px-5 3xl:px-8 py-1 sm:py-2 3xl:py-3 font-black`}>
                       {t.hero.superpower}
                     </span>
                   </div>
@@ -91,7 +91,7 @@ export default function Hero() {
                   {/* Line 3 */}
                   <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 3xl:gap-4 flex-wrap">
                     <span
-                      className={`text-white block ${language === 'lt' ? 'text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 3xl:text-8xl' : 'text-5xl xs:text-6xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-8xl 3xl:text-9xl'} py-1`}
+                      className={`text-white block ${['lt', 'ru'].includes(language) ? 'text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl 3xl:text-8xl' : 'text-5xl xs:text-6xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-8xl 3xl:text-9xl'} py-1`}
                       style={{
                         WebkitTextStroke: '1px #111827',
                         filter: 'drop-shadow(2px 2px 0px #10B981)',
