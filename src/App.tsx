@@ -11,6 +11,7 @@ import StudyingProcess from './components/StudyingProcess';
 import Contact from './components/Contact';
 import Blog from './pages/Blog';
 import BlogPostRouter from './pages/BlogPostRouter';
+import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
 import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
@@ -45,6 +46,8 @@ function App() {
             <Route path="/contact" element={<Layout showFooter={false}><Contact /></Layout>} />
             <Route path="/blog" element={<Layout><Blog /></Layout>} />
             <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
+            {/* 404 Catch-all route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieNotice />
           <LanguageAvailabilityPopup />
