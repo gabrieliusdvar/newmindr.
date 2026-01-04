@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Zap, Trophy, Star, ShoppingBag, Target, Rocket, ArrowRight, ArrowLeft, Lock, Unlock, Crown, Flame, Gem, Palette, Frame, Shirt } from 'lucide-react';
+import { Sparkles, Zap, Trophy, Star, ShoppingBag, Target, Rocket, ArrowRight, ArrowLeft, Lock, Unlock, Flame } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import CapyPrince from '../assets/CapyPrincemindr.png';
+import SwagMindr from '../assets/Swagmindr.png';
 
 export default function Showcase() {
     const navigate = useNavigate();
@@ -142,10 +144,10 @@ export default function Showcase() {
     ];
 
     const shopItems = [
-        { id: 1, type: 'image', src: '/CapyPrincemindr.png', price: 500, color: 'from-cyan-400 to-blue-400' },
+        { id: 1, type: 'image', src: CapyPrince, price: 500, color: 'from-cyan-400 to-blue-400' },
         { id: 2, type: 'text', text: 'BACKGROUND', price: 1000, color: 'from-red-500 to-red-600' },
         { id: 3, type: 'gold', text: 'YOUR NAME', price: 2500, color: 'bg-black' },
-        { id: 4, type: 'image', src: '/Swagmindr.png', price: 1500, color: 'from-purple-400 to-indigo-400' },
+        { id: 4, type: 'image', src: SwagMindr, price: 1500, color: 'from-purple-400 to-indigo-400' },
     ];
 
     const handleNext = (index: number) => {
