@@ -393,9 +393,9 @@ export default function Showcase() {
                             {badges.map((badge) => {
                                 const BadgeIcon = badge.icon;
                                 return (
-                                    <div key={badge.id} className={`aspect-square bg-gradient-to-br ${badge.color} border-4 border-black rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform cursor-pointer group relative`}>
+                                    <div key={badge.id} className={`aspect-square bg-gradient-to-br ${badge.color} border-4 border-black rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-110 hover:z-50 transition-transform cursor-pointer group relative`}>
                                         <BadgeIcon className="w-8 h-8 text-white" strokeWidth={3} />
-                                        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                                        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-50 pointer-events-none">
                                             {badge.name}
                                         </div>
                                     </div>
