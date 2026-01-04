@@ -63,6 +63,7 @@ export default function Footer() {
     { name: t.footer.ourCourses, type: 'courses' as const },
     { name: t.footer.programs, type: 'programs' as const },
     { name: t.footer.pricing, type: 'pricing' as const },
+    { name: t.footer.showcase || 'Showcase', path: '/showcase' },
     { name: t.footer.blog, path: '/blog' },
     { name: t.footer.contact, type: 'contact' as const },
   ];
