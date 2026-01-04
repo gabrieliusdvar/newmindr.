@@ -1424,8 +1424,8 @@ export const translations: Record<Language, any> = {
         {
           id: 2,
           platform: "Švietimas",
-          title: "Kodėl mokiniai nepavyksta (ir kaip mes tai keičiame)",
-          content: "30% nepavyksta dėl įsitraukimo stokos. 45% kovoja su tradiciniais metodais. Atraskite šokiruojančią statistiką ir kaip interaktyvus mokymasis revoliucionuoja švietimą.",
+          title: "Kodėl mokiniai patiria nesėkmes (ir kaip mes tai keičiame)",
+          content: "30% patiria nesėkmes dėl įsitraukimo stokos. 45% kovoja su tradiciniais metodais. Sužinokite šokiruojančią statistiką ir kaip interaktyvus mokymasis revoliucionuoja švietimą.",
           image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop",
           date: "Sau 4, 2026",
           likes: "15k",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TrendingDown, BookX, Gamepad2, Target, Users, Zap, Trophy } from 'lucide-react';
 
 const ArticleFail = () => {
     const navigate = useNavigate();
@@ -19,25 +20,25 @@ const ArticleFail = () => {
             number: "30%",
             fact: "of students fail due to lack of engagement",
             color: "bg-red-500",
-            icon: "😴"
+            Icon: TrendingDown
         },
         {
             number: "45%",
             fact: "struggle because traditional methods don't match their learning style",
             color: "bg-orange-500",
-            icon: "📚"
+            Icon: BookX
         },
         {
             number: "60%",
             fact: "of students say they'd perform better with interactive learning",
             color: "bg-yellow-500",
-            icon: "🎮"
+            Icon: Gamepad2
         },
         {
             number: "25%",
             fact: "fail due to lack of motivation and unclear goals",
             color: "bg-purple-500",
-            icon: "🎯"
+            Icon: Target
         }
     ];
 
@@ -93,9 +94,14 @@ const ArticleFail = () => {
 
                 {/* Introduction */}
                 <div className="bg-white rounded-3xl p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] border-4 border-gray-200 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
-                        The Hard Truth 📊
-                    </h2>
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                            <TrendingDown className="w-8 h-8 text-white" strokeWidth={3} />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+                            The Hard Truth
+                        </h2>
+                    </div>
                     <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
                         Every year, millions of students struggle, not because they lack intelligence or potential,
                         but because the traditional education system fails to engage them in ways that actually work.
@@ -112,40 +118,50 @@ const ArticleFail = () => {
                     </h2>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        {statistics.map((stat, index) => (
-                            <div
-                                key={index}
-                                onClick={() => handleStatReveal(index)}
-                                className={`
-                  relative bg-white rounded-3xl p-8 border-4 border-black cursor-pointer
-                  transform transition-all duration-300 hover:scale-105
-                  ${activeStatIndex === index ? 'shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'}
-                  ${revealedStats.includes(index) ? 'opacity-100' : 'opacity-70'}
-                `}
-                            >
-                                <div className="text-6xl mb-4">{stat.icon}</div>
-                                <div className={`text-6xl md:text-7xl font-black mb-4 ${stat.color.replace('bg-', 'text-')}`}>
-                                    {stat.number}
-                                </div>
-                                <p className="text-lg md:text-xl font-bold text-gray-800">
-                                    {stat.fact}
-                                </p>
-
-                                {!revealedStats.includes(index) && (
-                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 to-gray-900/5 rounded-3xl flex items-center justify-center backdrop-blur-sm">
-                                        <span className="text-2xl font-black text-gray-700">Click to Reveal</span>
+                        {statistics.map((stat, index) => {
+                            const IconComponent = stat.Icon;
+                            return (
+                                <div
+                                    key={index}
+                                    onClick={() => handleStatReveal(index)}
+                                    className={`
+                    relative bg-white rounded-3xl p-8 border-4 border-black cursor-pointer
+                    transform transition-all duration-300 hover:scale-105
+                    ${activeStatIndex === index ? 'shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'}
+                    ${revealedStats.includes(index) ? 'opacity-100' : 'opacity-70'}
+                  `}
+                                >
+                                    <div className={`w-20 h-20 ${stat.color} rounded-2xl flex items-center justify-center mb-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                                        <IconComponent className="w-10 h-10 text-white" strokeWidth={3} />
                                     </div>
-                                )}
-                            </div>
-                        ))}
+                                    <div className={`text-6xl md:text-7xl font-black mb-4 ${stat.color.replace('bg-', 'text-')}`}>
+                                        {stat.number}
+                                    </div>
+                                    <p className="text-lg md:text-xl font-bold text-gray-800">
+                                        {stat.fact}
+                                    </p>
+
+                                    {!revealedStats.includes(index) && (
+                                        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 to-gray-900/5 rounded-3xl flex items-center justify-center backdrop-blur-sm">
+                                            <span className="text-2xl font-black text-gray-700">Click to Reveal</span>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
 
                 {/* The Problem Section */}
                 <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 md:p-12 border-4 border-red-200 mb-12">
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
-                        Why This Happens 🤔
-                    </h2>
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                            <BookX className="w-8 h-8 text-white" strokeWidth={3} />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+                            Why This Happens
+                        </h2>
+                    </div>
 
                     <div className="space-y-6">
                         <div className="flex items-start gap-4">
@@ -197,29 +213,40 @@ const ArticleFail = () => {
                     </div>
 
                     <div className="relative z-10">
-                        <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ textShadow: '4px 4px 0px rgba(0,0,0,0.3)' }}>
-                            Enter: newmindr 🚀
-                        </h2>
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                <Trophy className="w-8 h-8 text-purple-600" strokeWidth={3} />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-black" style={{ textShadow: '4px 4px 0px rgba(0,0,0,0.3)' }}>
+                                Enter: newmindr
+                            </h2>
+                        </div>
 
                         <p className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed">
-                            We're not just another online learning platform. We're a revolution in how education works.
+                            We're not just another online learning platform. Every day we're expanding our classes and making them better for our users.
                         </p>
 
                         <div className="grid md:grid-cols-3 gap-6 mb-8">
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30">
-                                <div className="text-4xl mb-3">🎮</div>
+                                <div className="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center mb-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <Gamepad2 className="w-8 h-8 text-gray-900" strokeWidth={3} />
+                                </div>
                                 <h3 className="text-xl font-black mb-2">Gamified Learning</h3>
                                 <p className="text-white/90">Turn education into an adventure with interactive challenges and rewards.</p>
                             </div>
 
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30">
-                                <div className="text-4xl mb-3">🎯</div>
+                                <div className="w-16 h-16 bg-cyan-400 rounded-2xl flex items-center justify-center mb-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <Target className="w-8 h-8 text-gray-900" strokeWidth={3} />
+                                </div>
                                 <h3 className="text-xl font-black mb-2">Personalized Paths</h3>
-                                <p className="text-white/90">AI-powered learning that adapts to YOUR unique style and pace.</p>
+                                <p className="text-white/90">Learning that adapts to YOUR unique style and pace.</p>
                             </div>
 
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30">
-                                <div className="text-4xl mb-3">⚡</div>
+                                <div className="w-16 h-16 bg-pink-400 rounded-2xl flex items-center justify-center mb-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <Zap className="w-8 h-8 text-gray-900" strokeWidth={3} />
+                                </div>
                                 <h3 className="text-xl font-black mb-2">Active Engagement</h3>
                                 <p className="text-white/90">Learn by doing, not just watching. Hands-on, interactive experiences.</p>
                             </div>
@@ -229,15 +256,21 @@ const ArticleFail = () => {
                             <h3 className="text-2xl font-black mb-4">The Results Speak for Themselves:</h3>
                             <ul className="space-y-3 text-lg">
                                 <li className="flex items-center gap-3">
-                                    <span className="text-2xl">✅</span>
+                                    <div className="w-8 h-8 bg-green-400 rounded-lg flex items-center justify-center border-2 border-black flex-shrink-0">
+                                        <span className="text-black font-black">✓</span>
+                                    </div>
                                     <span><strong>90% retention rate</strong> vs. 5% in traditional lectures</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="text-2xl">✅</span>
+                                    <div className="w-8 h-8 bg-green-400 rounded-lg flex items-center justify-center border-2 border-black flex-shrink-0">
+                                        <span className="text-black font-black">✓</span>
+                                    </div>
                                     <span><strong>3x faster learning</strong> through active engagement</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="text-2xl">✅</span>
+                                    <div className="w-8 h-8 bg-green-400 rounded-lg flex items-center justify-center border-2 border-black flex-shrink-0">
+                                        <span className="text-black font-black">✓</span>
+                                    </div>
                                     <span><strong>85% of students</strong> report increased motivation</span>
                                 </li>
                             </ul>
@@ -247,8 +280,13 @@ const ArticleFail = () => {
 
                 {/* Call to Action */}
                 <div className="bg-white rounded-3xl p-8 md:p-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center">
+                    <div className="flex justify-center mb-6">
+                        <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                            <Users className="w-10 h-10 text-white" strokeWidth={3} />
+                        </div>
+                    </div>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6">
-                        Ready to Stop Failing and Start Soaring? 🦅
+                        Ready to Stop Failing and Start Soaring?
                     </h2>
                     <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
                         Discover how our interactive learning process transforms struggling students into confident achievers.
@@ -258,7 +296,10 @@ const ArticleFail = () => {
                         onClick={() => navigate('/process')}
                         className="group relative px-12 py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-black text-xl md:text-2xl rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-200 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]"
                     >
-                        <span className="relative z-10">See Our Learning Process →</span>
+                        <span className="relative z-10 flex items-center gap-3 justify-center">
+                            See Our Learning Process
+                            <Zap className="w-6 h-6" strokeWidth={3} />
+                        </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 rounded-xl transform translate-x-2 translate-y-2 -z-10"></div>
                     </button>
 
