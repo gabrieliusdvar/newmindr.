@@ -1420,6 +1420,17 @@ export const translations: Record<Language, any> = {
           likes: "12k",
           comments: "340",
           url: "/blog/interactive-rise"
+        },
+        {
+          id: 2,
+          platform: "Švietimas",
+          title: "Kodėl mokiniai nepavyksta (ir kaip mes tai keičiame)",
+          content: "30% nepavyksta dėl įsitraukimo stokos. 45% kovoja su tradiciniais metodais. Atraskite šokiruojančią statistiką ir kaip interaktyvus mokymasis revoliucionuoja švietimą.",
+          image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop",
+          date: "Sau 4, 2026",
+          likes: "15k",
+          comments: "520",
+          url: "/blog/why-students-fail"
         }
       ]
     }
@@ -2126,6 +2137,17 @@ export const translations: Record<Language, any> = {
           likes: "12k",
           comments: "340",
           url: "/blog/interactive-rise"
+        },
+        {
+          id: 2,
+          platform: "Образование",
+          title: "Почему студенты терпят неудачу (и как мы это меняем)",
+          content: "30% терпят неудачу из-за отсутствия вовлеченности. 45% борются с традиционными методами. Откройте шокирующую статистику и как интерактивное обучение революционизирует образование.",
+          image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop",
+          date: "Янв 4, 2026",
+          likes: "15k",
+          comments: "520",
+          url: "/blog/why-students-fail"
         }
       ]
     }

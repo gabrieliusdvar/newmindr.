@@ -42,7 +42,7 @@ export default function BlogPostRouter() {
     }
 
     // ID 2 or why-students-fail slug -> Why Students Fail Article
-    if (post.id === 2 || post.url.includes('why-students-fail') || post.platform === 'Education') {
+    if (post.id === 2 || post.url.includes('why-students-fail') || post.platform === 'Education' || post.platform === 'Švietimas' || post.platform === 'Образование') {
         return <ArticleFail />;
     }
 
