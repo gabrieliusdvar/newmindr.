@@ -23,13 +23,24 @@ const NotFound = () => {
         "You've discovered the void. Impressive!",
     ];
 
+    const sarcasticFunFacts = [
+        "Fun fact: This page is playing hide and seek. It's winning.",
+        "Fun fact: 404 errors are just pages being introverts.",
+        "Fun fact: You just found the internet's black hole.",
+        "Fun fact: This page is on a permanent coffee break.",
+        "Fun fact: Even Google Maps can't find this page.",
+        "Fun fact: This URL leads to absolutely nowhere. Congrats!",
+        "Fun fact: You've mastered the art of getting lost online.",
+        "Fun fact: This page exists in a parallel universe.",
+    ];
+
     // Pick ONE random message and keep it - useMemo ensures it only runs once
     const randomMessage = useMemo(() => {
         return sarcasticMessages[Math.floor(Math.random() * sarcasticMessages.length)];
     }, []);
 
-    const randomVisitorNumber = useMemo(() => {
-        return Math.floor(Math.random() * 1000) + 1;
+    const randomFunFact = useMemo(() => {
+        return sarcasticFunFacts[Math.floor(Math.random() * sarcasticFunFacts.length)];
     }, []);
 
     return (
@@ -114,7 +125,7 @@ const NotFound = () => {
                     {/* Fun fact */}
                     <div className="text-center">
                         <p className="text-xs md:text-sm text-gray-600 italic">
-                            Fun fact: You're the {randomVisitorNumber}th person to get lost today! 🎉
+                            {randomFunFact}
                         </p>
                     </div>
                 </div>
