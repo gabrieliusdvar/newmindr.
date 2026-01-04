@@ -703,6 +703,17 @@ export const translations: Record<Language, any> = {
           likes: "12k",
           comments: "340",
           url: "/blog/interactive-rise"
+        },
+        {
+          id: 2,
+          platform: "Education",
+          title: "Why Students Fail (And How We're Changing That)",
+          content: "30% fail due to lack of engagement. 45% struggle with traditional methods. Discover the shocking statistics and how interactive learning is revolutionizing education.",
+          image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop",
+          date: "Jan 4, 2026",
+          likes: "15k",
+          comments: "520",
+          url: "/blog/why-students-fail"
         }
       ]
     }

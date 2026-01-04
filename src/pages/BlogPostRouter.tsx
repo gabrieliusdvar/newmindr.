@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArticleRise from './articles/ArticleRise';
+import ArticleFail from './articles/ArticleFail';
 import ArticleParents from './articles/ArticleParents';
 import ArticleTeens from './articles/ArticleTeens';
 import ArticleGeneric from './articles/ArticleGeneric';
@@ -38,6 +39,11 @@ export default function BlogPostRouter() {
     // ID 1 (The Setup) or Interactive Slug -> Interactive Rise Article
     if (post.id === 1 || post.url.includes('interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos' || post.platform === 'Инсайты') {
         return <ArticleRise />;
+    }
+
+    // ID 2 or why-students-fail slug -> Why Students Fail Article
+    if (post.id === 2 || post.url.includes('why-students-fail') || post.platform === 'Education') {
+        return <ArticleFail />;
     }
 
     // Fallbacks for older protocols
