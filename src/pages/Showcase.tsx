@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Zap, Trophy, Star, Award, ShoppingBag, Target, Rocket, ArrowRight, ArrowLeft, Lock, Unlock, Crown, Flame, Gift, Medal, Gem, Palette, Frame, Shirt } from 'lucide-react';
+import { Sparkles, Zap, Trophy, Star, ShoppingBag, Target, Rocket, ArrowRight, ArrowLeft, Lock, Unlock, Crown, Flame, Gem, Palette, Frame, Shirt } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Showcase() {
@@ -8,6 +8,7 @@ export default function Showcase() {
     const { language } = useLanguage();
     const [currentStep, setCurrentStep] = useState(0);
     const [unlockedSteps, setUnlockedSteps] = useState<number[]>([0]);
+    const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const txt = {
         en: {
@@ -149,19 +150,36 @@ export default function Showcase() {
         { id: 6, name: 'Epic Outfit', price: 1500, icon: Shirt, color: 'from-green-400 to-emerald-400' },
     ];
 
-    const handleNext = () => {
-        if (currentStep < steps.length - 1) {
-            const nextStep = currentStep + 1;
+    const handleNext = (index: number) => {
+        if (index < steps.length - 1) {
+            const nextStep = index + 1;
             setCurrentStep(nextStep);
             if (!unlockedSteps.includes(nextStep)) {
                 setUnlockedSteps([...unlockedSteps, nextStep]);
             }
+
+            // Auto-scroll to next step
+            setTimeout(() => {
+                stepRefs.current[nextStep]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 100);
         }
     };
 
-    const handlePrevious = () => {
-        if (currentStep > 0) {
-            setCurrentStep(currentStep - 1);
+    const handlePrevious = (index: number) => {
+        if (index > 0) {
+            const prevStep = index - 1;
+            setCurrentStep(prevStep);
+
+            // Auto-scroll to previous step
+            setTimeout(() => {
+                stepRefs.current[prevStep]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 100);
         }
     };
 
@@ -193,7 +211,7 @@ export default function Showcase() {
 
                 {/* Interactive Roadmap */}
                 <div className="relative w-full mb-16" style={{ minHeight: '1200px' }}>
-                    {/* SVG Path with Arrows */}
+                    {/* SVG Path */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
                         <defs>
                             <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -203,9 +221,6 @@ export default function Showcase() {
                                 <stop offset="75%" stopColor="#10b981" />
                                 <stop offset="100%" stopColor="#ef4444" />
                             </linearGradient>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                                <polygon points="0 0, 10 3, 0 6" fill="#000" />
-                            </marker>
                         </defs>
 
                         {/* Main Path */}
@@ -228,18 +243,6 @@ export default function Showcase() {
                             strokeDasharray="20,20"
                             opacity="0.2"
                         />
-
-                        {/* Arrow Markers on Path */}
-                        {[25, 45, 65, 85].map((percent, i) => (
-                            <g key={i}>
-                                <circle cx={`${percent}%`} cy={`${30 + i * 15}%`} r="8" fill="#000" />
-                                <polygon
-                                    points={`${percent + 1},${30 + i * 15 - 1} ${percent + 2},${30 + i * 15} ${percent + 1},${30 + i * 15 + 1}`}
-                                    fill="#fff"
-                                    transform={`translate(${percent * 10}, ${(30 + i * 15) * 10})`}
-                                />
-                            </g>
-                        ))}
                     </svg>
 
                     {/* Step Nodes */}
@@ -251,6 +254,7 @@ export default function Showcase() {
                         return (
                             <div
                                 key={step.id}
+                                ref={(el) => (stepRefs.current[index] = el)}
                                 className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
                                 style={{
                                     top: step.position.top,
@@ -269,7 +273,7 @@ export default function Showcase() {
                                 <div className={`
                                     relative transition-all duration-500
                                     ${isCurrent ? 'scale-110' : 'scale-100'}
-                                    ${!isUnlocked ? 'blur-sm opacity-50' : ''}
+                                    ${!isUnlocked ? 'blur-sm opacity-50 pointer-events-none' : ''}
                                 `}>
                                     {/* Lock/Unlock Badge */}
                                     <div className={`
@@ -288,7 +292,7 @@ export default function Showcase() {
 
                                     {/* Main Card */}
                                     <div className={`
-                                        w-72 bg-white border-4 border-black rounded-3xl p-6
+                                        w-80 bg-white border-4 border-black rounded-3xl p-6
                                         ${isCurrent ? 'shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'}
                                         transition-all duration-300
                                     `}>
@@ -318,56 +322,43 @@ export default function Showcase() {
 
                                         {/* Status Badge */}
                                         <div className={`
-                                            text-center py-2 px-4 rounded-xl border-2 border-black font-black text-xs uppercase tracking-wider
+                                            text-center py-2 px-4 rounded-xl border-2 border-black font-black text-xs uppercase tracking-wider mb-4
                                             ${isCurrent ? 'bg-gradient-to-r from-green-400 to-emerald-400' : isUnlocked ? 'bg-blue-100' : 'bg-gray-200'}
                                         `}>
                                             {isCurrent ? t.current : isUnlocked ? t.unlocked : t.locked}
+                                        </div>
+
+                                        {/* Navigation Buttons */}
+                                        <div className="flex gap-3">
+                                            {index > 0 && (
+                                                <button
+                                                    onClick={() => handlePrevious(index)}
+                                                    className="flex-1 px-4 py-3 bg-white border-4 border-black rounded-xl font-black text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] transition-all"
+                                                >
+                                                    <span className="flex items-center justify-center gap-2">
+                                                        <ArrowLeft className="w-4 h-4" strokeWidth={3} />
+                                                        {t.previous}
+                                                    </span>
+                                                </button>
+                                            )}
+
+                                            {index < steps.length - 1 && (
+                                                <button
+                                                    onClick={() => handleNext(index)}
+                                                    className={`flex-1 px-4 py-3 bg-gradient-to-r ${step.color} text-white border-4 border-black rounded-xl font-black text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] transition-all`}
+                                                >
+                                                    <span className="flex items-center justify-center gap-2">
+                                                        {t.next}
+                                                        <ArrowRight className="w-4 h-4" strokeWidth={3} />
+                                                    </span>
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         );
                     })}
-                </div>
-
-                {/* Navigation Buttons */}
-                <div className="flex items-center justify-center gap-6 mb-16">
-                    <button
-                        onClick={handlePrevious}
-                        disabled={currentStep === 0}
-                        className={`
-                            group px-8 py-4 bg-white border-4 border-black rounded-2xl font-black text-xl
-                            shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
-                            transition-all duration-200
-                            ${currentStep === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]'}
-                        `}
-                    >
-                        <span className="flex items-center gap-3">
-                            <ArrowLeft className="w-6 h-6" strokeWidth={3} />
-                            {t.previous}
-                        </span>
-                    </button>
-
-                    <div className="text-center">
-                        <div className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1">Step</div>
-                        <div className="text-4xl font-black">{currentStep + 1} / {steps.length}</div>
-                    </div>
-
-                    <button
-                        onClick={handleNext}
-                        disabled={currentStep === steps.length - 1}
-                        className={`
-                            group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-4 border-black rounded-2xl font-black text-xl
-                            shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
-                            transition-all duration-200
-                            ${currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]'}
-                        `}
-                    >
-                        <span className="flex items-center gap-3">
-                            {t.next}
-                            <ArrowRight className="w-6 h-6" strokeWidth={3} />
-                        </span>
-                    </button>
                 </div>
 
                 {/* Rewards Showcase */}
