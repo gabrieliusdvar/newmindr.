@@ -54,7 +54,8 @@ const ArticleFail = () => {
             ctaTitle: "Ready to Stop Failing and Start Soaring?",
             ctaText: "Discover how our interactive learning process transforms struggling students into confident achievers.",
             ctaButton: "See Our Learning Process",
-            ctaFooter: "Join thousands of students who've already made the switch."
+            ctaFooter: "Join thousands of students who've already made the switch.",
+            imageCaption: "For a fair selection, everybody has to take the same exam: please climb that tree."
         },
         lt: {
             back: "Atgal",
@@ -92,7 +93,8 @@ const ArticleFail = () => {
             ctaTitle: "Pasiruošę nustoti patirti nesėkmes ir pradėti kilti?",
             ctaText: "Atraskite, kaip mūsų interaktyvus mokymosi procesas paverčia kovojančius mokinius pasitikėjusiais savimi sėkmės siekėjais.",
             ctaButton: "Žiūrėti mokymosi procesą",
-            ctaFooter: "Prisijunkite prie tūkstančių mokinių, kurie jau padarė pasirinkimą."
+            ctaFooter: "Prisijunkite prie tūkstančių mokinių, kurie jau padarė pasirinkimą.",
+            imageCaption: "Kad atranka būtų sąžininga, visi turite laikyti tą patį egzaminą – prašau, įlipkite į tą medį."
         },
         ru: {
             back: "Назад",
@@ -130,7 +132,8 @@ const ArticleFail = () => {
             ctaTitle: "Готовы перестать терпеть неудачи и начать взлетать?",
             ctaText: "Откройте для себя, как наш интерактивный процесс обучения превращает борющихся студентов в уверенных в себе достигателей.",
             ctaButton: "Посмотреть процесс обучения",
-            ctaFooter: "Присоединяйтесь к тысячам студентов, которые уже сделали выбор."
+            ctaFooter: "Присоединяйтесь к тысячам студентов, которые уже сделали выбор.",
+            imageCaption: "Для справедливого отбора все должны сдать одинаковый экзамен: пожалуйста, залезьте на это дерево."
         }
     };
 
@@ -330,6 +333,21 @@ const ArticleFail = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Educational Equality Image */}
+                <div className="bg-white rounded-3xl p-8 md:p-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-12">
+                    <div className="relative">
+                        <img
+                            src="/article-tree.webp"
+                            alt="Educational equality illustration"
+                            className="w-full rounded-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                        />
+                        <p className="text-center text-lg md:text-xl font-bold text-gray-700 mt-6 italic leading-relaxed">
+                            "{t.imageCaption}"
+                        </p>
+                    </div>
+                </div>
+
 
                 {/* The Solution - newmindr */}
                 <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-3xl p-8 md:p-12 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mb-12 relative overflow-hidden">
