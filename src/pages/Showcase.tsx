@@ -1,14 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Zap, Trophy, Star, Award, ShoppingBag, Target, Rocket, CheckCircle2, ArrowRight, Gift, Crown, Flame } from 'lucide-react';
+import { Sparkles, Zap, Trophy, Star, Award, ShoppingBag, Target, Rocket, ArrowRight, ArrowLeft, Lock, Unlock, Crown, Flame, Gift, Medal, Gem, Palette, Frame, Shirt } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Showcase() {
     const navigate = useNavigate();
     const { language } = useLanguage();
-    const [activeStep, setActiveStep] = useState(0);
-    const [scrollProgress, setScrollProgress] = useState(0);
-    const pathRef = useRef<SVGPathElement>(null);
+    const [currentStep, setCurrentStep] = useState(0);
+    const [unlockedSteps, setUnlockedSteps] = useState<number[]>([0]);
 
     const txt = {
         en: {
@@ -24,11 +23,15 @@ export default function Showcase() {
             step4Desc: "Unlock exclusive items, build your dream profile, flex your style!",
             step5Title: "🏆 Collect Achievements",
             step5Desc: "Badges, certificates, bragging rights. Show the world what you've mastered!",
+            next: "Next Step",
+            previous: "Previous",
+            current: "Current",
+            locked: "Locked",
+            unlocked: "Unlocked",
             ctaButton: "Begin Your Adventure",
             pointsEarned: "Points Earned",
             badgesUnlocked: "Badges Unlocked",
             shopPreview: "Exclusive Shop",
-            achievements: "Your Achievements",
         },
         lt: {
             title: "Jūsų Epinė Kelionė",
@@ -43,11 +46,15 @@ export default function Showcase() {
             step4Desc: "Atrakinkite išskirtinius daiktus, sukurkite svajonių profilį!",
             step5Title: "🏆 Rinkti Pasiekimus",
             step5Desc: "Ženkliukai, sertifikatai, pasigyrimai. Parodykite pasauliui!",
+            next: "Kitas Žingsnis",
+            previous: "Atgal",
+            current: "Dabartinis",
+            locked: "Užrakinta",
+            unlocked: "Atrakinta",
             ctaButton: "Pradėti Nuotykį",
             pointsEarned: "Uždirbta Taškų",
             badgesUnlocked: "Atrakinti Ženkliukai",
             shopPreview: "Išskirtinė Parduotuvė",
-            achievements: "Jūsų Pasiekimai",
         },
         ru: {
             title: "Ваше Эпическое Путешествие",
@@ -62,11 +69,15 @@ export default function Showcase() {
             step4Desc: "Разблокируйте эксклюзивные предметы, создайте профиль мечты!",
             step5Title: "🏆 Собирать Достижения",
             step5Desc: "Значки, сертификаты, права хвастовства. Покажите миру!",
+            next: "Следующий Шаг",
+            previous: "Назад",
+            current: "Текущий",
+            locked: "Заблокировано",
+            unlocked: "Разблокировано",
             ctaButton: "Начать Приключение",
             pointsEarned: "Заработано Очков",
             badgesUnlocked: "Разблокировано Значков",
             shopPreview: "Эксклюзивный Магазин",
-            achievements: "Ваши Достижения",
         }
     };
 
@@ -80,7 +91,7 @@ export default function Showcase() {
             icon: Rocket,
             color: 'from-blue-400 to-cyan-400',
             bgColor: 'bg-blue-500',
-            position: { top: '5%', left: '10%' },
+            position: { top: '10%', left: '15%' },
         },
         {
             id: 2,
@@ -89,7 +100,7 @@ export default function Showcase() {
             icon: Target,
             color: 'from-purple-400 to-pink-400',
             bgColor: 'bg-purple-500',
-            position: { top: '25%', left: '70%' },
+            position: { top: '30%', left: '70%' },
         },
         {
             id: 3,
@@ -98,7 +109,7 @@ export default function Showcase() {
             icon: Sparkles,
             color: 'from-yellow-400 to-orange-400',
             bgColor: 'bg-yellow-500',
-            position: { top: '50%', left: '30%' },
+            position: { top: '55%', left: '25%' },
         },
         {
             id: 4,
@@ -107,7 +118,7 @@ export default function Showcase() {
             icon: ShoppingBag,
             color: 'from-green-400 to-emerald-400',
             bgColor: 'bg-green-500',
-            position: { top: '70%', left: '65%' },
+            position: { top: '75%', left: '65%' },
         },
         {
             id: 5,
@@ -116,31 +127,49 @@ export default function Showcase() {
             icon: Trophy,
             color: 'from-red-400 to-rose-400',
             bgColor: 'bg-red-500',
-            position: { top: '90%', left: '40%' },
+            position: { top: '95%', left: '40%' },
         },
     ];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrolled = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = Math.min(scrolled / maxScroll, 1);
-            setScrollProgress(progress);
+    const badges = [
+        { id: 1, name: 'First Steps', icon: Rocket, color: 'from-blue-400 to-cyan-400' },
+        { id: 2, name: 'Quick Learner', icon: Zap, color: 'from-yellow-400 to-orange-400' },
+        { id: 3, name: 'Streak Master', icon: Flame, color: 'from-orange-500 to-red-500' },
+        { id: 4, name: 'Perfect Score', icon: Star, color: 'from-green-400 to-emerald-400' },
+        { id: 5, name: 'Night Owl', icon: Sparkles, color: 'from-purple-400 to-pink-400' },
+        { id: 6, name: 'Champion', icon: Trophy, color: 'from-red-400 to-rose-400' },
+    ];
 
-            // Update active step based on scroll
-            const stepIndex = Math.floor(progress * steps.length);
-            setActiveStep(Math.min(stepIndex, steps.length - 1));
-        };
+    const shopItems = [
+        { id: 1, name: 'Neon Frame', price: 500, icon: Frame, color: 'from-cyan-400 to-blue-400' },
+        { id: 2, name: 'Golden Crown', price: 1000, icon: Crown, color: 'from-yellow-400 to-orange-400' },
+        { id: 3, name: 'Rainbow Theme', price: 750, icon: Palette, color: 'from-pink-400 to-purple-400' },
+        { id: 4, name: 'Fire Effect', price: 1200, icon: Flame, color: 'from-orange-500 to-red-500' },
+        { id: 5, name: 'Rare Gem', price: 2000, icon: Gem, color: 'from-purple-500 to-pink-500' },
+        { id: 6, name: 'Epic Outfit', price: 1500, icon: Shirt, color: 'from-green-400 to-emerald-400' },
+    ];
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [steps.length]);
+    const handleNext = () => {
+        if (currentStep < steps.length - 1) {
+            const nextStep = currentStep + 1;
+            setCurrentStep(nextStep);
+            if (!unlockedSteps.includes(nextStep)) {
+                setUnlockedSteps([...unlockedSteps, nextStep]);
+            }
+        }
+    };
 
-    const pathLength = pathRef.current?.getTotalLength() || 0;
+    const handlePrevious = () => {
+        if (currentStep > 0) {
+            setCurrentStep(currentStep - 1);
+        }
+    };
+
+    const isStepUnlocked = (index: number) => unlockedSteps.includes(index);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50 pt-24 pb-16 overflow-hidden relative">
-            {/* Decorative Background Elements */}
+            {/* Decorative Background */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
                 <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute top-40 right-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl animate-pulse delay-75"></div>
@@ -163,8 +192,8 @@ export default function Showcase() {
                 </div>
 
                 {/* Interactive Roadmap */}
-                <div className="relative w-full" style={{ minHeight: '1200px' }}>
-                    {/* SVG Path */}
+                <div className="relative w-full mb-16" style={{ minHeight: '1200px' }}>
+                    {/* SVG Path with Arrows */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
                         <defs>
                             <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -174,24 +203,24 @@ export default function Showcase() {
                                 <stop offset="75%" stopColor="#10b981" />
                                 <stop offset="100%" stopColor="#ef4444" />
                             </linearGradient>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#000" />
+                            </marker>
                         </defs>
+
+                        {/* Main Path */}
                         <path
-                            ref={pathRef}
-                            d="M 10% 5% Q 30% 15%, 70% 25% T 30% 50% Q 50% 60%, 65% 70% T 40% 90%"
+                            d="M 15% 10% Q 40% 20%, 70% 30% T 25% 55% Q 45% 65%, 65% 75% T 40% 95%"
                             stroke="url(#pathGradient)"
                             strokeWidth="12"
                             fill="none"
                             strokeLinecap="round"
-                            strokeDasharray={pathLength}
-                            strokeDashoffset={pathLength * (1 - scrollProgress)}
-                            className="transition-all duration-300"
-                            style={{
-                                filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.3))',
-                            }}
+                            style={{ filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.3))' }}
                         />
+
                         {/* Dotted background path */}
                         <path
-                            d="M 10% 5% Q 30% 15%, 70% 25% T 30% 50% Q 50% 60%, 65% 70% T 40% 90%"
+                            d="M 15% 10% Q 40% 20%, 70% 30% T 25% 55% Q 45% 65%, 65% 75% T 40% 95%"
                             stroke="#000"
                             strokeWidth="12"
                             fill="none"
@@ -199,13 +228,25 @@ export default function Showcase() {
                             strokeDasharray="20,20"
                             opacity="0.2"
                         />
+
+                        {/* Arrow Markers on Path */}
+                        {[25, 45, 65, 85].map((percent, i) => (
+                            <g key={i}>
+                                <circle cx={`${percent}%`} cy={`${30 + i * 15}%`} r="8" fill="#000" />
+                                <polygon
+                                    points={`${percent + 1},${30 + i * 15 - 1} ${percent + 2},${30 + i * 15} ${percent + 1},${30 + i * 15 + 1}`}
+                                    fill="#fff"
+                                    transform={`translate(${percent * 10}, ${(30 + i * 15) * 10})`}
+                                />
+                            </g>
+                        ))}
                     </svg>
 
                     {/* Step Nodes */}
                     {steps.map((step, index) => {
                         const Icon = step.icon;
-                        const isActive = activeStep >= index;
-                        const isCurrent = activeStep === index;
+                        const isUnlocked = isStepUnlocked(index);
+                        const isCurrent = currentStep === index;
 
                         return (
                             <div
@@ -216,44 +257,53 @@ export default function Showcase() {
                                     left: step.position.left,
                                     zIndex: isCurrent ? 20 : 10,
                                 }}
-                                onClick={() => setActiveStep(index)}
                             >
-                                {/* Connecting Line Pulse Effect */}
+                                {/* Glow Effect for Current */}
                                 {isCurrent && (
                                     <div className="absolute inset-0 -z-10">
-                                        <div className={`absolute inset-0 ${step.bgColor} rounded-full blur-2xl opacity-50 animate-pulse`}></div>
+                                        <div className={`absolute inset-0 ${step.bgColor} rounded-full blur-3xl opacity-60 animate-pulse`}></div>
                                     </div>
                                 )}
 
                                 {/* Step Card */}
                                 <div className={`
-                                    relative cursor-pointer transition-all duration-500
-                                    ${isCurrent ? 'scale-125' : isActive ? 'scale-100' : 'scale-90 opacity-60'}
+                                    relative transition-all duration-500
+                                    ${isCurrent ? 'scale-110' : 'scale-100'}
+                                    ${!isUnlocked ? 'blur-sm opacity-50' : ''}
                                 `}>
-                                    {/* Step Number Badge */}
+                                    {/* Lock/Unlock Badge */}
                                     <div className={`
                                         absolute -top-4 -right-4 w-12 h-12 rounded-full border-4 border-black
                                         flex items-center justify-center font-black text-xl z-10
-                                        bg-gradient-to-br ${step.color}
+                                        ${isUnlocked ? `bg-gradient-to-br ${step.color}` : 'bg-gray-400'}
                                         shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
                                         ${isCurrent ? 'animate-bounce' : ''}
                                     `}>
-                                        {isActive ? <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={3} /> : step.id}
+                                        {isUnlocked ? (
+                                            <Unlock className="w-6 h-6 text-white" strokeWidth={3} />
+                                        ) : (
+                                            <Lock className="w-6 h-6 text-white" strokeWidth={3} />
+                                        )}
                                     </div>
 
                                     {/* Main Card */}
                                     <div className={`
-                                        w-64 bg-white border-4 border-black rounded-3xl p-6
+                                        w-72 bg-white border-4 border-black rounded-3xl p-6
                                         ${isCurrent ? 'shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'}
                                         transition-all duration-300
                                     `}>
+                                        {/* Step Number */}
+                                        <div className="text-center mb-4">
+                                            <span className="text-6xl font-black text-gray-200">{step.id}</span>
+                                        </div>
+
                                         {/* Icon */}
                                         <div className={`
-                                            w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto
+                                            w-24 h-24 rounded-2xl flex items-center justify-center mb-4 mx-auto
                                             bg-gradient-to-br ${step.color} border-4 border-black
                                             shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
                                         `}>
-                                            <Icon className="w-10 h-10 text-white" strokeWidth={3} />
+                                            <Icon className="w-12 h-12 text-white" strokeWidth={3} />
                                         </div>
 
                                         {/* Title */}
@@ -262,21 +312,17 @@ export default function Showcase() {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-gray-700 text-sm font-bold text-center leading-relaxed">
+                                        <p className="text-gray-700 text-sm font-bold text-center leading-relaxed mb-4">
                                             {step.description}
                                         </p>
 
-                                        {/* Progress Indicator */}
-                                        {isActive && (
-                                            <div className="mt-4 pt-4 border-t-2 border-black">
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <div className={`w-3 h-3 rounded-full ${step.bgColor} animate-pulse`}></div>
-                                                    <span className="text-xs font-black uppercase tracking-wider">
-                                                        {isCurrent ? 'Current' : 'Completed'}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        )}
+                                        {/* Status Badge */}
+                                        <div className={`
+                                            text-center py-2 px-4 rounded-xl border-2 border-black font-black text-xs uppercase tracking-wider
+                                            ${isCurrent ? 'bg-gradient-to-r from-green-400 to-emerald-400' : isUnlocked ? 'bg-blue-100' : 'bg-gray-200'}
+                                        `}>
+                                            {isCurrent ? t.current : isUnlocked ? t.unlocked : t.locked}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -284,8 +330,48 @@ export default function Showcase() {
                     })}
                 </div>
 
+                {/* Navigation Buttons */}
+                <div className="flex items-center justify-center gap-6 mb-16">
+                    <button
+                        onClick={handlePrevious}
+                        disabled={currentStep === 0}
+                        className={`
+                            group px-8 py-4 bg-white border-4 border-black rounded-2xl font-black text-xl
+                            shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+                            transition-all duration-200
+                            ${currentStep === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]'}
+                        `}
+                    >
+                        <span className="flex items-center gap-3">
+                            <ArrowLeft className="w-6 h-6" strokeWidth={3} />
+                            {t.previous}
+                        </span>
+                    </button>
+
+                    <div className="text-center">
+                        <div className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1">Step</div>
+                        <div className="text-4xl font-black">{currentStep + 1} / {steps.length}</div>
+                    </div>
+
+                    <button
+                        onClick={handleNext}
+                        disabled={currentStep === steps.length - 1}
+                        className={`
+                            group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-4 border-black rounded-2xl font-black text-xl
+                            shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+                            transition-all duration-200
+                            ${currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]'}
+                        `}
+                    >
+                        <span className="flex items-center gap-3">
+                            {t.next}
+                            <ArrowRight className="w-6 h-6" strokeWidth={3} />
+                        </span>
+                    </button>
+                </div>
+
                 {/* Rewards Showcase */}
-                <div className="grid md:grid-cols-3 gap-8 mt-24 relative z-10">
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {/* Points Card */}
                     <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform hover:scale-105 transition-all">
                         <div className="flex items-center gap-4 mb-6">
@@ -313,11 +399,17 @@ export default function Showcase() {
                             <h3 className="font-black text-2xl">{t.badgesUnlocked}</h3>
                         </div>
                         <div className="grid grid-cols-3 gap-3">
-                            {['🚀', '⚡', '🔥', '💯', '🦉', '🏆'].map((emoji, i) => (
-                                <div key={i} className="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 border-4 border-black rounded-2xl flex items-center justify-center text-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform cursor-pointer">
-                                    {emoji}
-                                </div>
-                            ))}
+                            {badges.map((badge) => {
+                                const BadgeIcon = badge.icon;
+                                return (
+                                    <div key={badge.id} className={`aspect-square bg-gradient-to-br ${badge.color} border-4 border-black rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform cursor-pointer group relative`}>
+                                        <BadgeIcon className="w-8 h-8 text-white" strokeWidth={3} />
+                                        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                                            {badge.name}
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -329,31 +421,26 @@ export default function Showcase() {
                             </div>
                             <h3 className="font-black text-2xl">{t.shopPreview}</h3>
                         </div>
-                        <div className="space-y-3">
-                            {[
-                                { icon: '🖼️', name: 'Neon Frame', price: 500 },
-                                { icon: '👑', name: 'Golden Crown', price: 1000 },
-                                { icon: '🔥', name: 'Fire Effect', price: 1200 },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-black rounded-xl hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer">
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-2xl">{item.icon}</span>
-                                        <span className="font-bold text-sm">{item.name}</span>
+                        <div className="grid grid-cols-2 gap-3">
+                            {shopItems.slice(0, 4).map((item) => {
+                                const ItemIcon = item.icon;
+                                return (
+                                    <div key={item.id} className={`aspect-square bg-gradient-to-br ${item.color} border-4 border-black rounded-2xl p-3 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-all cursor-pointer`}>
+                                        <ItemIcon className="w-8 h-8 text-white mb-2" strokeWidth={3} />
+                                        <div className="flex items-center gap-1 bg-black text-white px-2 py-1 rounded-lg">
+                                            <Zap className="w-3 h-3" />
+                                            <span className="text-xs font-black">{item.price}</span>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-1 font-black text-sm">
-                                        <Zap className="w-4 h-4 text-yellow-500" />
-                                        {item.price}
-                                    </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
 
                 {/* Epic CTA */}
-                <div className="mt-24 relative z-10">
+                <div className="relative z-10">
                     <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 border-4 border-black rounded-3xl p-16 text-center shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
-                        {/* Animated Stars */}
                         <div className="absolute inset-0 opacity-20">
                             {[...Array(20)].map((_, i) => (
                                 <Star
