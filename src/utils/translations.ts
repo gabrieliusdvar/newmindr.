@@ -692,6 +692,8 @@ export const translations: Record<Language, any> = {
       activeFeed: "FEED",
       distributed: "DISTRIBUTED",
       loadMore: "Loading more...",
+      readArticle: "Read Article",
+      readMore: "Read More",
       posts: [
         {
           id: 1,
@@ -1409,6 +1411,8 @@ export const translations: Record<Language, any> = {
       activeFeed: "AKTYVUS SRAUTAS",
       distributed: "PLATINAMA",
       loadMore: "Sinchronizuojama daugiau naujienų...",
+      readArticle: "Skaityti straipsnį",
+      readMore: "Skaityti daugiau",
       posts: [
         {
           id: 1,
@@ -2126,6 +2130,8 @@ export const translations: Record<Language, any> = {
       activeFeed: "АКТИВНЫЙ_ФИД",
       distributed: "РАСПРЕДЕЛЕНО",
       loadMore: "Синхронизация новых обновлений...",
+      readArticle: "Читать статью",
+      readMore: "Читать дальше",
       posts: [
         {
           id: 1,

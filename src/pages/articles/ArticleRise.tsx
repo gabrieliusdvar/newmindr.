@@ -37,7 +37,7 @@ export default function ArticleRise() {
             feedbackBtn: "GET INSTANT FEEDBACK",
             mobileTitle: "Mobile First",
             mobileText: "Kids live on phones. Why fight it? Our entire curriculum fits in their pocket.",
-            ctaTitle: "DON'T LET THEM FALL BEHIND.",
+            ctaTitle: "DON'T FALL BEHIND.",
             ctaSubtitle: "The Interactive Roadmap covers everything from Logic to Leadership.",
             ctaBtn: "TAKE ME TO THE ROADMAP",
             ctaSmall: "Try 7-days for free. It's on us 😎"
@@ -58,7 +58,7 @@ export default function ArticleRise() {
             feedbackBtn: "GAUTI ĮVERTINIMĄ",
             mobileTitle: "Mobile First",
             mobileText: "Vaikai gyvena telefonuose. Kam su tuo kovoti? Visa mūsų programa telpa jų kišenėje.",
-            ctaTitle: "NELEISKITE JIEMS ATSILIKTI.",
+            ctaTitle: "NEATSILIKITE.",
             ctaSubtitle: "Interaktyvus planas apima viską – nuo Logikos iki Lyderystės.",
             ctaBtn: "RODYTI PLANĄ",
             ctaSmall: "Išbandyk 7 dienas nemokamai. Mes statom 😎"
@@ -79,7 +79,7 @@ export default function ArticleRise() {
             feedbackBtn: "ПОЛУЧИТЬ РЕЗУЛЬТАТ",
             mobileTitle: "Мобильность",
             mobileText: "Дети живут в телефонах. Зачем бороться? Вся наша программа помещается в кармане.",
-            ctaTitle: "НЕ ДАЙТЕ ИМ ОТСТАТЬ.",
+            ctaTitle: "НЕ ОТСТАВАЙТЕ.",
             ctaSubtitle: "Интерактивная карта охватывает всё: от Логики до Лидерства.",
             ctaBtn: "ОТКРЫТЬ КАРТУ",
             ctaSmall: "Попробуйте 7 дней бесплатно. За наш счет 😎"

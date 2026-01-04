@@ -87,7 +87,7 @@ export default function Blog() {
                                     {featuredPost.content}
                                 </p>
                                 <div className="flex items-center gap-2 text-emerald-400 font-bold uppercase tracking-widest text-sm mt-2 group/btn">
-                                    Read Article <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-2" />
+                                    {t.blog.readArticle} <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-2" />
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@ export default function Blog() {
                                     {post.content}
                                 </p>
                                 <div className="mt-auto pt-2 flex items-center text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
-                                    Read More <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                    {t.blog.readMore} <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </div>
                         </Link>

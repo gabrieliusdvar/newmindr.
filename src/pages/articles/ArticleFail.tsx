@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { TrendingDown, BookX, Gamepad2, Target, Users, Zap, Trophy } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { TrendingDown, BookX, Gamepad2, Target, Users, Zap, Trophy, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const ArticleFail = () => {
@@ -19,6 +19,7 @@ const ArticleFail = () => {
 
     const txt = {
         en: {
+            back: "Back",
             title: "Why Students Fail",
             subtitle: "(And How We're Changing That)",
             intro: "The shocking truth about traditional education... and the solution you've been waiting for.",
@@ -56,6 +57,7 @@ const ArticleFail = () => {
             ctaFooter: "Join thousands of students who've already made the switch."
         },
         lt: {
+            back: "Atgal",
             title: "Kodėl mokiniai patiria nesėkmes",
             subtitle: "(ir kaip mes tai keičiame)",
             intro: "Šokiruojanti tiesa apie tradicinį švietimą... ir sprendimas, kurio laukėte.",
@@ -93,6 +95,7 @@ const ArticleFail = () => {
             ctaFooter: "Prisijunkite prie tūkstančių mokinių, kurie jau padarė pasirinkimą."
         },
         ru: {
+            back: "Назад",
             title: "Почему студенты терпят неудачу",
             subtitle: "(и как мы это меняем)",
             intro: "Шокирующая правда о традиционном образовании... и решение, которого вы ждали.",
@@ -169,8 +172,17 @@ const ArticleFail = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+            {/* Navigation Header */}
+            <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b-4 border-black px-6 py-4 flex justify-between items-center shadow-[0_4px_0_0_#e5e7eb]">
+                <Link to="/blog" className="flex items-center gap-2 font-black uppercase tracking-widest hover:underline">
+                    <ArrowLeft className="w-6 h-6 border-2 border-black rounded-full bg-white transition hover:scale-110" />
+                    {t.back}
+                </Link>
+                <div className="font-black text-xl tracking-tighter">NEWMINDR.</div>
+            </nav>
+
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-red-600 via-orange-600 to-yellow-500 text-white py-20 px-4 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-red-600 via-orange-600 to-yellow-500 text-white py-20 px-4 overflow-hidden pt-32">
                 {/* Animated Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_2px,transparent_2px),linear-gradient(90deg,rgba(255,255,255,0.1)_2px,transparent_2px)] bg-[size:50px_50px]"></div>
