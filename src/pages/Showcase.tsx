@@ -471,7 +471,7 @@ export default function Showcase() {
                                 Ready to Start<br />Your Journey?
                             </h2>
                             <button
-                                onClick={() => navigate('/pricing')}
+                                onClick={() => navigate('/process')}
                                 className="group px-16 py-8 bg-white text-black font-black text-3xl rounded-2xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] transition-all duration-200 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px]"
                             >
                                 <span className="flex items-center gap-4">
