@@ -142,12 +142,10 @@ export default function Showcase() {
     ];
 
     const shopItems = [
-        { id: 1, name: 'Neon Frame', price: 500, icon: Frame, color: 'from-cyan-400 to-blue-400' },
-        { id: 2, name: 'Golden Crown', price: 1000, icon: Crown, color: 'from-yellow-400 to-orange-400' },
-        { id: 3, name: 'Rainbow Theme', price: 750, icon: Palette, color: 'from-pink-400 to-purple-400' },
-        { id: 4, name: 'Fire Effect', price: 1200, icon: Flame, color: 'from-orange-500 to-red-500' },
-        { id: 5, name: 'Rare Gem', price: 2000, icon: Gem, color: 'from-purple-500 to-pink-500' },
-        { id: 6, name: 'Epic Outfit', price: 1500, icon: Shirt, color: 'from-green-400 to-emerald-400' },
+        { id: 1, type: 'image', src: '/CapyPrincemindr.png', price: 500, color: 'from-cyan-400 to-blue-400' },
+        { id: 2, type: 'text', text: 'BACKGROUND', price: 1000, color: 'from-red-500 to-red-600' },
+        { id: 3, type: 'gold', text: 'YOUR NAME', price: 2500, color: 'from-yellow-300 via-yellow-500 to-yellow-600' },
+        { id: 4, type: 'image', src: '/Swagmindr.png', price: 1500, color: 'from-purple-400 to-indigo-400' },
     ];
 
     const handleNext = (index: number) => {
@@ -413,13 +411,34 @@ export default function Showcase() {
                             <h3 className="font-black text-2xl">{t.shopPreview}</h3>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                            {shopItems.slice(0, 4).map((item) => {
-                                const ItemIcon = item.icon;
+                            {shopItems.map((item: any) => {
                                 return (
-                                    <div key={item.id} className={`aspect-square bg-gradient-to-br ${item.color} border-4 border-black rounded-2xl p-3 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-all cursor-pointer`}>
-                                        <ItemIcon className="w-8 h-8 text-white mb-2" strokeWidth={3} />
-                                        <div className="flex items-center gap-1 bg-black text-white px-2 py-1 rounded-lg">
-                                            <Zap className="w-3 h-3" />
+                                    <div key={item.id} className={`aspect-square bg-gradient-to-br ${item.color} border-4 border-black rounded-2xl p-3 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-all cursor-pointer relative overflow-hidden group`}>
+
+                                        {/* Image Item */}
+                                        {item.type === 'image' && (
+                                            <img src={item.src} alt="Shop Item" className="w-full h-full object-contain drop-shadow-md mb-6" />
+                                        )}
+
+                                        {/* Text Item (Background) */}
+                                        {item.type === 'text' && (
+                                            <span className="font-black text-lg text-white tracking-wider mb-6">{item.text}</span>
+                                        )}
+
+                                        {/* Gold Item */}
+                                        {item.type === 'gold' && (
+                                            <>
+                                                <span className="font-black text-xl text-white tracking-wider drop-shadow-md z-10 text-center leading-tight mb-6">{item.text}</span>
+                                                <Sparkles className="absolute top-2 right-2 text-yellow-100 w-5 h-5 animate-ping opacity-75" />
+                                                <Sparkles className="absolute top-1/2 left-2 text-yellow-200 w-3 h-3 animate-pulse" />
+                                                <Sparkles className="absolute bottom-12 right-4 text-white w-4 h-4 animate-bounce" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-yellow-600/50 to-transparent animate-pulse rounded-xl pointer-events-none"></div>
+                                            </>
+                                        )}
+
+                                        {/* Price Tag */}
+                                        <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black text-white px-2 py-1 rounded-lg z-20 shadow-md transform group-hover:scale-110 transition-transform">
+                                            <Zap className="w-3 h-3 text-yellow-400" fill="currentColor" />
                                             <span className="text-xs font-black">{item.price}</span>
                                         </div>
                                     </div>
