@@ -144,7 +144,7 @@ export default function Showcase() {
     const shopItems = [
         { id: 1, type: 'image', src: '/CapyPrincemindr.png', price: 500, color: 'from-cyan-400 to-blue-400' },
         { id: 2, type: 'text', text: 'BACKGROUND', price: 1000, color: 'from-red-500 to-red-600' },
-        { id: 3, type: 'gold', text: 'YOUR NAME', price: 2500, color: 'from-yellow-300 via-yellow-500 to-yellow-600' },
+        { id: 3, type: 'gold', text: 'YOUR NAME', price: 2500, color: 'bg-black' },
         { id: 4, type: 'image', src: '/Swagmindr.png', price: 1500, color: 'from-purple-400 to-indigo-400' },
     ];
 
@@ -413,11 +413,11 @@ export default function Showcase() {
                         <div className="grid grid-cols-2 gap-3">
                             {shopItems.map((item: any) => {
                                 return (
-                                    <div key={item.id} className={`aspect-square bg-gradient-to-br ${item.color} border-4 border-black rounded-2xl p-3 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-all cursor-pointer relative overflow-hidden group`}>
+                                    <div key={item.id} className={`aspect-square ${item.type === 'gold' ? 'bg-black' : `bg-gradient-to-br ${item.color}`} border-4 border-black rounded-2xl p-3 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-all cursor-pointer relative overflow-hidden group`}>
 
                                         {/* Image Item */}
                                         {item.type === 'image' && (
-                                            <img src={item.src} alt="Shop Item" className="w-full h-full object-contain drop-shadow-md mb-6" />
+                                            <img src={item.src} alt="Shop Item" className="w-full h-full object-contain drop-shadow-md" />
                                         )}
 
                                         {/* Text Item (Background) */}
@@ -428,11 +428,10 @@ export default function Showcase() {
                                         {/* Gold Item */}
                                         {item.type === 'gold' && (
                                             <>
-                                                <span className="font-black text-xl text-white tracking-wider drop-shadow-md z-10 text-center leading-tight mb-6">{item.text}</span>
-                                                <Sparkles className="absolute top-2 right-2 text-yellow-100 w-5 h-5 animate-ping opacity-75" />
+                                                <span className="font-black text-xl bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent tracking-wider drop-shadow-sm z-10 text-center leading-tight mb-6">{item.text}</span>
+                                                <Sparkles className="absolute top-2 right-2 text-yellow-300 w-5 h-5 animate-ping opacity-75" />
                                                 <Sparkles className="absolute top-1/2 left-2 text-yellow-200 w-3 h-3 animate-pulse" />
-                                                <Sparkles className="absolute bottom-12 right-4 text-white w-4 h-4 animate-bounce" />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-yellow-600/50 to-transparent animate-pulse rounded-xl pointer-events-none"></div>
+                                                <Sparkles className="absolute bottom-12 right-4 text-yellow-100 w-4 h-4 animate-bounce" />
                                             </>
                                         )}
 
