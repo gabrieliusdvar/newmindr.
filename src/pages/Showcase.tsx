@@ -210,7 +210,7 @@ export default function Showcase() {
                 </div>
 
                 {/* Interactive Roadmap */}
-                <div className="relative w-full mb-16" style={{ minHeight: '1200px' }}>
+                <div className="relative w-full mb-64" style={{ minHeight: '1400px' }}>
                     {/* SVG Path */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
                         <defs>
