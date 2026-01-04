@@ -1,73 +1,72 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Zap, Trophy, Star, Award, ShoppingBag, Target, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Sparkles, Zap, Trophy, Star, Award, ShoppingBag, Target, Rocket, CheckCircle2, ArrowRight, Gift, Crown, Flame } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Showcase() {
     const navigate = useNavigate();
     const { language } = useLanguage();
     const [activeStep, setActiveStep] = useState(0);
-    const [hoveredBadge, setHoveredBadge] = useState<number | null>(null);
-    const [points, setPoints] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const pathRef = useRef<SVGPathElement>(null);
 
     const txt = {
         en: {
-            title: "Your Learning Journey",
-            subtitle: "From Trial to Triumph",
-            step1Title: "Start Your Free Trial",
-            step1Desc: "Sign up in seconds. No credit card required. 7 days of unlimited access to all courses.",
-            step2Title: "Explore the Platform",
-            step2Desc: "Dive into interactive lessons, quizzes, and challenges designed to make learning addictive.",
-            step3Title: "Get Immersed",
-            step3Desc: "Experience learning like never before with gamified content, real-time feedback, and adaptive difficulty.",
-            step4Title: "Earn Points & Customize",
-            step4Desc: "Complete lessons to earn points. Unlock exclusive items to personalize your profile and show off your style.",
-            step5Title: "Collect Badges & Certificates",
-            step5Desc: "Showcase your achievements with badges and certificates. Build your learning portfolio and inspire others.",
-            ctaButton: "Start Your Journey",
-            pointsLabel: "Points Earned",
-            badgesLabel: "Badges Unlocked",
-            profileLabel: "Your Profile",
-            shopLabel: "Item Shop",
+            title: "Your Epic Journey",
+            subtitle: "From Zero to Hero",
+            step1Title: "🚀 Start Free Trial",
+            step1Desc: "Jump in! No credit card. 7 days of pure learning magic.",
+            step2Title: "🎯 Explore & Discover",
+            step2Desc: "Interactive lessons that feel like games. You'll forget you're learning!",
+            step3Title: "✨ Get Immersed",
+            step3Desc: "Real-time feedback, adaptive challenges, instant gratification.",
+            step4Title: "🎨 Earn & Customize",
+            step4Desc: "Unlock exclusive items, build your dream profile, flex your style!",
+            step5Title: "🏆 Collect Achievements",
+            step5Desc: "Badges, certificates, bragging rights. Show the world what you've mastered!",
+            ctaButton: "Begin Your Adventure",
+            pointsEarned: "Points Earned",
+            badgesUnlocked: "Badges Unlocked",
+            shopPreview: "Exclusive Shop",
+            achievements: "Your Achievements",
         },
         lt: {
-            title: "Jūsų Mokymosi Kelionė",
-            subtitle: "Nuo Bandomojo iki Triumfo",
-            step1Title: "Pradėkite Nemokamą Bandymą",
-            step1Desc: "Užsiregistruokite per sekundes. Nereikia kredito kortelės. 7 dienos neriboto priėjimo prie visų kursų.",
-            step2Title: "Tyrinėkite Platformą",
-            step2Desc: "Pasinerkite į interaktyvias pamokas, testus ir iššūkius, sukurtus padaryti mokymąsi įtraukiantį.",
-            step3Title: "Pasinerkite",
-            step3Desc: "Patirkite mokymąsi kaip niekada anksčiau su žaidybiniu turiniu, realiuoju laiku grįžtamuoju ryšiu ir prisitaikančiu sudėtingumu.",
-            step4Title: "Uždirbkite Taškų ir Pritaikykite",
-            step4Desc: "Užbaikite pamokas ir uždirbkite taškų. Atrakinkite išskirtinius daiktus, kad personalizuotumėte savo profilį.",
-            step5Title: "Rinkite Ženkliukus ir Sertifikatus",
-            step5Desc: "Parodykite savo pasiekimus su ženkliukais ir sertifikatais. Sukurkite savo mokymosi portfelį.",
-            ctaButton: "Pradėti Kelionę",
-            pointsLabel: "Uždirbta Taškų",
-            badgesLabel: "Atrakinti Ženkliukai",
-            profileLabel: "Jūsų Profilis",
-            shopLabel: "Daiktų Parduotuvė",
+            title: "Jūsų Epinė Kelionė",
+            subtitle: "Nuo Nulio iki Didvyrio",
+            step1Title: "🚀 Pradėti Bandymą",
+            step1Desc: "Šokite! Nereikia kredito kortelės. 7 dienos mokymosi magijos.",
+            step2Title: "🎯 Tyrinėti ir Atrasti",
+            step2Desc: "Interaktyvios pamokos, kurios jaučiasi kaip žaidimai!",
+            step3Title: "✨ Pasinerkite",
+            step3Desc: "Grįžtamasis ryšys realiuoju laiku, prisitaikantys iššūkiai.",
+            step4Title: "🎨 Uždirbti ir Pritaikyti",
+            step4Desc: "Atrakinkite išskirtinius daiktus, sukurkite svajonių profilį!",
+            step5Title: "🏆 Rinkti Pasiekimus",
+            step5Desc: "Ženkliukai, sertifikatai, pasigyrimai. Parodykite pasauliui!",
+            ctaButton: "Pradėti Nuotykį",
+            pointsEarned: "Uždirbta Taškų",
+            badgesUnlocked: "Atrakinti Ženkliukai",
+            shopPreview: "Išskirtinė Parduotuvė",
+            achievements: "Jūsų Pasiekimai",
         },
         ru: {
-            title: "Ваше Путешествие в Обучении",
-            subtitle: "От Пробного до Триумфа",
-            step1Title: "Начните Бесплатный Пробный Период",
-            step1Desc: "Зарегистрируйтесь за секунды. Кредитная карта не требуется. 7 дней неограниченного доступа ко всем курсам.",
-            step2Title: "Исследуйте Платформу",
-            step2Desc: "Погрузитесь в интерактивные уроки, тесты и задачи, созданные, чтобы сделать обучение захватывающим.",
-            step3Title: "Погрузитесь",
-            step3Desc: "Испытайте обучение как никогда раньше с геймифицированным контентом, обратной связью в реальном времени.",
-            step4Title: "Зарабатывайте Очки и Настраивайте",
-            step4Desc: "Завершайте уроки, чтобы заработать очки. Разблокируйте эксклюзивные предметы для персонализации профиля.",
-            step5Title: "Собирайте Значки и Сертификаты",
-            step5Desc: "Покажите свои достижения со значками и сертификатами. Создайте свое портфолио обучения.",
-            ctaButton: "Начать Путешествие",
-            pointsLabel: "Заработано Очков",
-            badgesLabel: "Разблокировано Значков",
-            profileLabel: "Ваш Профиль",
-            shopLabel: "Магазин Предметов",
+            title: "Ваше Эпическое Путешествие",
+            subtitle: "От Нуля до Героя",
+            step1Title: "🚀 Начать Пробный",
+            step1Desc: "Прыгайте! Без кредитной карты. 7 дней чистой магии обучения.",
+            step2Title: "🎯 Исследовать",
+            step2Desc: "Интерактивные уроки, которые ощущаются как игры!",
+            step3Title: "✨ Погрузиться",
+            step3Desc: "Обратная связь в реальном времени, адаптивные вызовы.",
+            step4Title: "🎨 Зарабатывать",
+            step4Desc: "Разблокируйте эксклюзивные предметы, создайте профиль мечты!",
+            step5Title: "🏆 Собирать Достижения",
+            step5Desc: "Значки, сертификаты, права хвастовства. Покажите миру!",
+            ctaButton: "Начать Приключение",
+            pointsEarned: "Заработано Очков",
+            badgesUnlocked: "Разблокировано Значков",
+            shopPreview: "Эксклюзивный Магазин",
+            achievements: "Ваши Достижения",
         }
     };
 
@@ -75,293 +74,314 @@ export default function Showcase() {
 
     const steps = [
         {
-            number: 1,
+            id: 1,
             title: t.step1Title,
             description: t.step1Desc,
             icon: Rocket,
-            color: 'from-blue-500 to-cyan-500',
-            borderColor: 'border-blue-500',
-            bgColor: 'bg-blue-50',
+            color: 'from-blue-400 to-cyan-400',
+            bgColor: 'bg-blue-500',
+            position: { top: '5%', left: '10%' },
         },
         {
-            number: 2,
+            id: 2,
             title: t.step2Title,
             description: t.step2Desc,
             icon: Target,
-            color: 'from-purple-500 to-pink-500',
-            borderColor: 'border-purple-500',
-            bgColor: 'bg-purple-50',
+            color: 'from-purple-400 to-pink-400',
+            bgColor: 'bg-purple-500',
+            position: { top: '25%', left: '70%' },
         },
         {
-            number: 3,
+            id: 3,
             title: t.step3Title,
             description: t.step3Desc,
             icon: Sparkles,
-            color: 'from-yellow-500 to-orange-500',
-            borderColor: 'border-yellow-500',
-            bgColor: 'bg-yellow-50',
+            color: 'from-yellow-400 to-orange-400',
+            bgColor: 'bg-yellow-500',
+            position: { top: '50%', left: '30%' },
         },
         {
-            number: 4,
+            id: 4,
             title: t.step4Title,
             description: t.step4Desc,
             icon: ShoppingBag,
-            color: 'from-green-500 to-emerald-500',
-            borderColor: 'border-green-500',
-            bgColor: 'bg-green-50',
+            color: 'from-green-400 to-emerald-400',
+            bgColor: 'bg-green-500',
+            position: { top: '70%', left: '65%' },
         },
         {
-            number: 5,
+            id: 5,
             title: t.step5Title,
             description: t.step5Desc,
             icon: Trophy,
-            color: 'from-red-500 to-rose-500',
-            borderColor: 'border-red-500',
-            bgColor: 'bg-red-50',
+            color: 'from-red-400 to-rose-400',
+            bgColor: 'bg-red-500',
+            position: { top: '90%', left: '40%' },
         },
     ];
 
-    const badges = [
-        { id: 1, name: 'First Steps', icon: '🚀', color: 'bg-blue-500' },
-        { id: 2, name: 'Quick Learner', icon: '⚡', color: 'bg-yellow-500' },
-        { id: 3, name: 'Streak Master', icon: '🔥', color: 'bg-orange-500' },
-        { id: 4, name: 'Perfect Score', icon: '💯', color: 'bg-green-500' },
-        { id: 5, name: 'Night Owl', icon: '🦉', color: 'bg-purple-500' },
-        { id: 6, name: 'Champion', icon: '🏆', color: 'bg-red-500' },
-    ];
-
-    const shopItems = [
-        { id: 1, name: 'Neon Frame', price: 500, icon: '🖼️', color: 'bg-cyan-500' },
-        { id: 2, name: 'Golden Crown', price: 1000, icon: '👑', color: 'bg-yellow-500' },
-        { id: 3, name: 'Rainbow BG', price: 750, icon: '🌈', color: 'bg-pink-500' },
-        { id: 4, name: 'Fire Effect', price: 1200, icon: '🔥', color: 'bg-orange-500' },
-    ];
-
     useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveStep((prev) => (prev + 1) % steps.length);
-        }, 4000);
-        return () => clearInterval(interval);
+        const handleScroll = () => {
+            const scrolled = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min(scrolled / maxScroll, 1);
+            setScrollProgress(progress);
+
+            // Update active step based on scroll
+            const stepIndex = Math.floor(progress * steps.length);
+            setActiveStep(Math.min(stepIndex, steps.length - 1));
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [steps.length]);
 
-    const handleEarnPoints = () => {
-        setIsAnimating(true);
-        setPoints((prev) => prev + 100);
-        setTimeout(() => setIsAnimating(false), 600);
-    };
+    const pathLength = pathRef.current?.getTotalLength() || 0;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24 pb-16">
+        <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50 pt-24 pb-16 overflow-hidden relative">
+            {/* Decorative Background Elements */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+                <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute top-40 right-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl animate-pulse delay-75"></div>
+                <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-green-400 rounded-full blur-3xl animate-pulse delay-150"></div>
+            </div>
+
             {/* Hero Section */}
-            <div className="max-w-7xl mx-auto px-4 mb-16">
+            <div className="max-w-7xl mx-auto px-4 mb-16 relative z-10">
                 <div className="text-center mb-12">
-                    <div className="inline-block mb-4">
-                        <div className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-black text-sm uppercase tracking-wider border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-2">
+                    <div className="inline-block mb-6 transform -rotate-2">
+                        <div className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-black text-lg uppercase tracking-wider border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
                             {t.subtitle}
                         </div>
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none">
-                        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+                    <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none tracking-tighter">
+                        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
                             {t.title}
                         </span>
                     </h1>
                 </div>
 
-                {/* Interactive Steps */}
-                <div className="grid md:grid-cols-5 gap-6 mb-16">
+                {/* Interactive Roadmap */}
+                <div className="relative w-full" style={{ minHeight: '1200px' }}>
+                    {/* SVG Path */}
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+                        <defs>
+                            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#3b82f6" />
+                                <stop offset="25%" stopColor="#a855f7" />
+                                <stop offset="50%" stopColor="#eab308" />
+                                <stop offset="75%" stopColor="#10b981" />
+                                <stop offset="100%" stopColor="#ef4444" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            ref={pathRef}
+                            d="M 10% 5% Q 30% 15%, 70% 25% T 30% 50% Q 50% 60%, 65% 70% T 40% 90%"
+                            stroke="url(#pathGradient)"
+                            strokeWidth="12"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeDasharray={pathLength}
+                            strokeDashoffset={pathLength * (1 - scrollProgress)}
+                            className="transition-all duration-300"
+                            style={{
+                                filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.3))',
+                            }}
+                        />
+                        {/* Dotted background path */}
+                        <path
+                            d="M 10% 5% Q 30% 15%, 70% 25% T 30% 50% Q 50% 60%, 65% 70% T 40% 90%"
+                            stroke="#000"
+                            strokeWidth="12"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeDasharray="20,20"
+                            opacity="0.2"
+                        />
+                    </svg>
+
+                    {/* Step Nodes */}
                     {steps.map((step, index) => {
                         const Icon = step.icon;
-                        const isActive = activeStep === index;
+                        const isActive = activeStep >= index;
+                        const isCurrent = activeStep === index;
 
                         return (
                             <div
-                                key={step.number}
+                                key={step.id}
+                                className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                                style={{
+                                    top: step.position.top,
+                                    left: step.position.left,
+                                    zIndex: isCurrent ? 20 : 10,
+                                }}
                                 onClick={() => setActiveStep(index)}
-                                className={`
-                                    relative cursor-pointer transition-all duration-500 transform
-                                    ${isActive ? 'scale-105 -translate-y-2' : 'hover:scale-102 hover:-translate-y-1'}
-                                `}
                             >
+                                {/* Connecting Line Pulse Effect */}
+                                {isCurrent && (
+                                    <div className="absolute inset-0 -z-10">
+                                        <div className={`absolute inset-0 ${step.bgColor} rounded-full blur-2xl opacity-50 animate-pulse`}></div>
+                                    </div>
+                                )}
+
+                                {/* Step Card */}
                                 <div className={`
-                                    bg-white border-4 border-black rounded-3xl p-6 h-full
-                                    ${isActive ? 'shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'}
-                                    transition-all duration-300
+                                    relative cursor-pointer transition-all duration-500
+                                    ${isCurrent ? 'scale-125' : isActive ? 'scale-100' : 'scale-90 opacity-60'}
                                 `}>
-                                    {/* Step Number */}
+                                    {/* Step Number Badge */}
                                     <div className={`
-                                        w-16 h-16 rounded-2xl flex items-center justify-center mb-4
-                                        bg-gradient-to-br ${step.color} border-4 border-black
+                                        absolute -top-4 -right-4 w-12 h-12 rounded-full border-4 border-black
+                                        flex items-center justify-center font-black text-xl z-10
+                                        bg-gradient-to-br ${step.color}
                                         shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+                                        ${isCurrent ? 'animate-bounce' : ''}
                                     `}>
-                                        <span className="text-white font-black text-2xl">{step.number}</span>
+                                        {isActive ? <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={3} /> : step.id}
                                     </div>
 
-                                    {/* Icon */}
-                                    <div className="mb-4">
-                                        <Icon className="w-12 h-12 text-black" strokeWidth={3} />
-                                    </div>
-
-                                    {/* Title */}
-                                    <h3 className="font-black text-xl mb-2 leading-tight">{step.title}</h3>
-
-                                    {/* Description - Only show on active */}
+                                    {/* Main Card */}
                                     <div className={`
-                                        overflow-hidden transition-all duration-500
-                                        ${isActive ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}
+                                        w-64 bg-white border-4 border-black rounded-3xl p-6
+                                        ${isCurrent ? 'shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'}
+                                        transition-all duration-300
                                     `}>
-                                        <p className="text-gray-700 text-sm leading-relaxed mt-2">
+                                        {/* Icon */}
+                                        <div className={`
+                                            w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto
+                                            bg-gradient-to-br ${step.color} border-4 border-black
+                                            shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+                                        `}>
+                                            <Icon className="w-10 h-10 text-white" strokeWidth={3} />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="font-black text-2xl mb-3 text-center leading-tight">
+                                            {step.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <p className="text-gray-700 text-sm font-bold text-center leading-relaxed">
                                             {step.description}
                                         </p>
-                                    </div>
 
-                                    {/* Active Indicator */}
-                                    {isActive && (
-                                        <div className="absolute -top-2 -right-2">
-                                            <div className="w-6 h-6 bg-green-500 border-2 border-black rounded-full flex items-center justify-center animate-pulse">
-                                                <CheckCircle2 className="w-4 h-4 text-white" strokeWidth={3} />
+                                        {/* Progress Indicator */}
+                                        {isActive && (
+                                            <div className="mt-4 pt-4 border-t-2 border-black">
+                                                <div className="flex items-center justify-center gap-2">
+                                                    <div className={`w-3 h-3 rounded-full ${step.bgColor} animate-pulse`}></div>
+                                                    <span className="text-xs font-black uppercase tracking-wider">
+                                                        {isCurrent ? 'Current' : 'Completed'}
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )}
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         );
                     })}
                 </div>
 
-                {/* Interactive Demo Section */}
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                    {/* Points & Gamification */}
-                    <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+                {/* Rewards Showcase */}
+                <div className="grid md:grid-cols-3 gap-8 mt-24 relative z-10">
+                    {/* Points Card */}
+                    <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform hover:scale-105 transition-all">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                                 <Zap className="w-8 h-8 text-white" strokeWidth={3} />
                             </div>
-                            <div>
-                                <h3 className="font-black text-2xl">{t.pointsLabel}</h3>
-                                <p className="text-gray-600 font-bold">{t.step4Title}</p>
-                            </div>
+                            <h3 className="font-black text-2xl">{t.pointsEarned}</h3>
                         </div>
-
-                        {/* Points Display */}
-                        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-4 border-black rounded-2xl p-6 mb-6">
-                            <div className="text-center">
-                                <div className={`
-                                    text-6xl font-black mb-2 transition-all duration-300
-                                    ${isAnimating ? 'scale-125 text-green-500' : 'text-gray-900'}
-                                `}>
-                                    {points}
-                                </div>
-                                <div className="text-sm font-bold text-gray-600 uppercase tracking-wider">Points</div>
-                            </div>
+                        <div className="text-6xl font-black text-center mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                            2,450
                         </div>
-
-                        {/* Earn Points Button */}
-                        <button
-                            onClick={handleEarnPoints}
-                            className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-black text-lg rounded-2xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]] transition-all duration-200 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]"
-                        >
-                            <span className="flex items-center justify-center gap-2">
-                                Complete Lesson +100 <Star className="w-5 h-5" />
-                            </span>
-                        </button>
-
-                        {/* Shop Items Preview */}
-                        <div className="mt-6">
-                            <h4 className="font-black text-lg mb-4">{t.shopLabel}</h4>
-                            <div className="grid grid-cols-2 gap-3">
-                                {shopItems.map((item) => (
-                                    <div
-                                        key={item.id}
-                                        className="bg-white border-2 border-black rounded-xl p-3 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer"
-                                    >
-                                        <div className="text-3xl mb-1">{item.icon}</div>
-                                        <div className="font-bold text-xs mb-1">{item.name}</div>
-                                        <div className="flex items-center gap-1">
-                                            <Zap className="w-3 h-3 text-yellow-500" />
-                                            <span className="text-xs font-black">{item.price}</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                        <div className="flex gap-2">
+                            {[...Array(3)].map((_, i) => (
+                                <div key={i} className="flex-1 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-black rounded-full"></div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Badges & Achievements */}
-                    <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+                    {/* Badges Card */}
+                    <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform hover:scale-105 transition-all">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                                 <Trophy className="w-8 h-8 text-white" strokeWidth={3} />
                             </div>
-                            <div>
-                                <h3 className="font-black text-2xl">{t.badgesLabel}</h3>
-                                <p className="text-gray-600 font-bold">{t.step5Title}</p>
-                            </div>
+                            <h3 className="font-black text-2xl">{t.badgesUnlocked}</h3>
                         </div>
-
-                        {/* Badges Grid */}
-                        <div className="grid grid-cols-3 gap-4 mb-6">
-                            {badges.map((badge, index) => (
-                                <div
-                                    key={badge.id}
-                                    onMouseEnter={() => setHoveredBadge(index)}
-                                    onMouseLeave={() => setHoveredBadge(null)}
-                                    className={`
-                                        relative aspect-square rounded-2xl border-4 border-black
-                                        flex flex-col items-center justify-center cursor-pointer
-                                        transition-all duration-300 ${badge.color}
-                                        ${hoveredBadge === index ? 'scale-110 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'}
-                                    `}
-                                >
-                                    <div className="text-4xl mb-2">{badge.icon}</div>
-                                    {hoveredBadge === index && (
-                                        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap z-10">
-                                            {badge.name}
-                                        </div>
-                                    )}
+                        <div className="grid grid-cols-3 gap-3">
+                            {['🚀', '⚡', '🔥', '💯', '🦉', '🏆'].map((emoji, i) => (
+                                <div key={i} className="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 border-4 border-black rounded-2xl flex items-center justify-center text-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform cursor-pointer">
+                                    {emoji}
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        {/* Certificate Preview */}
-                        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-4 border-black rounded-2xl p-6">
-                            <div className="flex items-center gap-3 mb-3">
-                                <Award className="w-8 h-8 text-yellow-600" strokeWidth={3} />
-                                <h4 className="font-black text-lg">Certificate Earned!</h4>
+                    {/* Shop Card */}
+                    <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform hover:scale-105 transition-all">
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                <ShoppingBag className="w-8 h-8 text-white" strokeWidth={3} />
                             </div>
-                            <div className="bg-white border-2 border-black rounded-xl p-4 text-center">
-                                <div className="text-3xl mb-2">🎓</div>
-                                <div className="font-black text-sm">Logic & Problem Solving</div>
-                                <div className="text-xs text-gray-600 font-bold mt-1">Completed Jan 2026</div>
-                            </div>
+                            <h3 className="font-black text-2xl">{t.shopPreview}</h3>
+                        </div>
+                        <div className="space-y-3">
+                            {[
+                                { icon: '🖼️', name: 'Neon Frame', price: 500 },
+                                { icon: '👑', name: 'Golden Crown', price: 1000 },
+                                { icon: '🔥', name: 'Fire Effect', price: 1200 },
+                            ].map((item, i) => (
+                                <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-black rounded-xl hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer">
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-2xl">{item.icon}</span>
+                                        <span className="font-bold text-sm">{item.name}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1 font-black text-sm">
+                                        <Zap className="w-4 h-4 text-yellow-500" />
+                                        {item.price}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-                {/* CTA Section */}
-                <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 border-4 border-black rounded-3xl p-12 text-center shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
-                    {/* Animated Background Elements */}
-                    <div className="absolute inset-0 opacity-10">
-                        <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
-                        <div className="absolute bottom-10 right-10 w-32 h-32 bg-white rounded-full animate-pulse delay-75"></div>
-                        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white rounded-full animate-pulse delay-150"></div>
-                    </div>
+                {/* Epic CTA */}
+                <div className="mt-24 relative z-10">
+                    <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 border-4 border-black rounded-3xl p-16 text-center shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+                        {/* Animated Stars */}
+                        <div className="absolute inset-0 opacity-20">
+                            {[...Array(20)].map((_, i) => (
+                                <Star
+                                    key={i}
+                                    className="absolute text-white animate-pulse"
+                                    style={{
+                                        top: `${Math.random() * 100}%`,
+                                        left: `${Math.random() * 100}%`,
+                                        animationDelay: `${Math.random() * 2}s`,
+                                    }}
+                                />
+                            ))}
+                        </div>
 
-                    <div className="relative z-10">
-                        <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-                            Ready to Start?
-                        </h2>
-                        <p className="text-xl text-white/90 font-bold mb-8 max-w-2xl mx-auto">
-                            Join thousands of learners who are already on their journey to success!
-                        </p>
-                        <button
-                            onClick={() => navigate('/pricing')}
-                            className="group px-12 py-6 bg-white text-black font-black text-2xl rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-200 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px]"
-                        >
-                            <span className="flex items-center gap-3">
-                                {t.ctaButton}
-                                <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
-                            </span>
-                        </button>
+                        <div className="relative z-10">
+                            <h2 className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight drop-shadow-lg">
+                                Ready to Start<br />Your Journey?
+                            </h2>
+                            <button
+                                onClick={() => navigate('/pricing')}
+                                className="group px-16 py-8 bg-white text-black font-black text-3xl rounded-2xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px]] transition-all duration-200 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px]"
+                            >
+                                <span className="flex items-center gap-4">
+                                    {t.ctaButton}
+                                    <ArrowRight className="w-10 h-10 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
