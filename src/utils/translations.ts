@@ -1414,7 +1414,7 @@ export const translations: Record<Language, any> = {
           id: 1,
           platform: "Įžvalgos",
           title: "Kodėl interaktyvus mokymasis populiarėja",
-          content: "70% geresnis inforamcijos įsiminimas. 300% didesnis įsitraukimas. Vadovėliai – pasenusi klasika. Štai ateitis.",
+          content: "70% geresnis informacijos įsiminimas. 300% didesnis įsitraukimas. Vadovėliai – pasenusi klasika. Štai ateitis.",
           image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format&fit=crop",
           date: "Sau 2, 2026",
           likes: "12k",
