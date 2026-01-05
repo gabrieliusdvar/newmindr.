@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
 import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
+import SEOHead from './components/SEOHead';
 
 import { ModalProvider } from './contexts/ModalContext';
 
@@ -40,6 +41,7 @@ function App() {
       <ModalProvider>
         <Router>
           <ScrollToTop />
+          <SEOHead />
           <Routes>
             <Route path="/" element={<Layout><Home /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />

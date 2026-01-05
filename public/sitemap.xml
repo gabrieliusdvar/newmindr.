@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - All Languages -->
   <url>
-    <loc>https://www.newmindr.com</loc>
-    <lastmod>2026-01-04</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.newmindr.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.newmindr.com/"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.newmindr.com/og-image.png</image:loc>
+      <image:title>newmindr. Interactive Learning Platform</image:title>
+    </image:image>
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://www.newmindr.com/about</loc>
-    <lastmod>2026-01-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/about"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/about?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/about?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,24 +33,89 @@
   <!-- Contact Page -->
   <url>
     <loc>https://www.newmindr.com/contact</loc>
-    <lastmod>2026-01-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/contact?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/contact?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Blog -->
+  <!-- Blog Main Page -->
   <url>
     <loc>https://www.newmindr.com/blog</loc>
-    <lastmod>2026-01-04</lastmod>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/blog?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/blog?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Courses/Programs -->
+  <!-- Blog Post: Interactive Rise -->
   <url>
-    <loc>https://www.newmindr.com/programs</loc>
+    <loc>https://www.newmindr.com/blog/interactive-rise</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/blog/interactive-rise"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/blog/interactive-rise?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/blog/interactive-rise?lang=ru"/>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Post: Why Students Fail -->
+  <url>
+    <loc>https://www.newmindr.com/blog/why-students-fail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/blog/why-students-fail"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/blog/why-students-fail?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/blog/why-students-fail?lang=ru"/>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Post: Why Kids Cheat -->
+  <url>
+    <loc>https://www.newmindr.com/blog/why-kids-cheat</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/blog/why-kids-cheat"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/blog/why-kids-cheat?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/blog/why-kids-cheat?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Showcase Page -->
+  <url>
+    <loc>https://www.newmindr.com/showcase</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/showcase"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/showcase?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/showcase?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Process/Getting Started Page -->
+  <url>
+    <loc>https://www.newmindr.com/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/process"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/process?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/process?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Courses Page -->
+  <url>
+    <loc>https://www.newmindr.com/courses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/courses"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/courses?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/courses?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
 </urlset>
