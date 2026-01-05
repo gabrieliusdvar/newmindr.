@@ -189,7 +189,7 @@ export default function Contact() {
                 ),
                 color: 'hover:bg-black',
                 shadow: 'shadow-[4px_4px_0_0_#000000]',
-                url: 'https://www.tiktok.com/@newmindr'
+                url: language === 'lt' ? 'https://www.tiktok.com/@newmindr_lt' : 'https://www.tiktok.com/@newmindr.com'
               },
             ].map((social, i) => (
               <a
