@@ -182,7 +182,7 @@ export default function Footer() {
               <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t.footer.connect}</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: Facebook, color: 'hover:bg-indigo-600', url: 'https://www.facebook.com/newmindr' },
+                  { icon: Facebook, color: 'hover:bg-indigo-600', url: language === 'lt' ? 'https://www.facebook.com/newmindr.lt/' : 'https://www.facebook.com/newmindr' },
                   { icon: Instagram, color: 'hover:bg-pink-500', url: language === 'lt' ? 'https://www.instagram.com/newmindr.lt/' : 'https://www.instagram.com/newmindr' },
                   { icon: Youtube, color: 'hover:bg-red-600', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
                   {

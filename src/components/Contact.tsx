@@ -178,7 +178,7 @@ export default function Contact() {
           {/* Social Media Links - Interactive Floating Bar */}
           <div className="hidden lg:flex absolute left-6 top-1/2 transform -translate-y-1/2 flex-col gap-6 z-20">
             {[
-              { icon: Facebook, color: 'hover:bg-indigo-600', url: 'https://www.facebook.com/newmindr' },
+              { icon: Facebook, color: 'hover:bg-indigo-600', url: language === 'lt' ? 'https://www.facebook.com/newmindr.lt/' : 'https://www.facebook.com/newmindr' },
               { icon: Instagram, color: 'hover:bg-pink-500', url: language === 'lt' ? 'https://www.instagram.com/newmindr.lt/' : 'https://www.instagram.com/newmindr' },
               { icon: Youtube, color: 'hover:bg-red-600', url: language === 'lt' ? 'https://www.youtube.com/@newmindr_LT' : 'https://www.youtube.com/@newmindr' },
               {

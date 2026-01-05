@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArticleRise from './articles/ArticleRise';
 import ArticleFail from './articles/ArticleFail';
 import ArticleParents from './articles/ArticleParents';
 import ArticleTeens from './articles/ArticleTeens';
+import ArticleCheating from './articles/ArticleCheating';
 import ArticleGeneric from './articles/ArticleGeneric';
-import { Loader2 } from 'lucide-react';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
@@ -36,6 +35,12 @@ export default function BlogPostRouter() {
     }
 
     // Router Logic
+
+    // ID 3 or why-kids-cheat
+    if (post.id === 3 || post.url.includes('why-kids-cheat')) {
+        return <ArticleCheating />;
+    }
+
     // ID 1 (The Setup) or Interactive Slug -> Interactive Rise Article
     if (post.id === 1 || post.url.includes('interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos' || post.platform === 'Инсайты') {
         return <ArticleRise />;

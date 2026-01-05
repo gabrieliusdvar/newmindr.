@@ -717,6 +717,17 @@ export const translations: Record<Language, any> = {
           likes: "15k",
           comments: "520",
           url: "/blog/why-students-fail"
+        },
+        {
+          id: 3,
+          platform: "Education",
+          title: "Why Kids Cheat Instead of Learning",
+          content: "Cheating isn’t a new problem—but why kids cheat has changed. In a world of instant answers, constant comparison, and pressure to perform, many children aren’t trying to “break the rules.” They’re trying to survive the system.",
+          image: "https://images.unsplash.com/photo-1513258496098-3ec40b9049a9?w=800&auto=format&fit=crop",
+          date: "Jan 5, 2026",
+          likes: "18k",
+          comments: "640",
+          url: "/blog/why-kids-cheat"
         }
       ]
     }
@@ -1437,6 +1448,17 @@ export const translations: Record<Language, any> = {
           likes: "15k",
           comments: "520",
           url: "/blog/why-students-fail"
+        },
+        {
+          id: 3,
+          platform: "Švietimas",
+          title: "Kodėl vaikai sukčiauja užuot mokęsi",
+          content: "Sukčiavimas nėra nauja problema, tačiau priežastys pasikeitė. Pasaulyje, kuriame atsakymai pasiekiami akimirksniu, nuolat lyginama su kitais ir spaudžiama siekti rezultatų, daugelis vaikų nebando „pažeisti taisyklių“. Jie bando išgyventi sistemoje.",
+          image: "https://images.unsplash.com/photo-1513258496098-3ec40b9049a9?w=800&auto=format&fit=crop",
+          date: "Sau 5, 2026",
+          likes: "18k",
+          comments: "640",
+          url: "/blog/why-kids-cheat"
         }
       ]
     }
@@ -2157,6 +2179,17 @@ export const translations: Record<Language, any> = {
           likes: "15k",
           comments: "520",
           url: "/blog/why-students-fail"
+        },
+        {
+          id: 3,
+          platform: "Образование",
+          title: "Почему дети списывают вместо того, чтобы учиться",
+          content: "Списывание — проблема не новая, но причины, по которым дети это делают, изменились. В мире мгновенных ответов, постоянного сравнения и давления многие дети не пытаются «нарушить правила». Они пытаются выжить в системе.",
+          image: "https://images.unsplash.com/photo-1513258496098-3ec40b9049a9?w=800&auto=format&fit=crop",
+          date: "Янв 5, 2026",
+          likes: "18k",
+          comments: "640",
+          url: "/blog/why-kids-cheat"
         }
       ]
     }
