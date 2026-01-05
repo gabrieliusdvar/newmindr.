@@ -118,4 +118,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Unsubscribe Page -->
+  <url>
+    <loc>https://www.newmindr.com/unsubscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.newmindr.com/unsubscribe"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.newmindr.com/unsubscribe?lang=lt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.newmindr.com/unsubscribe?lang=ru"/>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

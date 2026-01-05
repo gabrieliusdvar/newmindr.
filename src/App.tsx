@@ -17,6 +17,7 @@ import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
 import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
 import SEOHead from './components/SEOHead';
+import Unsubscribe from './pages/Unsubscribe';
 
 import { ModalProvider } from './contexts/ModalContext';
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/blog" element={<Layout><Blog /></Layout>} />
             <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
             <Route path="/showcase" element={<Layout><Showcase /></Layout>} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
             {/* 404 Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>

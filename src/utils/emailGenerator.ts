@@ -61,7 +61,7 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
                     <td align="center" style="padding: 20px 0; background-color: #f0f1f5;">
                         <p style="font-family: sans-serif; font-size: 12px; color: #666; margin: 0;">
                             ${unsub.prompt} 
-                            <a href="https://newmindr.com/unsubscribe" style="color: #3b82f6; font-weight: bold; text-decoration: none;">${unsub.action}</a>
+                            <a href="https://www.newmindr.com/unsubscribe" style="color: #3b82f6; font-weight: bold; text-decoration: none;">${unsub.action}</a>
                         </p>
                     </td>
                 </tr>
@@ -189,7 +189,7 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
             <p style="margin: 0; font-size: 14px; font-weight: bold;">${t.footer || 'newmindr. Learning Reimagined'}</p>
             <p style="margin-top: 15px; font-size: 10px; color: #888;">
                 ${unsub.prompt} 
-                <a href="https://newmindr.com/unsubscribe" style="color: #3b82f6; text-decoration: none;">${unsub.action}</a>
+                <a href="https://www.newmindr.com/unsubscribe" style="color: #3b82f6; text-decoration: none;">${unsub.action}</a>
             </p>
         </div>
     `;
