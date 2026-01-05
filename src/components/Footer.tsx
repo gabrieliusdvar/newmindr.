@@ -31,7 +31,12 @@ export default function Footer() {
 
     try {
       const { sendEmail } = await import('../utils/emailService');
+      const { subscribeNewsletter } = await import('../utils/newsletterService');
 
+      // Store subscriber in database
+      await subscribeNewsletter(email, language);
+
+      // Send welcome email
       await sendEmail({
         to: email,
         subject: t.emails.newsletter.subject,

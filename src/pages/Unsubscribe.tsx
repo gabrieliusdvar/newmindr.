@@ -76,14 +76,15 @@ export default function Unsubscribe() {
         setStatus('loading');
 
         try {
-            // Simulate API call - in production, this would call your backend
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const { unsubscribeNewsletter } = await import('../utils/newsletterService');
+            const result = await unsubscribeNewsletter(email);
 
-            // Here you would typically call your unsubscribe API
-            // For example: await fetch('/api/unsubscribe', { method: 'POST', body: JSON.stringify({ email }) });
-
-            console.log('Unsubscribe request for:', email);
-            setStatus('success');
+            if (result.success) {
+                setStatus('success');
+            } else {
+                setStatus('error');
+                setErrorMessage(result.error || t.errorGeneral);
+            }
         } catch (error) {
             setStatus('error');
             setErrorMessage(t.errorGeneral);
