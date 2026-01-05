@@ -9,7 +9,7 @@ import MinigamePopup from './MinigamePopup';
 export default function Hero() {
   const { t, language } = useLanguage();
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [isMinigameOpen, setIsMinigameOpen] = useState(false);
 
   const validateEmail = (email: string) => {
@@ -27,6 +27,7 @@ export default function Hero() {
       return;
     }
 
+    setStatus('loading');
     try {
       const html = generateEmailHtml(language, 'trial', { name: 'Friend' });
       await sendEmail({
@@ -128,26 +129,30 @@ export default function Hero() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t.hero.emailPlaceholder}
+                      disabled={status === 'loading' || status === 'success'}
                       className={`w-full bg-white border-2 sm:border-3 3xl:border-4 rounded-lg sm:rounded-xl 3xl:rounded-2xl px-6 sm:px-8 3xl:px-10 py-3 sm:py-4 3xl:py-5 text-base sm:text-lg 3xl:text-xl text-gray-900 font-black focus:outline-none focus:ring-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] 3xl:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative z-10 transition-all duration-300 ${status === 'error'
                         ? 'border-red-500 bg-red-50'
                         : status === 'success'
                           ? 'border-emerald-500 bg-emerald-50'
                           : 'border-gray-900'
-                        }`}
+                        } ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
                     />
                   </div>
                   <div className="relative">
                     <button
                       id="claim-button"
                       onClick={handleClaim}
+                      disabled={status === 'loading' || status === 'success'}
                       className={`w-full sm:w-auto px-6 sm:px-8 3xl:px-10 py-3 sm:py-4 3xl:py-5 text-base sm:text-lg 3xl:text-xl border-2 sm:border-3 3xl:border-4 border-gray-900 rounded-lg sm:rounded-xl 3xl:rounded-2xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] 3xl:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none font-black text-gray-900 transition-all duration-500 whitespace-nowrap relative z-10 uppercase tracking-tighter ${status === 'success'
                         ? 'bg-emerald-400 shadow-none translate-y-1 translate-x-1'
                         : status === 'error'
                           ? 'bg-red-400'
-                          : 'bg-yellow-400 hover:bg-yellow-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 3xl:hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'
+                          : status === 'loading'
+                            ? 'bg-gray-200 cursor-not-allowed'
+                            : 'bg-yellow-400 hover:bg-yellow-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 3xl:hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]'
                         }`}
                     >
-                      {status === 'success' ? t.hero.ready : status === 'error' ? t.hero.tryAgain : t.hero.ctaButton}
+                      {status === 'success' ? t.hero.ready : status === 'error' ? t.hero.tryAgain : status === 'loading' ? t.hero.sending : t.hero.ctaButton}
                     </button>
                     {status === 'success' && (
                       <div className="absolute -bottom-6 sm:-bottom-8 right-0 text-[10px] xs:text-xs sm:text-sm 3xl:text-base font-black uppercase text-emerald-600 animate-bounce whitespace-nowrap text-right">

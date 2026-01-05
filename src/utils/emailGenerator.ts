@@ -1,6 +1,30 @@
 import { Language, translations } from './translations';
 import { STRIPE_LINKS } from './emailConfig';
-import { EMAIL_IMAGES } from './emailImages';
+
+/**
+ * Hosted image URLs for email templates
+ * Using hosted URLs instead of base64 for better email client compatibility
+ */
+const EMAIL_IMAGE_URLS = {
+    // Base URL for hosted images
+    baseUrl: 'https://newmindr.pages.dev',
+
+    // Trial images
+    trialEnHeader: 'https://newmindr.pages.dev/trial/images/b880af19a6348b92c6f411a4c22f48dd.png',
+    trialEnEagle: 'https://newmindr.pages.dev/trial/images/86023f0fadcdbb15636cb424e619e382.png',
+    trialLtHeader: 'https://newmindr.pages.dev/trial/images/lt-header.png',
+    trialLtEagle: 'https://newmindr.pages.dev/trial/images/lt-eagle.png',
+    trialRuHeader: 'https://newmindr.pages.dev/trial/images/ru-header.png',
+    trialRuEagle: 'https://newmindr.pages.dev/trial/images/ru-eagle.png',
+
+    // Newsletter images
+    newsletterEnHeader: 'https://newmindr.pages.dev/newsletter/images/aff6dd8b8a3b6658dc9c21e719e0921f.png',
+    newsletterEnContent: 'https://newmindr.pages.dev/newsletter/images/e08d778ef3a764e65fd10a0d34eb5f6f.png',
+    newsletterLtHeader: 'https://newmindr.pages.dev/newsletter/images/e1c32af7216d822d5e67de5642f69670.png',
+    newsletterLtContent: 'https://newmindr.pages.dev/newsletter/images/f792eb1e8b56dc33bcae2476b015b3d9.png',
+    newsletterRuHeader: 'https://newmindr.pages.dev/newsletter/images/f00c60897cb2eeb4b98d8875197bcf36.png',
+    newsletterRuContent: 'https://newmindr.pages.dev/newsletter/images/42e30765187a3a740111d37e904f5cb5.png',
+};
 
 /**
  * Generates a beautiful, premium HTML email template based on the 

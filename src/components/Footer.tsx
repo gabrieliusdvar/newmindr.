@@ -14,6 +14,8 @@ export default function Footer() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -29,6 +31,7 @@ export default function Footer() {
       return;
     }
 
+    setLoading(true);
     try {
       const { sendEmail } = await import('../utils/emailService');
       const { subscribeNewsletter } = await import('../utils/newsletterService');
@@ -52,6 +55,8 @@ export default function Footer() {
     } catch (err: any) {
       console.error('Email failed to send:', err);
       setError(err?.message || 'error');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -239,6 +244,7 @@ export default function Footer() {
                         }}
                         placeholder={t.footer.enterEmail}
                         className={`w-full bg-white border-2 ${error ? 'border-red-500 bg-red-50' : 'border-gray-900'} rounded-lg px-3 py-2 text-xs font-bold text-gray-900 focus:outline-none focus:bg-gray-50 transition-colors`}
+                        disabled={loading || success}
                       />
                       {error && (
                         <div className="absolute top-full mt-1 left-0 right-0 z-20 flex items-center gap-1.5 bg-white border-2 border-red-500 text-red-600 rounded-md px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] animate-in slide-in-from-top-1">
@@ -251,11 +257,11 @@ export default function Footer() {
                     </div>
                     <button
                       type="submit"
-                      disabled={success}
-                      className={`w-full py-2 border-2 border-gray-900 rounded-lg font-black text-gray-900 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:translate-y-1 transition-all uppercase tracking-widest text-xs ${success ? 'bg-emerald-400' : 'bg-yellow-400 hover:bg-yellow-300'}`}
+                      disabled={success || loading}
+                      className={`w-full py-2 border-2 border-gray-900 rounded-lg font-black text-gray-900 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:translate-y-1 transition-all uppercase tracking-widest text-xs ${success ? 'bg-emerald-400' : 'bg-yellow-400 hover:bg-yellow-300'} ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                       style={{ fontFamily: "'Sora', sans-serif" }}
                     >
-                      {success ? 'SUBSCRIBED!' : t.footer.subscribe}
+                      {success ? t.footer.subscribed : loading ? t.footer.subscribing : t.footer.subscribe}
                     </button>
                   </div>
                 </form>
