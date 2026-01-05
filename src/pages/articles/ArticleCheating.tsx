@@ -300,7 +300,7 @@ export default function ArticleCheating() {
                                     </div>
                                     <h3 className="font-bold text-lg mb-2 leading-tight">{point.title}</h3>
 
-                                    <div className={`overflow-hidden transition-all duration-500 ${activePoint === point.id ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                                    <div className={`overflow-hidden transition-all duration-500 ${activePoint === point.id ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                                         <div className="space-y-3 text-sm">
                                             <div className="bg-red-500/20 p-3 rounded-lg border border-red-500/30">
                                                 <div className="flex items-center gap-2 text-red-100 font-bold text-xs uppercase mb-1">
