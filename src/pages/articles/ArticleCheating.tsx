@@ -11,206 +11,209 @@ export default function ArticleCheating() {
         en: {
             back: "Back to Blog",
             title: "Why Kids Cheat Instead of Learning",
-            subtitle: "They aren't trying to break the rules. They're trying to survive the system.",
+            subtitle: "It's not about breaking rules. It's about surviving a broken system.",
             intro: {
-                p1: "Cheating isn’t a new problem—but why kids cheat has changed. In a world of instant answers, constant comparison, and pressure to perform, many children aren’t trying to “break the rules.” They’re trying to survive the system.",
-                p2: "If you run an interactive courses website, understanding this is critical. Cheating is rarely about laziness. It’s usually a signal that learning has broken down somewhere earlier.",
-                insight: "Key Insight: Kids don’t cheat because they want easy wins. They cheat because they’re afraid to fail publicly."
+                p1: "Let's be honest - cheating has always existed. But today, the reasons behind it have shifted dramatically. We live in an age where answers are one Google search away, where kids are constantly compared to their peers, and where the pressure to get good grades can feel overwhelming. Most children who cheat aren't rebels trying to game the system. They're just trying to keep up.",
+                p2: "As parents and educators, this should make us pause. When a child cheats, it's rarely about laziness or bad character. More often, it's a red flag that something in their learning experience isn't working. The question we should be asking isn't \"How do we catch cheaters?\" but \"Why does cheating feel like the only option?\"",
+                insight: "Here's what we've learned: Kids don't cheat because they want shortcuts. They cheat because they're terrified of looking stupid in front of others."
             },
-            interactiveTitle: "DEBUGGING THE CLASSROOM",
-            interactiveSubtitle: "Click on a system error to view the root cause analysis.",
+            interactiveTitle: "WHERE LEARNING BREAKS DOWN",
+            interactiveSubtitle: "Click on each issue to understand what's really happening.",
             points: [
                 {
                     id: 1,
                     icon: Shield,
-                    title: "System Error: Unsafe Environment",
-                    symptom: "Kids Cheat When Learning Feels Unsafe",
-                    diagnosis: "Wrong answer = embarrassment. Low score = punishment.",
-                    fix: "When the environment feels unforgiving, cheating becomes a defense mechanism. Interactive learning shifts focus from 'being right' to 'exploring'."
+                    title: "When Mistakes Feel Dangerous",
+                    symptom: "Children cheat when making errors feels unsafe",
+                    diagnosis: "In many classrooms, a wrong answer leads to embarrassment. A low grade means disappointment from parents. This creates fear.",
+                    fix: "When we create spaces where mistakes are part of learning - not failures to hide - kids stop needing to cheat. Interactive learning does exactly this: it rewards exploration, not just correct answers."
                 },
                 {
                     id: 2,
                     icon: Search,
-                    title: "System Error: Meaning Not Found",
-                    symptom: "Memorization Without Meaning",
-                    diagnosis: "Why struggle to understand if I just need the right answer?",
-                    fix: "When learning is just remembering facts, kids optimize for results. Shift focus to: trying, adjusting, exploring, experimenting."
+                    title: "Learning Without Understanding",
+                    symptom: "Memorizing facts without knowing why they matter",
+                    diagnosis: "If the goal is just to remember the right answer for a test, why would anyone bother understanding it? Kids are smart - they optimize for what's measured.",
+                    fix: "Real learning happens when kids can experiment, try different approaches, and see how things connect. When understanding becomes the goal, cheating becomes pointless."
                 },
                 {
                     id: 3,
                     icon: AlertTriangle,
-                    title: "System Error: External Pressure",
-                    symptom: "Pressure from Adults",
-                    diagnosis: "Grades over growth. Speed over mastery.",
-                    fix: "When adults reward outcomes more than effort, kids learn that 'how' doesn't matter. That's a system problem, not a kid problem."
+                    title: "Too Much Pressure from Adults",
+                    symptom: "When grades matter more than growth",
+                    diagnosis: "We mean well, but sometimes our focus on results sends the wrong message. When we celebrate only outcomes, kids learn that the process doesn't count.",
+                    fix: "What if we praised effort as much as achievement? What if trying something hard was valued even when it didn't work out? Kids need to know that how they learn matters, not just what they score."
                 },
                 {
                     id: 4,
                     icon: Zap,
-                    title: "System Error: Low Engagement",
-                    symptom: "Boredom Is a Huge Factor",
-                    diagnosis: "Bored kids disengage quietly—by copying or Googling.",
-                    fix: "Engagement reduces cheating more effectively than punishment. Branching paths, challenges, immediate feedback."
+                    title: "Plain Old Boredom",
+                    symptom: "Disengagement is a bigger problem than we admit",
+                    diagnosis: "Bored kids mentally check out. And when they check out, copying an answer feels easier than struggling through material that doesn't interest them.",
+                    fix: "Engaging content changes everything. When learning feels like a game - with challenges, choices, and immediate feedback - kids want to participate. They don't need to cheat when they're actually enjoying themselves."
                 },
                 {
                     id: 5,
                     icon: Heart,
-                    title: "System Error: No Ownership",
-                    symptom: "Lack of Ownership",
-                    diagnosis: "Learning happens TO them, not WITH them.",
-                    fix: "When they control pace and make decisions, cheating loses its appeal. Why cheat when the journey is yours?"
+                    title: "No Sense of Ownership",
+                    symptom: "Learning happens to them, not with them",
+                    diagnosis: "When kids have no control over what, when, or how they learn, they feel like passengers. And passengers don't care about the journey.",
+                    fix: "Give children choices. Let them set their pace. When they feel ownership over their learning, they develop pride in their progress. Why cheat on something you actually care about?"
                 },
                 {
                     id: 6,
                     icon: Monitor,
-                    title: "System Error: Design Flaw",
-                    symptom: "Technology Isn’t the Enemy—Design Is",
-                    diagnosis: "Passive videos & one-answer quizzes = Cheating bait.",
-                    fix: "Good design: simulations, problem-solving, retries without shame. Build around curiosity, not compliance."
+                    title: "Bad Design, Not Bad Kids",
+                    symptom: "The technology isn't the problem - how we use it is",
+                    diagnosis: "Passive videos followed by simple quizzes are practically an invitation to cheat. If the content doesn't require thinking, why would kids think?",
+                    fix: "Well-designed learning uses simulations, problem-solving scenarios, and activities where there isn't just one right answer. When you build for curiosity instead of compliance, cheating naturally disappears."
                 }
             ],
             conclusion: {
-                title: "The Real Question",
-                text: "The real question isn't 'Why do kids cheat?' It is: 'What is our learning experience teaching them to value?'",
-                list: ["Speed over understanding?", "Scores over curiosity?", "Perfection over progress?"],
-                final: "Kids don’t wake up wanting to cheat. They wake up wanting to feel capable, accepted, and successful. Design learning experiences that meet those needs—and cheating stops being a problem you have to fight."
-            }
+                title: "The Real Question We Should Ask",
+                text: "Instead of asking \"Why do kids cheat?\" we need to ask: \"What are we teaching them to value?\"",
+                list: ["Are we rewarding speed over understanding?", "Are we valuing grades over genuine curiosity?", "Are we pushing perfection instead of celebrating progress?"],
+                final: "No child wakes up wanting to cheat. They wake up wanting to feel capable, accepted, and proud of themselves. When we design learning experiences that meet these basic needs, cheating stops being a problem we have to police. It simply becomes unnecessary."
+            },
+            cta: "See How We Do It"
         },
         lt: {
             back: "Grįžti į tinklaraštį",
-            title: "Kodėl vaikai sukčiauja užuot mokęsi",
-            subtitle: "Jie nebando pažeisti taisyklių. Jie bando išgyventi sistemoje.",
+            title: "Kodėl vaikai sukčiauja vietoj to, kad mokytųsi",
+            subtitle: "Tai ne apie taisyklių laužymą. Tai apie išgyvenimą sugedusioje sistemoje.",
             intro: {
-                p1: "Sukčiavimas nėra nauja problema, tačiau priežastys pasikeitė. Pasaulyje, kuriame atsakymai pasiekiami akimirksniu, nuolat lyginama su kitais ir spaudžiama siekti rezultatų, daugelis vaikų nebando „pažeisti taisyklių“. Jie bando išgyventi sistemoje.",
-                p2: "Jei kuriate interaktyvius kursus, suprasti tai yra gyvybiškai svarbu. Sukčiavimas retai kyla iš tinginystės. Paprastai tai signalas, kad mokymosi procesas kažkur nutrūko.",
-                insight: "Pagrindinė įžvalga: Vaikai sukčiauja ne todėl, kad nori lengvų pergalių. Jie sukčiauja, nes bijo viešai suklysti."
+                p1: "Būkime atviri - sukčiavimas egzistavo visada. Tačiau šiandien priežastys smarkiai pasikeitė. Gyvename laikais, kai atsakymai yra vieno Google paieškos atstumo, kai vaikai nuolat lyginami su bendraamžiais, o spaudimas gauti gerus pažymius gali atrodyti nepakeliamas. Daugelis vaikų, kurie sukčiauja, nėra maištininkai, bandantys apgauti sistemą. Jie tiesiog bando neatsilikti.",
+                p2: "Kaip tėvai ir mokytojai, turėtume sustoti ir pagalvoti. Kai vaikas sukčiauja, tai retai būna dėl tinginio ar blogo charakterio. Dažniausiai tai raudonas signalas, kad kažkas mokymosi procese neveikia. Klausimas turėtų būti ne \"Kaip pagauti sukčius?\", o \"Kodėl sukčiavimas atrodo vienintelė išeitis?\"",
+                insight: "Štai ką išmokome: Vaikai sukčiauja ne todėl, kad nori lengvų kelių. Jie sukčiauja, nes jiems baisu atrodyti kvailai prieš kitus."
             },
-            interactiveTitle: "KLASĖS DERINIMAS (DEBUGGING)",
-            interactiveSubtitle: "Spustelėkite sistemos klaidą, kad pamatytumėte priežasčių analizę.",
+            interactiveTitle: "KUR MOKYMASIS SUGENDA",
+            interactiveSubtitle: "Paspauskite ant kiekvienos problemos, kad suprastumėte, kas iš tikrųjų vyksta.",
             points: [
                 {
                     id: 1,
                     icon: Shield,
-                    title: "Sistemos klaida: Nesaugi aplinka",
-                    symptom: "Vaikai sukčiauja, kai jaučiasi nesaugūs",
-                    diagnosis: "Klaidingas atsakymas = gėda. Žemas balas = bausmė.",
-                    fix: "Kai aplinka neatleidžia klaidų, sukčiavimas tampa gynybos mechanizmu. Interaktyvus mokymasis perkelia dėmesį nuo „buvimo teisiu“ į „tyrinėjimą“."
+                    title: "Kai klaidos atrodo pavojingos",
+                    symptom: "Vaikai sukčiauja, kai klysti jaučiasi nesaugu",
+                    diagnosis: "Daugelyje klasių neteisingas atsakymas sukelia gėdą. Žemas pažymys reiškia tėvų nusivylimą. Tai sukuria baimę.",
+                    fix: "Kai sukuriame erdves, kur klaidos yra mokymosi dalis - o ne nesėkmės, kurias reikia slėpti - vaikams nebereikia sukčiauti. Interaktyvus mokymasis būtent tai ir daro: apdovanoja tyrinėjimą, ne tik teisingus atsakymus."
                 },
                 {
                     id: 2,
                     icon: Search,
-                    title: "Sistemos klaida: Nėra prasmės",
-                    symptom: "Įsiminimas be prasmės",
-                    diagnosis: "Kam vargti suprantant, jei reikia tik teisingo atsakymo?",
-                    fix: "Kai mokymasis tėra faktų kartojimas, vaikai optimizuoja rezultatą. Keiskite fokusą į: bandymą, derinimą, tyrinėjimą, eksperimentavimą."
+                    title: "Mokymasis be supratimo",
+                    symptom: "Faktų įsiminimas nežinant, kodėl jie svarbūs",
+                    diagnosis: "Jei tikslas tik atsiminti teisingą atsakymą testui, kam vargti jį suprasti? Vaikai protingi - jie optimizuoja tam, kas matuojama.",
+                    fix: "Tikras mokymasis vyksta, kai vaikai gali eksperimentuoti, bandyti skirtingus būdus ir matyti, kaip viskas susiję. Kai supratimas tampa tikslu, sukčiavimas tampa beprasmis."
                 },
                 {
                     id: 3,
                     icon: AlertTriangle,
-                    title: "Sistemos klaida: Išorinis spaudimas",
-                    symptom: "Suaugusiųjų spaudimas",
-                    diagnosis: "Pažymiai svarbiau už augimą. Greitis svarbiau už meistriškumą.",
-                    fix: "Kai suaugusieji vertina rezultatą labiau nei pastangas, vaikai išmoksta, kad „kaip“ nesvarbu. Tai sistemos problema."
+                    title: "Per didelis suaugusiųjų spaudimas",
+                    symptom: "Kai pažymiai svarbesni už augimą",
+                    diagnosis: "Mes norime gero, bet kartais mūsų dėmesys rezultatams siunčia neteisingą žinutę. Kai švenčiame tik pasiekimus, vaikai išmoksta, kad procesas nesvarbus.",
+                    fix: "O kas, jei girtume pastangas tiek pat, kiek pasiekimus? Jei bandymas kažko sunkaus būtų vertinamas net tada, kai nepavyksta? Vaikai turi žinoti, kad svarbu kaip jie mokosi, ne tik kokie jų balai."
                 },
                 {
                     id: 4,
                     icon: Zap,
-                    title: "Sistemos klaida: Mažas įsitraukimas",
-                    symptom: "Nuobodulys yra didžiulis faktorius",
-                    diagnosis: "Nuobodžiaujantys vaikai atsijungia tyliai – kopijuodami ar „gūglindami“.",
-                    fix: "Įsitraukimas mažina sukčiavimą efektyviau nei bausmės. Sprendimai, iššūkiai, grįžtamasis ryšys."
+                    title: "Paprasčiausias nuobodulys",
+                    symptom: "Neįsitraukimas yra didesnė problema, nei pripažįstame",
+                    diagnosis: "Nuobodžiaujantys vaikai mintyse išsijungia. O kai išsijungia, nusirašyti atsakymą atrodo lengviau nei kankintis su medžiaga, kuri jiems neįdomi.",
+                    fix: "Įtraukiantis turinys viską keičia. Kai mokymasis primena žaidimą - su iššūkiais, pasirinkimais ir tiesioginiu grįžtamuoju ryšiu - vaikai nori dalyvauti. Jiems nereikia sukčiauti, kai jiems tikrai įdomu."
                 },
                 {
                     id: 5,
                     icon: Heart,
-                    title: "Sistemos klaida: Nėra nuosavybės",
-                    symptom: "Atsakomybės trūkumas",
-                    diagnosis: "Mokymasis vyksta JIEMS, o ne SU JAIS.",
-                    fix: "Kai jie kontroliuoja tempą ir priima sprendimus, sukčiavimas praranda prasmę. Kam sukčiauti, kai kelionė priklauso tau?"
+                    title: "Nuosavybės jausmo trūkumas",
+                    symptom: "Mokymasis vyksta JIEMS, o ne SU jais",
+                    diagnosis: "Kai vaikai nekontroliuoja, ko, kada ar kaip jie mokosi, jie jaučiasi kaip keleiviai. O keleiviai nesirūpina kelione.",
+                    fix: "Duokite vaikams pasirinkimus. Leiskite jiems nustatyti savo tempą. Kai jie jaučia nuosavybę savo mokymuisi, jie išsiugdo pasididžiavimą savo pažanga. Kam sukčiauti kažkuo, kas tau iš tikrųjų rūpi?"
                 },
                 {
                     id: 6,
                     icon: Monitor,
-                    title: "Sistemos klaida: Dizaino trūkumas",
-                    symptom: "Technologijos nėra priešas – dizainas yra",
-                    diagnosis: "Pasyvūs vaizdo įrašai ir vieno atsakymo testai = masalas sukčiavimui.",
-                    fix: "Geras dizainas: simuliacijos, problemų sprendimas, bandymai be gėdos. Kurkite smalsumui, ne paklusnumui."
+                    title: "Blogas dizainas, ne blogi vaikai",
+                    symptom: "Problema ne technologijos, o kaip jas naudojame",
+                    diagnosis: "Pasyvūs vaizdo įrašai su paprastais testais praktiškai kviečia sukčiauti. Jei turinys nereikalauja mąstymo, kodėl vaikai turėtų mąstyti?",
+                    fix: "Gerai suprojektuotas mokymasis naudoja simuliacijas, problemų sprendimo scenarijus ir veiklas, kur nėra tik vieno teisingo atsakymo. Kai kuriate smalsumui, o ne paklusnumui, sukčiavimas savaime išnyksta."
                 }
             ],
             conclusion: {
-                title: "Tikrasis Klausimas",
-                text: "Tikrasis klausimas nėra „Kodėl vaikai sukčiauja?“. Tai yra: „Ką mūsų mokymosi patirtis moko juos vertinti?“",
-                list: ["Greitį vietoj supratimo?", "Balus vietoj smalsumo?", "Tobulumą vietoj progreso?"],
-                final: "Vaikai nepabunda norėdami sukčiauti. Jie pabunda norėdami jaustis gabūs, priimti ir sėkmingi. Sukurkite mokymosi patirtis, kurios atliepia šiuos poreikius – ir sukčiavimas taps nereikalingas."
-            }
+                title: "Tikrasis klausimas, kurį turėtume kelti",
+                text: "Vietoj klausimo \"Kodėl vaikai sukčiauja?\" turime klausti: \"Ko mes juos mokome vertinti?\"",
+                list: ["Ar apdovanojame greitį vietoj supratimo?", "Ar vertiname pažymius labiau nei tikrą smalsumą?", "Ar spaudžiame tobulumą vietoj pažangos šventimo?"],
+                final: "Joks vaikas nepabunda norėdamas sukčiauti. Jie pabunda norėdami jaustis gabūs, priimti ir didžiuotis savimi. Kai kuriame mokymosi patirtis, kurios atitinka šiuos pagrindinius poreikius, sukčiavimas nustoja būti problema, kurią reikia kontroliuoti. Jis tiesiog tampa nereikalingas."
+            },
+            cta: "Pažiūrėkite, kaip tai darome"
         },
         ru: {
             back: "Назад в блог",
             title: "Почему дети списывают вместо того, чтобы учиться",
-            subtitle: "Они не пытаются нарушить правила. Они пытаются выжить в системе.",
+            subtitle: "Дело не в нарушении правил. Дело в выживании в сломанной системе.",
             intro: {
-                p1: "Списывание — проблема не новая, но причины изменились. В мире мгновенных ответов, постоянного сравнения и давления многие дети не пытаются «нарушить правила». Они пытаются выжить в системе.",
-                p2: "Если вы создаете интерактивные курсы, понимание этого критически важно. Списывание редко связано с ленью. Обычно это сигнал, что процесс обучения где-то сломался.",
-                insight: "Ключевой инсайт: Дети списывают не потому, что хотят легких побед. Они списывают, потому что боятся публичного провала."
+                p1: "Будем честны - списывание существовало всегда. Но сегодня причины кардинально изменились. Мы живем в эпоху, когда ответы находятся на расстоянии одного поиска в Google, когда детей постоянно сравнивают со сверстниками, а давление получать хорошие оценки может казаться невыносимым. Большинство детей, которые списывают - не бунтари, пытающиеся обмануть систему. Они просто пытаются не отставать.",
+                p2: "Как родители и педагоги, мы должны задуматься. Когда ребенок списывает, это редко связано с ленью или плохим характером. Чаще это красный флаг, что что-то в процессе обучения не работает. Вопрос должен быть не \"Как поймать списывающих?\", а \"Почему списывание кажется единственным выходом?\"",
+                insight: "Вот что мы поняли: Дети списывают не потому, что хотят легких путей. Они списывают, потому что боятся выглядеть глупо перед другими."
             },
-            interactiveTitle: "ОТЛАДКА КЛАССА",
-            interactiveSubtitle: "Нажмите на системную ошибку, чтобы увидеть анализ причин.",
+            interactiveTitle: "ГДЕ ОБУЧЕНИЕ ЛОМАЕТСЯ",
+            interactiveSubtitle: "Нажмите на каждую проблему, чтобы понять, что происходит на самом деле.",
             points: [
                 {
                     id: 1,
                     icon: Shield,
-                    title: "Ошибка системы: Небезопасная среда",
-                    symptom: "Страх ошибки",
-                    diagnosis: "Неверный ответ = смущение. Низкий балл = наказание.",
-                    fix: "Когда среда не прощает ошибок, списывание становится защитой. Интерактивное обучение смещает фокус с «быть правым» на «исследование»."
+                    title: "Когда ошибки кажутся опасными",
+                    symptom: "Дети списывают, когда ошибаться небезопасно",
+                    diagnosis: "Во многих классах неправильный ответ ведет к смущению. Низкая оценка означает разочарование родителей. Это создает страх.",
+                    fix: "Когда мы создаем пространство, где ошибки - часть обучения, а не провалы, которые нужно скрывать, детям больше не нужно списывать. Интерактивное обучение именно это и делает: награждает исследование, а не только правильные ответы."
                 },
                 {
                     id: 2,
                     icon: Search,
-                    title: "Ошибка системы: Нет смысла",
-                    symptom: "Запоминание без понимания",
-                    diagnosis: "Зачем мучиться, если нужен только правильный ответ?",
-                    fix: "Когда учеба — это повторение фактов, дети оптимизируют результат. Сместите фокус на: пробы, настройки, исследования, эксперименты."
+                    title: "Обучение без понимания",
+                    symptom: "Запоминание фактов без понимания их значения",
+                    diagnosis: "Если цель - просто запомнить правильный ответ для теста, зачем утруждаться его понимать? Дети умны - они оптимизируют то, что измеряется.",
+                    fix: "Настоящее обучение происходит, когда дети могут экспериментировать, пробовать разные подходы и видеть связи. Когда понимание становится целью, списывание становится бессмысленным."
                 },
                 {
                     id: 3,
                     icon: AlertTriangle,
-                    title: "Ошибка системы: Давление",
-                    symptom: "Давление взрослых",
-                    diagnosis: "Оценки важнее роста. Скорость важнее мастерства.",
-                    fix: "Когда взрослые награждают за результат, а не за усилия, дети учатся, что «как» не важно. Это проблема системы."
+                    title: "Слишком много давления от взрослых",
+                    symptom: "Когда оценки важнее развития",
+                    diagnosis: "Мы желаем добра, но иногда наш фокус на результатах посылает неправильный сигнал. Когда мы празднуем только достижения, дети учатся, что процесс не важен.",
+                    fix: "Что если бы мы хвалили усилия так же, как достижения? Если бы попытка сделать что-то сложное ценилась даже когда не получилось? Дети должны знать, что важно как они учатся, а не только какие у них оценки."
                 },
                 {
                     id: 4,
                     icon: Zap,
-                    title: "Ошибка системы: Скука",
-                    symptom: "Низкая вовлеченность",
-                    diagnosis: "Скучающие дети отключаются тихо — копируя или гугля.",
-                    fix: "Вовлеченность снижает списывание лучше наказаний. Ветвящиеся пути, вызовы, мгновенная обратная связь."
+                    title: "Обычная скука",
+                    symptom: "Отсутствие вовлеченности - большая проблема, чем мы признаем",
+                    diagnosis: "Скучающие дети мысленно отключаются. А когда отключаются, списать ответ кажется легче, чем мучиться с неинтересным материалом.",
+                    fix: "Увлекательный контент меняет все. Когда обучение похоже на игру - с вызовами, выборами и мгновенной обратной связью - дети хотят участвовать. Им не нужно списывать, когда им действительно интересно."
                 },
                 {
                     id: 5,
                     icon: Heart,
-                    title: "Ошибка системы: Нет владения",
-                    symptom: "Отсутствие ответственности",
-                    diagnosis: "Обучение происходит С НИМИ, а не У НИХ.",
-                    fix: "Когда они контролируют темп и принимают решения, списывание теряет смысл. Зачем списывать, когда это твой путь?"
+                    title: "Отсутствие чувства собственности",
+                    symptom: "Обучение происходит с ними, а не у них",
+                    diagnosis: "Когда дети не контролируют что, когда и как они учатся, они чувствуют себя пассажирами. А пассажиры не заботятся о путешествии.",
+                    fix: "Дайте детям выбор. Позвольте им задавать свой темп. Когда они чувствуют владение своим обучением, они развивают гордость за свой прогресс. Зачем списывать то, что тебе действительно важно?"
                 },
                 {
                     id: 6,
                     icon: Monitor,
-                    title: "Ошибка системы: Ошибка дизайна",
-                    symptom: "Технологии — не враг",
-                    diagnosis: "Пассивные видео и тесты с одним ответом = приманка для списывания.",
-                    fix: "Хороший дизайн: симуляции, решение проблем, попытки без стыда. Стройте на любопытстве, а не послушании."
+                    title: "Плохой дизайн, а не плохие дети",
+                    symptom: "Проблема не в технологиях, а в том, как мы их используем",
+                    diagnosis: "Пассивные видео с простыми тестами - практически приглашение списывать. Если контент не требует мышления, зачем детям думать?",
+                    fix: "Хорошо спроектированное обучение использует симуляции, сценарии решения проблем и активности, где нет единственного правильного ответа. Когда вы строите для любопытства, а не послушания, списывание исчезает само собой."
                 }
             ],
             conclusion: {
-                title: "Настоящий вопрос",
-                text: "Настоящий вопрос не «Почему дети списывают?». А: «Что наш опыт обучения учит их ценить?»",
-                list: ["Скорость вместо понимания?", "Баллы вместо любопытства?", "Идеал вместо прогресса?"],
-                final: "Дети не просыпаются с желанием списать. Они хотят чувствовать себя способными и успешными. Создайте обучение, отвечающее этим потребностям — и проблема исчезнет."
-            }
+                title: "Настоящий вопрос, который мы должны задать",
+                text: "Вместо \"Почему дети списывают?\" нужно спросить: \"Чему мы учим их ценить?\"",
+                list: ["Награждаем ли мы скорость вместо понимания?", "Ценим ли мы оценки больше искреннего любопытства?", "Давим ли мы на совершенство вместо празднования прогресса?"],
+                final: "Ни один ребенок не просыпается с желанием списать. Они просыпаются желая чувствовать себя способными, принятыми и гордыми собой. Когда мы создаем опыт обучения, отвечающий этим базовым потребностям, списывание перестает быть проблемой, которую нужно контролировать. Оно просто становится ненужным."
+            },
+            cta: "Посмотрите, как мы это делаем"
         }
     };
 
@@ -231,7 +234,7 @@ export default function ArticleCheating() {
                 {/* Hero */}
                 <header className="mb-16">
                     <div className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-black uppercase tracking-widest mb-6">
-                        System Failure
+                        {language === 'lt' ? 'Sistemos gedimas' : language === 'ru' ? 'Сбой системы' : 'System Failure'}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase leading-[0.9] tracking-tighter text-gray-900">
                         {t.title}
@@ -285,14 +288,14 @@ export default function ArticleCheating() {
                                     key={point.id}
                                     onClick={() => setActivePoint(activePoint === point.id ? null : point.id)}
                                     className={`text-left p-6 rounded-2xl border-2 transition-all duration-300 group ${activePoint === point.id
-                                            ? 'bg-emerald-500 border-emerald-400 text-white shadow-[0_0_30px_rgba(16,185,129,0.3)] scale-105 z-20'
-                                            : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30 text-gray-300'
+                                        ? 'bg-emerald-500 border-emerald-400 text-white shadow-[0_0_30px_rgba(16,185,129,0.3)] scale-105 z-20'
+                                        : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30 text-gray-300'
                                         }`}
                                 >
                                     <div className="flex items-center justify-between mb-4">
                                         <point.icon className={`w-8 h-8 ${activePoint === point.id ? 'text-white' : 'text-gray-500 group-hover:text-emerald-400'}`} />
                                         <div className={`text-xs font-black uppercase tracking-widest px-2 py-1 rounded bg-black/20 ${activePoint === point.id ? 'text-white' : 'text-gray-600'}`}>
-                                            Error 0{point.id}
+                                            {language === 'lt' ? 'Klaida' : language === 'ru' ? 'Ошибка' : 'Issue'} 0{point.id}
                                         </div>
                                     </div>
                                     <h3 className="font-bold text-lg mb-2 leading-tight">{point.title}</h3>
@@ -301,13 +304,13 @@ export default function ArticleCheating() {
                                         <div className="space-y-3 text-sm">
                                             <div className="bg-red-500/20 p-3 rounded-lg border border-red-500/30">
                                                 <div className="flex items-center gap-2 text-red-100 font-bold text-xs uppercase mb-1">
-                                                    <AlertTriangle className="w-3 h-3" /> Warning
+                                                    <AlertTriangle className="w-3 h-3" /> {language === 'lt' ? 'Problema' : language === 'ru' ? 'Проблема' : 'Problem'}
                                                 </div>
                                                 <p className="text-white/90 font-medium leading-relaxed">{point.diagnosis}</p>
                                             </div>
                                             <div className="bg-white/20 p-3 rounded-lg border border-white/30">
                                                 <div className="flex items-center gap-2 text-white font-bold text-xs uppercase mb-1">
-                                                    <CheckCircle2 className="w-3 h-3" /> Fix Applied
+                                                    <CheckCircle2 className="w-3 h-3" /> {language === 'lt' ? 'Sprendimas' : language === 'ru' ? 'Решение' : 'Solution'}
                                                 </div>
                                                 <p className="text-white/90 font-medium leading-relaxed">{point.fix}</p>
                                             </div>
@@ -344,8 +347,8 @@ export default function ArticleCheating() {
                 </section>
 
                 <div className="mt-16 text-center">
-                    <Link to="/contact" className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-emerald-500 transition-all hover:-translate-y-1 shadow-lg">
-                        {language === 'lt' ? 'Pradėti pokytį' : language === 'ru' ? 'Начать изменения' : 'Start the Change'}
+                    <Link to="/process" className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-emerald-500 transition-all hover:-translate-y-1 shadow-lg">
+                        {t.cta}
                         <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>
