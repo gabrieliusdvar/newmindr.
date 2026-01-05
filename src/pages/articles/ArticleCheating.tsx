@@ -220,14 +220,14 @@ export default function ArticleCheating() {
     const t = content[language as keyof typeof content] || content.en;
 
     return (
-        <div className="min-h-screen bg-neutral-50 font-sans text-gray-900 pt-20">
+        <div className="min-h-screen bg-neutral-50 font-sans text-gray-900 pt-24 selection:bg-emerald-400/30 overflow-x-hidden">
             {/* Nav */}
-            <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 px-6 py-4 flex justify-between items-center">
-                <Link to="/blog" className="flex items-center gap-2 font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors text-xs">
-                    <ArrowLeft className="w-4 h-4" />
+            <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b-4 border-black px-6 py-4 flex justify-between items-center shadow-[0_4px_0_0_#e5e7eb]">
+                <Link to="/blog" className="flex items-center gap-2 font-black uppercase tracking-widest hover:underline">
+                    <ArrowLeft className="w-6 h-6 border-2 border-black rounded-full bg-white transition hover:scale-110" />
                     {t.back}
                 </Link>
-                <div className="font-black text-lg tracking-tighter">NEWMINDR</div>
+                <div className="font-black text-xl tracking-tighter">NEWMINDR.</div>
             </nav>
 
             <div className="container mx-auto px-6 py-12 max-w-4xl">
