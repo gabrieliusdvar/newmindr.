@@ -222,7 +222,7 @@ export default function PaymentSuccess() {
                             className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-700 ${animationStep >= 4 ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                         >
                             <button
-                                onClick={() => navigate('/process')}
+                                onClick={() => window.location.href = 'https://learning.newmindr.com'}
                                 className="flex-1 group px-8 py-5 bg-gradient-to-r from-emerald-400 to-green-500 text-white font-black text-xl rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 transition-all duration-200"
                             >
                                 <span className="flex items-center justify-center gap-3">
