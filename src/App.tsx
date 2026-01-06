@@ -19,6 +19,8 @@ import LanguageAvailabilityPopup from './components/LanguageAvailabilityPopup';
 import SEOHead from './components/SEOHead';
 import Unsubscribe from './pages/Unsubscribe';
 import PaymentSuccess from './pages/PaymentSuccess';
+import AuthListener from './components/AuthListener';
+import UpdatePassword from './pages/UpdatePassword';
 
 import { ModalProvider } from './contexts/ModalContext';
 
@@ -42,6 +44,7 @@ function App() {
     <LanguageProvider>
       <ModalProvider>
         <Router>
+          <AuthListener />
           <ScrollToTop />
           <SEOHead />
           <Routes>
@@ -53,6 +56,7 @@ function App() {
             <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
             <Route path="/showcase" element={<Layout><Showcase /></Layout>} />
             <Route path="/tx/s" element={<PaymentSuccess />} />
+            <Route path="/update-password" element={<UpdatePassword />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
             {/* 404 Catch-all route */}
             <Route path="*" element={<NotFound />} />

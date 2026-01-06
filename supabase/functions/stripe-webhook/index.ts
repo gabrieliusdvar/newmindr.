@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import Stripe from "https://esm.sh/stripe@11.1.0?target=deno";
 import { Resend } from "https://esm.sh/resend@2.0.0";
@@ -13,31 +13,64 @@ const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const translations = {
     en: {
-        title: "Access Granted",
-        greeting: "Welcome to newmindr., {email}!",
-        content: "We've created a secure account for you to access the learning platform. Here are your login credentials:",
-        emailLabel: "Email:",
-        passwordLabel: "Temporary Password:",
-        cta: "LOGIN TO PLATFORM",
-        footer: "Please change your password after your first login."
+        welcome: {
+            title: "Access Granted",
+            greeting: "Welcome to newmindr., {email}!",
+            content: "We've created a secure account for you to access the learning platform. Here are your login credentials:",
+            emailLabel: "Email:",
+            passwordLabel: "Temporary Password:",
+            cta: "LOGIN TO PLATFORM",
+            footer: "Please change your password after your first login."
+        },
+        welcomeBack: {
+            title: "Subscription Active",
+            greeting: "Welcome back, {email}!",
+            content: "Your subscription is now active. You can log in with your existing credentials.",
+            emailLabel: "Email:",
+            passwordLabel: "Password:",
+            cta: "OPEN PLATFORM",
+            footer: "Need help? Reply to this email."
+        }
     },
     lt: {
-        title: "Prieiga Suteikta",
-        greeting: "Sveiki atvykę į newmindr., {email}!",
-        content: "Sukūrėme jums saugią paskyrą mokymosi platformai pasiekti. Štai jūsų prisijungimo duomenys:",
-        emailLabel: "El. paštas:",
-        passwordLabel: "Laikinas slaptažodis:",
-        cta: "PRISIJUNGTI Į PLATFORMĄ",
-        footer: "Prašome pasikeisti slaptažodį po pirmojo prisijungimo."
+        welcome: {
+            title: "Prieiga Suteikta",
+            greeting: "Sveiki atvykę į newmindr., {email}!",
+            content: "Sukūrėme jums saugią paskyrą mokymosi platformai pasiekti. Štai jūsų prisijungimo duomenys:",
+            emailLabel: "El. paštas:",
+            passwordLabel: "Laikinas slaptažodis:",
+            cta: "PRISIJUNGTI Į PLATFORMĄ",
+            footer: "Prašome pasikeisti slaptažodį po pirmojo prisijungimo."
+        },
+        welcomeBack: {
+            title: "Prenumerata Aktyvi",
+            greeting: "Sveiki sugrįžę, {email}!",
+            content: "Jūsų prenumerata aktyvuota. Galite prisijungti su turimais duomenimis.",
+            emailLabel: "El. paštas:",
+            passwordLabel: "Slaptažodis:",
+            cta: "ATIDARYTI PLATFORMĄ",
+            footer: "Reikia pagalbos? Atsakykite į šį laišką."
+        }
     },
     ru: {
-        title: "Доступ Разрешен",
-        greeting: "Добро пожаловать в newmindr., {email}!",
-        content: "Мы создали для вас аккаунт для доступа к платформе обучения. Вот ваши данные для входа:",
-        emailLabel: "Email:",
-        passwordLabel: "Временный пароль:",
-        cta: "ВОЙТИ В ПЛАТФОРМУ",
-        footer: "Пожалуйста, смените пароль после первого входа."
+        welcome: {
+            title: "Доступ Разрешен",
+            greeting: "Добро пожаловать в newmindr., {email}!",
+            content: "Мы создали для вас аккаунт для доступа к платформе обучения. Вот ваши данные для входа:",
+            emailLabel: "Email:",
+            passwordLabel: "Временный пароль:",
+            cta: "ВОЙТИ В ПЛАТФОРМУ",
+            footer: "Пожалуйста, смените пароль после первого входа."
+        },
+        welcomeBack: {
+            title: "Подписка Активна",
+            greeting: "С возвращением, {email}!",
+            content: "Ваша подписка активирована. Вы можете войти с существующими данными.",
+            emailLabel: "Email:",
+            passwordLabel: "Пароль:",
+            cta: "ОТКРЫТЬ ПЛАТФОРМУ",
+            footer: "Нужна помощь? Ответьте на это письмо."
+        }
     }
 };
 
@@ -50,8 +83,8 @@ function generatePassword(length = 12) {
     return retVal;
 }
 
-function generateEmailHtml(lang: 'en' | 'lt' | 'ru', data: any) {
-    const t = translations[lang] || translations.en;
+function generateEmailHtml(lang: 'en' | 'lt' | 'ru', type: 'welcome' | 'welcomeBack', data: any) {
+    const t = (translations[lang] || translations.en)[type];
     const colors = {
         purple: '#8b5cf6',
         black: '#111111',
@@ -59,6 +92,9 @@ function generateEmailHtml(lang: 'en' | 'lt' | 'ru', data: any) {
         gray: '#f3f4f6'
     };
     const loginLink = 'https://learning.newmindr.com/login';
+    const passwordDisplay = type === 'welcome'
+        ? `<td style="font-weight: 700; color: ${colors.black}; font-size: 18px; letter-spacing: 1px; background: #fff; padding: 5px 10px; border: 1px solid #000; display: inline-block;">${data.password}</td>`
+        : `<td style="font-weight: 700; color: ${colors.black}; font-size: 16px; font-style: italic;">(Use existing password)</td>`;
 
     return `
     <!DOCTYPE html>
@@ -95,7 +131,7 @@ function generateEmailHtml(lang: 'en' | 'lt' | 'ru', data: any) {
                                         </tr>
                                         <tr>
                                             <td style="font-weight: 900; color: #666; font-size: 14px; text-transform: uppercase;">${t.passwordLabel}</td>
-                                            <td style="font-weight: 700; color: ${colors.black}; font-size: 18px; letter-spacing: 1px; background: #fff; padding: 5px 10px; border: 1px solid #000; display: inline-block;">${data.password}</td>
+                                            ${passwordDisplay}
                                         </tr>
                                     </table>
                                 </div>
@@ -120,12 +156,18 @@ function generateEmailHtml(lang: 'en' | 'lt' | 'ru', data: any) {
     `;
 }
 
-serve(async (req) => {
+Deno.serve(async (req) => {
     const signature = req.headers.get("Stripe-Signature");
     const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
 
-    if (!signature || !webhookSecret) {
-        return new Response("Missing signature or secret", { status: 400 });
+    if (!webhookSecret) {
+        console.error("Missing STRIPE_WEBHOOK_SECRET env var");
+        return new Response("Server misconfiguration", { status: 500 });
+    }
+
+    if (!signature) {
+        console.error("Missing Stripe-Signature header");
+        return new Response("Missing signature", { status: 400 });
     }
 
     const body = await req.text();
@@ -140,6 +182,7 @@ serve(async (req) => {
             cryptoProvider
         );
     } catch (err) {
+        console.error(`Webhook signature verification failed: ${err.message}`);
         return new Response(`Webhook Error: ${err.message}`, { status: 400 });
     }
 
@@ -150,10 +193,27 @@ serve(async (req) => {
 
     console.log(`Received event: ${event.type}`);
 
+    // Helper to safely convert Stripe timestamp to ISO
+    const toISO = (ts: number | null | undefined) => {
+        if (!ts) return null;
+        try {
+            return new Date(ts * 1000).toISOString();
+        } catch (e) {
+            console.error("Date conversion error for TS:", ts, e);
+            return null;
+        }
+    };
+
     try {
         if (event.type === "customer.subscription.created" || event.type === "customer.subscription.updated") {
             const subscription = event.data.object;
             const customerId = subscription.customer as string;
+
+            if (!customerId) {
+                console.error("No customer ID in subscription object");
+                return new Response("Invalid subscription data", { status: 400 });
+            }
+
             const customer = await stripe.customers.retrieve(customerId);
             const email = (customer as any).email;
             let preferredLocale = (customer as any).preferred_locales?.[0]?.substring(0, 2).toLowerCase() || 'en';
@@ -166,18 +226,19 @@ serve(async (req) => {
 
             console.log(`Processing subscription for: ${email} (${preferredLocale})`);
 
+            // Safe date handling
+            const start = toISO(subscription.current_period_start) || toISO(subscription.start_date) || toISO(subscription.created);
+            const end = toISO(subscription.current_period_end) || toISO(subscription.trial_end);
+
             // sync subscription data
             const subscriptionData = {
                 stripe_customer_id: customerId,
                 stripe_subscription_id: subscription.id,
                 email: email,
                 status: subscription.status,
-                plan_interval: subscription.items.data[0].plan.interval,
-                plan_amount: subscription.items.data[0].plan.amount,
-                currency: subscription.items.data[0].plan.currency,
-                current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),
-                current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
-                updated_at: new Date().toISOString(),
+                plan_interval: subscription.items?.data?.[0]?.plan?.interval || 'month',
+                current_period_start: start,
+                current_period_end: end,
             };
 
             const { error: upsertError } = await supabase
@@ -186,50 +247,55 @@ serve(async (req) => {
 
             if (upsertError) console.error("Error upserting subscription:", upsertError);
 
-            // Account Creation Logic (Only on new subscription creation or if user doesn't exist)
+            // Account Creation / Email Logic
             if (event.type === "customer.subscription.created") {
-                // Check if user exists
-                const { data: { users }, error: userError } = await supabase.auth.admin.listUsers();
-                const existingUser = users.find(u => u.email === email);
+                const tempPassword = generatePassword();
 
-                if (!existingUser) {
-                    console.log(`Creating new user for ${email}...`);
-                    const tempPassword = generatePassword();
+                // Attempt to create user
+                const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
+                    email: email,
+                    password: tempPassword,
+                    email_confirm: true // Auto-confirm
+                });
 
-                    const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
-                        email: email,
-                        password: tempPassword,
-                        email_confirm: true // Auto-confirm
-                    });
+                if (createError) {
+                    console.log(`User creation note (likely exists): ${createError.message}. Sending Welcome Back email.`);
 
-                    if (createError) {
-                        console.error("Error creating user:", createError);
-                    } else if (newUser) {
-                        console.log("User created successfully. Sending welcome email...");
-
-                        // Send Email
-                        const html = generateEmailHtml(preferredLocale as any, { email, password: tempPassword });
-
-                        try {
-                            const emailData = await resend.emails.send({
-                                from: 'newmindr <hello@newmindr.com>', // User SHOULD populate this in env if different
-                                to: email,
-                                subject: translations[preferredLocale as 'en' | 'lt' | 'ru'].title,
-                                html: html
-                            });
-                            console.log("Welcome email sent:", emailData);
-                        } catch (emailErr) {
-                            console.error("Failed to send email:", emailErr);
-                        }
+                    // Send "Welcome Back" Email
+                    const html = generateEmailHtml(preferredLocale as any, 'welcomeBack', { email });
+                    try {
+                        const res = await resend.emails.send({
+                            from: 'newmindr <hello@newmindr.com>',
+                            to: email,
+                            subject: (translations[preferredLocale as 'en' | 'lt' | 'ru'] || translations.en).welcomeBack.title,
+                            html: html
+                        });
+                        console.log("Welcome Back email sent:", res);
+                    } catch (e) {
+                        console.error("Resend Error (Welcome Back):", e);
                     }
-                } else {
-                    console.log(`User ${email} already exists. Skipping account creation.`);
-                    // Optional: Send email saying "Your subscription is active, login with existing account"
+
+                } else if (newUser) {
+                    console.log("User created successfully. Sending New Account email...");
+
+                    // Send "New Account" Email
+                    const html = generateEmailHtml(preferredLocale as any, 'welcome', { email, password: tempPassword });
+                    try {
+                        const res = await resend.emails.send({
+                            from: 'newmindr <hello@newmindr.com>',
+                            to: email,
+                            subject: (translations[preferredLocale as 'en' | 'lt' | 'ru'] || translations.en).welcome.title,
+                            html: html
+                        });
+                        console.log("New Account email sent:", res);
+                    } catch (e) {
+                        console.error("Resend Error (New Account):", e);
+                    }
                 }
             }
         }
     } catch (err) {
-        console.error(err);
+        console.error("Handler error:", err);
         return new Response(JSON.stringify({ error: err.message }), {
             status: 500,
             headers: { "Content-Type": "application/json" },
