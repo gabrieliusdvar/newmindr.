@@ -280,6 +280,14 @@ export default function Footer() {
             <div className="flex items-center gap-3 text-[9px] font-bold text-gray-500 uppercase tracking-widest">
               <button onClick={() => openModal('privacy')} className="hover:text-gray-900 transition-colors underline decoration-2 decoration-gray-200 hover:decoration-emerald-500">{t.footer.privacyPolicy}</button>
               <button onClick={() => openModal('terms')} className="hover:text-gray-900 transition-colors underline decoration-2 decoration-gray-200 hover:decoration-emerald-500">{t.footer.termsOfService}</button>
+              <a
+                href="https://billing.stripe.com/p/login/eVq14m0ImbDAfNMbB7es000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 transition-colors underline decoration-2 decoration-gray-200 hover:decoration-emerald-500"
+              >
+                {t.footer.manageSubscription}
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1 bg-gray-900 text-white rounded-lg text-[9px] font-black uppercase tracking-[0.2em] -rotate-1 shadow-[3px_3px_0_0_rgba(251,191,36,1)]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

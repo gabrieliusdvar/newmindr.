@@ -203,7 +203,8 @@ export const translations: Record<Language, any> = {
       loveYou: "WE LOVE YOU TOO! ❤️",
       poweredBy: "Powered by Curiosity",
       navigation: "Navigation",
-      connect: "Connect"
+      connect: "Connect",
+      manageSubscription: "Manage Subscription"
     },
     about: {
       title: "About",
@@ -947,7 +948,8 @@ export const translations: Record<Language, any> = {
       loveYou: "MES TAIP PAT TAVE MYLIME! ❤️",
       poweredBy: "Sukurta Smalsumo",
       navigation: "Navigacija",
-      connect: "Susisiekime"
+      connect: "Susisiekime",
+      manageSubscription: "Valdyti prenumeratą"
     },
     about: {
       title: "Apie",
@@ -1691,7 +1693,8 @@ export const translations: Record<Language, any> = {
       loveYou: "МЫ ТОЖЕ ВАС ЛЮБИМ! ❤️",
       poweredBy: "Движимы любопытством",
       navigation: "Навигация",
-      connect: "Контакты"
+      connect: "Контакты",
+      manageSubscription: "Управление подпиской"
     },
     about: {
       title: "О нас",
