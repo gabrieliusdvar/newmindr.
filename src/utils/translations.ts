@@ -686,6 +686,16 @@ export const translations: Record<Language, any> = {
         message: "Message",
         footer: "Submitted via newmindr.com",
         unsubscribe: "Don't want to get newsletters? UNSUBSCRIBE"
+      },
+      welcome: {
+        subject: "Your newmindr. Account Credentials 🔑",
+        title: "Access Granted",
+        greeting: "Welcome to newmindr., {email}!",
+        content: "We've created a secure account for you to access the learning platform. Here are your login credentials:",
+        emailLabel: "Email:",
+        passwordLabel: "Temporary Password:",
+        cta: "LOGIN TO PLATFORM",
+        footer: "Please change your password after your first login."
       }
     },
     blog: {
@@ -1420,6 +1430,16 @@ export const translations: Record<Language, any> = {
         message: "Žinutė",
         footer: "Pateikta per newmindr.com",
         unsubscribe: "Nenorite gauti naujienlaiškių? ATSISAKYTI"
+      },
+      welcome: {
+        subject: "Jūsų newmindr. Paskyros Prisijungimai 🔑",
+        title: "Prieiga Suteikta",
+        greeting: "Sveiki atvykę į newmindr., {email}!",
+        content: "Sukūrėme jums saugią paskyrą mokymosi platformai pasiekti. Štai jūsų prisijungimo duomenys:",
+        emailLabel: "El. paštas:",
+        passwordLabel: "Laikinas slaptažodis:",
+        cta: "PRISIJUNGTI Į PLATFORMĄ",
+        footer: "Prašome pasikeisti slaptažodį po pirmojo prisijungimo."
       }
     },
     blog: {
@@ -2154,6 +2174,16 @@ export const translations: Record<Language, any> = {
         message: "Сообщение",
         footer: "Отправлено через newmindr.com",
         unsubscribe: "Не хотите получать рассылку? ОТПИСАТЬСЯ"
+      },
+      welcome: {
+        subject: "Ваши данные для входа в newmindr. 🔑",
+        title: "Доступ Разрешен",
+        greeting: "Добро пожаловать в newmindr., {email}!",
+        content: "Мы создали для вас аккаунт для доступа к платформе обучения. Вот ваши данные для входа:",
+        emailLabel: "Email:",
+        passwordLabel: "Временный пароль:",
+        cta: "ВОЙТИ В ПЛАТФОРМУ",
+        footer: "Пожалуйста, смените пароль после первого входа."
       }
     },
     blog: {

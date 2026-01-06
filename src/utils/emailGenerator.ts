@@ -5,7 +5,7 @@ import { STRIPE_LINKS } from './emailConfig';
  * Hosted image URLs for email templates
  * Using hosted URLs instead of base64 for better email client compatibility
  */
-const EMAIL_IMAGE_URLS = {
+const EMAIL_IMAGES = {
     // Base URL for hosted images
     baseUrl: 'https://newmindr.pages.dev',
 
@@ -30,9 +30,13 @@ const EMAIL_IMAGE_URLS = {
  * Generates a beautiful, premium HTML email template based on the 
  * neo-brutalist design of newmindr.com
  */
-export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' | 'contact', data: any) {
+export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' | 'contact' | 'welcome', data: any) {
     const t = translations[lang].emails[type];
     const shared = translations[lang].emails.contact; // Using contact as source for shared footer keys
+
+    const interpolate = (str: string, values: any) => {
+        return str.replace(/{(\w+)}/g, (_, key) => values[key] || '');
+    };
 
     const getUnsubscribeParts = (text: string) => {
         const parts = text.split('? ');
@@ -184,6 +188,92 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
         `;
     }
 
+    // CUSTOM WELCOME TEMPLATE
+    if (type === 'welcome') {
+        const colors = {
+            purple: '#8b5cf6', // Welcome/Login (Purple)
+            black: '#111111',
+            white: '#ffffff',
+            gray: '#f3f4f6'
+        };
+
+        const loginLink = 'https://learning.newmindr.com/login';
+
+        return `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; background-color: ${colors.gray}; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" style="padding: 40px 10px;">
+                        <table width="600" border="4" cellspacing="0" cellpadding="0" style="background: ${colors.white}; border-color: ${colors.black}; border-style: solid; box-shadow: 12px 12px 0px 0px ${colors.black};">
+                            <!-- Header -->
+                            <tr>
+                                <td style="background-color: ${colors.purple}; padding: 40px 30px; border-bottom: 4px solid ${colors.black}; text-align: center;">
+                                    <h1 style="margin: 0; font-size: 32px; font-weight: 900; color: ${colors.white}; text-transform: uppercase; letter-spacing: 1px; text-shadow: 2px 2px 0px #000;">
+                                        ${t.title}
+                                    </h1>
+                                </td>
+                            </tr>
+                            
+                            <!-- Content -->
+                            <tr>
+                                <td style="padding: 40px 30px;">
+                                    <p style="font-size: 18px; line-height: 1.6; color: ${colors.black}; font-weight: bold; margin-bottom: 20px;">
+                                        ${interpolate(t.greeting, data)}
+                                    </p>
+                                    <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 30px;">
+                                        ${t.content}
+                                    </p>
+
+                                    <!-- Credentials Box -->
+                                    <div style="background-color: ${colors.gray}; border: 2px solid ${colors.black}; border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td style="font-weight: 900; color: #666; font-size: 14px; text-transform: uppercase;">${t.emailLabel}</td>
+                                                <td style="font-weight: 700; color: ${colors.black}; font-size: 16px;">${data.email}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 900; color: #666; font-size: 14px; text-transform: uppercase;">${t.passwordLabel}</td>
+                                                <td style="font-weight: 700; color: ${colors.black}; font-size: 18px; letter-spacing: 1px; background: #fff; padding: 5px 10px; border: 1px solid #000; display: inline-block;">${data.password}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- CTA -->
+                                    <div style="text-align: center;">
+                                        <a href="${loginLink}" style="display: inline-block; background: ${colors.black}; color: ${colors.white}; padding: 18px 30px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 16px; border: 2px solid ${colors.white}; box-shadow: 4px 4px 0px 0px ${colors.purple}; text-transform: uppercase;">
+                                            ${t.cta}
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Footer -->
+                            <tr>
+                                <td style="background-color: ${colors.black}; padding: 30px; text-align: center;">
+                                    <p style="margin: 0; color: ${colors.white}; font-size: 14px; font-weight: 700;">
+                                        ${t.footer}
+                                    </p>
+                                    <p style="margin-top: 15px; font-size: 11px; color: #888;">
+                                        ${unsub.prompt} 
+                                        <a href="https://www.newmindr.com/unsubscribe" style="color: #3b82f6; text-decoration: none;">${unsub.action}</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+        </html>
+        `;
+    }
+
     // Theme colors
     const colors = {
         primary: '#3b82f6', // Trial (Blue)
@@ -196,9 +286,7 @@ export function generateEmailHtml(lang: Language, type: 'newsletter' | 'trial' |
 
     const themeColor = type === 'trial' ? colors.primary : colors.success;
 
-    const interpolate = (str: string, values: any) => {
-        return str.replace(/{(\w+)}/g, (_, key) => values[key] || '');
-    };
+
 
     const header = `
         <div style="background: ${themeColor}; padding: 40px 20px; text-align: center; border-bottom: 4px solid ${colors.black}; position: relative; overflow: hidden;">
