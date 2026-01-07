@@ -171,9 +171,6 @@ export default function Programs() {
                       alt=""
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    {/* Color Overlay - multiply/color-burn effect for retro feel */}
-                    <div className={`absolute inset-0 ${program.bgColor} mix-blend-multiply opacity-90 group-hover:opacity-85 transition-opacity duration-300`}></div>
-                    <div className="absolute inset-0 bg-black/10"></div>
                   </div>
 
                   {/* Pattern overlay layer - kept on top of image for texture */}
