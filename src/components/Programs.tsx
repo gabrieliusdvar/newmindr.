@@ -14,6 +14,7 @@ export default function Programs() {
       shadowColor: 'shadow-emerald-400/50',
       image: '/program_exploring.jpg',
       borderColor: 'border-emerald-500',
+      fillColor: 'bg-emerald-500',
     },
     {
       titleKey: 'studentMonitoring' as const,
@@ -23,8 +24,9 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-blue-500',
       shadowColor: 'shadow-blue-400/50',
-      image: '/program_building.jpg',
+      image: '/program_building_v2.jpg',
       borderColor: 'border-blue-500',
+      fillColor: 'bg-blue-500',
     },
     {
       titleKey: 'scholarshipProgram' as const,
@@ -36,6 +38,7 @@ export default function Programs() {
       shadowColor: 'shadow-pink-300/50',
       image: '/program_future.jpg',
       borderColor: 'border-pink-400',
+      fillColor: 'bg-pink-400',
     },
   ];
 
@@ -134,33 +137,6 @@ export default function Programs() {
                 holes.push(...sideLeft.position.map(pos => ({ side: 'left', position: pos })));
               }
 
-              // Background pattern styles based on card index
-              const patternStyle = index === 0
-                ? {
-                  // First card: Math grid pattern
-                  backgroundImage: `
-                      repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.2) 24px, rgba(0, 0, 0, 0.2) 25px),
-                      repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.15) 24px, rgba(0, 0, 0, 0.15) 25px)
-                    `,
-                  backgroundSize: '100% 100%',
-                  pointerEvents: 'none' as const
-                }
-                : index === 1
-                  ? {
-                    // Middle card: Dot grid pattern
-                    backgroundImage: `
-                      radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '20px 20px',
-                    pointerEvents: 'none' as const
-                  }
-                  : {
-                    // Right card: Writing lines pattern
-                    backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(0, 0, 0, 0.2) 28px, rgba(0, 0, 0, 0.2) 29px)`,
-                    backgroundSize: '100% 100%',
-                    pointerEvents: 'none' as const
-                  };
-
               return (
                 <div
                   key={index}
@@ -175,17 +151,13 @@ export default function Programs() {
                     />
                   </div>
 
-                  {/* Pattern overlay layer - kept on top of image for texture */}
-                  <div
-                    className="absolute inset-0"
-                    style={patternStyle}
-                  ></div>
+
 
                   {/* Notepad hole punches */}
                   {holes.map((hole, holeIndex) => (
                     <div
                       key={holeIndex}
-                      className={`absolute z-20 ${hole.side === 'left' ? '-left-3' : '-right-3'} ${hole.position.includes('top-1/2') || hole.position.includes('bottom-1/2') ? `${hole.position} -translate-y-1/2` : hole.position} border-2 ${program.borderColor} bg-[#0a0a0a]`}
+                      className={`absolute z-20 ${hole.side === 'left' ? '-left-3' : '-right-3'} ${hole.position.includes('top-1/2') || hole.position.includes('bottom-1/2') ? `${hole.position} -translate-y-1/2` : hole.position} ${program.fillColor}`}
                       style={{
                         width: '18px',
                         height: '18px',
