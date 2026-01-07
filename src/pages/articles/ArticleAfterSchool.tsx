@@ -58,7 +58,7 @@ export default function ArticleAfterSchool() {
         lt: {
             back: "Grįžti į tinklaraštį",
             title: "Po pamokų: svarbiausios vaiko dienos valandos",
-            subtitle: "Po pamokų vaikai turi daug laisvo laiko. Tai galimybė augti arba prarastas laikas. Svarbu ne pakeisti mokyklą, o apsaugoti laiką.",
+            subtitle: "Po pamokų vaikai turi daug laisvo laiko. Tai galimybė augti arba prarasti laiką. Svarbu ne pakeisti mokyklą, o apsaugoti laiką.",
             intro: {
                 p1: "Skambutis nuskamba 15 val. Kitas 6-7 valandas jūsų vaikas laisvas. Šis tarpas tarp mokyklos ir miego dažnai yra laikas, kai vyksta didžiausias vystymasis - arba ne.",
                 p2: "Be struktūros šis laikas lengvai užsipildo begaliniu naršymu, nuoboduliu ar pasyviu vartojimu. Tačiau su tinkama kryptimi tai gali tapti smalsumo, disciplinos ir tikrų įgūdžių žaidimų aikštele.",
@@ -225,8 +225,8 @@ export default function ArticleAfterSchool() {
                                     key={path.id}
                                     onClick={() => setActivePath(activePath === path.id ? null : path.id)}
                                     className={`relative p-6 rounded-2xl border-4 transition-all duration-300 text-left h-full flex flex-col items-center text-center ${activePath === path.id
-                                            ? 'bg-white text-gray-900 border-white scale-105 z-20 shadow-2xl'
-                                            : 'bg-gray-800 border-gray-700 hover:bg-gray-700 hover:border-gray-500 text-gray-300 contrast-75'
+                                        ? 'bg-white text-gray-900 border-white scale-105 z-20 shadow-2xl'
+                                        : 'bg-gray-800 border-gray-700 hover:bg-gray-700 hover:border-gray-500 text-gray-300 contrast-75'
                                         }`}
                                 >
                                     <div className={`w-16 h-16 rounded-full ${path.color} flex items-center justify-center mb-4 border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.3)]`}>
