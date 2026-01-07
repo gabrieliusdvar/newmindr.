@@ -943,7 +943,7 @@ export const translations: Record<Language, any> = {
       stopConsuming: "Nustok Vartoti. Pradėk Kurti.",
       learning: "MOKYMASIS",
       reimagined: "IŠ NAUJO.",
-      brandDescription: "Mes kuriame infrastruktūrą sekančiai kūrybingų protų kartai. Interaktyvu, įtraukiantį ir sukurta tau.",
+      brandDescription: "Mes kuriame infrastruktūrą sekančiai kūrybingų protų kartai. Interaktyvu, įtraukią ir sukurta tau.",
       locationLabel: "Vieta",
       loveYou: "MES TAIP PAT TAVE MYLIME! ❤️",
       poweredBy: "Sukurta Smalsumo",
