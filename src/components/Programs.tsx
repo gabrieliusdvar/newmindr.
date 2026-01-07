@@ -123,16 +123,15 @@ export default function Programs() {
               const sideRight = { side: 'right', position: ['top-8', 'top-[35%]', 'bottom-[35%]', 'bottom-8'] };
 
               if (index === 0) {
+                // Interactive Exploring: Right side only
                 holes.push(...sideRight.position.map(pos => ({ side: 'right', position: pos })));
-                // Add left holes on mobile for balance
-                holes.push(...sideLeft.position.map(pos => ({ side: 'left', position: pos, mobileOnly: true })));
               } else if (index === 1) {
+                // Creative Building: Both sides
                 holes.push(...sideLeft.position.map(pos => ({ side: 'left', position: pos })));
                 holes.push(...sideRight.position.map(pos => ({ side: 'right', position: pos })));
               } else {
+                // Future Ready: Left side only
                 holes.push(...sideLeft.position.map(pos => ({ side: 'left', position: pos })));
-                // Add right holes on mobile for balance
-                holes.push(...sideRight.position.map(pos => ({ side: 'right', position: pos, mobileOnly: true })));
               }
 
               // Background pattern styles based on card index
@@ -186,13 +185,11 @@ export default function Programs() {
                   {holes.map((hole, holeIndex) => (
                     <div
                       key={holeIndex}
-                      className={`absolute z-20 ${hole.side === 'left' ? '-left-3' : '-right-3'} ${hole.position.includes('top-1/2') || hole.position.includes('bottom-1/2') ? `${hole.position} -translate-y-1/2` : hole.position} ${(hole as any).mobileOnly ? 'md:hidden' : ''}`}
+                      className={`absolute z-20 ${hole.side === 'left' ? '-left-3' : '-right-3'} ${hole.position.includes('top-1/2') || hole.position.includes('bottom-1/2') ? `${hole.position} -translate-y-1/2` : hole.position} border-2 ${program.borderColor} bg-[#0a0a0a]`}
                       style={{
                         width: '18px',
                         height: '18px',
                         borderRadius: '50%',
-                        backgroundColor: '#0a0a0a',
-                        border: '2px solid #0a0a0a',
                       }}
                     ></div>
                   ))}
@@ -202,7 +199,7 @@ export default function Programs() {
                       <program.icon className={`w-12 h-12 ${program.iconColor}`} strokeWidth={3} />
                     </div>
 
-                    <h3 className="text-3xl font-black text-white mb-3 tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ fontFamily: "'Outfit', sans-serif", WebkitTextStroke: '1px black' }}>
+                    <h3 className="text-3xl font-black text-white mb-3 tracking-tight drop-shadow-md" style={{ fontFamily: "'Outfit', sans-serif" }}>
                       {t.programs[program.titleKey]}
                     </h3>
 
