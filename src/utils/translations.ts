@@ -742,6 +742,17 @@ export const translations: Record<Language, any> = {
           likes: "18k",
           comments: "640",
           url: "/blog/why-kids-cheat"
+        },
+        {
+          id: 4,
+          platform: "Education",
+          title: "After School: The Most Important Hours of a Child’s Day",
+          content: "School ends early, but learning doesn’t stop. This post explains how the hours after school often shape habits, discipline, and curiosity.",
+          image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop",
+          date: "Jan 7, 2026",
+          likes: "5k",
+          comments: "120",
+          url: "/blog/after-school"
         }
       ]
     }
@@ -1487,6 +1498,17 @@ export const translations: Record<Language, any> = {
           likes: "18k",
           comments: "640",
           url: "/blog/why-kids-cheat"
+        },
+        {
+          id: 4,
+          platform: "Švietimas",
+          title: "Po pamokų: svarbiausios vaiko dienos valandos",
+          content: "Po pamokų vaikai turi daug laisvo laiko. Šis laikas gali būti iššvaistytas arba tapti galimybe augti. Interaktyvūs kursai padeda išnaudoti laiką.",
+          image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop",
+          date: "Sau 7, 2026",
+          likes: "5k",
+          comments: "120",
+          url: "/blog/after-school"
         }
       ]
     }
@@ -2232,6 +2254,17 @@ export const translations: Record<Language, any> = {
           likes: "18k",
           comments: "640",
           url: "/blog/why-kids-cheat"
+        },
+        {
+          id: 4,
+          platform: "Образование",
+          title: "После школы: Самые важные часы дня",
+          content: "Школа заканчивается рано, но обучение не прекращается. Этот пост объясняет, как часы после школы формируют привычки и любознательность.",
+          image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop",
+          date: "Янв 7, 2026",
+          likes: "5k",
+          comments: "120",
+          url: "/blog/after-school"
         }
       ]
     }

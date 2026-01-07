@@ -6,6 +6,7 @@ import ArticleParents from './articles/ArticleParents';
 import ArticleTeens from './articles/ArticleTeens';
 import ArticleCheating from './articles/ArticleCheating';
 import ArticleGeneric from './articles/ArticleGeneric';
+import ArticleAfterSchool from './articles/ArticleAfterSchool';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
@@ -49,6 +50,11 @@ export default function BlogPostRouter() {
     // ID 2 or why-students-fail slug -> Why Students Fail Article
     if (post.id === 2 || post.url.includes('why-students-fail') || post.platform === 'Education' || post.platform === 'Švietimas' || post.platform === 'Образование') {
         return <ArticleFail />;
+    }
+
+    // ID 4 or after-school -> After School Article
+    if (post.id === 4 || post.url.includes('after-school')) {
+        return <ArticleAfterSchool />;
     }
 
     // Fallbacks for older protocols
