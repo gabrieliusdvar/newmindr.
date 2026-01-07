@@ -140,7 +140,7 @@ export default function ArticleCheating() {
             ],
             conclusion: {
                 title: "Tikrasis klausimas, kurį turėtume kelti",
-                text: "Vietoj klausimo \"Kodėl vaikai sukčiauja?\" turime klausti: \"Ko mes juos mokome vertinti?\"",
+                text: "Vietoj klausimo \"Kodėl vaikai sukčiauja?\" turime klausti: \"Ką mes juos mokome vertinti?\"",
                 list: ["Ar apdovanojame greitį vietoj supratimo?", "Ar vertiname pažymius labiau nei tikrą smalsumą?", "Ar spaudžiame tobulumą vietoj pažangos šventimo?"],
                 final: "Joks vaikas nepabunda norėdamas sukčiauti. Jie pabunda norėdami jaustis gabūs, priimti ir didžiuotis savimi. Kai kuriame mokymosi patirtis, kurios atitinka šiuos pagrindinius poreikius, sukčiavimas nustoja būti problema, kurią reikia kontroliuoti. Jis tiesiog tampa nereikalingas."
             },
