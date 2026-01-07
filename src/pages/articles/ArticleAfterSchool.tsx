@@ -17,6 +17,12 @@ export default function ArticleAfterSchool() {
                 p2: "Without structure, this time easily fills with endless scrolling, unstructured boredom, or passive consumption. But with the right direction, it can be a playground for curiosity, discipline, and real-world skills.",
                 insight: "The goal isn't to add more work. It's to replace 'dead time' with 'growth time'."
             },
+            timeline: {
+                title: "After School Hours",
+                schoolEnds: "School Ends",
+                gap: "The Critical Gap",
+                bedtime: "Bedtime"
+            },
             interactiveTitle: "CHOOSE A PATH",
             interactiveSubtitle: "See how different after-school habits shape a child's future.",
             paths: [
@@ -64,6 +70,12 @@ export default function ArticleAfterSchool() {
                 p2: "Be struktūros šis laikas lengvai užsipildo begaliniu naršymu, nuoboduliu ar pasyviu vartojimu. Tačiau su tinkama kryptimi tai gali tapti smalsumo, disciplinos ir tikrų įgūdžių žaidimų aikštele.",
                 insight: "Tikslas nėra pridėti daugiau darbo. Tikslas yra pakeisti „mirusį laiką“ į „augimo laiką“."
             },
+            timeline: {
+                title: "Po pamokų valandos",
+                schoolEnds: "Pamokos baigiasi",
+                gap: "Svarbus tarpas",
+                bedtime: "Miego laikas"
+            },
             interactiveTitle: "PASIRINKITE KELIĄ",
             interactiveSubtitle: "Pamatykite, kaip skirtingi įpročiai po pamokų formuoja vaiko ateitį.",
             paths: [
@@ -110,6 +122,12 @@ export default function ArticleAfterSchool() {
                 p1: "Звонок звенит в 15:00. Следующие 6-7 часов ваш ребенок свободен. Этот промежуток между школой и сном часто становится временем самого значительного развития - или его отсутствия.",
                 p2: "Без структуры это время легко заполняется бесконечным скроллингом или пассивным потреблением. Но с правильным направлением оно может стать площадкой для любопытства, дисциплины и реальных навыков.",
                 insight: "Цель не в том, чтобы добавить работы. Цель - заменить «мертвое время» на «время роста»."
+            },
+            timeline: {
+                title: "Часы после школы",
+                schoolEnds: "Школа заканчивается",
+                gap: "Критический пробел",
+                bedtime: "Время сна"
             },
             interactiveTitle: "ВЫБЕРИТЕ ПУТЬ",
             interactiveSubtitle: "Посмотрите, как привычки после школы формируют будущее ребенка.",
@@ -168,7 +186,7 @@ export default function ArticleAfterSchool() {
                 {/* Hero */}
                 <header className="mb-16 text-center">
                     <div className="inline-block px-4 py-1.5 bg-purple-100 text-purple-600 rounded-full text-xs font-black uppercase tracking-widest mb-6 border-2 border-purple-200">
-                        After School Hours
+                        {t.timeline.title}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tighter text-gray-900">
                         {t.title}
@@ -195,15 +213,15 @@ export default function ArticleAfterSchool() {
                         <div className="font-mono text-sm space-y-4 opacity-90">
                             <div className="border-b border-gray-700 pb-2">
                                 <span className="text-gray-500">15:00</span>
-                                <p className="font-bold">School Ends</p>
+                                <p className="font-bold">{t.timeline.schoolEnds}</p>
                             </div>
                             <div className="border-b border-gray-700 pb-2">
                                 <span className="text-yellow-500">15:30 - 18:30</span>
-                                <p className="font-bold text-yellow-300">The Critical Gap</p>
+                                <p className="font-bold text-yellow-300">{t.timeline.gap}</p>
                             </div>
                             <div>
                                 <span className="text-gray-500">21:00</span>
-                                <p className="font-bold">Bedtime</p>
+                                <p className="font-bold">{t.timeline.bedtime}</p>
                             </div>
                         </div>
                     </div>
