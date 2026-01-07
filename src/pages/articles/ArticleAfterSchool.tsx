@@ -71,7 +71,7 @@ export default function ArticleAfterSchool() {
                 insight: "Tikslas nėra pridėti daugiau darbo. Tikslas yra pakeisti „mirusį laiką“ į „augimo laiką“."
             },
             timeline: {
-                title: "Po pamokų valandos",
+                title: "Valandos po pamokų",
                 schoolEnds: "Pamokos baigiasi",
                 gap: "Svarbus tarpas",
                 bedtime: "Miego laikas"
