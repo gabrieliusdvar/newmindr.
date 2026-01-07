@@ -37,6 +37,11 @@ export default function BlogPostRouter() {
 
     // Router Logic
 
+    // ID 4 or after-school -> After School Article
+    if (post.id === 4 || post.url.includes('after-school')) {
+        return <ArticleAfterSchool />;
+    }
+
     // ID 3 or why-kids-cheat
     if (post.id === 3 || post.url.includes('why-kids-cheat')) {
         return <ArticleCheating />;
@@ -50,11 +55,6 @@ export default function BlogPostRouter() {
     // ID 2 or why-students-fail slug -> Why Students Fail Article
     if (post.id === 2 || post.url.includes('why-students-fail') || post.platform === 'Education' || post.platform === 'Švietimas' || post.platform === 'Образование') {
         return <ArticleFail />;
-    }
-
-    // ID 4 or after-school -> After School Article
-    if (post.id === 4 || post.url.includes('after-school')) {
-        return <ArticleAfterSchool />;
     }
 
     // Fallbacks for older protocols
