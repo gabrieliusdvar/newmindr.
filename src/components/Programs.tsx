@@ -12,6 +12,7 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-emerald-500',
       shadowColor: 'shadow-emerald-400/50',
+      image: '/program_exploring.jpg'
     },
     {
       titleKey: 'studentMonitoring' as const,
@@ -21,6 +22,7 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-blue-500',
       shadowColor: 'shadow-blue-400/50',
+      image: '/program_building.jpg'
     },
     {
       titleKey: 'scholarshipProgram' as const,
@@ -30,6 +32,7 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-pink-400',
       shadowColor: 'shadow-pink-300/50',
+      image: '/program_future.jpg'
     },
   ];
 
@@ -129,8 +132,6 @@ export default function Programs() {
                 holes.push(...sideRight.position.map(pos => ({ side: 'right', position: pos, mobileOnly: true })));
               }
 
-              // ... (patternStyle remains the same)
-
               // Background pattern styles based on card index
               const patternStyle = index === 0
                 ? {
@@ -161,13 +162,26 @@ export default function Programs() {
               return (
                 <div
                   key={index}
-                  className={`${program.bgColor} border-4 border-gray-900 rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 cursor-pointer group relative overflow-visible`}
+                  className={`relative border-4 border-gray-900 rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 cursor-pointer group overflow-hidden`}
                 >
-                  {/* Pattern overlay layer */}
+                  {/* Background Image Layer */}
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src={program.image}
+                      alt=""
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Color Overlay - multiply/color-burn effect for retro feel */}
+                    <div className={`absolute inset-0 ${program.bgColor} mix-blend-multiply opacity-90 group-hover:opacity-85 transition-opacity duration-300`}></div>
+                    <div className="absolute inset-0 bg-black/10"></div>
+                  </div>
+
+                  {/* Pattern overlay layer - kept on top of image for texture */}
                   <div
-                    className="absolute inset-0 rounded-3xl"
+                    className="absolute inset-0 z-1"
                     style={patternStyle}
                   ></div>
+
                   {/* Notepad hole punches */}
                   {holes.map((hole, holeIndex) => (
                     <div
@@ -183,21 +197,19 @@ export default function Programs() {
                     ></div>
                   ))}
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={`${program.iconBg} w-24 h-24 rounded-3xl border-4 border-gray-900 flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}>
                       <program.icon className={`w-12 h-12 ${program.iconColor}`} strokeWidth={3} />
                     </div>
 
-                    <h3 className="text-2xl font-black text-gray-900 mb-3 tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                    <h3 className="text-3xl font-black text-white mb-3 tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ fontFamily: "'Outfit', sans-serif", WebkitTextStroke: '1px black' }}>
                       {t.programs[program.titleKey]}
                     </h3>
 
-                    <p className="text-gray-800 font-medium leading-relaxed">
+                    <p className="text-white font-bold leading-relaxed text-lg drop-shadow-[1px_1px_0px_rgba(0,0,0,1)]">
                       {t.programs[program.descriptionKey]}
                     </p>
                   </div>
-
-                  <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/20 rounded-full blur-2xl z-0"></div>
                 </div>
               );
             })}

@@ -619,7 +619,7 @@ export const translations: Record<Language, any> = {
           },
           {
             title: "5. Payments and Subscriptions",
-            content: "Some aspects of the Platform may be provided for a fee. If you choose to use paid aspects of the Platform, you agree to the pricing and payment terms, as we may update them from time to time. newmindr. may add new services for additional fees and charges, or amend fees and charges for existing services, at any time in its sole discretion."
+            content: "Some aspects of the Platform may be provided for a fee. If you choose to use paid aspects of the Platform, you agree to the pricing and payment terms, as we may update them from time to time. newmindr. may add new services for additional fees and charges, or amend fees and charges for existing services, at any time in its sole discretion. Yearly Subscription Policy: Yearly plans are a binding commitment for a 12-month period in exchange for a discounted rate. If you choose to cancel your subscription prior to the completion of the 12-month term, you remain responsible for the full payment of the remaining monthly installments. Failure to settle outstanding balances may result in your account being referred to debt collection services."
           },
           {
             title: "6. Limitation of Liability",
@@ -1364,7 +1364,7 @@ export const translations: Record<Language, any> = {
           },
           {
             title: "5. Mokėjimai ir prenumeratos",
-            content: "Kai kai kurie Platformos aspektai gali būti mokami. Jei nuspręsite naudotis mokamais Platformos aspektais, sutinkate su kainodaros ir mokėjimo sąlygomis, kurias galime laikas nuo laiko atnaujinti. newmindr. gali bet kuriuo metu savo nuožiūra pridėti naujų paslaugų už papildomą mokestį arba pakeisti esamų paslaugų mokesčius."
+            content: "Kai kurie Platformos aspektai gali būti mokami. Jei nuspręsite naudotis mokamais Platformos aspektais, sutinkate su kainodaros ir mokėjimo sąlygomis, kurias galime laikas nuo laiko atnaujinti. newmindr. gali bet kuriuo metu savo nuožiūra pridėti naujų paslaugų už papildomą mokestį arba pakeisti esamų paslaugų mokesčius. Metinės prenumeratos politika: Metiniai planai yra įsipareigojimas 12 mėnesių laikotarpiui mainais už suteiktą nuolaidą. Jei nuspręsite nutraukti prenumeratą nepasibaigus 12 mėnesių terminui, jūs privalote sumokėti visas likusias mėnesines įmokas. Nesumokėjus šių įmokų, jūsų skola gali būti perduota skolų išieškojimo agentūroms."
           },
           {
             title: "6. Atsakomybės ribojimas",
