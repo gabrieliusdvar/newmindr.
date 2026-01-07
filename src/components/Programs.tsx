@@ -12,7 +12,8 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-emerald-500',
       shadowColor: 'shadow-emerald-400/50',
-      image: '/program_exploring.jpg'
+      image: '/program_exploring.jpg',
+      borderColor: 'border-emerald-500',
     },
     {
       titleKey: 'studentMonitoring' as const,
@@ -22,7 +23,8 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-blue-500',
       shadowColor: 'shadow-blue-400/50',
-      image: '/program_building.jpg'
+      image: '/program_building.jpg',
+      borderColor: 'border-blue-500',
     },
     {
       titleKey: 'scholarshipProgram' as const,
@@ -32,7 +34,8 @@ export default function Programs() {
       iconBg: 'bg-white',
       iconColor: 'text-pink-400',
       shadowColor: 'shadow-pink-300/50',
-      image: '/program_future.jpg'
+      image: '/program_future.jpg',
+      borderColor: 'border-pink-400',
     },
   ];
 
@@ -162,7 +165,7 @@ export default function Programs() {
               return (
                 <div
                   key={index}
-                  className={`relative border-4 border-gray-900 rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 cursor-pointer group overflow-hidden`}
+                  className={`relative border-4 ${program.borderColor} rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 cursor-pointer group overflow-hidden`}
                 >
                   {/* Background Image Layer */}
                   <div className="absolute inset-0 z-0">
@@ -175,7 +178,7 @@ export default function Programs() {
 
                   {/* Pattern overlay layer - kept on top of image for texture */}
                   <div
-                    className="absolute inset-0 z-1"
+                    className="absolute inset-0"
                     style={patternStyle}
                   ></div>
 
@@ -194,7 +197,7 @@ export default function Programs() {
                     ></div>
                   ))}
 
-                  <div className="relative z-10 flex flex-col h-full">
+                  <div className="relative z-30 flex flex-col h-full">
                     <div className={`${program.iconBg} w-24 h-24 rounded-3xl border-4 border-gray-900 flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}>
                       <program.icon className={`w-12 h-12 ${program.iconColor}`} strokeWidth={3} />
                     </div>
