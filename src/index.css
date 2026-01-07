@@ -13,9 +13,9 @@
   }
 
   body {
-    /* Prevents the site from stretching too wide on 4K/Ultrawide monitors */
-    max-width: 1920px;
-    margin: 0 auto;
+    /* Removed max-width restriction for 4K/8K support */
+    width: 100%;
+    margin: 0;
     background-color: white;
     /* Ensure background fills outside on huge screens */
     font-family: 'Inter', sans-serif;
@@ -23,7 +23,6 @@
     padding: 0;
     /* Prevent horizontal scroll on mobile */
     overflow-x: hidden;
-    width: 100%;
     /* Disable text selection */
     user-select: none;
     -webkit-user-select: none;

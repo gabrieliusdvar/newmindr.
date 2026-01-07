@@ -64,16 +64,16 @@ export default function Hero() {
         <div className="hidden lg:block flex-1 lg:h-auto lg:w-1/2 bg-gradient-to-br from-purple-300 to-purple-400"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 3xl:px-12 relative z-10">
-        <div className="max-w-7xl 3xl:max-w-[1800px] mx-auto">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:min-h-[75vh] 3xl:min-h-[60vh]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 3xl:px-12 4xl:px-16 relative z-10">
+        <div className="max-w-7xl 3xl:max-w-[1600px] 4xl:max-w-[2400px] mx-auto">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:min-h-[75vh] 3xl:min-h-[60vh] 4xl:min-h-[50vh]">
             {/* Left side - Content */}
-            <div className="flex flex-col justify-start lg:justify-center py-6 sm:py-8 lg:py-20 3xl:py-24 lg:pl-0 lg:pr-8 lg:-ml-20 3xl:-ml-24">
-              <div className="max-w-xl mx-auto lg:mx-0 3xl:max-w-2xl">
-                <h1 className="font-black leading-[1.1] mb-6 sm:mb-8 3xl:mb-12 uppercase tracking-tighter text-center lg:text-left">
+            <div className="flex flex-col justify-start lg:justify-center py-6 sm:py-8 lg:py-20 3xl:py-24 4xl:py-32 lg:pl-0 lg:pr-8 lg:-ml-20 3xl:-ml-24 4xl:-ml-32">
+              <div className="max-w-xl mx-auto lg:mx-0 3xl:max-w-2xl 4xl:max-w-4xl">
+                <h1 className="font-black leading-[1.1] mb-6 sm:mb-8 3xl:mb-12 4xl:mb-16 uppercase tracking-tighter text-center lg:text-left">
                   {/* Line 1 */}
                   <span
-                    className={`block ${['lt', 'ru'].includes(language) ? 'text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] 3xl:text-5xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-5xl 3xl:text-6xl'} mb-3 sm:mb-4 3xl:mb-6 text-white whitespace-nowrap lg:whitespace-normal xl:whitespace-nowrap`}
+                    className={`block ${['lt', 'ru'].includes(language) ? 'text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] 3xl:text-5xl 4xl:text-7xl' : 'text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-5xl 3xl:text-6xl 4xl:text-8xl'} mb-3 sm:mb-4 3xl:mb-6 4xl:mb-8 text-white whitespace-nowrap lg:whitespace-normal xl:whitespace-nowrap`}
                     style={{
                       WebkitTextStroke: '1px #111827',
                       filter: 'drop-shadow(2px 2px 0px #FACC15)',
@@ -200,13 +200,13 @@ export default function Hero() {
               </div>
 
               {/* Main image container - Pushed to bottom via flex */}
-              <div className="relative w-full max-w-sm xs:max-w-md sm:max-w-lg lg:max-w-4xl 3xl:max-w-6xl z-10 mx-auto">
+              <div className="relative w-full max-w-sm xs:max-w-md sm:max-w-lg lg:max-w-4xl 3xl:max-w-6xl 4xl:max-w-screen-2xl z-10 mx-auto">
                 <div className="relative z-10">
                   <div className="w-full flex items-center justify-center lg:justify-end">
                     <img
                       src="/das.png"
                       alt="Capybara"
-                      className="w-full h-auto block translate-y-12 max-w-[380px] xs:max-w-[420px] sm:max-w-[480px] lg:max-w-[595px] 3xl:max-w-[800px] object-contain lg:-mr-20 3xl:-mr-32"
+                      className="w-full h-auto block translate-y-12 max-w-[380px] xs:max-w-[420px] sm:max-w-[480px] lg:max-w-[595px] 3xl:max-w-[800px] 4xl:max-w-[1200px] object-contain lg:-mr-20 3xl:-mr-32 4xl:-mr-40"
                     />
                   </div>
                 </div>
