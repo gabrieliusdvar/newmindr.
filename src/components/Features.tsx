@@ -274,18 +274,24 @@ export default function Features() {
       descriptionKey: 'learningVirtuallyDesc' as const,
       badgeKey: 'totallyFree' as const,
       badgeColor: 'bg-gradient-to-r from-pink-300 to-pink-400',
+      rotation: 'rotate-[-3deg]',
+      shape: 'rounded-sm',
     },
     {
       titleKey: 'scholarshipForEveryone' as const,
       descriptionKey: 'scholarshipForEveryoneDesc' as const,
       badgeKey: 'limitedSpots' as const,
       badgeColor: 'bg-gradient-to-r from-purple-400 to-purple-500',
+      rotation: 'rotate-[2deg]',
+      shape: 'rounded-md',
     },
     {
       titleKey: 'trackStudentProgress' as const,
       descriptionKey: 'trackStudentProgressDesc' as const,
       badgeKey: 'realTime' as const,
       badgeColor: 'bg-gradient-to-r from-green-400 to-green-500',
+      rotation: 'rotate-[-1deg]',
+      shape: 'rounded-lg',
     },
   ];
 
@@ -409,8 +415,18 @@ export default function Features() {
                   {t.features[features[activeTab].descriptionKey]}
                 </p>
 
-                <div className="inline-block">
-                  <div className={`${features[activeTab].badgeColor} px-4 py-1.5 rounded-full border-2 border-gray-900 text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0_0_rgba(0,0,0,1)]`}>
+                <div className="inline-block relative group cursor-default">
+                  {/* Sticker Effect */}
+                  <div className={`
+                    ${features[activeTab].badgeColor} 
+                    ${features[activeTab].rotation}
+                    ${features[activeTab].shape}
+                    px-6 py-2 
+                    border-[3px] border-white ring-4 ring-gray-900 
+                    text-xs font-black uppercase tracking-widest 
+                    shadow-[4px_4px_0_0_rgba(0,0,0,0.5)]
+                    transform transition-transform duration-300 hover:scale-105 hover:rotate-0
+                  `}>
                     {t.features[features[activeTab].badgeKey]}
                   </div>
                 </div>
