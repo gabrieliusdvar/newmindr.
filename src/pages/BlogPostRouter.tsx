@@ -7,6 +7,7 @@ import ArticleTeens from './articles/ArticleTeens';
 import ArticleCheating from './articles/ArticleCheating';
 import ArticleGeneric from './articles/ArticleGeneric';
 import ArticleAfterSchool from './articles/ArticleAfterSchool';
+import ArticleFutureLearning from './articles/ArticleFutureLearning';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
@@ -40,6 +41,11 @@ export default function BlogPostRouter() {
     // ID 4 or after-school -> After School Article
     if (post.id === 4 || post.url.includes('after-school')) {
         return <ArticleAfterSchool />;
+    }
+
+    // ID 5 or future-learning
+    if (post.id === 5 || post.url.includes('future-learning')) {
+        return <ArticleFutureLearning />;
     }
 
     // ID 3 or why-kids-cheat

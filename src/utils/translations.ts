@@ -753,6 +753,17 @@ export const translations: Record<Language, any> = {
           likes: "5k",
           comments: "120",
           url: "/blog/after-school"
+        },
+        {
+          id: 5,
+          platform: "Education",
+          title: "The Future of Learning Is Already Here — Are We Letting Our Kids Miss It?",
+          content: "Parents today face a quiet dilemma. We want to protect our children from screens, but the world is digital. The real question isn't 'Should kids use screens?', but 'What are they using them for?'",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
+          date: "Jan 8, 2026",
+          likes: "2k",
+          comments: "45",
+          url: "/blog/future-learning-is-here"
         }
       ]
     }
@@ -1509,6 +1520,17 @@ export const translations: Record<Language, any> = {
           likes: "5k",
           comments: "120",
           url: "/blog/after-school"
+        },
+        {
+          id: 5,
+          platform: "Švietimas",
+          title: "Mokymosi ateitis jau čia — ar leidžiame vaikams ją praleisti?",
+          content: "Tėvai šiandien susiduria su dilema: saugoti vaikus nuo ekranų ar ruošti skaitmeniniam pasauliui. Sprendimas nėra vengimas, o aktyvus naudojimas. Sužinokite, kodėl pasyvus laikas yra tikrasis priešas.",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
+          date: "Sau 8, 2026",
+          likes: "2k",
+          comments: "45",
+          url: "/blog/future-learning-is-here"
         }
       ]
     }
@@ -2265,6 +2287,17 @@ export const translations: Record<Language, any> = {
           likes: "5k",
           comments: "120",
           url: "/blog/after-school"
+        },
+        {
+          id: 5,
+          platform: "Образование",
+          title: "Будущее обучения уже здесь — позволяем ли мы детям упустить его?",
+          content: "Родители сегодня сталкиваются с дилеммой: защитить детей от экранов или подготовить их к цифровому миру. Решение не в избегании, а в активном использовании.",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
+          date: "Янв 8, 2026",
+          likes: "2k",
+          comments: "45",
+          url: "/blog/future-learning-is-here"
         }
       ]
     }
