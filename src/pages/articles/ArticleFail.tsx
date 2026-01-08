@@ -94,7 +94,7 @@ const ArticleFail = () => {
             ctaText: "Atraskite, kaip mūsų interaktyvus mokymosi procesas paverčia kovojančius mokinius pasitikėjusiais savimi sėkmės siekėjais.",
             ctaButton: "Žiūrėti mokymosi procesą",
             ctaFooter: "Prisijunkite prie tūkstančių mokinių, kurie jau padarė pasirinkimą.",
-            imageCaption: "Kad atranka būtų sąžininga, visi turite laikyti tą patį egzaminą – prašau, įlipkite į tą medį."
+            imageCaption: "Kad atranka būtų sąžininga, visi turite laikyti tą patį egzaminą - prašau, įlipkite į tą medį."
         },
         ru: {
             back: "Назад",

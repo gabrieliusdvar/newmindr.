@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Clock, Smartphone, Brain, Gamepad, Coffee, Sparkles, ArrowRight, Shield, XCircle, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Clock, Smartphone, Gamepad, Sparkles, ArrowRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -11,7 +11,7 @@ export default function ArticleAfterSchool() {
         en: {
             back: "Back to Blog",
             title: "After School: The Most Important Hours of a Child’s Day",
-            subtitle: "School ends early, but learning doesn’t stop. It’s not about replacing school — it’s about protecting time.",
+            subtitle: "School ends early, but learning doesn’t stop. It’s not about replacing school - it’s about protecting time.",
             intro: {
                 p1: "The bell rings at 3 PM. For the next 6-7 hours, your child is free. This 'gap' between school ending and bedtime is often where the most significant development happens - or doesn't.",
                 p2: "Without structure, this time easily fills with endless scrolling, unstructured boredom, or passive consumption. But with the right direction, it can be a playground for curiosity, discipline, and real-world skills.",

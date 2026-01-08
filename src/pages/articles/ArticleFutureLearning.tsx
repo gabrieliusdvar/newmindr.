@@ -11,15 +11,15 @@ export default function ArticleFutureLearning() {
         en: {
             back: "Back to Blog",
             readingTime: "5 min read",
-            title: "The Future of Learning Is Already Here — Are We Letting Our Kids Miss It?",
+            title: "The Future of Learning Is Already Here - Are We Letting Our Kids Miss It?",
             subtitle: "The real question isn't 'Should kids use screens?', but 'What are they using them for?'",
             intro: {
                 dilemma: "Parents today face a quiet dilemma.",
-                p1: "On one hand, we want to protect our children from too much screen time. On the other — the world they are growing into is digital, fast-changing, and deeply interactive.",
+                p1: "On one hand, we want to protect our children from too much screen time. On the other - the world they are growing into is digital, fast-changing, and deeply interactive.",
                 question: "What are they using them for?"
             },
             section1: {
-                title: "1. Screens Are Not the Problem — Passive Time Is",
+                title: "1. Screens Are Not the Problem - Passive Time Is",
                 desc: "Not all screen time is the same. Interactive courses turn screens into tools, not distractions.",
                 passive: {
                     title: "PASSIVE CONSUMPTION",
@@ -36,7 +36,7 @@ export default function ArticleFutureLearning() {
             },
             section2: {
                 title: "2. After-School Hours Shape More Than We Think",
-                desc: "School ends early. But learning — and influence — does not.",
+                desc: "School ends early. But learning - and influence - does not.",
                 problem: "Unstructured time leads to boredom and loss of curiosity.",
                 solution: "Structured, interactive learning gives meaningful challenges and a sense of progress.",
                 grid: [
@@ -66,15 +66,15 @@ export default function ArticleFutureLearning() {
         lt: {
             back: "Grįžti į tinklaraštį",
             readingTime: "5 min skaitymas",
-            title: "Mokymosi ateitis jau čia — ar leidžiame vaikams ją praleisti?",
+            title: "Mokymosi ateitis jau čia - ar leidžiame vaikams ją praleisti?",
             subtitle: "Tikrasis klausimas nėra „Ar vaikai turėtų naudotis ekranais?“, o „Kam jie juos naudoja?“",
             intro: {
                 dilemma: "Šiandien tėvai susiduria su tyliu vidiniu konfliktu.",
-                p1: "Viena vertus, norime apsaugoti vaikus nuo per ilgo laiko prie ekranų. Kita vertus — pasaulis, kuriame jie augs, yra skaitmeninis, greitai besikeičiantis ir interaktyvus.",
+                p1: "Viena vertus, norime apsaugoti vaikus nuo per ilgo laiko prie ekranų. Kita vertus - pasaulis, kuriame jie augs, yra skaitmeninis, greitai besikeičiantis ir interaktyvus.",
                 question: "Kam tie ekranai yra naudojami?"
             },
             section1: {
-                title: "1. Ekranai nėra problema — problema yra pasyvus laikas",
+                title: "1. Ekranai nėra problema - problema yra pasyvus laikas",
                 desc: "Ne visas laikas prie ekranų yra vienodas. Interaktyvūs kursai paverčia ekranus įrankiais, o ne trukdžiais.",
                 passive: {
                     title: "PASYVUS VARTOJIMAS",
@@ -91,7 +91,7 @@ export default function ArticleFutureLearning() {
             },
             section2: {
                 title: "2. Laikas po pamokų formuoja daugiau, nei galvojame",
-                desc: "Pamokos baigiasi anksti. Tačiau įtaka ir mokymasis — ne.",
+                desc: "Pamokos baigiasi anksti. Tačiau įtaka ir mokymasis - ne.",
                 problem: "Neorganizuotas laikas po pamokų dažnai veda prie nuobodulio ir smalsumo praradimo.",
                 solution: "Struktūruotas, interaktyvus mokymasis suteikia prasmingus iššūkius ir progreso jausmą.",
                 grid: [
@@ -101,7 +101,7 @@ export default function ArticleFutureLearning() {
                 ]
             },
             section3: {
-                title: "3. Didžiausia rizika — nepabandyti",
+                title: "3. Didžiausia rizika - nepabandyti",
                 desc: "Daugelis tėvų laukia, kol pablogės pažymiai ar dings motyvacija. Tačiau šiuolaikinės platformos yra prevencinė priemonė.",
                 comparison: "Interaktyvūs kursai nepakeičia mokyklos. Jie ją papildo.",
                 insight: "Tikrasis praradimas yra praleista galimybė, kai geresni sprendimai jau egzistuoja."
@@ -121,15 +121,15 @@ export default function ArticleFutureLearning() {
         ru: {
             back: "Назад в блог",
             readingTime: "5 мин чтения",
-            title: "Будущее обучения уже здесь — позволяем ли мы детям упустить его?",
+            title: "Будущее обучения уже здесь - позволяем ли мы детям упустить его?",
             subtitle: "Настоящий вопрос не в том, «Стоит ли пользоваться экранами?», а в том, «Для чего они используются?»",
             intro: {
                 dilemma: "Сегодня родители сталкиваются с тихой дилеммой.",
-                p1: "С одной стороны, мы хотим защитить детей от экранов. С другой — мир их будущего цифровой и интерактивный.",
+                p1: "С одной стороны, мы хотим защитить детей от экранов. С другой - мир их будущего цифровой и интерактивный.",
                 question: "Для чего они их используют?"
             },
             section1: {
-                title: "1. Экраны — не проблема. Проблема в пассивности",
+                title: "1. Экраны - не проблема. Проблема в пассивности",
                 desc: "Не все время за экраном одинаково. Интерактив превращает экраны в инструменты.",
                 passive: {
                     title: "ПАССИВНОЕ ПОТРЕБЛЕНИЕ",
@@ -146,7 +146,7 @@ export default function ArticleFutureLearning() {
             },
             section2: {
                 title: "2. Часы после школы формируют личность",
-                desc: "Школа заканчивается рано. Но обучение — нет.",
+                desc: "Школа заканчивается рано. Но обучение - нет.",
                 problem: "Скука и потеря интереса происходят в свободное время.",
                 solution: "Структурированное обучение дает вызовы и чувство прогресса.",
                 grid: [
@@ -156,14 +156,14 @@ export default function ArticleFutureLearning() {
                 ]
             },
             section3: {
-                title: "3. Самый большой риск — не попробовать",
-                desc: "Многие родители ждут падения оценок. Но современные платформы — это превентивная мера.",
+                title: "3. Самый большой риск - не попробовать",
+                desc: "Многие родители ждут падения оценок. Но современные платформы - это превентивная мера.",
                 comparison: "Интерактивные курсы не заменяют школу. Они поддерживают ее.",
-                insight: "Настоящая потеря — угасание любопытства, когда решения уже рядом."
+                insight: "Настоящая потеря - угасание любопытства, когда решения уже рядом."
             },
             conclusion: {
                 title: "Спокойный шаг вперед",
-                text: "Интерактивное обучение — это не давление. Это направление.",
+                text: "Интерактивное обучение - это не давление. Это направление.",
                 points: [
                     "Учатся в своем темпе",
                     "Исследуют интересные темы",
