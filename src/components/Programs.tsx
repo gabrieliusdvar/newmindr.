@@ -43,7 +43,7 @@ export default function Programs() {
   ];
 
   return (
-    <section className="relative bg-[#0a0a0a] py-20 overflow-hidden" style={{
+    <section id="programs" className="relative bg-[#0a0a0a] py-20 overflow-hidden" style={{
       borderTop: '5px dashed #22c55e',
       borderBottom: '5px dashed #22c55e'
     }}>

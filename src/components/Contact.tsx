@@ -128,7 +128,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="fixed inset-0 top-[50px] lg:top-[50px] overflow-hidden bg-emerald-400 lg:bg-white overscroll-none touch-none lg:touch-auto">
+    <div id="contact" className="fixed inset-0 top-[50px] lg:top-[50px] overflow-hidden bg-emerald-400 lg:bg-white overscroll-none touch-none lg:touch-auto">
       <div className="grid lg:grid-cols-[1.2fr_0.8fr] min-h-[calc(100svh-50px)] w-full relative flex flex-col lg:grid">
         {/* Black divider line - moved to 60% */}
         <div className="absolute left-[60%] top-0 bottom-0 w-1 bg-gray-900 transform -translate-x-1/2 z-10 hidden lg:block"></div>
