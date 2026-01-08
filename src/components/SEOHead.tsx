@@ -12,14 +12,14 @@ interface SEOConfig {
 const seoConfigs: Record<string, Record<string, SEOConfig>> = {
     '/': {
         en: {
-            title: 'newmindr. | Interactive Learning Platform - Online Courses & Education',
-            description: 'newmindr. is the leading interactive learning platform for kids, teens, and adults. Explore engaging online courses in leadership, negotiation, comic storytelling, game design, and more.',
+            title: 'newmindr.',
+            description: 'An interactive learning platform with engaging online courses, a private community, and experiences that make learning stick.',
             keywords: 'newmindr, newmindr., interactive learning, interactive courses, online courses, education platform, e-learning, leadership courses, gamified learning'
         },
         lt: {
             title: 'newmindr. | Interaktyvaus mokymosi platforma - Internetiniai kursai',
             description: 'newmindr. yra pirmaujanti interaktyvaus mokymosi platforma vaikams, paaugliams ir suaugusiems. Atraskite įtraukiančius internetinius kursus lyderystės, derybų, komiksų kūrimo ir kitose srityse.',
-            keywords: 'newmindr, newmindr., interaktyvus mokymasis, interaktyvūs kursai, kursai, internetiniai kursai, mokymosi platforma, lyderystės kursai, švietimas'
+            keywords: 'newmindr, newmindr., interaktyvus mokymasis, interaktyvūs kursai, kursai, internetiniai kursai, mokymosi platforma, lyderystės kursai, švietimas, naujos mintys, naujos smegenys'
         },
         ru: {
             title: 'newmindr. | Платформа интерактивного обучения - Онлайн курсы',

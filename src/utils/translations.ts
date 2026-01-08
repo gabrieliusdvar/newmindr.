@@ -759,7 +759,7 @@ export const translations: Record<Language, any> = {
   },
   lt: {
     seo: {
-      title: "newmindr. Interaktyvus mokymasis"
+      title: "newmindr."
     },
     cookies: {
       title: "NAUDOJAME SLAPUKUS",
