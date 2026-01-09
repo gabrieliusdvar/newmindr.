@@ -8,6 +8,7 @@ import ArticleCheating from './articles/ArticleCheating';
 import ArticleGeneric from './articles/ArticleGeneric';
 import ArticleAfterSchool from './articles/ArticleAfterSchool';
 import ArticleFutureLearning from './articles/ArticleFutureLearning';
+import ArticlePlayToLearn from './articles/ArticlePlayToLearn';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
@@ -46,6 +47,11 @@ export default function BlogPostRouter() {
     // ID 5 or future-learning
     if (post.id === 5 || post.url.includes('future-learning')) {
         return <ArticleFutureLearning />;
+    }
+
+    // ID 6 or play-to-learn
+    if (post.id === 6 || post.url.includes('play-to-learn')) {
+        return <ArticlePlayToLearn />;
     }
 
     // ID 3 or why-kids-cheat

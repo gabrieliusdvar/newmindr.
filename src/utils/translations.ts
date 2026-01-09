@@ -764,6 +764,17 @@ export const translations: Record<Language, any> = {
           likes: "2k",
           comments: "45",
           url: "/blog/future-learning-is-here"
+        },
+        {
+          id: 6,
+          platform: "Education",
+          title: "What a Child Really Learns by Playing (And Why It’s More Important Than Grades)",
+          content: "Play is not a waste of time. It is the purest form of learning. Discover why games make children learn faster, handle failure better, and build skills that school grades can't measure.",
+          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          date: "Jan 9, 2026",
+          likes: "4.5k",
+          comments: "67",
+          url: "/blog/play-to-learn"
         }
       ]
     }
@@ -1531,6 +1542,17 @@ export const translations: Record<Language, any> = {
           likes: "2k",
           comments: "45",
           url: "/blog/future-learning-is-here"
+        },
+        {
+          id: 6,
+          platform: "Švietimas",
+          title: "Ką vaikas iš tikrųjų išmoksta žaisdamas (ir kodėl tai svarbiau nei pažymiai)",
+          content: "Žaidimas nėra laiko švaistymas. Tai — gryniausia mokymosi forma. Sužinokite, kodėl žaidimuose vaikai mokosi greičiau, nebijo klysti ir įgyja įgūdžių, kurių neparodo jokie pažymiai.",
+          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          date: "Sau 9, 2026",
+          likes: "4.5k",
+          comments: "67",
+          url: "/blog/play-to-learn"
         }
       ]
     }
@@ -2298,6 +2320,17 @@ export const translations: Record<Language, any> = {
           likes: "2k",
           comments: "45",
           url: "/blog/future-learning-is-here"
+        },
+        {
+          id: 6,
+          platform: "Образование",
+          title: "Чему на самом деле учится ребенок в игре (и почему это важнее оценок)",
+          content: "Игра — это не пустая трата времени. Это чистая форма обучения. Узнайте, почему в играх дети учатся быстрее, не боятся ошибок и развивают навыки, которые нельзя измерить оценками.",
+          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          date: "Янв 9, 2026",
+          likes: "4.5k",
+          comments: "67",
+          url: "/blog/play-to-learn"
         }
       ]
     }
