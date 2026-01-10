@@ -242,7 +242,7 @@ export default function ArticlePlayToLearn() {
                     <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 max-w-4xl mx-auto relative group">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                         <img
-                            src="https://images.unsplash.com/photo-1596496356991-9563285d2033?w=1200&auto=format&fit=crop"
+                            src="/play-to-learn.png"
                             alt="Learning through play"
                             className="w-full h-auto object-cover max-h-[600px] transform group-hover:scale-105 transition-transform duration-700"
                         />
