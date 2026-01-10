@@ -402,7 +402,15 @@ export default function Classes() {
             totalCourses: "48 COURSES",
             liveSessions: "LIVE SESSIONS",
             selfPaced: "SELF-PACED",
-            highlights: "What you'll learn:"
+            highlights: "What you'll learn:",
+            interactive: "Interactive",
+            projectBased: "Project-Based",
+            guided: "Guided",
+            themes: {
+                "8-12": "EXPLORERS & CREATORS",
+                "13-16": "INNOVATORS & BUILDERS",
+                "17-19": "FUTURE LEADERS"
+            }
         },
         lt: {
             title: "VISOS PAMOKOS",
@@ -420,7 +428,15 @@ export default function Classes() {
             totalCourses: "48 KURSAI",
             liveSessions: "GYVI UŽSIĖMIMAI",
             selfPaced: "SAVO TEMPU",
-            highlights: "Ko išmoksite:"
+            highlights: "Ko išmoksite:",
+            interactive: "Interaktyvus",
+            projectBased: "Projektų pagrindas",
+            guided: "Vadovaujamas",
+            themes: {
+                "8-12": "TYRINĖTOJAI IR KŪRĖJAI",
+                "13-16": "NOVATORIAI IR STATYTOJAI",
+                "17-19": "ATEITIES LYDERIAI"
+            }
         },
         ru: {
             title: "ВСЕ КЛАССЫ",
@@ -438,7 +454,15 @@ export default function Classes() {
             totalCourses: "48 КУРСОВ",
             liveSessions: "ЖИВЫЕ СЕССИИ",
             selfPaced: "В СВОЁМ ТЕМПЕ",
-            highlights: "Чему научитесь:"
+            highlights: "Чему научитесь:",
+            interactive: "Интерактивный",
+            projectBased: "Проектный",
+            guided: "С наставником",
+            themes: {
+                "8-12": "ИССЛЕДОВАТЕЛИ И ТВОРЦЫ",
+                "13-16": "НОВАТОРЫ И СТРОИТЕЛИ",
+                "17-19": "ЛИДЕРЫ БУДУЩЕГО"
+            }
         }
     };
 
@@ -492,12 +516,12 @@ export default function Classes() {
                                 key={group}
                                 onClick={() => setActiveGroup(group)}
                                 className={`relative px-8 py-6 border-4 border-black rounded-2xl font-black text-xl transition-all duration-300 ${isActive
-                                        ? `${groupData.bgColor} shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] scale-105`
-                                        : 'bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-102'
+                                    ? `${groupData.bgColor} shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] scale-105`
+                                    : 'bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-102'
                                     }`}
                             >
                                 <div className="text-3xl mb-1">{group} {t.ageLabel}</div>
-                                <div className="text-xs uppercase tracking-widest opacity-70">{groupData.theme}</div>
+                                <div className="text-xs uppercase tracking-widest opacity-70">{t.themes[group as keyof typeof t.themes]}</div>
                                 {isActive && (
                                     <div className="absolute -top-3 -right-3 w-8 h-8 bg-black rounded-full flex items-center justify-center">
                                         <CheckCircle2 className="w-5 h-5 text-white" />
@@ -529,8 +553,8 @@ export default function Classes() {
                             >
                                 <div
                                     className={`h-full p-6 bg-white border-4 border-black rounded-2xl transition-all duration-300 ${isHovered || isExpanded
-                                            ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -translate-x-1 -translate-y-1'
-                                            : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                                        ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -translate-x-1 -translate-y-1'
+                                        : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                                         } ${currentGroup.hoverBg}`}
                                 >
                                     {/* Tag */}
@@ -573,9 +597,9 @@ export default function Classes() {
                                                 ))}
                                             </div>
                                             <div className="flex flex-wrap gap-2 mb-4">
-                                                <span className="px-3 py-1 bg-emerald-100 border-2 border-black rounded-full text-xs font-bold">Interactive</span>
-                                                <span className="px-3 py-1 bg-blue-100 border-2 border-black rounded-full text-xs font-bold">Project-Based</span>
-                                                <span className="px-3 py-1 bg-pink-100 border-2 border-black rounded-full text-xs font-bold">Guided</span>
+                                                <span className="px-3 py-1 bg-emerald-100 border-2 border-black rounded-full text-xs font-bold">{t.interactive}</span>
+                                                <span className="px-3 py-1 bg-blue-100 border-2 border-black rounded-full text-xs font-bold">{t.projectBased}</span>
+                                                <span className="px-3 py-1 bg-pink-100 border-2 border-black rounded-full text-xs font-bold">{t.guided}</span>
                                             </div>
                                             <Link
                                                 to="/process"

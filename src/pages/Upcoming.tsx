@@ -58,44 +58,6 @@ const ProgressBar = ({ progress, color }: { progress: number; color: string }) =
     </div>
 );
 
-// Countdown timer component
-const CountdownTimer = () => {
-    const [time, setTime] = useState({ days: 47, hours: 12, mins: 34, secs: 56 });
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTime(prev => {
-                let { days, hours, mins, secs } = prev;
-                secs--;
-                if (secs < 0) { secs = 59; mins--; }
-                if (mins < 0) { mins = 59; hours--; }
-                if (hours < 0) { hours = 23; days--; }
-                if (days < 0) days = 0;
-                return { days, hours, mins, secs };
-            });
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
-
-    return (
-        <div className="flex gap-3 justify-center">
-            {[
-                { value: time.days, label: 'DAYS' },
-                { value: time.hours, label: 'HRS' },
-                { value: time.mins, label: 'MIN' },
-                { value: time.secs, label: 'SEC' }
-            ].map((item, i) => (
-                <div key={i} className="text-center">
-                    <div className="w-14 h-14 bg-black border-2 border-emerald-500 rounded-lg flex items-center justify-center font-mono text-2xl font-black text-emerald-400">
-                        {String(item.value).padStart(2, '0')}
-                    </div>
-                    <div className="text-[10px] text-gray-500 mt-1 font-bold">{item.label}</div>
-                </div>
-            ))}
-        </div>
-    );
-};
-
 export default function Upcoming() {
     const { language } = useLanguage();
     const [activePanel, setActivePanel] = useState<number | null>(null);
@@ -111,6 +73,14 @@ export default function Upcoming() {
             stayTuned: "Stay Tuned",
             notifyMe: "Notify Me When Ready",
             backToHome: "Back to Home",
+            startLearningNow: "Start Learning Now",
+            growWithUs: "Be the first to experience our upcoming features. Join now and grow with us!",
+            clickToExpand: "Click to expand",
+            livePreview: "LIVE PREVIEW",
+            educationalQuests: "1,000+ EDUCATIONAL QUESTS",
+            coming2027: "COMING 2027",
+            originalSeries: "ORIGINAL SERIES",
+            entertainmentMeetsEducation: "Where entertainment meets education",
             panels: [
                 {
                     icon: Pickaxe,
@@ -219,6 +189,14 @@ export default function Upcoming() {
             stayTuned: "Sekite naujienas",
             notifyMe: "Pranešti kai bus paruošta",
             backToHome: "Grįžti į pradžią",
+            startLearningNow: "Pradėk mokytis dabar",
+            growWithUs: "Būkite pirmieji, išbandykite mūsų naujas funkcijas. Prisijunkite dabar ir augkite kartu su mumis!",
+            clickToExpand: "Spauskite norėdami išplėsti",
+            livePreview: "TIESIOGINĖ PERŽIŪRA",
+            educationalQuests: "1,000+ EDUKACINIŲ UŽDUOČIŲ",
+            coming2027: "ATEINA 2027",
+            originalSeries: "ORIGINALI SERIJA",
+            entertainmentMeetsEducation: "Kur pramoga susitinka su edukacija",
             panels: [
                 {
                     icon: Pickaxe,
@@ -327,6 +305,14 @@ export default function Upcoming() {
             stayTuned: "Следите за новостями",
             notifyMe: "Уведомить когда будет готово",
             backToHome: "На главную",
+            startLearningNow: "Начать учиться сейчас",
+            growWithUs: "Будьте первыми, кто испытает наши новые функции. Присоединяйтесь и растите вместе с нами!",
+            clickToExpand: "Нажмите чтобы развернуть",
+            livePreview: "ПРЕВЬЮ",
+            educationalQuests: "1,000+ ОБРАЗОВАТЕЛЬНЫХ ЗАДАНИЙ",
+            coming2027: "СКОРО 2027",
+            originalSeries: "ОРИГИНАЛЬНЫЙ СЕРИАЛ",
+            entertainmentMeetsEducation: "Где развлечение встречает образование",
             panels: [
                 {
                     icon: Pickaxe,
@@ -468,15 +454,9 @@ export default function Upcoming() {
                 <p className="text-xl md:text-2xl font-bold text-gray-400 mb-4">
                     {t.subtitle}
                 </p>
-                <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
+                <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-16">
                     {t.description}
                 </p>
-
-                {/* Countdown Timer */}
-                <div className="mb-16">
-                    <p className="text-sm text-gray-500 mb-4 uppercase tracking-widest">Next Major Update In</p>
-                    <CountdownTimer />
-                </div>
             </section>
 
             {/* Panels Section */}
@@ -552,7 +532,7 @@ export default function Upcoming() {
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                                                             <div className="absolute bottom-2 left-3 text-xs font-bold text-emerald-400 flex items-center gap-1">
                                                                 <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                                                                LIVE PREVIEW
+                                                                {t.livePreview}
                                                             </div>
                                                         </div>
 
@@ -586,7 +566,7 @@ export default function Upcoming() {
                                                             <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-transparent to-emerald-900/80" />
                                                             <div className="absolute inset-0 flex items-center justify-center">
                                                                 <span className="px-6 py-3 bg-black/70 border-2 border-emerald-500 rounded-full font-black text-emerald-400 text-sm backdrop-blur-sm">
-                                                                    1,000+ EDUCATIONAL QUESTS
+                                                                    {t.educationalQuests}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -606,11 +586,11 @@ export default function Upcoming() {
                                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                                                         <div className="absolute bottom-0 left-0 right-0 p-6">
                                                             <div className="flex items-center gap-3 mb-2">
-                                                                <span className="px-3 py-1 bg-pink-500 rounded-full text-xs font-black text-black">COMING 2027</span>
-                                                                <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white backdrop-blur-sm">ORIGINAL SERIES</span>
+                                                                <span className="px-3 py-1 bg-pink-500 rounded-full text-xs font-black text-black">{t.coming2027}</span>
+                                                                <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white backdrop-blur-sm">{t.originalSeries}</span>
                                                             </div>
                                                             <h4 className="text-2xl font-black text-white mb-1">NEWMINDR. ANIMATED</h4>
-                                                            <p className="text-pink-300 text-sm">Where entertainment meets education</p>
+                                                            <p className="text-pink-300 text-sm">{t.entertainmentMeetsEducation}</p>
                                                         </div>
                                                         {/* Floating decorative elements */}
                                                         <div className="absolute top-4 right-4 w-16 h-16 border-2 border-pink-500/30 rounded-full animate-spin-slow" />
@@ -632,9 +612,8 @@ export default function Upcoming() {
                                         </div>
                                     </div>
 
-                                    {/* Expand indicator */}
                                     <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-gray-500 text-sm transition-opacity ${isActive ? 'opacity-0' : 'opacity-100'}`}>
-                                        <span>Click to expand</span>
+                                        <span>{t.clickToExpand}</span>
                                         <ArrowRight className="w-4 h-4 animate-bounce-x" />
                                     </div>
                                 </div>
@@ -656,7 +635,7 @@ export default function Upcoming() {
                             {t.stayTuned}
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                            Be the first to experience our upcoming features. Join now and grow with us!
+                            {t.growWithUs}
                         </p>
                         <div className="flex flex-wrap gap-4 justify-center">
                             <Link
@@ -664,7 +643,7 @@ export default function Upcoming() {
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl font-black text-lg shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] hover:shadow-[0_0_40px_-5px_rgba(16,185,129,0.7)] transition-all hover:scale-105"
                             >
                                 <Zap className="w-5 h-5" />
-                                Start Learning Now
+                                {t.startLearningNow}
                             </Link>
                             <Link
                                 to="/"
