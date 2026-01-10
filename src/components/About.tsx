@@ -565,17 +565,19 @@ export default function About() {
 
               <div className="space-y-4">
                 <h4 className="text-gray-400 font-semibold uppercase tracking-wider text-xs ml-1">{t.about.popups.courses.ageGroups}</h4>
-                {[
-                  { range: "8–12", title: t.about.popups.courses.group1, color: "bg-orange-100 text-orange-600" },
-                  { range: "13–16", title: t.about.popups.courses.group2, color: "bg-blue-100 text-blue-600" },
-                  { range: "17–19", title: t.about.popups.courses.group3, color: "bg-purple-100 text-purple-600" }
-                ].map((group, i) => (
-                  <div key={i} className={`flex items-center p-4 rounded-2xl bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 group`}>
-                    <span className={`px-3 py-1 rounded-full text-sm font-bold mr-4 ${group.color}`}>{group.range}</span>
-                    <span className={`font-medium text-gray-900 ${windowState === 'minimized' ? 'text-xs' : 'text-lg'}`}>{group.title}</span>
-                    <div className="ml-auto text-gray-300 group-hover:text-gray-400"><ArrowRight className="w-5 h-5" /></div>
-                  </div>
-                ))}
+                <div className="space-y-4">
+                  {[
+                    { range: "8-12", title: t.about.popups.courses.group1, color: "bg-orange-100 text-orange-600" },
+                    { range: "13-16", title: t.about.popups.courses.group2, color: "bg-blue-100 text-blue-600" },
+                    { range: "17-19", title: t.about.popups.courses.group3, color: "bg-purple-100 text-purple-600" }
+                  ].map((group, i) => (
+                    <div key={i} className={`flex items-center p-4 rounded-2xl bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 group`}>
+                      <span className={`px-3 py-1 rounded-full text-sm font-bold mr-4 ${group.color}`}>{group.range}</span>
+                      <span className={`font-medium text-gray-900 ${windowState === 'minimized' ? 'text-xs' : 'text-lg'}`}>{group.title}</span>
+                      <div className="ml-auto text-gray-300 group-hover:text-gray-400"><ArrowRight className="w-5 h-5" /></div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

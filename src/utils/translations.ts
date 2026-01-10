@@ -487,7 +487,7 @@ export const translations: Record<Language, any> = {
       subtitle: "Discover the perfect learning path for every age and interest.",
       groups: {
         "8-12": {
-          age: "8–12 Years",
+          age: "8-12 Years",
           theme: "Explorers & Creators",
           list: [
             "Coding Stories", "Comic & Visual Storytelling", "Creative Writing Studio",
@@ -498,7 +498,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "13-16": {
-          age: "13–16 Years",
+          age: "13-16 Years",
           theme: "Innovators & Builders",
           list: [
             "AI & Future Tech Explorer", "Change-Making Projects", "Code Your First App",
@@ -510,7 +510,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "17-19": {
-          age: "17–19 Years",
+          age: "17-19 Years",
           theme: "Future Leaders",
           list: [
             "AI Tools & Promptcraft", "Automation & No-Code Systems", "Biotech & Health Explorations",
@@ -770,7 +770,7 @@ export const translations: Record<Language, any> = {
           platform: "Education",
           title: "What a Child Really Learns by Playing (And Why It’s More Important Than Grades)",
           content: "Play is not a waste of time. It is the purest form of learning. Discover why games make children learn faster, handle failure better, and build skills that school grades can't measure.",
-          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1596496356991-9563285d2033?w=800&auto=format&fit=crop",
           date: "Jan 9, 2026",
           likes: "4.5k",
           comments: "67",
@@ -898,20 +898,20 @@ export const translations: Record<Language, any> = {
       growthPotential: "Karjeros rezultatai",
       growthPotentialDesc: "Išmok įgūdžių, kurie iš tikrųjų veda tave į priekį.",
       learningVirtually: "Mokymasis kaip žaidimas",
-      learningVirtuallyDesc: "Jaunieji atradėjai mokosi per žaidimus, gyvas veiklas ir vadovaujamus iššūkius. Jie spaudžia, žaidžia, klausia ir atranda naujas idėjas – aktyviai dalyvaudami.",
+      learningVirtuallyDesc: "Jaunieji atradėjai mokosi per žaidimus, gyvas veiklas ir vadovaujamus iššūkius. Jie spaudžia, žaidžia, klausia ir atranda naujas idėjas - aktyviai dalyvaudami.",
       totallyFree: "Išbandyk nemokamai",
       scholarshipForEveryone: "Parama, judinanti į priekį",
       scholarshipForEveryoneDesc: "Programos, skirtos praktiniams įgūdžiams ir pasitikėjimui ugdyti.",
       limitedSpots: "KREIPTIS DABAR",
       trackStudentProgress: "Mokymasis veiksme",
-      trackStudentProgressDesc: "Progresas kuriamas per projektus, iššūkius ir gyvą bendravimą – todėl augimas matomas, kai mokiniai kuria, sprendžia ir tobulėja.",
+      trackStudentProgressDesc: "Progresas kuriamas per projektus, iššūkius ir gyvą bendravimą - todėl augimas matomas, kai mokiniai kuria, sprendžia ir tobulėja.",
       realTime: "Gyvas progresas",
     },
     programs: {
       title: "MOKYMOSI ATEITIS",
       subtitle: "YRA",
       education: "INTERAKTYVI",
-      description: "Gyvos sesijos, protingi iššūkiai ir žaismingas dizainas – pritaikyta kiekvienam augimo etapui.",
+      description: "Gyvos sesijos, protingi iššūkiai ir žaismingas dizainas - pritaikyta kiekvienam augimo etapui.",
       virtualClass: "Interaktyvus Tyrinėjimas",
       virtualClassDesc: "Spausk, žaisk, klausk, atrask. Mokymasis tampa magija.",
       studentMonitoring: "Kūrybinis Konstravimas",
@@ -990,15 +990,15 @@ export const translations: Record<Language, any> = {
       heroSubtitle: "Kuriame interaktyvaus mokymosi ateitį sekančiai kartai.",
       since2022: "Nuo 2022 m.",
       missionTitle: "Mūsų misija",
-      missionDescription: "Mes čia tam, kad mokymasis būtų aktyvus, įtraukiantis ir prieinamas – kad mokiniai ne tik vartotų informaciją, bet ir joje dalyvautų. Per interaktyvias patirtis padedame mokiniams ugdyti tikrus įgūdžius, pasitikėjimą ir smalsumą kiekviename etape.",
+      missionDescription: "Mes čia tam, kad mokymasis būtų aktyvus, įtraukiantis ir prieinamas - kad mokiniai ne tik vartotų informaciją, bet ir joje dalyvautų. Per interaktyvias patirtis padedame mokiniams ugdyti tikrus įgūdžius, pasitikėjimą ir smalsumą kiekviename etape.",
       scratchPrompt: "NUTRINK, KAD PAMATYTUM",
       valuesTitle: "Mūsų vertybės",
       innovation: "Inovacijos",
-      innovationDesc: "Kuriame mokymosi patirtis, kurios labiau primena žaidimus nei pamokas – interaktyvios, modernios ir sukurtos taip, kaip mokiniai mokosi šiandien.",
+      innovationDesc: "Kuriame mokymosi patirtis, kurios labiau primena žaidimus nei pamokas - interaktyvios, modernios ir sukurtos taip, kaip mokiniai mokosi šiandien.",
       community: "Bendruomenė",
       communityDesc: "Mokytis geriau kartu. Kuriame erdves, kuriose mokiniai dalyvauja, bendradarbiauja ir auga su savo bendraamžiais.",
       excellence: "Kokybė",
-      excellenceDesc: "Kiekviena klasė, veikla ir sąveika yra kruopščiai sukurta, kad suteiktų prasmingą mokymąsi – ne pasyvų laiką prie ekrano.",
+      excellenceDesc: "Kiekviena klasė, veikla ir sąveika yra kruopščiai sukurta, kad suteiktų prasmingą mokymąsi - ne pasyvų laiką prie ekrano.",
       achievement: "Pasiekimai",
       achievementDesc: "Švenčiame kiekvieną pasiekimą ir sėkmę, kad ir kokia maža ji būtų.",
       creativity: "Kūrybiškumas",
@@ -1044,7 +1044,7 @@ export const translations: Record<Language, any> = {
         education: {
           title: "Naujas požiūris į švietimą",
           desc1: "Švietimas neturi būti pasyvus ar vienodas visiems.",
-          desc2: "Mes fokusuojamės į mokymąsi per dalyvavimą – kai mokiniai aktyviai įsitraukia, eksperimentuoja ir auga, o ne tik stebi.",
+          desc2: "Mes fokusuojamės į mokymąsi per dalyvavimą - kai mokiniai aktyviai įsitraukia, eksperimentuoja ir auga, o ne tik stebi.",
           diffTitle: "Kuo mes skirtingi:",
           diff1: "Aktyvus mokymasis vietoje paskaitų",
           diff2: "Sukurta tikram dėmesio išlaikymui",
@@ -1088,7 +1088,7 @@ export const translations: Record<Language, any> = {
           ourMissionLabel: "Mūsų misija",
           missionShortDesc: "Mes esame čia, kad mokymasis taptų aktyvus, įtraukiantis ir prieinamas.",
           designPhilosophyDesc: "Mes tikime, kad laikas prie ekrano gali būti aktyvus, o ne pasyvus.",
-          designPhil1: "Svarbiausia – interakcija",
+          designPhil1: "Svarbiausia - interakcija",
           designPhil2: "Žaidybinis progresas",
           designPhil3: "Socialinis mokymasis",
           whoItsForTitle: "Kam tai skirta",
@@ -1147,7 +1147,7 @@ export const translations: Record<Language, any> = {
         },
         step4: {
           title: "Momentinis atsakas",
-          description: "Jokio laukimo pažymių. Aplinka reaguoja į tave. Išlaikyk testus, atrakink lygius arba sudaužyk simuliaciją – atsakas yra momentinis.",
+          description: "Jokio laukimo pažymių. Aplinka reaguoja į tave. Išlaikyk testus, atrakink lygius arba sudaužyk simuliaciją - atsakas yra momentinis.",
           action: "Gauti rezultatus"
         },
         step5: {
@@ -1265,7 +1265,7 @@ export const translations: Record<Language, any> = {
       subtitle: "Atraskite tobulą mokymosi kelią kiekvienam amžiui ir pomėgiui.",
       groups: {
         "8-12": {
-          age: "8–12 Metų",
+          age: "8-12 Metų",
           theme: "Tyrinėtojai ir Kūrėjai",
           list: [
             "Kodavimo Istorijos", "Komiksai ir Vizualinis Pasakojimas", "Kūrybinio Rašymo Studija",
@@ -1276,7 +1276,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "13-16": {
-          age: "13–16 Metų",
+          age: "13-16 Metų",
           theme: "Novatoriai ir Statytojai",
           list: [
             "AI ir Ateities Technologijos", "Pokyčių Projektai", "Sukurk Savo Pirmąją Programėlę",
@@ -1288,7 +1288,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "17-19": {
-          age: "17–19 Metų",
+          age: "17-19 Metų",
           theme: "Ateities Lyderiai",
           list: [
             "AI Įrankiai ir Promptų Kūrimas", "Automatizacija ir No-Code Sistemos", "Biotechnologijų ir Sveikatos Tyrinėjimai",
@@ -1492,7 +1492,7 @@ export const translations: Record<Language, any> = {
           id: 1,
           platform: "Įžvalgos",
           title: "Kodėl interaktyvus mokymasis populiarėja",
-          content: "70% geresnis informacijos įsiminimas. 300% didesnis įsitraukimas. Vadovėliai – pasenusi klasika. Štai ateitis.",
+          content: "70% geresnis informacijos įsiminimas. 300% didesnis įsitraukimas. Vadovėliai - pasenusi klasika. Štai ateitis.",
           image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format&fit=crop",
           date: "Sau 2, 2026",
           likes: "12k",
@@ -1547,8 +1547,8 @@ export const translations: Record<Language, any> = {
           id: 6,
           platform: "Švietimas",
           title: "Ką vaikas iš tikrųjų išmoksta žaisdamas (ir kodėl tai svarbiau nei pažymiai)",
-          content: "Žaidimas nėra laiko švaistymas. Tai — gryniausia mokymosi forma. Sužinokite, kodėl žaidimuose vaikai mokosi greičiau, nebijo klysti ir įgyja įgūdžių, kurių neparodo jokie pažymiai.",
-          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          content: "Žaidimas nėra laiko švaistymas. Tai - gryniausia mokymosi forma. Sužinokite, kodėl žaidimuose vaikai mokosi greičiau, nebijo klysti ir įgyja įgūdžių, kurių neparodo jokie pažymiai.",
+          image: "https://images.unsplash.com/photo-1596496356991-9563285d2033?w=800&auto=format&fit=crop",
           date: "Sau 9, 2026",
           likes: "4.5k",
           comments: "67",
@@ -2043,7 +2043,7 @@ export const translations: Record<Language, any> = {
       subtitle: "Откройте идеальный путь для любого возраста и интересов.",
       groups: {
         "8-12": {
-          age: "8–12 лет",
+          age: "8-12 лет",
           theme: "Исследователи и творцы",
           list: [
             "Истории через код", "Визуальный сторителлинг", "Студия креативного письма",
@@ -2054,7 +2054,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "13-16": {
-          age: "13–16 лет",
+          age: "13-16 лет",
           theme: "Инноваторы и строители",
           list: [
             "Мир ИИ", "Проекты перемен", "Твое первое приложение",
@@ -2066,7 +2066,7 @@ export const translations: Record<Language, any> = {
           ]
         },
         "17-19": {
-          age: "17–19 лет",
+          age: "17-19 лет",
           theme: "Лидеры будущего",
           list: [
             "ИИ и Промпт-инжиниринг", "Автоматизация и No-code", "Биотехнологии",
@@ -2325,8 +2325,8 @@ export const translations: Record<Language, any> = {
           id: 6,
           platform: "Образование",
           title: "Чему на самом деле учится ребенок в игре (и почему это важнее оценок)",
-          content: "Игра — это не пустая трата времени. Это чистая форма обучения. Узнайте, почему в играх дети учатся быстрее, не боятся ошибок и развивают навыки, которые нельзя измерить оценками.",
-          image: "https://images.unsplash.com/photo-1555617981-dcdbd6509c73?w=800&auto=format&fit=crop",
+          content: "Игра - это не пустая трата времени. Это чистая форма обучения. Узнайте, почему в играх дети учатся быстрее, не боятся ошибок и развивают навыки, которые нельзя измерить оценками.",
+          image: "https://images.unsplash.com/photo-1596496356991-9563285d2033?w=800&auto=format&fit=crop",
           date: "Янв 9, 2026",
           likes: "4.5k",
           comments: "67",

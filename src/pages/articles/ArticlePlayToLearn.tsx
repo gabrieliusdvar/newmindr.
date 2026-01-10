@@ -15,7 +15,7 @@ export default function ArticlePlayToLearn() {
             subtitle: "Play is not a waste of time. It is the purest form of learning.",
             intro: {
                 p1: "Many parents know this situation.",
-                p2: "A child can play games for hours. But as soon as they need to open a book — motivation vanishes.",
+                p2: "A child can play games for hours. But as soon as they need to open a book - motivation vanishes.",
                 question: "Are games doing harm?",
                 answer: "But perhaps it's worth asking differently. Play is not a waste of time. It is a form of learning."
             },
@@ -34,9 +34,9 @@ export default function ArticlePlayToLearn() {
                 toggleGame: "IN GAMES",
                 toggleSchool: "IN SCHOOL",
                 gamePoints: [
-                    "You made a mistake — you try again immediately",
-                    "You reached the goal — you get an instant reward",
-                    "You see progress — you want to continue"
+                    "You made a mistake - you try again immediately",
+                    "You reached the goal - you get an instant reward",
+                    "You see progress - you want to continue"
                 ],
                 schoolPoints: [
                     "A mistake often means a bad grade",
@@ -67,7 +67,7 @@ export default function ArticlePlayToLearn() {
                     "If they are not afraid to try",
                     "If they can think independently"
                 ],
-                summary: "Gamified, interactive learning helps develop exactly these abilities — those that last a lifetime."
+                summary: "Gamified, interactive learning helps develop exactly these abilities - those that last a lifetime."
             },
             conclusion: {
                 title: "What does this mean for parents?",
@@ -79,12 +79,12 @@ export default function ArticlePlayToLearn() {
             back: "Grįžti į tinklaraštį",
             readingTime: "5 min skaitymas",
             title: "Ką vaikas iš tikrųjų išmoksta žaisdamas (ir kodėl tai svarbiau nei pažymiai)",
-            subtitle: "Žaidimas nėra laiko švaistymas. Tai — gryniausia mokymosi forma.",
+            subtitle: "Žaidimas nėra laiko švaistymas. Tai - gryniausia mokymosi forma.",
             intro: {
                 p1: "Daugelis tėvų pažįsta šią situaciją.",
-                p2: "Vaikas valandų valandas gali žaisti žaidimus. Bet vos tik reikia atsiversti knygą — motyvacija dingsta.",
+                p2: "Vaikas valandų valandas gali žaisti žaidimus. Bet vos tik reikia atsiversti knygą - motyvacija dingsta.",
                 question: "Ar žaidimai daro žalą?",
-                answer: "Tačiau gal verta paklausti kitaip. Žaidimas nėra laiko švaistymas. Jis — mokymosi forma."
+                answer: "Tačiau gal verta paklausti kitaip. Žaidimas nėra laiko švaistymas. Jis - mokymosi forma."
             },
             section1: {
                 title: "Kai vaikas žaidžia, jis nėra pasyvus",
@@ -101,9 +101,9 @@ export default function ArticlePlayToLearn() {
                 toggleGame: "ŽAIDIMUOSE",
                 toggleSchool: "MOKYKLOJE (DAŽNAI)",
                 gamePoints: [
-                    "Suklydai — bandai dar kartą iškart",
-                    "Pasiekei tikslą — gauni atlygį",
-                    "Matai progresą — nori tęsti"
+                    "Suklydai - bandai dar kartą iškart",
+                    "Pasiekei tikslą - gauni atlygį",
+                    "Matai progresą - nori tęsti"
                 ],
                 schoolPoints: [
                     "Klaida reiškia blogą pažymį",
@@ -124,7 +124,7 @@ export default function ArticlePlayToLearn() {
                     desc: "Realios užduotys, loginis mąstymas, kantrybė.",
                     icon: "CheckCircle2"
                 },
-                statement: "Tai nėra pabėgimas nuo realybės. Tai — pasiruošimas jai."
+                statement: "Tai nėra pabėgimas nuo realybės. Tai - pasiruošimas jai."
             },
             section4: {
                 title: "Kodėl pažymiai nėra geriausias rodiklis",
@@ -134,7 +134,7 @@ export default function ArticlePlayToLearn() {
                     "Ar nebijo bandyti",
                     "Ar geba galvoti savarankiškai"
                 ],
-                summary: "Žaidybinis, interaktyvus mokymasis padeda ugdyti būtent šiuos gebėjimus — tuos, kurie išlieka visam gyvenimui."
+                summary: "Žaidybinis, interaktyvus mokymasis padeda ugdyti būtent šiuos gebėjimus - tuos, kurie išlieka visam gyvenimui."
             },
             conclusion: {
                 title: "Ką tai reiškia tėvams?",
@@ -146,12 +146,12 @@ export default function ArticlePlayToLearn() {
             back: "Назад в блог",
             readingTime: "5 мин чтения",
             title: "Чему на самом деле учится ребенок в игре (и почему это важнее оценок)",
-            subtitle: "Игра — это не пустая трата времени. Это чистая форма обучения.",
+            subtitle: "Игра - это не пустая трата времени. Это чистая форма обучения.",
             intro: {
                 p1: "Многим родителям знакома эта ситуация.",
-                p2: "Ребенок может часами играть в игры. Но как только нужно открыть книгу — мотивация исчезает.",
+                p2: "Ребенок может часами играть в игры. Но как только нужно открыть книгу - мотивация исчезает.",
                 question: "Вредят ли игры?",
-                answer: "Но, возможно, стоит спросить иначе. Игра — это не пустая трата времени. Это форма обучения."
+                answer: "Но, возможно, стоит спросить иначе. Игра - это не пустая трата времени. Это форма обучения."
             },
             section1: {
                 title: "Когда ребенок играет, он не пассивен",
@@ -168,9 +168,9 @@ export default function ArticlePlayToLearn() {
                 toggleGame: "В ИГРАХ",
                 toggleSchool: "В ШКОЛЕ",
                 gamePoints: [
-                    "Ошибся — пробуешь снова немедленно",
-                    "Достиг цели — получаешь награду",
-                    "Видишь прогресс — хочешь продолжать"
+                    "Ошибся - пробуешь снова немедленно",
+                    "Достиг цели - получаешь награду",
+                    "Видишь прогресс - хочешь продолжать"
                 ],
                 schoolPoints: [
                     "Ошибка означает плохую оценку",
@@ -194,14 +194,14 @@ export default function ArticlePlayToLearn() {
                 statement: "Это не побег от реальности. Это подготовка к ней."
             },
             section4: {
-                title: "Почему оценки — не лучший показатель",
+                title: "Почему оценки - не лучший показатель",
                 text: "Оценки показывают, что ребенок запомнил. Но они не показывают:",
                 skills: [
                     "Умеет ли ребенок учиться",
                     "Не боится ли пробовать",
                     "Способен ли думать самостоятельно"
                 ],
-                summary: "Игровое, интерактивное обучение помогает развить именно эти способности — те, которые остаются на всю жизнь."
+                summary: "Игровое, интерактивное обучение помогает развить именно эти способности - те, которые остаются на всю жизнь."
             },
             conclusion: {
                 title: "Что это значит для родителей?",
