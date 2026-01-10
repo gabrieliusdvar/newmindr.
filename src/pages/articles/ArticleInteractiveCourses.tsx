@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, MousePointer2, AlertTriangle, ScanFace, X, Check, ArrowRight, Zap, Newspaper } from 'lucide-react';
+import { ArrowLeft, ScanFace, X, Check, ArrowRight, Zap, Newspaper } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -15,6 +15,7 @@ export default function ArticleInteractiveCourses() {
     const content = {
         en: {
             back: "Back to Papers",
+            dailySarcasm: "THE DAILY SARCASM",
             readingTime: "READ TIME: 30 SEC",
             title: "INTERACTIVE COURSES SHOCK THE WORLD!",
             subtitle: "Citizens confused: 'Wait, learning can actually be fun?' Exclusive report inside.",
@@ -28,7 +29,7 @@ export default function ArticleInteractiveCourses() {
             },
             section2: {
                 title: "WHY IT IS 'VERY NICE'",
-                desc: "Our investigative team confirms: It is indeed very nice. Your brain is tricked into enjoyment.",
+                desc: "As Borat would say: It is indeed very nice. Your brain is tricked into enjoyment.",
                 comparison: [
                     { old: "Board reading text", new: "Dragging code blocks" },
                     { old: "Sleeping in class", new: "Dopamine Hits" },
@@ -38,18 +39,23 @@ export default function ArticleInteractiveCourses() {
             interactiveDemo: {
                 title: "SARCASM-O-METER",
                 desc: "Adjust the dial to measure our disdain for old methods.",
-                sliderLabel: "RESPECT FOR PDFS"
+                sliderLabel: "RESPECT FOR PDFS",
+                einstein: "EINSTEIN",
+                feedbackLow: "ERROR: SARCASM LEVELS TOO LOW.",
+                feedbackMed: "ANALYZING... OPINION DETECTED.",
+                feedbackHigh: "MAXIMUM SARCASM ACHIEVED! SYSTEM UNSTABLE!"
             },
             cta: "INVEST IN YOUR BRAIN",
             finalThought: "YOU PASSED THE LITERACY TEST. NOW GO PLAY."
         },
         lt: {
             back: "Grįžti į laikraščius",
+            dailySarcasm: "DIENOS SARKAZMAS",
             readingTime: "LAIKAS: 30 SEK",
             title: "INTERAKTYVŪS KURSAI ŠOKIRUOJA PASAULĮ!",
             subtitle: "Piliečiai sutrikę: 'Palauk, mokymasis gali būti smagus?' Išskirtinis reportažas.",
             intro: "EKSTRA! EKSTRA! SKAITYKITE VISKĄ APIE TAI! Jūs esate čia, nes atsisakėte skaityti PDF kaip viduramžių vienuolis. Geras pasirinkimas.",
-            imageCaption: "ĮRODYMAS #1: NEVOGTI ŠIO PAVEIKSLĖLIO",
+            imageCaption: "ĮRODYMAS #1: Intelekto nepavogsi",
             section1: {
                 title: "STATINĖ KATASTROFA",
                 text: "Įsivaizduok, kad bandai išmokti važiuoti dviračiu skaitydamas knygą 'Dviračio stabilumo fizika'. Tu kristum. Nuolat. Tai yra vadovėlių tragedija. Popieriniai pažadai!",
@@ -58,7 +64,7 @@ export default function ArticleInteractiveCourses() {
             },
             section2: {
                 title: "KODĖL TAI 'VERY NICE'",
-                desc: "Mūsų tyrimų komanda patvirtina: Tai tikrai very nice. Tavo smegenys apgautos mėgautis.",
+                desc: "Kaip pasakytų Boratas: Tai tikrai very nice. Tavo smegenys apgautos mėgautis.",
                 comparison: [
                     { old: "Lentos skaitymas", new: "Kodo blokų tampymas" },
                     { old: "Miegojimas klasėje", new: "Dopamino dozės" },
@@ -68,13 +74,18 @@ export default function ArticleInteractiveCourses() {
             interactiveDemo: {
                 title: "SARKAZMATORIUS",
                 desc: "Pasukite rankenėlę, kad pamatuotumėte mūsų panieką seniems metodams.",
-                sliderLabel: "Pagarba PDF'ams"
+                sliderLabel: "Pagarba PDF'ams",
+                einstein: "EINSTEINAS",
+                feedbackLow: "KLAIDA: SARKAZMO LYGIS PER ŽEMAS.",
+                feedbackMed: "ANALIZUOJAMA... NUOMONĖ APTIKTA.",
+                feedbackHigh: "MAKSIMALUS SARKAZMAS PASIEKTAS! SISTEMA NESTABILI!"
             },
             cta: "INVESTUOK Į SMEGENIS",
             finalThought: "IŠLAIKEI RAŠTINGUMO TESTĄ. DABAR EIK ŽAISTI."
         },
         ru: {
             back: "Назад к газетам",
+            dailySarcasm: "ЕЖЕДНЕВНЫЙ САРКАЗМ",
             readingTime: "ВРЕМЯ: 30 СЕК",
             title: "ИНТЕРАКТИВНЫЕ КУРСЫ ШОКИРУЮТ МИР!",
             subtitle: "Граждане в замешательстве: 'Подождите, учиться может быть весело?' Эксклюзивный репортаж.",
@@ -88,7 +99,7 @@ export default function ArticleInteractiveCourses() {
             },
             section2: {
                 title: "ПОЧЕМУ ЭТО 'VERY NICE'",
-                desc: "Наша следственная группа подтверждает: Это действительно very nice. Ваш мозг обманут и получает удовольствие.",
+                desc: "Как сказал бы Борат: Это действительно very nice. Ваш мозг обманут и получает удовольствие.",
                 comparison: [
                     { old: "Чтение доски", new: "Перетаскивание кода" },
                     { old: "Сон на уроке", new: "Дофамин" },
@@ -98,7 +109,11 @@ export default function ArticleInteractiveCourses() {
             interactiveDemo: {
                 title: "САРКАЗМОМЕТР",
                 desc: "Покрутите ручку, чтобы измерить наше презрение к старым методам.",
-                sliderLabel: "УВАЖЕНИЕ К PDF"
+                sliderLabel: "УВАЖЕНИЕ К PDF",
+                einstein: "ЭЙНШТЕЙН",
+                feedbackLow: "ОШИБКА: УРОВЕНЬ САРКАЗМА СЛИШКОМ НИЗОК.",
+                feedbackMed: "АНАЛИЗ... ОБНАРУЖЕНО МНЕНИЕ.",
+                feedbackHigh: "МАКСИМАЛЬНЫЙ САРКАЗМ! СИСТЕМА НЕСТАБИЛЬНА!"
             },
             cta: "ИНВЕСТИРУЙ В МОЗГ",
             finalThought: "ТЫ ПРОШЕЛ ТЕСТ НА ГРАМОТНОСТЬ. ТЕПЕРЬ ИДИ ИГРАЙ."
@@ -119,7 +134,7 @@ export default function ArticleInteractiveCourses() {
                     {t.back}
                 </Link>
                 <div className="font-black text-2xl tracking-tighter uppercase border-2 border-black px-4 py-1 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-1">
-                    THE DAILY SARCASM
+                    {t.dailySarcasm}
                 </div>
             </nav>
 
@@ -266,7 +281,7 @@ export default function ArticleInteractiveCourses() {
                             <div className="flex justify-between text-xs font-black uppercase tracking-widest text-white mb-2">
                                 <span>ZZZ...</span>
                                 <span>{t.interactiveDemo.sliderLabel}</span>
-                                <span>EINSTEIN</span>
+                                <span>{t.interactiveDemo.einstein}</span>
                             </div>
                             <input
                                 type="range"
@@ -287,9 +302,9 @@ export default function ArticleInteractiveCourses() {
                         </div>
 
                         <div className="border-2 border-white p-6 text-center bg-gray-900 font-mono text-xl min-h-[100px] flex items-center justify-center">
-                            {sarcasmLevel < 30 && <span className="text-red-400 animate-pulse">ERROR: SARCASM LEVELS TOO LOW.</span>}
-                            {sarcasmLevel >= 30 && sarcasmLevel < 70 && <span className="text-yellow-400">ANALYZING... OPINION DETECTED.</span>}
-                            {sarcasmLevel >= 70 && <span className="text-green-400 font-black glitch-text">MAXIMUM SARCASM ACHIEVED! SYSTEM UNSTABLE!</span>}
+                            {sarcasmLevel < 30 && <span className="text-red-400 animate-pulse">{t.interactiveDemo.feedbackLow}</span>}
+                            {sarcasmLevel >= 30 && sarcasmLevel < 70 && <span className="text-yellow-400">{t.interactiveDemo.feedbackMed}</span>}
+                            {sarcasmLevel >= 70 && <span className="text-green-400 font-black glitch-text">{t.interactiveDemo.feedbackHigh}</span>}
                         </div>
                     </div>
                 </section>
@@ -297,7 +312,7 @@ export default function ArticleInteractiveCourses() {
                 {/* FOOTER CTA */}
                 <section className="text-center py-20 border-t-8 border-black border-dotted">
                     <p className="font-black text-2xl uppercase mb-12 tracking-widest">{t.finalThought}</p>
-                    <Link to="/courses" className="inline-flex items-center gap-4 bg-yellow-400 text-black text-2xl font-black py-6 px-16 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all group">
+                    <Link to="/process" className="inline-flex items-center gap-4 bg-yellow-400 text-black text-2xl font-black py-6 px-16 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all group">
                         {t.cta}
                         <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
                     </Link>

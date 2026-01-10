@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import { useEffect, useState, useMemo } from 'react';
 
 const NotFound = () => {
     const navigate = useNavigate();
+    const { language } = useLanguage();
     const [floatOffset, setFloatOffset] = useState(0);
 
     useEffect(() => {
@@ -12,36 +14,97 @@ const NotFound = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const sarcasticMessages = [
-        "Well, this is awkward...",
-        "Oops! This page went on vacation.",
-        "404: Brain not found. Just like this page.",
-        "Congrats! You found a page that doesn't exist.",
-        "This page is as lost as your keys.",
-        "Even our eagle couldn't find this page.",
-        "Plot twist: This page never existed.",
-        "You've discovered the void. Impressive!",
-    ];
+    const content = {
+        en: {
+            messages: [
+                "Well, this is awkward...",
+                "Oops! This page went on vacation.",
+                "404: Brain not found. Just like this page.",
+                "Congrats! You found a page that doesn't exist.",
+                "This page is as lost as your keys.",
+                "Even our eagle couldn't find this page.",
+                "Plot twist: This page never existed.",
+                "You've discovered the void. Impressive!",
+            ],
+            funFacts: [
+                "Fun fact: This page is playing hide and seek. It's winning.",
+                "Fun fact: 404 errors are just pages being introverts.",
+                "Fun fact: You just found the internet's black hole.",
+                "Fun fact: This page is on a permanent coffee break.",
+                "Fun fact: Even Google Maps can't find this page.",
+                "Fun fact: This URL leads to absolutely nowhere. Congrats!",
+                "Fun fact: You've mastered the art of getting lost online.",
+                "Fun fact: This page exists in a parallel universe.",
+            ],
+            subtitle: "The page you're looking for has flown away. 🦅",
+            home: "Take Me Home",
+            back: "Go Back"
+        },
+        lt: {
+            messages: [
+                "Na, tai bent nejauku...",
+                "Ups! Šis puslapis išėjo atostogų.",
+                "404: Smegenys nerastos. Kaip ir šis puslapis.",
+                "Sveikiname! Radote puslapį, kuris neegzistuoja.",
+                "Šis puslapis pasimetęs kaip tavo raktai.",
+                "Net mūsų erelis negalėjo rasti šio puslapio.",
+                "Siužeto posūkis: Šis puslapis niekada neegzistavo.",
+                "Jūs atradote tuštumą. Įspūdinga!",
+            ],
+            funFacts: [
+                "Įdomus faktas: Šis puslapis žaidžia slėpynių. Jis laimi.",
+                "Įdomus faktas: 404 klaidos yra tiesiog intravertai puslapiai.",
+                "Įdomus faktas: Jūs ką tik radote interneto juodąją skylę.",
+                "Įdomus faktas: Šis puslapis amžinoje kavos pertraukoje.",
+                "Įdomus faktas: Net Google Maps negali rasti šio puslapio.",
+                "Įdomus faktas: Šis URL veda į niekur. Sveikiname!",
+                "Įdomus faktas: Jūs įvaldėte pasimetimo internete meną.",
+                "Įdomus faktas: Šis puslapis egzistuoja paralelinėje visatoje.",
+            ],
+            subtitle: "Puslapis, kurio ieškote, išskrido. 🦅",
+            home: "Namo",
+            back: "Grįžti atgal"
+        },
+        ru: {
+            messages: [
+                "Ну, это неловко...",
+                "Упс! Эта страница ушла в отпуск.",
+                "404: Мозг не найден. Как и эта страница.",
+                "Поздравляем! Вы нашли страницу, которой не существует.",
+                "Эта страница потерялась, как ваши ключи.",
+                "Даже наш орел не смог найти эту страницу.",
+                "Поворот сюжета: Этой страницы никогда не существовало.",
+                "Вы открыли пустоту. Впечатляет!",
+            ],
+            funFacts: [
+                "Забавный факт: Эта страница играет в прятки. И выигрывает.",
+                "Забавный факт: Ошибки 404 — это просто страницы-интроверты.",
+                "Забавный факт: Вы только что нашли черную дыру интернета.",
+                "Забавный факт: Эта страница на вечном перерыве на кофе.",
+                "Забавный факт: Даже Google Maps не может найти эту страницу.",
+                "Забавный факт: Этот URL ведет в никуда. Поздравляем!",
+                "Забавный факт: Вы освоили искусство теряться в интернете.",
+                "Забавный факт: Эта страница существует в параллельной вселенной.",
+            ],
+            subtitle: "Страница, которую вы ищете, улетела. 🦅",
+            home: "Домой",
+            back: "Вернуться"
+        }
+    };
 
-    const sarcasticFunFacts = [
-        "Fun fact: This page is playing hide and seek. It's winning.",
-        "Fun fact: 404 errors are just pages being introverts.",
-        "Fun fact: You just found the internet's black hole.",
-        "Fun fact: This page is on a permanent coffee break.",
-        "Fun fact: Even Google Maps can't find this page.",
-        "Fun fact: This URL leads to absolutely nowhere. Congrats!",
-        "Fun fact: You've mastered the art of getting lost online.",
-        "Fun fact: This page exists in a parallel universe.",
-    ];
+    const t = content[language as keyof typeof content] || content.en;
 
     // Pick ONE random message and keep it - useMemo ensures it only runs once
+    // We intentionally ignore dependency array to keep it static on language change unless reload, 
+    // BUT since t changes with language, we might want to re-roll or map the index.
+    // Let's just re-roll for simplicity when language changes, it adds to the chaos.
     const randomMessage = useMemo(() => {
-        return sarcasticMessages[Math.floor(Math.random() * sarcasticMessages.length)];
-    }, []);
+        return t.messages[Math.floor(Math.random() * t.messages.length)];
+    }, [t]);
 
     const randomFunFact = useMemo(() => {
-        return sarcasticFunFacts[Math.floor(Math.random() * sarcasticFunFacts.length)];
-    }, []);
+        return t.funFacts[Math.floor(Math.random() * t.funFacts.length)];
+    }, [t]);
 
     return (
         <div className="h-screen w-screen bg-gradient-to-br from-purple-600 via-purple-500 to-purple-700 flex items-center justify-center p-4 overflow-hidden relative">
@@ -99,7 +162,7 @@ const NotFound = () => {
                             {randomMessage}
                         </h2>
                         <p className="text-base md:text-lg text-gray-700 font-semibold">
-                            The page you're looking for has flown away. 🦅
+                            {t.subtitle}
                         </p>
                     </div>
 
@@ -109,7 +172,7 @@ const NotFound = () => {
                             onClick={() => navigate('/')}
                             className="group relative px-6 py-3 bg-purple-600 text-white font-black text-base rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px]"
                         >
-                            <span className="relative z-10">Take Me Home</span>
+                            <span className="relative z-10">{t.home}</span>
                             <div className="absolute inset-0 bg-purple-700 rounded-lg transform translate-x-1 translate-y-1 -z-10"></div>
                         </button>
 
@@ -117,7 +180,7 @@ const NotFound = () => {
                             onClick={() => navigate(-1)}
                             className="group relative px-6 py-3 bg-yellow-400 text-gray-900 font-black text-base rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px]"
                         >
-                            <span className="relative z-10">Go Back</span>
+                            <span className="relative z-10">{t.back}</span>
                             <div className="absolute inset-0 bg-yellow-500 rounded-lg transform translate-x-1 translate-y-1 -z-10"></div>
                         </button>
                     </div>
