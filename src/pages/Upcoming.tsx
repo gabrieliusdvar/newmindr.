@@ -533,6 +533,91 @@ export default function Upcoming() {
                                                     ))}
                                                 </div>
                                             )}
+
+                                            {/* Media Gallery - Minecraft Panel (index 0) */}
+                                            {isActive && index === 0 && (
+                                                <div className="mt-8 animate-fadeIn">
+                                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                                        {/* Video with floating animation */}
+                                                        <div className="col-span-2 relative group/media overflow-hidden rounded-2xl border-2 border-emerald-500/50 animate-float-media" style={{ animationDelay: '0s' }}>
+                                                            <video
+                                                                autoPlay
+                                                                loop
+                                                                muted
+                                                                playsInline
+                                                                className="w-full h-48 object-cover transition-transform duration-500 group-hover/media:scale-110"
+                                                            >
+                                                                <source src="/minecaft1.mp4" type="video/mp4" />
+                                                            </video>
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                                            <div className="absolute bottom-2 left-3 text-xs font-bold text-emerald-400 flex items-center gap-1">
+                                                                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                                                                LIVE PREVIEW
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Image 1 */}
+                                                        <div className="relative group/media overflow-hidden rounded-2xl border-2 border-emerald-500/30 hover:border-emerald-500 transition-all animate-float-media" style={{ animationDelay: '0.5s' }}>
+                                                            <img
+                                                                src="/minecraft2.jpg"
+                                                                alt="Minecraft Learning Experience"
+                                                                className="w-full h-48 object-cover transition-transform duration-500 group-hover/media:scale-110"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover/media:opacity-100 transition-opacity" />
+                                                        </div>
+
+                                                        {/* Image 2 */}
+                                                        <div className="relative group/media overflow-hidden rounded-2xl border-2 border-emerald-500/30 hover:border-emerald-500 transition-all animate-float-media" style={{ animationDelay: '1s' }}>
+                                                            <img
+                                                                src="/minecraft3.jpg"
+                                                                alt="Educational Minecraft World"
+                                                                className="w-full h-48 object-cover transition-transform duration-500 group-hover/media:scale-110"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover/media:opacity-100 transition-opacity" />
+                                                        </div>
+
+                                                        {/* Image 3 - Full width */}
+                                                        <div className="col-span-2 md:col-span-4 relative group/media overflow-hidden rounded-2xl border-2 border-emerald-500/30 hover:border-emerald-500 transition-all animate-float-media" style={{ animationDelay: '1.5s' }}>
+                                                            <img
+                                                                src="/minecraft4.jpg"
+                                                                alt="Collaborative Learning in Minecraft"
+                                                                className="w-full h-40 object-cover transition-transform duration-500 group-hover/media:scale-105"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-transparent to-emerald-900/80" />
+                                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                                <span className="px-6 py-3 bg-black/70 border-2 border-emerald-500 rounded-full font-black text-emerald-400 text-sm backdrop-blur-sm">
+                                                                    1,000+ EDUCATIONAL QUESTS
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Media Gallery - Animated Series Panel (index 3) */}
+                                            {isActive && index === 3 && (
+                                                <div className="mt-8 animate-fadeIn">
+                                                    <div className="relative group/media overflow-hidden rounded-3xl border-2 border-pink-500/50 hover:border-pink-500 transition-all animate-float-media">
+                                                        <img
+                                                            src="/film.png"
+                                                            alt="newmindr. Animated Series Preview"
+                                                            className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover/media:scale-105"
+                                                        />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                                                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                                                            <div className="flex items-center gap-3 mb-2">
+                                                                <span className="px-3 py-1 bg-pink-500 rounded-full text-xs font-black text-black">COMING 2027</span>
+                                                                <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white backdrop-blur-sm">ORIGINAL SERIES</span>
+                                                            </div>
+                                                            <h4 className="text-2xl font-black text-white mb-1">NEWMINDR. ANIMATED</h4>
+                                                            <p className="text-pink-300 text-sm">Where entertainment meets education</p>
+                                                        </div>
+                                                        {/* Floating decorative elements */}
+                                                        <div className="absolute top-4 right-4 w-16 h-16 border-2 border-pink-500/30 rounded-full animate-spin-slow" />
+                                                        <div className="absolute top-8 right-8 w-8 h-8 bg-pink-500/20 rounded-full animate-pulse" />
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Progress & ETA */}
@@ -601,6 +686,13 @@ export default function Upcoming() {
                 .animate-float {
                     animation: float ease-in-out infinite;
                 }
+                @keyframes float-media {
+                    0%, 100% { transform: translateY(0) scale(1); }
+                    50% { transform: translateY(-8px) scale(1.01); }
+                }
+                .animate-float-media {
+                    animation: float-media 4s ease-in-out infinite;
+                }
                 @keyframes shimmer {
                     0% { transform: translateX(-100%); }
                     100% { transform: translateX(100%); }
@@ -631,6 +723,13 @@ export default function Upcoming() {
                 }
                 .animate-fadeIn {
                     animation: fadeIn 0.5s ease-out forwards;
+                }
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                .animate-spin-slow {
+                    animation: spin-slow 20s linear infinite;
                 }
             `}</style>
         </div>
