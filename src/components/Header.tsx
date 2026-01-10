@@ -17,6 +17,7 @@ export default function Header() {
   };
 
   const navLinks = [
+    { to: '/classes', label: t.header.classes || 'Classes' },
     { to: '/about', label: t.header.about },
     { to: '/process', label: t.header.studyingProcess },
     { to: '/blog', label: t.header.blog },
