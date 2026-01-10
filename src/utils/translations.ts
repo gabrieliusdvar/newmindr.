@@ -775,6 +775,17 @@ export const translations: Record<Language, any> = {
           likes: "4.5k",
           comments: "67",
           url: "/blog/play-to-learn"
+        },
+        {
+          id: 7,
+          platform: "Education",
+          title: "Interactive Courses: Because Reading is So 20th Century",
+          content: "An unbiased review of why interactive learning is the greatest invention since sliced bread. Warning: Contains sarcasm and truth.",
+          image: "/no-stealable.png",
+          date: "Jan 10, 2026",
+          likes: "99k",
+          comments: "1",
+          url: "/blog/interactive-courses"
         }
       ]
     }
@@ -1553,6 +1564,17 @@ export const translations: Record<Language, any> = {
           likes: "4.5k",
           comments: "67",
           url: "/blog/play-to-learn"
+        },
+        {
+          id: 7,
+          platform: "Švietimas",
+          title: "Interaktyvūs kursai: Nes skaitymas yra atgyvena",
+          content: "Nešališka apžvalga, kodėl interaktyvus mokymasis yra geriau už pjaustytą batoną. Įspėjimas: Sudėtyje yra sarkazmo.",
+          image: "/no-stealable.png",
+          date: "Sau 10, 2026",
+          likes: "99k",
+          comments: "1",
+          url: "/blog/interactive-courses"
         }
       ]
     }
@@ -2331,6 +2353,17 @@ export const translations: Record<Language, any> = {
           likes: "4.5k",
           comments: "67",
           url: "/blog/play-to-learn"
+        },
+        {
+          id: 7,
+          platform: "Образование",
+          title: "Интерактивные курсы: Потому что чтение — это прошлый век",
+          content: "Непредвзятый обзор того, почему интерактивное обучение — лучшее изобретение. Осторожно: Сарказм.",
+          image: "/no-stealable.png",
+          date: "Янв 10, 2026",
+          likes: "99k",
+          comments: "1",
+          url: "/blog/interactive-courses"
         }
       ]
     }

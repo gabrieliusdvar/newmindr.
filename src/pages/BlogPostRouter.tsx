@@ -9,6 +9,7 @@ import ArticleGeneric from './articles/ArticleGeneric';
 import ArticleAfterSchool from './articles/ArticleAfterSchool';
 import ArticleFutureLearning from './articles/ArticleFutureLearning';
 import ArticlePlayToLearn from './articles/ArticlePlayToLearn';
+import ArticleInteractiveCourses from './articles/ArticleInteractiveCourses';
 
 export default function BlogPostRouter() {
     const { id } = useParams<{ id: string }>();
@@ -39,6 +40,11 @@ export default function BlogPostRouter() {
 
     // Router Logic
 
+    // ID 7 or interactive-courses
+    if (post.id === 7 || post.url.includes('interactive-courses')) {
+        return <ArticleInteractiveCourses />;
+    }
+
     // ID 4 or after-school -> After School Article
     if (post.id === 4 || post.url.includes('after-school')) {
         return <ArticleAfterSchool />;
@@ -60,7 +66,7 @@ export default function BlogPostRouter() {
     }
 
     // ID 1 (The Setup) or Interactive Slug -> Interactive Rise Article
-    if (post.id === 1 || post.url.includes('interactive') || post.platform === 'Insights' || post.platform === 'Įžvalgos' || post.platform === 'Инсайты') {
+    if (post.id === 1 || post.url.includes('interactive-rise') || post.platform === 'Insights' || post.platform === 'Įžvalgos' || post.platform === 'Инсайты') {
         return <ArticleRise />;
     }
 
