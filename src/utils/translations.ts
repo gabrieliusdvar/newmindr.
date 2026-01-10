@@ -162,6 +162,7 @@ export const translations: Record<Language, any> = {
     header: {
       ourCourses: "OUR ALL COURSES",
       classes: "Classes",
+      upcoming: "Upcoming",
       about: "About",
       studyingProcess: "Studying Process",
       blog: "Blog",
@@ -952,6 +953,7 @@ export const translations: Record<Language, any> = {
     header: {
       ourCourses: "Visi kursai",
       classes: "Pamokos",
+      upcoming: "Ateitis",
       about: "Apie",
       studyingProcess: "Mokymosi procesas",
       blog: "Tinklas",
@@ -1742,6 +1744,7 @@ export const translations: Record<Language, any> = {
     header: {
       ourCourses: "ВСЕ НАШИ КУРСЫ",
       classes: "Классы",
+      upcoming: "Скоро",
       about: "О нас",
       studyingProcess: "Процесс обучения",
       blog: "Блог",

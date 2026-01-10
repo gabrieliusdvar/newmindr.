@@ -13,6 +13,7 @@ import Blog from './pages/Blog';
 import BlogPostRouter from './pages/BlogPostRouter';
 import Showcase from './pages/Showcase';
 import Classes from './pages/Classes';
+import Upcoming from './pages/Upcoming';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import CookieNotice from './components/CookieNotice';
@@ -53,6 +54,7 @@ function App() {
             <Route path="/about" element={<Layout><About /></Layout>} />
             <Route path="/process" element={<Layout><StudyingProcess /></Layout>} />
             <Route path="/classes" element={<Layout><Classes /></Layout>} />
+            <Route path="/upcoming" element={<Layout><Upcoming /></Layout>} />
             <Route path="/contact" element={<Layout showFooter={false}><Contact /></Layout>} />
             <Route path="/blog" element={<Layout><Blog /></Layout>} />
             <Route path="/blog/:id" element={<Layout showFooter={false}><BlogPostRouter /></Layout>} />
