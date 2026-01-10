@@ -234,9 +234,19 @@ export default function ArticlePlayToLearn() {
                     <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-emerald-600">
                         {t.title}
                     </h1>
-                    <p className="text-xl md:text-2xl font-medium text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl md:text-2xl font-medium text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
                         {t.subtitle}
                     </p>
+
+                    {/* Hero Image */}
+                    <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 max-w-4xl mx-auto relative group">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <img
+                            src="https://images.unsplash.com/photo-1596496356991-9563285d2033?w=1200&auto=format&fit=crop"
+                            alt="Learning through play"
+                            className="w-full h-auto object-cover max-h-[600px] transform group-hover:scale-105 transition-transform duration-700"
+                        />
+                    </div>
                 </header>
 
                 {/* Intro */}
